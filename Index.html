@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arkaya Risk — The Third Domain of Risk</title>
+<meta name="description" content="Arkaya Risk. Unlocking the Governance Premium. Governance intelligence for capital-market-facing organisations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:       #0c0b09;
+  --parchment: #f5f0e8;
+  --gold:      #b8943a;
+  --gold-l:    #d4ac55;
+  --gold-pale: rgba(184,148,58,0.07);
+  --dim:       #6b6456;
+  --rule:      rgba(184,148,58,0.18);
+  --mid:       #151310;
+  --mid2:      #1c1a16;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(–ink);color:var(–parchment);font-family:‘Outfit’,sans-serif;font-weight:300;font-size:16px;line-height:1.75;overflow-x:hidden}
+
+/* ── HEADER ── */
+header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:64px;background:rgba(12,11,9,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(–rule)}
+.wordmark{font-family:‘Cormorant Garamond’,serif;font-weight:500;font-size:1.05rem;letter-spacing:0.24em;text-transform:uppercase;color:var(–parchment);text-decoration:none}
+.wordmark span{color:var(–gold)}
+.header-right{display:flex;align-items:center;gap:28px}
+.header-tag{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(–dim);opacity:.55}
+.header-cta{font-size:0.64rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(–ink);background:var(–gold);padding:8px 20px;border-radius:2px;text-decoration:none;transition:background .22s}
+.header-cta:hover{background:var(–gold-l)}
+
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:100px 52px 80px;text-align:center}
+.hero-grain{position:absolute;inset:0;background-image:url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘noise’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23noise)’ opacity=‘0.04’/%3E%3C/svg%3E”);opacity:.4;pointer-events:none}
+.hero-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(ellipse,rgba(184,148,58,0.06) 0%,transparent 70%);pointer-events:none}
+
+/* Quote rotator */
+.quote-wrap{min-height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:52px;position:relative}
+.quote-item{position:absolute;opacity:0;transform:translateY(8px);transition:opacity .7s ease,transform .7s ease;max-width:680px;text-align:center;pointer-events:none}
+.quote-item.active{opacity:1;transform:translateY(0);position:relative;pointer-events:auto}
+.quote-text{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-weight:300;font-size:clamp(1.05rem,1.8vw,1.35rem);color:rgba(245,240,232,0.6);line-height:1.65;margin-bottom:12px}
+.quote-attr{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(–gold);opacity:.65}
+.quote-dots{display:flex;gap:8px;justify-content:center;margin-top:20px;position:relative;z-index:2}
+.quote-dot{width:5px;height:5px;border-radius:50%;background:rgba(184,148,58,0.25);cursor:pointer;transition:background .3s}
+.quote-dot.active{background:var(–gold)}
+
+/* Hero primary */
+.hero-rule{width:1px;height:48px;background:linear-gradient(to bottom,transparent,var(–gold),transparent);margin:0 auto 36px}
+.hero-primary{font-family:‘Cormorant Garamond’,serif;font-weight:500;font-size:clamp(2.4rem,5vw,4rem);letter-spacing:0.02em;color:var(–parchment);line-height:1.15;margin-bottom:28px}
+.hero-three{display:flex;flex-direction:column;gap:0;margin-bottom:36px;max-width:760px;margin-left:auto;margin-right:auto}
+.hero-line{font-family:‘Cormorant Garamond’,serif;font-size:clamp(1rem,1.8vw,1.3rem);line-height:1.6;color:rgba(245,240,232,0.55)}
+.hero-line.accent{color:var(–gold-l);font-style:italic;margin-top:6px}
+.hero-desc{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(–dim);opacity:.7;margin-bottom:48px;line-height:2}
+.hero-btn{display:inline-block;font-size:0.68rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(–gold);border:1px solid rgba(184,148,58,0.35);padding:14px 36px;border-radius:2px;text-decoration:none;transition:all .25s}
+.hero-btn:hover{background:var(–gold-pale);border-color:var(–gold)}
+
+/* ── SECTIONS ── */
+section{padding:96px 52px}
+.section-inner{max-width:960px;margin:0 auto}
+.section-label{font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;color:var(–gold);opacity:.65;margin-bottom:24px;display:flex;align-items:center;gap:14px}
+.section-label::before,.section-label::after{content:’’;display:block;width:28px;height:1px;background:var(–gold);opacity:.35}
+
+/* ── TWO AI CONVERSATIONS ── */
+#two-ai{background:var(–mid);border-top:1px solid var(–rule);border-bottom:1px solid var(–rule)}
+.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(–rule);margin-bottom:48px}
+.ai-col{background:var(–mid);padding:40px 36px}
+.ai-col.col-right{border-top:2px solid var(–gold)}
+.ai-col-label{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(–dim);margin-bottom:16px;opacity:.7}
+.ai-col-body{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-weight:300;font-size:clamp(1rem,1.6vw,1.2rem);line-height:1.7;color:rgba(245,240,232,0.6)}
+.ai-col.col-right .ai-col-body{color:rgba(245,240,232,0.85)}
+.ai-close{text-align:center;padding-top:8px}
+.ai-close-text{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-weight:300;font-size:clamp(0.95rem,1.6vw,1.15rem);color:rgba(245,240,232,0.5);line-height:1.7;max-width:680px;margin:0 auto 20px}
+.ai-close-line{font-family:‘Cormorant Garamond’,serif;font-weight:500;font-size:clamp(1rem,1.7vw,1.2rem);color:var(–gold-l);letter-spacing:0.01em;line-height:1.6;max-width:760px;margin:0 auto}
+
+/* ── CAPITAL EVENT BRIDGE ── */
+#capital-bridge{background:var(–ink);padding:80px 52px}
+.bridge-inner{max-width:800px;margin:0 auto;text-align:center}
+.bridge-question{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-weight:300;font-size:clamp(1.2rem,2.2vw,1.65rem);color:rgba(245,240,232,0.75);line-height:1.6;margin-bottom:32px}
+.bridge-question strong{font-style:normal;font-weight:500;color:var(–parchment)}
+.bridge-divider{width:40px;height:1px;background:var(–gold);margin:0 auto 32px;opacity:.5}
+.bridge-answer{font-family:‘Cormorant Garamond’,serif;font-weight:400;font-size:clamp(1.05rem,1.8vw,1.3rem);color:rgba(245,240,232,0.85);line-height:1.65}
+.bridge-answer em{color:var(–gold-l);font-style:italic}
+
+/* ── PROPOSITIONS ── */
+#propositions{background:var(–mid2)}
+.prop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(–rule);margin-top:48px}
+.prop-card{background:var(–mid2);padding:40px 32px;position:relative;overflow:hidden;transition:background .3s}
+.prop-card:hover{background:rgba(28,26,22,0.7)}
+.prop-card::before{content:’’;position:absolute;top:0;left:0;right:0;height:2px;background:transparent;transition:background .3s}
+.prop-card:hover::before{background:var(–gold)}
+.prop-num{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(–gold);opacity:.5;margin-bottom:20px}
+.prop-heading{font-family:‘Cormorant Garamond’,serif;font-weight:500;font-size:1.35rem;color:var(–parchment);margin-bottom:16px;line-height:1.3}
+.prop-body{font-size:0.82rem;color:rgba(245,240,232,0.5);line-height:1.8}
+.prop-body strong{color:rgba(245,240,232,0.75);font-weight:400}
+
+/* ── HOW ── */
+#how{background:var(–ink);border-top:1px solid var(–rule)}
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;margin-top:48px}
+.how-col-label{font-size:0.62rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(–gold);opacity:.65;margin-bottom:20px}
+.how-body{font-size:0.87rem;color:rgba(245,240,232,0.55);line-height:1.85}
+.how-body p{margin-bottom:16px}
+.how-body strong{color:rgba(245,240,232,0.8);font-weight:400}
+
+/* ── ARCHAEA STRIP ── */
+#archaea{background:var(–mid);border-top:1px solid var(–rule);border-bottom:1px solid var(–rule);padding:72px 52px;text-align:center}
+.archaea-inner{max-width:680px;margin:0 auto}
+.archaea-label{font-size:0.58rem;letter-spacing:0.24em;text-transform:uppercase;color:var(–gold);opacity:.5;margin-bottom:28px}
+.archaea-heading{font-family:‘Cormorant Garamond’,serif;font-weight:300;font-size:clamp(1.4rem,2.5vw,2rem);color:rgba(245,240,232,0.7);line-height:1.5;margin-bottom:24px}
+.archaea-body{font-size:0.8rem;color:var(–dim);line-height:1.9}
+
+/* ── CONTACT ── */
+#contact{background:var(–ink)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;margin-top:48px}
+.contact-lede{font-family:‘Cormorant Garamond’,serif;font-style:italic;font-weight:300;font-size:clamp(1.1rem,1.8vw,1.35rem);color:rgba(245,240,232,0.65);line-height:1.65;margin-bottom:32px}
+.contact-direct{font-size:0.78rem;color:var(–dim);line-height:2}
+.contact-direct a{color:var(–gold);text-decoration:none}
+.contact-direct a:hover{color:var(–gold-l)}
+.contact-direct strong{color:rgba(245,240,232,0.6);font-weight:400;display:block;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:12px;margin-top:24px}
+.contact-direct strong:first-child{margin-top:0}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(–dim);margin-bottom:8px}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(255,255,255,0.03);border:1px solid rgba(184,148,58,0.15);color:var(–parchment);font-family:‘Outfit’,sans-serif;font-size:0.82rem;font-weight:300;padding:12px 16px;border-radius:2px;outline:none;transition:border-color .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(184,148,58,0.45)}
+.form-group select option{background:var(–mid)}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-submit{font-size:0.68rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(–ink);background:var(–gold);border:none;padding:14px 32px;border-radius:2px;cursor:pointer;transition:background .22s;width:100%}
+.form-submit:hover{background:var(–gold-l)}
+.form-note{font-size:0.62rem;color:var(–dim);opacity:.5;margin-top:12px;line-height:1.7}
+
+/* ── FOOTER ── */
+footer{background:var(–mid);border-top:1px solid var(–rule);padding:40px 52px}
+.footer-inner{max-width:960px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:40px}
+.footer-wordmark{font-family:‘Cormorant Garamond’,serif;font-weight:500;font-size:1rem;letter-spacing:0.22em;text-transform:uppercase;color:var(–parchment);margin-bottom:10px}
+.footer-wordmark span{color:var(–gold)}
+.footer-legal{font-size:0.65rem;color:var(–dim);opacity:.55;line-height:1.8}
+.footer-right{text-align:right;font-size:0.67rem;color:var(–dim);line-height:1.9}
+.footer-right a{color:var(–gold);text-decoration:none}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:var(–gold);color:var(–ink);font-size:0.72rem;font-weight:500;letter-spacing:0.1em;padding:14px 28px;border-radius:2px;opacity:0;transition:all .4s;pointer-events:none;white-space:nowrap;z-index:999}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+header{padding:0 24px}
+.header-tag{display:none}
+section{padding:64px 24px}
+#hero{padding:90px 24px 60px}
+.ai-grid{grid-template-columns:1fr}
+.prop-grid{grid-template-columns:1fr}
+.how-grid{grid-template-columns:1fr;gap:40px}
+.contact-grid{grid-template-columns:1fr}
+.footer-inner{flex-direction:column}
+.footer-right{text-align:left}
+#capital-bridge{padding:60px 24px}
+}
+</style>
+
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+
+<header>
+  <a class="wordmark" href="#">Arkaya <span>Risk</span></a>
+  <div class="header-right">
+    <span class="header-tag">The Third Domain of Risk</span>
+    <a class="header-cta" href="#contact">Get in Touch</a>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+
+<section id="hero">
+  <div class="hero-grain"></div>
+  <div class="hero-glow"></div>
+
+  <!-- Rotating quotes -->
+
+  <div class="quote-wrap">
+    <div class="quote-item active">
+      <p class="quote-text">"The most important thing is not generating high returns. It is avoiding the losses that prevent ordinary returns from compounding."</p>
+      <p class="quote-attr">Howard Marks — Oaktree Capital</p>
+    </div>
+    <div class="quote-item">
+      <p class="quote-text">"The organisations that survive and compound over time are not simply the ones that grow well. They are the ones built to absorb disorder."</p>
+      <p class="quote-attr">Howard Marks — Oaktree Capital</p>
+    </div>
+    <div class="quote-item">
+      <p class="quote-text">"Antifragility is beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better."</p>
+      <p class="quote-attr">Nassim Nicholas Taleb — Antifragile</p>
+    </div>
+    <div class="quote-item">
+      <p class="quote-text">"The real measure of success is not how much you make when things go right, but how little you lose when they go wrong."</p>
+      <p class="quote-attr">Mark Spitznagel — Universa Investments</p>
+    </div>
+    <div class="quote-item">
+      <p class="quote-text">"Governance risk is not a category to be managed alongside enterprise risk. It is the condition that determines whether every other risk is manageable at all."</p>
+      <p class="quote-attr">Arkaya Risk — March 2026</p>
+    </div>
+    <div class="quote-dots">
+      <div class="quote-dot active" onclick="setQuote(0)"></div>
+      <div class="quote-dot" onclick="setQuote(1)"></div>
+      <div class="quote-dot" onclick="setQuote(2)"></div>
+      <div class="quote-dot" onclick="setQuote(3)"></div>
+      <div class="quote-dot" onclick="setQuote(4)"></div>
+    </div>
+  </div>
+
+  <div class="hero-rule"></div>
+
+  <h1 class="hero-primary">Unlocking the Governance Premium</h1>
+
+  <div class="hero-three">
+    <p class="hero-line">AI creates the risk. AI builds the remedy.</p>
+    <p class="hero-line accent">At every capital event, the proof is what gets priced.</p>
+  </div>
+
+  <p class="hero-desc">Governance intelligence for capital-market-facing organisations<br>Continuously evidenced &nbsp;·&nbsp; Obligations mapped &nbsp;·&nbsp; Capital market legible</p>
+
+<a class="hero-btn" href="#contact">Request a Governance MOT</a>
+
+</section>
+
+<!-- ── TWO AI CONVERSATIONS ── -->
+
+<section id="two-ai">
+  <div class="section-inner">
+    <div class="section-label">The AI Return Gap</div>
+    <div class="ai-grid">
+      <div class="ai-col col-left">
+        <div class="ai-col-label">The first AI conversation</div>
+        <p class="ai-col-body">Deployment. Copilots, automation, workflow integration. The return has not followed the promise. Adding AI to human workflows produces real gains. Incremental ones. The transformational return hasn't arrived yet.</p>
+      </div>
+      <div class="ai-col col-right">
+        <div class="ai-col-label">The second AI conversation</div>
+        <p class="ai-col-body">The return to be made by converting a governance gap into a Governance Premium — a gap with a known cost, a known cause, and a known remedy, part of which is insurance. The mathematics are not about generating exceptional returns. They are about eliminating the losses that prevent ordinary returns from compounding.</p>
+      </div>
+    </div>
+    <div class="ai-close">
+      <p class="ai-close-text">Every board in 2026 is having both conversations. Most are only pricing one of them.</p>
+      <p class="ai-close-line">The Sunday Times is writing the AI adoption story. Regulators are writing the accountability requirements. Nobody is writing the connection between them — except Arkaya.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CAPITAL EVENT BRIDGE ── -->
+
+<section id="capital-bridge">
+  <div class="bridge-inner">
+    <p class="bridge-question">At every capital event — refinancing, exit, insurance renewal, claim — <strong>the same question is now being asked:</strong> can you evidence your governance, or are you asserting it?</p>
+    <div class="bridge-divider"></div>
+    <p class="bridge-answer">The defensive playbook Arkaya builds is how organisations answer it.<br><em>The resilience capital it produces is what pays out when they do.</em></p>
+  </div>
+</section>
+
+<!-- ── THREE PROPOSITIONS ── -->
+
+<section id="propositions">
+  <div class="section-inner">
+    <div class="section-label">The Governance Premium</div>
+    <div class="prop-grid">
+
+```
+  <div class="prop-card">
+    <div class="prop-num">I — The Known Cost</div>
+    <h3 class="prop-heading">The exit discount is measurable before the process begins.</h3>
+    <p class="prop-body">Bain's 2026 analysis puts the governance uncertainty discount at <strong>£15–20m on a £500m business</strong> before the first bid conversation. It is not assembled at exit. It accumulates silently across the hold period — at every renewal, every refinancing, every point where capital is at stake. The governance record that removes it has to be built before the event. Not assembled when it starts.</p>
+  </div>
+
+  <div class="prop-card">
+    <div class="prop-num">II — The Compressed Window</div>
+    <h3 class="prop-heading">The loss event now arrives before the governance response.</h3>
+    <p class="prop-body">In 2026, digital disruption rose <strong>nine percentage points in a single year</strong> to become the second-highest risk globally — measured across 4,073 Chief Audit Executives in 131 countries. The fastest-rising risks are precisely the areas where audit coverage is most deficient. The governance infrastructure most organisations are running was not built for the speed at which risk now forms. <strong>Enterprise value destruction is permanent. Insurance does not recover it.</strong></p>
+  </div>
+
+  <div class="prop-card">
+    <div class="prop-num">III — The Remedy</div>
+    <h3 class="prop-heading">Effective governance architecture supports affirmative cover.</h3>
+    <p class="prop-body">Insurers are withdrawing affirmative cover across D&O, GL and PI lines — not because AI risk is uninsurable, but because governance quality cannot be verified. A continuously evidenced, obligations-mapped governance record changes what insurance can do. <strong>Effective governance architecture compresses the governance gap, restores affirmative cover, and becomes a corollary of finance and going concern</strong> — not overhead alongside it. The opacity loading disappears at every renewal, refinancing and exit.</p>
+  </div>
+
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ── HOW ARKAYA WORKS ── -->
+
+<section id="how">
+  <div class="section-inner">
+    <div class="section-label">How Arkaya Works</div>
+    <div class="how-grid">
+      <div>
+        <div class="how-col-label">The Custos Methodology</div>
+        <div class="how-body">
+          <p>Arkaya delivers its service through Custos — a governance methodology designed in four stages. It is not a compliance framework, a software product or an advisory report. It is a structured, outcomes-defined approach to building a <strong>continuously fed governance architecture</strong> that the organisation operates within rather than reports against.</p>
+          <p>The methodology begins with the <strong>Governance MOT</strong> — a structured diagnostic with every named member of the accountability layer, run concurrently with a review of the organisation's insurance programme. It surfaces the gap between where the organisation believes itself to be and where it actually sits — and what that gap is costing.</p>
+          <p>Each subsequent stage builds toward the full evidence architecture: obligations mapped to named individuals, quality improvement plans per risk domain, and the continuously maintained governance ledger deployed at every capital event.</p>
+        </div>
+      </div>
+      <div>
+        <div class="how-col-label">The Cost Collapse</div>
+        <div class="how-body">
+          <p>The defensive playbook has not been written at scale for one reason: the inputs were too expensive. Major practices have been charging <strong>£50–100k for a periodic risk maturity assessment</strong> and <strong>£200,000 for a static AI governance policy</strong> — a document, not an architecture, out of date before it was read.</p>
+          <p>AI has changed this structurally. The same compression reshaping every knowledge-intensive industry is now operating on the inputs to governance infrastructure. The cost of producing a continuously maintained, obligations-mapped governance architecture is falling at the same rate as every other form of structured analysis that once required expensive specialist time.</p>
+          <p><strong>The deflation of governance input costs is the mechanism through which insurance moves from overhead to instrument.</strong> For the first time, the defensive chapter of the value creation plan is affordable across the portfolio — not only at the largest companies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ARCHAEA STRIP ── -->
+
+<section id="archaea">
+  <div class="archaea-inner">
+    <div class="archaea-label">Why Arkaya</div>
+    <h2 class="archaea-heading">Named for Archaea — the most resilient organisms on Earth. Thriving in environments that destroy everything else.</h2>
+    <p class="archaea-body">Arkaya Risk was established to build the defensive chapter of the value creation plan — the governance architecture that the offensive playbook has always assumed but never produced. The organisations that define the next era of value creation are those that can demonstrate — to every party that prices their risk — that their governance is not merely practised but continuously evidenced, obligations-mapped and capital market legible.</p>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Get in Touch</div>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-lede">The full picture is available under NDA. The detail is substantial and tailored to your position. The conversation starts with the Governance MOT.</p>
+        <p class="contact-lede" style="font-size:clamp(0.95rem,1.5vw,1.1rem);margin-top:0;">This is the conversation we are having. We are building deliberately and selectively.</p>
+        <div class="contact-direct">
+          <strong>Direct Contact</strong>
+          David McKibbin, Founder<br>
+          <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a><br>
+          +44 (0)7972 178 759<br>
+          <a href="http://www.arkayarisk.com">arkayarisk.com</a>
+        </div>
+      </div>
+      <div>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label>Organisation</label>
+            <input type="text" placeholder="Your organisation">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>I am approaching as</label>
+            <select>
+              <option value="">Select context</option>
+              <option>A board member or executive</option>
+              <option>A private equity investor or operating partner</option>
+              <option>An insurer, underwriter or broker</option>
+              <option>A capital markets counterparty</option>
+              <option>A potential partner or adviser</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Anything you'd like to add (optional)</label>
+            <textarea placeholder="Context, questions, or how you found us"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+          <p class="form-note">Private and confidential — not for further distribution without the consent of Arkaya Risk / Centinel 10 Ltd.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-wordmark">Arkaya <span>Risk</span></div>
+      <div class="footer-legal">
+        Arkaya Risk is a trading name of Centinel 10 Ltd.<br>
+        © 2026 Centinel 10 Ltd. All rights reserved.<br>
+        Private and confidential. Not for further distribution without consent.
+      </div>
+    </div>
+    <div class="footer-right">
+      The Third Domain of Risk<br>
+      <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a><br>
+      +44 (0)7972 178 759
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Message received — David will be in touch shortly.</div>
+
+<script>
+const quotes = document.querySelectorAll('.quote-item:not(.quote-dots)');
+const allItems = document.querySelectorAll('.quote-item');
+const dots = document.querySelectorAll('.quote-dot');
+let current = 0;
+let timer;
+
+function setQuote(i) {
+  allItems[current].classList.remove('active');
+  dots[current].classList.remove('active');
+  current = i;
+  allItems[current].classList.add('active');
+  dots[current].classList.add('active');
+  clearInterval(timer);
+  timer = setInterval(() => setQuote((current + 1) % dots.length), 6000);
+}
+
+timer = setInterval(() => setQuote((current + 1) % dots.length), 6000);
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 5000);
+  e.target.reset();
+}
+</script>
+
+</body>
+</html>
