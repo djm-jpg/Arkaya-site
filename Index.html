@@ -309,8 +309,9 @@ footer {
   footer { padding: 36px 24px; flex-direction: column; }
   .footer-right { text-align: left; }
   .footer-links { justify-content: flex-start; }
-  .audience-grid { grid-template-columns: repeat(2, 1fr); }
-  .audience-card { padding: 24px 20px; }
+  .audience-blocks { grid-template-columns: 1fr; }
+  .audience-block { border-right: none; border-bottom: 1px solid var(--rule); padding: 32px 24px; }
+  .audience-block:last-child { border-bottom: none; }
   .conversations { grid-template-columns: 1fr; gap: 48px; }
   .wad-grid { grid-template-columns: 1fr; gap: 40px; }
   .wad-pull { position: static; }
@@ -361,15 +362,37 @@ footer {
 <section id="audience">
   <div class="container">
     <span class="label">Who We Work With</span>
-    <div class="audience-grid">
-      <div class="audience-card"><h3>Corporates &amp; Boards</h3><p>Governance evidence before the capital event</p></div>
-      <div class="audience-card"><h3>Insurers, MGAs &amp; Captives</h3><p>Affirmative cover built on continuous evidence</p></div>
-      <div class="audience-card"><h3>Private Equity &amp; Sponsors</h3><p>The defensive chapter of the value creation plan</p></div>
-      <div class="audience-card"><h3>Creditors &amp; Lenders</h3><p>Governance trajectory visible at every covenant event</p></div>
-      <div class="audience-card"><h3>Brokers &amp; Intermediaries</h3><p>The distribution opportunity in governance intelligence</p></div>
-      <div class="audience-card"><h3>Capital Markets</h3><p>Governance risk priced on evidence, not assertion</p></div>
-      <div class="audience-card"><h3>Global Capability Centres</h3><p>Governance evidence across the GCC relationship — continuously, not at the point of failure</p></div>
+    <div class="audience-blocks">
+
+```
+  <div class="audience-block">
+    <div class="audience-block-label">Corporates &amp; Boards</div>
+    <div class="audience-block-items">
+      <div class="audience-item"><h3>Corporates &amp; Boards</h3><p>The entity whose governance is priced at every capital event — before it, not in response to it</p></div>
+      <div class="audience-item"><h3>Global Capability Centres</h3><p>Governance evidence across the GCC relationship — continuously, not at the point of failure</p></div>
     </div>
+  </div>
+
+  <div class="audience-block">
+    <div class="audience-block-label">Insurance</div>
+    <div class="audience-block-items">
+      <div class="audience-item"><h3>Insurers, MGAs &amp; Captives</h3><p>Affirmative cover built on continuous evidence</p></div>
+      <div class="audience-item"><h3>Brokers &amp; Intermediaries</h3><p>The distribution opportunity in governance intelligence</p></div>
+    </div>
+  </div>
+
+  <div class="audience-block">
+    <div class="audience-block-label">Finance</div>
+    <div class="audience-block-items">
+      <div class="audience-item"><h3>Private Equity &amp; Sponsors</h3><p>The defensive chapter of the value creation plan</p></div>
+      <div class="audience-item"><h3>Bank &amp; Non-Bank Funders</h3><p>Governance trajectory visible at every covenant and credit event</p></div>
+      <div class="audience-item"><h3>Investment Management</h3><p>Governance risk priced on evidence, not assertion</p></div>
+    </div>
+  </div>
+
+</div>
+```
+
   </div>
 </section>
 
