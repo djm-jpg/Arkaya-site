@@ -430,8 +430,8 @@ footer {
       <svg class="chart-svg" viewBox="0 0 820 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrative chart showing enterprise value trajectory divergence following a governance failure">
         <defs>
           <linearGradient id="gapGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#C4993A" stop-opacity="0.18"/>
-            <stop offset="100%" stop-color="#C4993A" stop-opacity="0.04"/>
+            <stop offset="0%" stop-color="#C4993A" stop-opacity="0.22"/>
+            <stop offset="100%" stop-color="#C4993A" stop-opacity="0.06"/>
           </linearGradient>
           <marker id="arrowIns" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
             <path d="M0,0 L0,6 L6,3 z" fill="#B04040" opacity="0.7"/>
@@ -440,21 +440,21 @@ footer {
 
 ```
     <!-- Chart background -->
-    <rect x="60" y="30" width="580" height="340" fill="#EAE7DF" rx="1"/>
+    <rect x="60" y="30" width="580" height="340" fill="#1E1C19" rx="1"/>
 
     <!-- Horizontal gridlines -->
-    <line x1="60" y1="269" x2="640" y2="269" stroke="#E4DFD8" stroke-width="1"/>
-    <line x1="60" y1="192" x2="640" y2="192" stroke="#E4DFD8" stroke-width="1"/>
-    <line x1="60" y1="116" x2="640" y2="116" stroke="#E0D8CC" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="60" y1="269" x2="640" y2="269" stroke="rgba(242,239,232,0.08)" stroke-width="1"/>
+    <line x1="60" y1="192" x2="640" y2="192" stroke="rgba(242,239,232,0.08)" stroke-width="1"/>
+    <line x1="60" y1="116" x2="640" y2="116" stroke="rgba(242,239,232,0.12)" stroke-width="1" stroke-dasharray="3,3"/>
 
     <!-- Vertical gridlines (subtle) -->
-    <line x1="176" y1="30" x2="176" y2="370" stroke="#EDE9E2" stroke-width="1"/>
-    <line x1="408" y1="30" x2="408" y2="370" stroke="#EDE9E2" stroke-width="1"/>
-    <line x1="524" y1="30" x2="524" y2="370" stroke="#EDE9E2" stroke-width="1"/>
+    <line x1="176" y1="30" x2="176" y2="370" stroke="rgba(242,239,232,0.05)" stroke-width="1"/>
+    <line x1="408" y1="30" x2="408" y2="370" stroke="rgba(242,239,232,0.05)" stroke-width="1"/>
+    <line x1="524" y1="30" x2="524" y2="370" stroke="rgba(242,239,232,0.05)" stroke-width="1"/>
 
     <!-- Event line -->
-    <line x1="292" y1="30" x2="292" y2="370" stroke="#B04040" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
-    <text x="292" y="22" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="9" fill="#B04040" letter-spacing="0.15em" opacity="0.8">GOVERNANCE EVENT</text>
+    <line x1="292" y1="30" x2="292" y2="370" stroke="#D45252" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+    <text x="292" y="22" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="9" fill="#D45252" letter-spacing="0.15em" opacity="0.8">GOVERNANCE EVENT</text>
 
     <!-- Gap fill (between pre-loss trajectory and company EV) -->
     <path class="cfill"
@@ -489,33 +489,33 @@ footer {
       fill="none" stroke="#B04040" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
 
     <!-- Insurance annotation -->
-    <line x1="500" y1="302" x2="510" y2="275" stroke="#B04040" stroke-width="0.8" opacity="0.7" marker-end="url(#arrowRmi)"/>
-    <text x="462" y="316" font-family="'Cormorant Garamond', serif" font-size="10" fill="#B04040" opacity="0.85" font-style="italic">Insurance: ~4% of gap</text>
+    <line x1="500" y1="302" x2="510" y2="275" stroke="#D45252" stroke-width="0.8" opacity="0.8" marker-end="url(#arrowRmi)"/>
+    <text x="462" y="316" font-family="'Cormorant Garamond', serif" font-size="10" fill="#D45252" opacity="0.9" font-style="italic">Insurance: ~4% of gap</text>
 
     <!-- Right-side labels -->
     <text x="648" y="59" font-family="'Cormorant Garamond', serif" font-size="11" fill="#4A8B7C" dominant-baseline="middle">Sector peer</text>
-    <text x="648" y="83" font-family="'Cormorant Garamond', serif" font-size="11" fill="#C4993A" dominant-baseline="middle" opacity="0.8">Pre-loss trajectory</text>
-    <text x="648" y="231" font-family="'Cormorant Garamond', serif" font-size="11" fill="#C4993A" dominant-baseline="middle">Company EV</text>
+    <text x="648" y="83" font-family="'Cormorant Garamond', serif" font-size="11" fill="#C4993A" dominant-baseline="middle">Pre-loss trajectory</text>
+    <text x="648" y="231" font-family="'Cormorant Garamond', serif" font-size="11" fill="rgba(242,239,232,0.7)" dominant-baseline="middle">Company EV</text>
 
     <!-- X-axis -->
     <line x1="60" y1="370" x2="640" y2="370" stroke="#D4CFC8" stroke-width="1"/>
-    <text x="350" y="408" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="10" fill="#9B9590" letter-spacing="0.08em">MONTHS RELATIVE TO GOVERNANCE EVENT</text>
+    <text x="350" y="408" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="11" fill="rgba(242,239,232,0.65)" letter-spacing="0.08em">MONTHS RELATIVE TO GOVERNANCE EVENT</text>
 
     <!-- X-axis tick labels -->
-    <text x="60"  y="384" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="10" fill="#9B9590">−12</text>
-    <text x="176" y="384" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="10" fill="#9B9590">−6</text>
+    <text x="60"  y="384" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="10" fill="rgba(242,239,232,0.35)">−12</text>
+    <text x="176" y="384" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="10" fill="rgba(242,239,232,0.35)">−6</text>
     <text x="292" y="384" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="10" fill="#B04040" font-weight="500">0</text>
-    <text x="408" y="384" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="10" fill="#9B9590">+6</text>
-    <text x="524" y="384" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="10" fill="#9B9590">+12</text>
-    <text x="640" y="384" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="10" fill="#9B9590">+18</text>
+    <text x="408" y="384" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="10" fill="rgba(242,239,232,0.35)">+6</text>
+    <text x="524" y="384" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="10" fill="rgba(242,239,232,0.35)">+12</text>
+    <text x="640" y="384" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="10" fill="rgba(242,239,232,0.35)">+18</text>
 
     <!-- Y-axis label -->
-    <text x="18" y="200" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="10" fill="#9B9590" letter-spacing="0.1em" transform="rotate(-90, 18, 200)">EV (INDEXED)</text>
+    <text x="18" y="200" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="10" fill="rgba(242,239,232,0.35)" letter-spacing="0.1em" transform="rotate(-90, 18, 200)">EV (INDEXED)</text>
 
     <!-- Y-axis gridline labels -->
-    <text x="52" y="116" text-anchor="end" font-family="'Cormorant Garamond', serif" font-size="9" fill="#B04040" dominant-baseline="middle" opacity="0.7">100</text>
-    <text x="52" y="192" text-anchor="end" font-family="'Cormorant Garamond', serif" font-size="9" fill="#9B9590" dominant-baseline="middle">85</text>
-    <text x="52" y="269" text-anchor="end" font-family="'Cormorant Garamond', serif" font-size="9" fill="#9B9590" dominant-baseline="middle">70</text>
+    <text x="52" y="116" text-anchor="end" font-family="'Cormorant Garamond', serif" font-size="9" fill="#D45252" dominant-baseline="middle">100</text>
+    <text x="52" y="192" text-anchor="end" font-family="'Cormorant Garamond', serif" font-size="9" fill="rgba(242,239,232,0.3)" dominant-baseline="middle">85</text>
+    <text x="52" y="269" text-anchor="end" font-family="'Cormorant Garamond', serif" font-size="9" fill="rgba(242,239,232,0.3)" dominant-baseline="middle">70</text>
   </svg>
   <div class="chart-legend">
     <div class="legend-item"><span class="legend-line sector"></span>Sector peer EV</div>
