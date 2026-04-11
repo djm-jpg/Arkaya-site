@@ -122,7 +122,7 @@ nav {
 .hero-meta .pillars { color: var(--gold); margin-top: 4px; }
 .munger {
   margin-top: 64px; padding-top: 44px; border-top: 1px solid var(--rule);
-  font-size: 36px; font-style: italic; color: rgba(242,239,232,0.65);
+  font-size: 28px; font-style: italic; color: rgba(242,239,232,0.65);
   line-height: 1.6; max-width: 100%;
 }
 .munger cite {
@@ -175,7 +175,7 @@ nav {
   max-width: 720px; margin: 0 auto;
   border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
   padding: 60px 0;
-  font-size: clamp(24px, 3vw, 36px); font-weight: 300; font-style: italic;
+  font-size: clamp(22px, 2.6vw, 32px); font-weight: 300; font-style: italic;
   text-align: center; line-height: 1.4; color: #F2EFE8;
 }
 .capital-q strong { font-style: normal; font-weight: 500; }
@@ -304,7 +304,7 @@ footer {
   .nav-logo img { height: 36px; }
   #hero { padding: 110px 24px 72px; }
   .hero-logo { width: min(360px, 88vw); padding: 4px 8px; }
-  .munger { font-size: 26px; }
+  .munger { font-size: 22px; }
   #audience, #return-gap, #gov-premium, #what-we-do, #contact { padding: 56px 24px; }
   footer { padding: 36px 24px; flex-direction: column; }
   .footer-right { text-align: left; }
@@ -347,10 +347,10 @@ footer {
   <p class="hero-line hero-line-1">The risk signals exist.</p>
   <p class="hero-line hero-line-2">The architecture that proves they're being captured and responded to doesn't.</p>
   <p class="hero-line hero-line-3">Every counterparty prices the same governance risk. None of them speak the same risk language.</p>
-  <p class="hero-line hero-line-4">In an AI-speed world, that is the difference between a going and a gone concern — between <span class="hero-death">capital destruction</span> and <span class="hero-resilience">resilience capital.</span></p>
+  <p class="hero-line hero-line-4">In an AI-speed world, that is the difference between a going and a gone concern — between <span class="hero-resilience">resilience capital</span> and <span class="hero-death">capital destruction.</span></p>
   <p class="hero-tagline">AI accelerates the risk. Arkaya builds the architecture that proves it's being managed.</p>
   <div class="hero-meta">
-    <div>GOVERNANCE INTELLIGENCE FOR CORPORATES, INSURERS, SPONSORS, CREDITORS AND CAPITAL MARKETS</div>
+    <div style="color: rgba(242,239,232,0.78); margin-bottom: 12px;">GOVERNANCE INTELLIGENCE</div>
     <div class="pillars">CONTINUOUSLY EVIDENCED &nbsp;·&nbsp; OBLIGATIONS MAPPED &nbsp;·&nbsp; CAPITAL MARKET LEGIBLE</div>
   </div>
   <blockquote class="munger">
@@ -365,28 +365,25 @@ footer {
     <div class="audience-blocks">
 
 ```
-  <div class="audience-block">
-    <div class="audience-block-label">Corporates &amp; Boards</div>
+  <div class="audience-block" onclick="document.getElementById('context').value='corporate-board'; window.location.hash='contact';">
+    <div class="audience-block-label">Corporates</div>
+    <div class="audience-block-items"></div>
+  </a>
+
+  <div class="audience-block" onclick="document.getElementById('context').value='insurer-mga'; window.location.hash='contact';">
+    <div class="audience-block-label">Insurance Sector</div>
     <div class="audience-block-items">
-      <div class="audience-item"><h3>Corporates &amp; Boards</h3><p>The entity whose governance is priced at every capital event — before it, not in response to it</p></div>
-      <div class="audience-item"><h3>Global Capability Centres</h3><p>Governance evidence across the GCC relationship — continuously, not at the point of failure</p></div>
+      <div class="audience-item"><h3>Insurers, MGAs &amp; Captives</h3></div>
+      <div class="audience-item"><h3>Brokers &amp; Intermediaries</h3></div>
     </div>
   </div>
 
-  <div class="audience-block">
-    <div class="audience-block-label">Insurance</div>
+  <div class="audience-block" onclick="document.getElementById('context').value='pe-sponsor'; window.location.hash='contact';">
+    <div class="audience-block-label">Finance Sector</div>
     <div class="audience-block-items">
-      <div class="audience-item"><h3>Insurers, MGAs &amp; Captives</h3><p>Affirmative cover built on continuous evidence</p></div>
-      <div class="audience-item"><h3>Brokers &amp; Intermediaries</h3><p>The distribution opportunity in governance intelligence</p></div>
-    </div>
-  </div>
-
-  <div class="audience-block">
-    <div class="audience-block-label">Finance</div>
-    <div class="audience-block-items">
-      <div class="audience-item"><h3>Private Equity &amp; Sponsors</h3><p>The defensive chapter of the value creation plan</p></div>
-      <div class="audience-item"><h3>Bank &amp; Non-Bank Funders</h3><p>Governance trajectory visible at every covenant and credit event</p></div>
-      <div class="audience-item"><h3>Investment Management</h3><p>Governance risk priced on evidence, not assertion</p></div>
+      <div class="audience-item"><h3>Private Equity &amp; Investment Firms</h3></div>
+      <div class="audience-item"><h3>Global Capability Centres</h3></div>
+      <div class="audience-item"><h3>Bank &amp; Non-Bank Funders</h3></div>
     </div>
   </div>
 
@@ -536,9 +533,9 @@ footer {
 <section id="rmi-section" style="background:#2A2825; padding: 0 60px 100px;">
   <div class="container">
     <div class="chart-wrap" id="rmiChart">
-      <div class="chart-label-row" style="padding-top:80px;">
-        <span class="label" style="margin-bottom:0;">The Trajectory Argument</span>
-        <span class="chart-sublabel">RMI score over hold period — state vs direction</span>
+      <div style="padding-top:80px; margin-bottom:24px;">
+        <span class="label" style="margin-bottom:16px; display:block;">The Mispricing Problem</span>
+        <span class="chart-sublabel">Static governance scoring prices state. The Dynamic Risk Maturity Index (DRMI) prices trajectory.</span>
       </div>
 
 ```
@@ -564,39 +561,45 @@ footer {
     <line x1="192" y1="20" x2="192" y2="370" stroke="rgba(242,239,232,0.07)" stroke-width="1"/>
     <line x1="375" y1="20" x2="375" y2="370" stroke="rgba(242,239,232,0.07)" stroke-width="1"/>
     <line x1="680" y1="20" x2="680" y2="370" stroke="rgba(196,153,58,0.20)"  stroke-width="1" stroke-dasharray="3,3"/>
-    <path class="cfill" d="M70,221 L131,218 L192,208 L253,195 L314,182 L375,169 L436,155 L497,142 L558,132 L619,122 L680,116 L680,370 L70,370 Z" fill="url(#rmiRiseGrad)"/>
-    <path class="cline" d="M70,146 L131,152 L192,159 L253,165 L314,172 L375,178 L436,185 L497,192 L558,198 L619,205 L680,215" fill="none" stroke="#D45252" stroke-width="2" stroke-dasharray="6,4" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
-    <path class="cline cline-2" d="M70,221 L131,218 L192,208 L253,195 L314,182 L375,169 L436,155 L497,142 L558,132 L619,122 L680,116" fill="none" stroke="#52A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="192" cy="208" r="5" fill="#52A86A" opacity="0.9" class="cline cline-2"/>
-    <circle cx="375" cy="169" r="5" fill="#52A86A" opacity="0.9" class="cline cline-2"/>
-    <circle cx="558" cy="132" r="5" fill="#52A86A" opacity="0.9" class="cline cline-2"/>
-    <text x="196" y="198" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(82,168,106,0.85)" font-style="italic">Diagnostic</text>
-    <text x="379" y="159" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(82,168,106,0.85)" font-style="italic">Readiness</text>
-    <text x="562" y="122" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(82,168,106,0.85)" font-style="italic">Maturity</text>
-    <line x1="690" y1="116" x2="690" y2="215" stroke="rgba(242,239,232,0.25)" stroke-width="1.5" marker-end="url(#arrowRmi)"/>
+    <path class="cfill" d="M70,235 L131,228 L192,218 L253,205 L314,192 L375,178 L436,165 L497,152 L558,142 L619,132 L680,122 L680,370 L70,370 Z" fill="url(#rmiRiseGrad)"/>
+    <path class="cline" d="M70,136 L131,142 L192,149 L253,159 L314,169 L375,178 L436,188 L497,198 L558,208 L619,215 L680,221" fill="none" stroke="#D45252" stroke-width="2" stroke-dasharray="6,4" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+    <path class="cline cline-2" d="M70,235 L131,228 L192,218 L253,205 L314,192 L375,178 L436,165 L497,152 L558,142 L619,132 L680,122" fill="none" stroke="#52A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="192" cy="218" r="5" fill="#52A86A" opacity="0.9" class="cline cline-2"/>
+    <circle cx="375" cy="178" r="5" fill="#52A86A" opacity="0.9" class="cline cline-2"/>
+    <circle cx="558" cy="142" r="5" fill="#52A86A" opacity="0.9" class="cline cline-2"/>
+    <!-- Crossover annotation -->
+    <rect x="270" y="114" width="184" height="54" fill="#2A2825" rx="4" stroke="rgba(242,239,232,0.25)" stroke-width="1"/>
+    <text x="362" y="135" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="14" fill="rgba(242,239,232,0.92)" font-style="italic">Same static score.</text>
+    <text x="362" y="156" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="14" fill="#C4993A">Different risk.</text>
+    <line x1="362" y1="168" x2="375" y2="178" stroke="rgba(242,239,232,0.45)" stroke-width="1"/>
+    <circle cx="375" cy="178" r="8" fill="#C4993A" stroke="#2A2825" stroke-width="2"/>
+    <text x="196" y="208" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(82,168,106,0.85)" font-style="italic">Diagnostic</text>
+    <text x="320" y="168" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(82,168,106,0.85)" font-style="italic">Readiness</text>
+    <text x="562" y="132" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(82,168,106,0.85)" font-style="italic">Maturity</text>
+    <line x1="690" y1="122" x2="690" y2="221" stroke="rgba(242,239,232,0.25)" stroke-width="1.5" marker-end="url(#arrowRmi)"/>
     <text x="698" y="162" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,239,232,0.45)" font-style="italic" dominant-baseline="middle">Discount</text>
-    <text x="52" y="146" text-anchor="end" font-family="'Cormorant Garamond',serif" font-size="9" fill="#D45252" dominant-baseline="middle" opacity="0.8">65</text>
-    <text x="52" y="221" text-anchor="end" font-family="'Cormorant Garamond',serif" font-size="9" fill="#52A86A" dominant-baseline="middle" opacity="0.8">42</text>
+    <text x="52" y="136" text-anchor="end" font-family="'Cormorant Garamond',serif" font-size="9" fill="#D45252" dominant-baseline="middle" opacity="0.8">68</text>
+    <text x="52" y="235" text-anchor="end" font-family="'Cormorant Garamond',serif" font-size="9" fill="#52A86A" dominant-baseline="middle" opacity="0.8">38</text>
     <line x1="60" y1="370" x2="700" y2="370" stroke="rgba(242,239,232,0.15)" stroke-width="1"/>
-    <text x="375" y="408" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,239,232,0.3)" letter-spacing="0.08em">HOLD PERIOD — YEARS</text>
+    <text x="375" y="408" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="11" fill="rgba(242,239,232,0.65)" letter-spacing="0.08em">HOLD PERIOD — YEARS</text>
     <text x="70"  y="384" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,239,232,0.3)">0</text>
     <text x="192" y="384" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,239,232,0.3)">1</text>
     <text x="314" y="384" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,239,232,0.3)">2</text>
     <text x="436" y="384" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,239,232,0.3)">3</text>
     <text x="558" y="384" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,239,232,0.3)">4</text>
     <text x="680" y="384" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(196,153,58,0.7)">Exit</text>
-    <text x="18" y="195" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,239,232,0.3)" letter-spacing="0.1em" transform="rotate(-90,18,195)">RMI SCORE</text>
+    <text x="18" y="195" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,239,232,0.3)" letter-spacing="0.1em" transform="rotate(-90,18,195)">DRMI SCORE</text>
     <text x="52" y="228" text-anchor="end" font-family="'Cormorant Garamond',serif" font-size="9" fill="rgba(242,239,232,0.25)" dominant-baseline="middle">40</text>
     <text x="52" y="162" text-anchor="end" font-family="'Cormorant Garamond',serif" font-size="9" fill="rgba(196,153,58,0.5)"   dominant-baseline="middle">60</text>
     <text x="52" y="96"  text-anchor="end" font-family="'Cormorant Garamond',serif" font-size="9" fill="rgba(82,168,106,0.5)"   dominant-baseline="middle">80</text>
   </svg>
 
   <div class="chart-legend">
-    <div class="legend-item"><span style="display:inline-block;width:28px;height:0;border-top:2px dashed #D45252;opacity:0.85;vertical-align:middle;"></span>&nbsp;RMI 65 — declining trajectory</div>
-    <div class="legend-item"><span style="display:inline-block;width:28px;height:2px;background:#52A86A;vertical-align:middle;"></span>&nbsp;RMI 42 — building trajectory</div>
+    <div class="legend-item"><span style="display:inline-block;width:28px;height:0;border-top:2px dashed #D45252;opacity:0.85;vertical-align:middle;"></span>&nbsp;DRMI 68 — declining trajectory</div>
+    <div class="legend-item"><span style="display:inline-block;width:28px;height:2px;background:#52A86A;vertical-align:middle;"></span>&nbsp;DRMI 38 — building trajectory</div>
   </div>
 
-  <p class="chart-caption">Illustrative. The RMI 65 business arrives at exit inside L3 — governed by assertion, trajectory deteriorating. The RMI 42 business crosses into L4 — continuously evidenced, trajectory documented. The governance discount applies to the first. It cannot be applied to the second.</p>
+  <p class="chart-caption">Illustrative. The DRMI 68 business arrives at exit inside L3 — governed by assertion, trajectory deteriorating. The DRMI 38 business crosses into L4 — continuously evidenced, trajectory documented. The governance discount applies to the first. It cannot be applied to the second.</p>
 </div>
 ```
 
@@ -612,9 +615,10 @@ footer {
         <em>The resilience capital it produces is what pays out when they do.</em>
       </div>
       <div class="wad-prose">
-        <p>Governance risk is where credit risk was before the rating agencies. Unmeasured. Assertion-based. Systematically mispriced by every counterparty that encounters it at every capital event — and whose contracts require event triggers to be monitored in between.</p>
-        <p>The mispricing runs in both directions. A business with strong governance appearance and a deteriorating trajectory is a worse capital event risk than one with weaker appearance and a documented, improving one. Every existing framework prices the state. None of them price the direction. And trigger language written for slow-moving risk increases the dispute surface area as governance velocity increases.</p>
-        <p>The Risk Maturity Index closes that gap — a trajectory-linked governance rating, continuously maintained, attributed to named decision-makers, independently verified. One record. Every counterparty. Before the event.</p>
+        <p>Arkaya builds the defensive chapter of the value creation plan — the governance architecture that protects enterprise value from entry through to every capital event. Not a compliance framework. Not a software product. Not an advisory report. The architecture the organisation operates within — continuously evidenced, obligations mapped, capital market legible.</p>
+        <p>The methodology runs in four stages. The Governance Diagnostic maps where the organisation actually sits versus where it believes itself to be — surfacing the gap between board assertion and management reality. The Readiness Review identifies where governance velocity is falling behind risk velocity. The Maturity Programme builds Quality Improvement Plans per domain, each with a named owner, milestone cadence, and board sign-off requirement. Exit Readiness deploys the accumulated evidence record at the capital event — before the buyer's due diligence team arrives, not in response to it.</p>
+        <p>The Dynamic Risk Maturity Index (DRMI) is the calibration instrument that makes the trajectory legible to every counterparty simultaneously — insurer at renewal, lender at covenant review, acquirer in due diligence. One continuously maintained record. Every pricing moment. Before the event.</p>
+        <p>That record is resilience capital. It is built. Not asserted.</p>
         <p>The full picture is available under NDA.</p>
       </div>
     </div>
