@@ -492,7 +492,7 @@ footer {
       fill="none" stroke="#B04040" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
 
     <!-- Insurance annotation -->
-    <line x1="500" y1="302" x2="510" y2="275" stroke="#B04040" stroke-width="0.8" opacity="0.7" marker-end="url(#arrowIns)"/>
+    <line x1="500" y1="302" x2="510" y2="275" stroke="#B04040" stroke-width="0.8" opacity="0.7" marker-end="url(#arrowRmi)"/>
     <text x="462" y="316" font-family="'Cormorant Garamond', serif" font-size="10" fill="#B04040" opacity="0.85" font-style="italic">Insurance: ~4% of gap</text>
 
     <!-- Right-side labels -->
@@ -533,6 +533,76 @@ footer {
   </div>
 </section>
 
+<section id="rmi-section" style="background:#2A2825; padding: 0 60px 100px;">
+  <div class="container">
+    <div class="chart-wrap" id="rmiChart">
+      <div class="chart-label-row" style="padding-top:80px;">
+        <span class="label" style="margin-bottom:0;">The Trajectory Argument</span>
+        <span class="chart-sublabel">RMI score over hold period — state vs direction</span>
+      </div>
+
+```
+  <svg class="chart-svg" viewBox="0 0 820 420" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arrowRmi" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L6,3 z" fill="rgba(242,239,232,0.4)"/>
+      </marker>
+      <linearGradient id="rmiRiseGrad" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0%" stop-color="#52A86A" stop-opacity="0.06"/>
+        <stop offset="100%" stop-color="#52A86A" stop-opacity="0.18"/>
+      </linearGradient>
+    </defs>
+    <rect x="60" y="20" width="620" height="350" fill="#1E1C19" rx="1"/>
+    <rect x="60" y="162" width="620" height="66" fill="rgba(196,153,58,0.04)"/>
+    <rect x="60" y="96"  width="620" height="66" fill="rgba(82,168,106,0.04)"/>
+    <line x1="60" y1="228" x2="680" y2="228" stroke="rgba(242,239,232,0.10)" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="60" y1="162" x2="680" y2="162" stroke="rgba(196,153,58,0.25)"  stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="60" y1="96"  x2="680" y2="96"  stroke="rgba(82,168,106,0.25)"  stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="686" y="228" font-family="'Cormorant Garamond',serif" font-size="9" fill="rgba(242,239,232,0.35)" dominant-baseline="middle">L3</text>
+    <text x="686" y="162" font-family="'Cormorant Garamond',serif" font-size="9" fill="rgba(196,153,58,0.7)"   dominant-baseline="middle">L4</text>
+    <text x="686" y="96"  font-family="'Cormorant Garamond',serif" font-size="9" fill="rgba(82,168,106,0.7)"   dominant-baseline="middle">L5</text>
+    <line x1="192" y1="20" x2="192" y2="370" stroke="rgba(242,239,232,0.07)" stroke-width="1"/>
+    <line x1="375" y1="20" x2="375" y2="370" stroke="rgba(242,239,232,0.07)" stroke-width="1"/>
+    <line x1="680" y1="20" x2="680" y2="370" stroke="rgba(196,153,58,0.20)"  stroke-width="1" stroke-dasharray="3,3"/>
+    <path class="cfill" d="M70,221 L131,218 L192,208 L253,195 L314,182 L375,169 L436,155 L497,142 L558,132 L619,122 L680,116 L680,370 L70,370 Z" fill="url(#rmiRiseGrad)"/>
+    <path class="cline" d="M70,146 L131,152 L192,159 L253,165 L314,172 L375,178 L436,185 L497,192 L558,198 L619,205 L680,215" fill="none" stroke="#D45252" stroke-width="2" stroke-dasharray="6,4" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+    <path class="cline cline-2" d="M70,221 L131,218 L192,208 L253,195 L314,182 L375,169 L436,155 L497,142 L558,132 L619,122 L680,116" fill="none" stroke="#52A86A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="192" cy="208" r="5" fill="#52A86A" opacity="0.9" class="cline cline-2"/>
+    <circle cx="375" cy="169" r="5" fill="#52A86A" opacity="0.9" class="cline cline-2"/>
+    <circle cx="558" cy="132" r="5" fill="#52A86A" opacity="0.9" class="cline cline-2"/>
+    <text x="196" y="198" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(82,168,106,0.85)" font-style="italic">Diagnostic</text>
+    <text x="379" y="159" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(82,168,106,0.85)" font-style="italic">Readiness</text>
+    <text x="562" y="122" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(82,168,106,0.85)" font-style="italic">Maturity</text>
+    <line x1="690" y1="116" x2="690" y2="215" stroke="rgba(242,239,232,0.25)" stroke-width="1.5" marker-end="url(#arrowRmi)"/>
+    <text x="698" y="162" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,239,232,0.45)" font-style="italic" dominant-baseline="middle">Discount</text>
+    <text x="52" y="146" text-anchor="end" font-family="'Cormorant Garamond',serif" font-size="9" fill="#D45252" dominant-baseline="middle" opacity="0.8">65</text>
+    <text x="52" y="221" text-anchor="end" font-family="'Cormorant Garamond',serif" font-size="9" fill="#52A86A" dominant-baseline="middle" opacity="0.8">42</text>
+    <line x1="60" y1="370" x2="700" y2="370" stroke="rgba(242,239,232,0.15)" stroke-width="1"/>
+    <text x="375" y="408" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,239,232,0.3)" letter-spacing="0.08em">HOLD PERIOD — YEARS</text>
+    <text x="70"  y="384" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,239,232,0.3)">0</text>
+    <text x="192" y="384" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,239,232,0.3)">1</text>
+    <text x="314" y="384" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,239,232,0.3)">2</text>
+    <text x="436" y="384" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,239,232,0.3)">3</text>
+    <text x="558" y="384" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,239,232,0.3)">4</text>
+    <text x="680" y="384" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(196,153,58,0.7)">Exit</text>
+    <text x="18" y="195" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,239,232,0.3)" letter-spacing="0.1em" transform="rotate(-90,18,195)">RMI SCORE</text>
+    <text x="52" y="228" text-anchor="end" font-family="'Cormorant Garamond',serif" font-size="9" fill="rgba(242,239,232,0.25)" dominant-baseline="middle">40</text>
+    <text x="52" y="162" text-anchor="end" font-family="'Cormorant Garamond',serif" font-size="9" fill="rgba(196,153,58,0.5)"   dominant-baseline="middle">60</text>
+    <text x="52" y="96"  text-anchor="end" font-family="'Cormorant Garamond',serif" font-size="9" fill="rgba(82,168,106,0.5)"   dominant-baseline="middle">80</text>
+  </svg>
+
+  <div class="chart-legend">
+    <div class="legend-item"><span style="display:inline-block;width:28px;height:0;border-top:2px dashed #D45252;opacity:0.85;vertical-align:middle;"></span>&nbsp;RMI 65 — declining trajectory</div>
+    <div class="legend-item"><span style="display:inline-block;width:28px;height:2px;background:#52A86A;vertical-align:middle;"></span>&nbsp;RMI 42 — building trajectory</div>
+  </div>
+
+  <p class="chart-caption">Illustrative. The RMI 65 business arrives at exit inside L3 — governed by assertion, trajectory deteriorating. The RMI 42 business crosses into L4 — continuously evidenced, trajectory documented. The governance discount applies to the first. It cannot be applied to the second.</p>
+</div>
+```
+
+  </div>
+</section>
+
 <section id="what-we-do">
   <div class="container">
     <span class="label">What Arkaya Does</span>
@@ -545,9 +615,7 @@ footer {
         <p>Governance risk is where credit risk was before the rating agencies. Unmeasured. Assertion-based. Systematically mispriced by every counterparty that encounters it at every capital event — and whose contracts require event triggers to be monitored in between.</p>
         <p>The mispricing runs in both directions. A business with strong governance appearance and a deteriorating trajectory is a worse capital event risk than one with weaker appearance and a documented, improving one. Every existing framework prices the state. None of them price the direction. And trigger language written for slow-moving risk increases the dispute surface area as governance velocity increases.</p>
         <p>The Risk Maturity Index closes that gap — a trajectory-linked governance rating, continuously maintained, attributed to named decision-makers, independently verified. One record. Every counterparty. Before the event.</p>
-        <p>No placement commission. No issuer fee. The conflict that corrupted rating agency integrity in 2008 is architecturally absent.</p>
-        <p>That is what it means to sit on your side of the table.</p>
-        <p>The full picture is available under NDA. The conversation starts with the Governance MOT.</p>
+        <p>The full picture is available under NDA.</p>
       </div>
     </div>
   </div>
@@ -610,13 +678,26 @@ footer {
 </footer>
 
 <script>
-  const chartEl = document.getElementById('theChart');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); }
-    });
-  }, { threshold: 0.25 });
-  obs.observe(chartEl);
+  try {
+    const chartEl = document.getElementById('theChart');
+    if (chartEl) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.25 });
+      obs.observe(chartEl);
+    }
+    const rmiEl = document.getElementById('rmiChart');
+    if (rmiEl) {
+      const obs2 = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('in-view'); obs2.unobserve(e.target); }
+        });
+      }, { threshold: 0.25 });
+      obs2.observe(rmiEl);
+    }
+  } catch(e) { console.warn('Observer error:', e); }
 </script>
 
 </body>
