@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arkaya GET. The Governance Evidence Taxonomy.</title>
+<meta name="description" content="Arkaya GET. The Governance Evidence Taxonomy. Eight-field schema for evidence of governance. Open. Observable. Multi-engine. Cryptographically verifiable. The schema counterparties read to price governance risk.">
+<meta name="keywords" content="Governance Evidence Taxonomy, GET, schema authority, governance evidence, eight-field schema, observable primitives, Custos Loop, multi-engine certification, schema neutrality, Dynamic Risk Maturity Assessment, DRMA, capital markets, W3C precedent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-teal: #2A393C;
+    --slate-teal: #364748;
+    --bronze: #C89358;
+    --bronze-soft: rgba(200, 147, 88, 0.13);
+    --bronze-line: rgba(200, 147, 88, 0.45);
+    --charcoal: #41413F;
+    --charcoal-soft: rgba(65, 65, 63, 0.78);
+    --off-white: #F4F5EF;
+    --off-white-deep: #ECEDE6;
+    --rule: rgba(42, 57, 60, 0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--charcoal);
+    background: var(--off-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--bronze); color: var(--deep-teal); }
+
+  .container {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+  .container-narrow {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* Header */
+  header {
+    background: var(--off-white);
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-link {
+    display: inline-block;
+    line-height: 0;
+  }
+  .logo {
+    height: 76px;
+    width: auto;
+    display: block;
+  }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--charcoal);
+    text-decoration: none;
+    font-size: 12.5px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 200ms ease;
+    position: relative;
+    padding: 4px 0;
+  }
+  nav a.active { color: var(--bronze); }
+  nav a:hover { color: var(--bronze); }
+  nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background: var(--bronze);
+    transition: width 200ms ease;
+  }
+  nav a.active::after, nav a:hover::after { width: 100%; }
+
+  /* Title block */
+  .title-block {
+    padding: 88px 0 56px 0;
+    border-bottom: 1px solid var(--rule);
+    background: var(--off-white-deep);
+  }
+  .eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 600;
+    margin-bottom: 22px;
+  }
+  .page-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(38px, 6vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--deep-teal);
+    margin-bottom: 16px;
+  }
+  .page-subtitle {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(20px, 2.6vw, 28px);
+    line-height: 1.3;
+    color: var(--slate-teal);
+    max-width: 720px;
+    margin-bottom: 32px;
+  }
+  .title-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--charcoal-soft);
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .title-meta span::before {
+    content: '·';
+    color: var(--bronze);
+    margin-right: 8px;
+  }
+  .title-meta span:first-child::before { content: ''; margin: 0; }
+
+  /* Four-layer stack visual */
+  .arch-section {
+    background: var(--off-white);
+    padding: 72px 0 88px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .arch-head {
+    margin-bottom: 40px;
+    max-width: 720px;
+  }
+  .arch-eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .arch-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(26px, 3.6vw, 38px);
+    line-height: 1.18;
+    letter-spacing: -0.015em;
+    color: var(--deep-teal);
+    margin-bottom: 16px;
+  }
+  .arch-lede {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    max-width: 640px;
+  }
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 980px;
+    margin: 0;
+    padding: 0;
+  }
+  .layer {
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 26px;
+    align-items: center;
+    padding: 22px 26px;
+    border-radius: 3px;
+    transition: transform 250ms ease;
+  }
+  .layer:hover { transform: translateX(4px); }
+  .layer-id {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(65, 65, 63, 0.55);
+  }
+  .layer-id strong {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.005em;
+    color: var(--deep-teal);
+    margin-top: 4px;
+  }
+  .layer-desc {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--charcoal);
+    font-weight: 400;
+    max-width: 100%;
+    margin: 0;
+  }
+  .layer-desc em {
+    color: var(--deep-teal);
+    font-style: normal;
+    font-weight: 500;
+  }
+  .layer-brand {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .brand-get-solutions {
+    background: rgba(42, 57, 60, 0.08);
+    color: var(--deep-teal);
+    border: 1px solid rgba(42, 57, 60, 0.18);
+  }
+  .brand-get {
+    background: var(--bronze);
+    color: var(--deep-teal);
+  }
+  .layer-3 { background: rgba(54, 71, 72, 0.04); border: 1px solid rgba(54, 71, 72, 0.10); }
+  .layer-2 { background: rgba(54, 71, 72, 0.05); border: 1px solid rgba(54, 71, 72, 0.13); }
+  .layer-1 { background: rgba(200, 147, 88, 0.18); border: 1px solid var(--bronze-line); }
+  .layer-0 { background: rgba(54, 71, 72, 0.04); border: 1px solid rgba(54, 71, 72, 0.10); }
+  .layer-brand-placeholder {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: rgba(65, 65, 63, 0.55);
+    letter-spacing: 0.2px;
+  }
+  .engine-boundary {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 26px;
+    padding: 12px 26px;
+    background: var(--deep-teal);
+    color: var(--off-white);
+    border-radius: 3px;
+    align-items: center;
+  }
+  .engine-boundary .boundary-label {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--bronze);
+  }
+  .engine-boundary .boundary-content {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    color: var(--off-white);
+    letter-spacing: 0.3px;
+  }
+  .engine-boundary .boundary-content strong {
+    font-weight: 600;
+    color: var(--off-white);
+  }
+
+  /* Sections */
+  section {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  section:last-of-type { border-bottom: none; }
+  .section-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(26px, 3.6vw, 38px);
+    line-height: 1.18;
+    letter-spacing: -0.015em;
+    color: var(--deep-teal);
+    margin-bottom: 24px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--charcoal);
+    margin-bottom: 18px;
+    max-width: 720px;
+  }
+  p strong { font-weight: 600; color: var(--deep-teal); }
+  p em { font-style: italic; color: var(--slate-teal); }
+
+  /* The eight fields */
+  .fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 32px;
+  }
+  .field {
+    background: var(--off-white);
+    padding: 28px 26px;
+    transition: background 200ms ease;
+  }
+  .field:hover { background: var(--off-white-deep); }
+  .field-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 1.6px;
+    color: var(--bronze);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .field-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 19px;
+    color: var(--deep-teal);
+    margin-bottom: 8px;
+    letter-spacing: -0.005em;
+  }
+  .field-desc {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--charcoal-soft);
+  }
+
+  /* Discipline blocks (schema neutrality, multi-engine, etc) */
+  .discipline {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 36px;
+    padding: 28px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .discipline:first-of-type { border-top: none; }
+  .discipline-label {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--bronze);
+    padding-top: 4px;
+  }
+  .discipline-body {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--charcoal);
+  }
+  .discipline-body strong { font-weight: 600; color: var(--deep-teal); }
+  .discipline-body em { font-style: italic; color: var(--slate-teal); }
+
+  /* Custos Loop visual */
+  .loop {
+    margin-top: 36px;
+    background: var(--deep-teal);
+    color: var(--off-white);
+    padding: 42px 38px;
+    border-radius: 4px;
+  }
+  .loop-title {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .loop-formula {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(20px, 2.6vw, 26px);
+    line-height: 1.4;
+    color: var(--off-white);
+    margin-bottom: 24px;
+    letter-spacing: -0.005em;
+  }
+  .loop-formula .arrow {
+    color: var(--bronze);
+    margin: 0 12px;
+    font-style: normal;
+  }
+  .loop-note {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(244, 245, 239, 0.78);
+    max-width: 640px;
+  }
+  .loop-note strong { color: var(--bronze); font-weight: 500; }
+
+  /* Pull-quote */
+  .pull {
+    margin: 40px 0 8px 0;
+    padding: 30px 0 30px 28px;
+    border-left: 3px solid var(--bronze);
+    max-width: 760px;
+  }
+  .pull p {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(20px, 2.4vw, 26px);
+    line-height: 1.4;
+    color: var(--deep-teal);
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+
+  /* Section epigraph */
+  .epigraph {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(17px, 1.6vw, 19px);
+    line-height: 1.45;
+    color: var(--slate-teal);
+    max-width: 600px;
+    margin: 4px 0 14px 0;
+    letter-spacing: -0.005em;
+  }
+  .epigraph-attr {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    opacity: 0.7;
+    margin-bottom: 34px;
+  }
+
+  /* Closing */
+  .closing {
+    background: var(--deep-teal);
+    padding: 90px 0;
+    text-align: center;
+    border-bottom: none;
+  }
+  .closing p {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(22px, 3vw, 32px);
+    line-height: 1.3;
+    color: var(--off-white);
+    margin: 0 auto;
+    max-width: 720px;
+    padding: 0 20px;
+  }
+  .closing-back {
+    display: inline-block;
+    margin-top: 36px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .closing-back:hover { text-decoration: underline; }
+
+  /* Footer */
+  footer {
+    background: var(--deep-teal);
+    padding: 40px 0;
+    border-top: 1px solid rgba(200, 147, 88, 0.18);
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 28px;
+  }
+  .footer-meta {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    color: rgba(244, 245, 239, 0.55);
+    line-height: 1.7;
+    letter-spacing: 0.4px;
+  }
+  .footer-meta a {
+    color: var(--bronze);
+    text-decoration: none;
+  }
+  .footer-meta a:hover { text-decoration: underline; }
+  .footer-legal {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10px;
+    color: rgba(244, 245, 239, 0.35);
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+
+  /* Mobile */
+  @media (max-width: 760px) {
+    .container, .container-narrow { padding: 0 22px; }
+    .title-block { padding: 60px 0 44px 0; }
+    section { padding: 56px 0; }
+    .arch-section { padding: 48px 0 60px 0; }
+    .fields { grid-template-columns: 1fr; }
+    .discipline { grid-template-columns: 1fr; gap: 12px; }
+    .header-inner { flex-direction: row; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .logo { height: 56px; }
+    nav { gap: 18px; }
+    .loop { padding: 32px 26px; }
+    .layer {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 20px 22px;
+    }
+    .layer-brand, .layer-brand-placeholder { justify-self: start; }
+    .engine-boundary {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 14px 22px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="/" class="logo-link" aria-label="Arkaya Risk. Building resilience capital.">
+      <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
+    </a>
+    <nav>
+      <a href="/schema" class="active">Schema</a>
+      <a href="/solutions">Solutions</a>
+    </nav>
+  </div>
+</header>
+
+<section class="title-block">
+  <div class="container">
+    <div class="eyebrow">Pillar one · Schema authority</div>
+    <h1 class="page-title">Arkaya GET</h1>
+    <p class="page-subtitle">The Governance Evidence Taxonomy. The schema counterparties read.</p>
+    <div class="title-meta">
+      <span>Open output</span>
+      <span>Multi-engine by design</span>
+      <span>Observable, not declared</span>
+      <span>Versioned</span>
+    </div>
+  </div>
+</section>
+
+<section class="arch-section">
+  <div class="container">
+    <div class="arch-head">
+      <div class="arch-eyebrow">The architecture</div>
+      <h2 class="arch-title">Where Arkaya GET sits.</h2>
+      <p class="arch-lede">
+        Governance resolves into four operational layers. Source systems produce data. The evidence layer makes that data interoperable. Counterparties price against it. Capital outcomes follow. Arkaya stewards Layer 1.
+      </p>
+    </div>
+
+    <figure class="stack" aria-label="The four-layer governance stack">
+
+      <div class="layer layer-3">
+        <div class="layer-id">Layer 3<strong>Capital</strong></div>
+        <div class="layer-desc">Outcomes the pricing layer produces. Capacity at renewal. Terms at signing. Refinancing pricing at execution. Recovery at claim. Enterprise value at exit.</div>
+        <span class="layer-brand brand-get-solutions">Arkaya GET Solutions</span>
+      </div>
+
+      <div class="layer layer-2">
+        <div class="layer-id">Layer 2<strong>Pricing</strong></div>
+        <div class="layer-desc">Counterparties apply their own assessments against Layer 1 evidence. <em>D&amp;O, cyber and W&amp;I underwriters. Acquirers. Lenders. Reinsurers. Claims handlers and defence counsel.</em></div>
+        <span class="layer-brand brand-get-solutions">Arkaya GET Solutions</span>
+      </div>
+
+      <div class="layer layer-1">
+        <div class="layer-id">Layer 1<strong>Evidence</strong></div>
+        <div class="layer-desc">The <em>Governance Evidence Taxonomy</em>. Eight-field schema. Observable, not declared. Versioned, machine-readable, cryptographically verifiable. Maturity calibration with trajectory.</div>
+        <span class="layer-brand brand-get">Arkaya GET</span>
+      </div>
+
+      <div class="engine-boundary">
+        <div class="boundary-label">Engine boundary</div>
+        <div class="boundary-content"><strong>Custos Loop.</strong> Multi-engine certified. Engines read Layer 0 telemetry and emit schema-conformant evidence at AI cadence.</div>
+      </div>
+
+      <div class="layer layer-0">
+        <div class="layer-id">Layer 0<strong>Source</strong></div>
+        <div class="layer-desc">Source systems. Dynamic business continuity, risk-maturity, quality improvement, agentic AI control monitoring. <em>Multi-vendor by design.</em></div>
+        <span class="layer-brand-placeholder">Brandless. Vendor-neutral.</span>
+      </div>
+
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow">
+    <div class="section-num">§ 01 · Purpose</div>
+    <h2>The schema that makes governance priceable.</h2>
+    <p>
+      Hazard was codified at Edward Lloyd's coffee house in 1688. Credit at Moody's in 1909, formalised by the NRSRO designation in 1975, embedded in Basel from 1988. <strong>Governance is the third domain</strong>, and it has been priced by inference rather than evidence for forty years.
+    </p>
+    <p>
+      The Governance Evidence Taxonomy is the schema that resolves that. Eight observable fields. Machine-readable. Cryptographically verifiable. Trajectory-aware. The same schema is read by every counterparty pricing governance risk: D&amp;O, cyber and W&amp;I underwriters; lenders; acquirers; reinsurers; claims handlers; defence counsel.
+    </p>
+    <div class="pull">
+      <p>The declaration is never trusted, only verified, and only current.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--off-white-deep);">
+  <div class="container">
+    <div class="section-num">§ 02 · The eight fields</div>
+    <h2>What the schema captures.</h2>
+    <p>
+      The taxonomy is primitive-level by design. Counterparties read primitives and construct their own assessments. No score is summed from the schema. No rating is issued from Layer 1.
+    </p>
+
+    <div class="fields">
+      <div class="field">
+        <div class="field-num">Field 01</div>
+        <div class="field-name">Counterparty</div>
+        <div class="field-desc">Who reads the evidence and prices against it. Insurer, lender, acquirer, reinsurer, claims handler, defence counsel.</div>
+      </div>
+      <div class="field">
+        <div class="field-num">Field 02</div>
+        <div class="field-name">Decision being priced</div>
+        <div class="field-desc">The capital moment. Renewal, claim, exit, refinancing, covenant surveillance.</div>
+      </div>
+      <div class="field">
+        <div class="field-num">Field 03</div>
+        <div class="field-name">Risk if misrepresented</div>
+        <div class="field-desc">What goes wrong if the evidence is wrong. Avoidance, rescission, exclusion bite, going concern.</div>
+      </div>
+      <div class="field">
+        <div class="field-num">Field 04</div>
+        <div class="field-name">Evidence primitives</div>
+        <div class="field-desc">The observable atoms. Control events, HITL decisions, board minutes, audit logs, regulator filings. Not summaries.</div>
+      </div>
+      <div class="field">
+        <div class="field-num">Field 05</div>
+        <div class="field-name">Temporal cadence</div>
+        <div class="field-desc">At what frequency. Continuous, event-triggered, periodic. The schema accommodates each but does not flatten them.</div>
+      </div>
+      <div class="field">
+        <div class="field-num">Field 06</div>
+        <div class="field-name">Provenance</div>
+        <div class="field-desc">Where the primitive came from. Source system, engine, signing key. Chain of custody preserved end to end.</div>
+      </div>
+      <div class="field">
+        <div class="field-num">Field 07</div>
+        <div class="field-name">Verification mode</div>
+        <div class="field-desc">How it was verified. Cryptographic signature, third-party attestation, regulator-of-record, self-declared (flagged).</div>
+      </div>
+      <div class="field">
+        <div class="field-num">Field 08</div>
+        <div class="field-name">Maturity calibration with trajectory</div>
+        <div class="field-desc">The Dynamic Risk Maturity Assessment (DRMA). Assessment-level expression of where governance maturity sits and where it is moving. Trajectory, not score.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow">
+    <div class="section-num">§ 03 · Schema neutrality</div>
+    <p class="epigraph">"All I want to know is where I'm going to die, so I'll never go there."</p>
+    <div class="epigraph-attr">— Charles Munger</div>
+    <h2>Schema decisions are not commercial decisions.</h2>
+    <p>
+      Moody's published its first manual in 1909. The NRSRO designation was codified in 1975. Basel II embedded ratings in bank capital adequacy in 2004. Counterparties outsourced credit due diligence because a structured approach to credit rating existed. The rating became the procurement proxy. Governance ratings already exist. None surfaced Wirecard, Greensill, FTX or Credit Suisse before the moment governance was tested.
+    </p>
+    <p>
+      Refusing the rating-agency posture at Layer 1 is the precondition for the taxonomy to do work. The discipline that holds the architecture together: <strong>schema decisions are made on a separate governance track from commercial decisions</strong>. If the schema's evolution were biased by commercial pressure, the rating-agency failure mode would re-enter through the back door.
+    </p>
+    <p>
+      The W3C, ISO and IEEE precedents apply. A standards authority defines conformance criteria. Multiple implementations compete on engineering quality. Comparability and interoperability are preserved by certification, not by ownership.
+    </p>
+  </div>
+</section>
+
+<section style="background: var(--off-white-deep);">
+  <div class="container-narrow">
+    <div class="section-num">§ 04 · Engines and the schema interface</div>
+    <h2>How engines emit Layer 1 evidence.</h2>
+    <p>
+      Engines sit at the boundary between Layer 0 source systems and Layer 1 evidence. An engine is software that reads source telemetry and emits GET-conformant evidence at the cadence the schema requires. The cadence cannot be met by point-in-time review; the engines are AI engines by necessity, not by choice.
+    </p>
+    <p>
+      The methodology engines must implement is fixed:
+    </p>
+
+    <div class="loop">
+      <div class="loop-title">The Custos Loop</div>
+      <div class="loop-formula">
+        Protocol <span class="arrow">→</span> Signal <span class="arrow">→</span> HITL Decision <span class="arrow">→</span> Evidence
+      </div>
+      <p class="loop-note">
+        <strong>Protocol:</strong> board-authored executable. <strong>Signal:</strong> from live controls. <strong>HITL Decision:</strong> the act, named, not the role. <strong>Evidence:</strong> of the HITL decision against obligation. Improvement is what the loop produces.
+      </p>
+    </div>
+
+    <div class="pull">
+      <p>Schema authored by Arkaya. Engines built by certified partners. Counterparties read both.</p>
+    </div>
+
+    <p>
+      Custos is the certification framework, not a single-vendor engine. The conformance suite, reference adapter and schema-to-engine adapter sit at Arkaya as part of the schema authority remit. Engines are tested against the framework for schema fidelity. Engine substitution preserves counterparty continuity by design. <em>Multi-engine by certification, not by accident.</em>
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow">
+    <div class="section-num">§ 05 · Architectural disciplines</div>
+    <h2>The rules the schema enforces.</h2>
+
+    <div class="discipline">
+      <div class="discipline-label">Open output</div>
+      <div class="discipline-body">
+        Schema content is published under open licence. The institution and its composite brands are protected; the schema itself is not. This is the W3C model. The trademark perimeter does not extend to the standard.
+      </div>
+    </div>
+
+    <div class="discipline">
+      <div class="discipline-label">No rating</div>
+      <div class="discipline-body">
+        No rating, no benchmark, no score is issued from Layer 1. <em>Primitives are observable. Primitives are not summed. Counterparties price.</em>
+      </div>
+    </div>
+
+    <div class="discipline">
+      <div class="discipline-label">No source-system competition</div>
+      <div class="discipline-body">
+        Arkaya does not operate at Layer 0. The source-system layer is multi-vendor by design. The schema specifies what Layer 0 must emit; it does not compete with the vendors that emit it.
+      </div>
+    </div>
+
+    <div class="discipline">
+      <div class="discipline-label">No commercial bias</div>
+      <div class="discipline-body">
+        Schema evolution runs on a governance track separate from commercial activity. Schema decisions are not influenced by which engine, vendor or counterparty would benefit. The discipline is structural, not aspirational.
+      </div>
+    </div>
+
+    <div class="discipline">
+      <div class="discipline-label">Trajectory over state</div>
+      <div class="discipline-body">
+        Field 08, maturity calibration with trajectory, signals where governance is moving, not where it sits today. Two organisations at the same Foundational level diverge by Established within a rolling cycle. Trajectory is what counterparties price.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="closing">
+  <div class="container-narrow">
+    <p><em>Resilience Capital is built. Not asserted.</em></p>
+    <a href="/solutions" class="closing-back">See Arkaya GET Solutions →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-meta">
+      Arkaya Risk · trading name of Centinel 10 Ltd<br>
+      <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a> · +44 (0)7972 178 759<br>
+      <a href="https://www.linkedin.com/in/davidmckibbin" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="footer-legal">
+      © 2026 Centinel 10 Ltd. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
