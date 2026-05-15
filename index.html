@@ -125,24 +125,29 @@
     font-weight: 500;
     margin-bottom: 38px;
     opacity: 0;
-    animation: fadeUp 700ms ease 200ms forwards;
+    animation: fadeUp 700ms ease 300ms forwards;
   }
   .hero-headline {
     font-family: 'Fraunces', serif;
     font-weight: 300;
-    font-size: clamp(32px, 5.6vw, 64px);
+    font-size: clamp(30px, 5.2vw, 62px);
     line-height: 1.2;
     letter-spacing: -0.02em;
     color: var(--off-white-soft);
-    max-width: 920px;
+    max-width: 1180px;
     margin-bottom: 44px;
-    opacity: 0;
-    animation: fadeUp 900ms ease 400ms forwards;
   }
+  .hero-headline .line {
+    display: block;
+    opacity: 0;
+    animation: fadeUp 800ms ease forwards;
+  }
+  .hero-headline .line-1 { animation-delay: 800ms; }
+  .hero-headline .line-2 { animation-delay: 1600ms; }
+  .hero-headline .line-3 { animation-delay: 2400ms; }
   .hero-headline .third {
     color: var(--off-white);
     font-weight: 400;
-    display: block;
     margin-top: 6px;
   }
   .hero-bridge {
@@ -155,7 +160,7 @@
     border-left: 2px solid var(--bronze);
     padding-left: 22px;
     opacity: 0;
-    animation: fadeUp 900ms ease 1000ms forwards;
+    animation: fadeUp 900ms ease 3200ms forwards;
   }
 
   @keyframes fadeUp {
@@ -523,9 +528,9 @@
   <div class="container">
     <div class="hero-eyebrow">The Third Domain of Risk</div>
     <h1 class="hero-headline">
-      Hazard was codified at Lloyd's in 1688.<br>
-      Credit at Moody's in 1909.<br>
-      <span class="third">Governance is the third domain.</span>
+      <span class="line line-1">Hazard was codified at Lloyd's of London in 1688.</span>
+      <span class="line line-2">Credit at Moody's in 1909.</span>
+      <span class="line line-3 third">Governance is the third domain.</span>
     </h1>
     <p class="hero-bridge">
       Arkaya is building the evidence layer capital markets need to price it at AI&nbsp;speed.
