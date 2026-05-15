@@ -183,6 +183,48 @@
     color: var(--charcoal);
     max-width: 640px;
   }
+
+  /* Function (dual-primitive) section */
+  .function-section {
+    background: var(--off-white-deep);
+    padding: 80px 0 96px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .dual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    margin-top: 52px;
+    max-width: 980px;
+  }
+  .dual-item {
+    border-top: 2px solid var(--bronze);
+    padding-top: 28px;
+  }
+  .dual-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    margin-bottom: 16px;
+  }
+  .dual-item h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(20px, 2.2vw, 26px);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--deep-teal);
+    margin: 0 0 18px 0;
+  }
+  .dual-item p {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin: 0;
+  }
   .stack {
     display: flex;
     flex-direction: column;
@@ -541,6 +583,8 @@
     .title-block { padding: 60px 0 44px 0; }
     section { padding: 56px 0; }
     .arch-section { padding: 48px 0 60px 0; }
+    .function-section { padding: 48px 0 60px 0; }
+    .dual { grid-template-columns: 1fr; gap: 40px; margin-top: 36px; }
     .fields { grid-template-columns: 1fr; }
     .discipline { grid-template-columns: 1fr; gap: 12px; }
     .header-inner { flex-direction: row; align-items: center; gap: 14px; flex-wrap: wrap; }
@@ -595,7 +639,7 @@
       <div class="arch-eyebrow">The architecture</div>
       <h2 class="arch-title">Where Arkaya GET sits.</h2>
       <p class="arch-lede">
-        Governance resolves into four operational layers. Source systems produce data. The evidence layer makes that data interoperable. Counterparties price against it. Capital outcomes follow. Arkaya stewards Layer 1.
+        Governance resolves into four operational layers. Source systems produce data. The evidence layer translates risk and makes it machine-readable. Counterparties price against it. Capital outcomes follow. Arkaya stewards Layer 1.
       </p>
     </div>
 
@@ -634,6 +678,31 @@
   </div>
 </section>
 
+<section class="function-section">
+  <div class="container">
+    <div class="arch-head">
+      <div class="arch-eyebrow">Function</div>
+      <h2 class="arch-title">What the schema does.</h2>
+      <p class="arch-lede">
+        The Governance Evidence Taxonomy does two things at once. Both have to be true for capital markets to price governance at AI speed.
+      </p>
+    </div>
+
+    <div class="dual">
+      <div class="dual-item">
+        <div class="dual-tag">01 · Translation</div>
+        <h3>Translates risk across the disciplines that price it.</h3>
+        <p>Insurance speaks of severity. Audit of control failure. Legal of exposure. Accounting of materiality. Finance of covenant breach. The same governance reality, five professional vocabularies that don't talk to each other. GET specifies one shared evidence grammar that every discipline can read.</p>
+      </div>
+      <div class="dual-item">
+        <div class="dual-tag">02 · Machine-readable</div>
+        <h3>Renders evidence in machine-readable form.</h3>
+        <p>The eight fields are observable values, structured for direct ingestion, cryptographically verifiable. AI agents, underwriting engines, due-diligence platforms and rating systems parse evidence without human interpretation, at the speed risk now transmits.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="container-narrow">
     <div class="section-num">§ 01 · Purpose</div>
@@ -642,7 +711,7 @@
       Hazard was codified at Edward Lloyd's coffee house in 1688. Credit at Moody's in 1909, formalised by the NRSRO designation in 1975, embedded in Basel from 1988. <strong>Governance is the third domain</strong>, and it has been priced by inference rather than evidence for forty years.
     </p>
     <p>
-      The Governance Evidence Taxonomy is the schema that resolves that. Eight observable fields. Machine-readable. Cryptographically verifiable. Trajectory-aware. The same schema is read by every counterparty pricing governance risk: D&amp;O, cyber and W&amp;I underwriters; lenders; acquirers; reinsurers; claims handlers; defence counsel.
+      The Governance Evidence Taxonomy is the schema that resolves that. It translates risk across the disciplines that price it — insurance, finance, audit, legal, accounting — and makes that translation machine-readable. Eight observable fields. Cryptographically verifiable. Trajectory-aware. Read by every counterparty: D&amp;O, cyber and W&amp;I underwriters; lenders; acquirers; reinsurers; claims handlers; defence counsel.
     </p>
     <div class="pull">
       <p>The declaration is never trusted, only verified, and only current.</p>
