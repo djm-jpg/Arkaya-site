@@ -603,6 +603,24 @@
       padding: 14px 22px;
     }
   }
+  .chart-figure { margin: 44px 0 8px 0; }
+  .chart-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid var(--rule);
+  }
+  .chart-figure figcaption {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--charcoal-soft);
+    margin-top: 14px;
+    padding-left: 16px;
+    border-left: 2px solid var(--bronze);
+    max-width: 680px;
+  }
 </style>
 </head>
 <body>
@@ -866,6 +884,11 @@
         Field 08, maturity calibration with trajectory, signals where governance is moving, not where it sits today. Two organisations at the same Foundational level diverge by Established within a rolling cycle. Trajectory is what counterparties price.
       </div>
     </div>
+
+    <figure class="chart-figure" aria-label="The pricing failure">
+      <img src="/CSE_20260427_pricing-failure-chart.png" alt="Two organisations assessed at the same governance maturity level at T=0 diverge by three maturity levels by T+6; point-in-time pricing misprices both.">
+      <figcaption>Field 08 in one picture. Two organisations assessed at the same maturity level at T=0 diverge by three levels by T+6. Point-in-time pricing treats them identically and misprices both. Trajectory is what counterparties price. Illustrative model; no score is issued.</figcaption>
+    </figure>
 
   </div>
 </section>
