@@ -490,6 +490,45 @@
     text-transform: uppercase;
   }
 
+  /* Founder */
+  .founder {
+    background: var(--deep-teal);
+    padding: 96px 0 90px 0;
+    border-top: 1px solid rgba(200, 147, 88, 0.18);
+  }
+  .founder-inner { max-width: 860px; }
+  .founder-eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 500;
+    margin-bottom: 22px;
+  }
+  .founder-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(24px, 3.4vw, 34px);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--off-white);
+    margin-bottom: 30px;
+  }
+  .founder-body {
+    border-left: 2px solid var(--bronze);
+    padding-left: 24px;
+    max-width: 760px;
+  }
+  .founder-body p {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--off-white-soft);
+    margin-bottom: 18px;
+  }
+  .founder-body p:last-child { margin-bottom: 0; }
+
   /* Mobile */
   @media (max-width: 760px) {
     .container { padding: 0 22px; }
@@ -502,6 +541,7 @@
     .logo { height: 56px; }
     nav { gap: 18px; }
     .closing { padding: 70px 0; }
+    .founder { padding: 64px 0 60px 0; }
   }
 </style>
 </head>
@@ -523,7 +563,7 @@
   <div class="container">
     <div class="hero-eyebrow">The Third Domain of Risk</div>
     <h1 class="hero-headline">
-      <span class="line line-1">Hazard found its home at Lloyd's of London in 1688,<br>22 years after the Great Fire of London.</span>
+      <span class="line line-1">Hazard found its home at Edward Lloyd's coffee house in 1688,<br>22 years after the Great Fire of London.</span>
       <span class="line line-2">Credit at Moody's in 1909, in the wake of the Panic of 1907.</span>
       <span class="line line-3 third">Governance is now the third domain.</span>
     </h1>
@@ -564,6 +604,19 @@
         <span class="pillar-go">See the solutions</span>
       </a>
 
+    </div>
+  </div>
+</section>
+
+<section class="founder">
+  <div class="container">
+    <div class="founder-inner">
+      <div class="founder-eyebrow">The founder</div>
+      <h2 class="founder-name">David McKibbin</h2>
+      <div class="founder-body">
+        <p>Arkaya's thesis is witnessed, not constructed. David held SMF1, the Chief Executive function, the most senior controlled role the FCA pre-approves, under the regime built after the financial crisis to put individual accountability behind governance. He has met the five capital moments from every side of the table: underwriting, broking on the sell-side, and corporate on the buy-side.</p>
+        <p>He turned down Barings at the start of his career; it became the textbook governance collapse. After 9/11, AIG appointed him to underwrite a property book on a co-underwritten facility, capacity split 50:50 with National Indemnity, the Berkshire Hathaway company led by Ajit Jain, written net with no reinsurance treaty behind it, to exploit the wholesale facultative capacity vacuum the attacks had opened. Both were AAA-rated at the time. He underwrote from inside two business models that were diametrically opposed. One later required a government rescue. The other did not. The instrument is built by someone who underwrote the difference and is no longer prepared to see it priced only after it crystallises.</p>
+      </div>
     </div>
   </div>
 </section>
