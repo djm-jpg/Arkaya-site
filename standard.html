@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Arkaya Production Standard. How Arkaya governs its own production.</title>
+<meta name="description" content="The Arkaya Production Standard is the architecture Arkaya proposes for the market, applied to Arkaya's own production. Self-imposed, publicly published, evidenced on every artefact issued. The governance loop applied to ourselves.">
+<meta name="keywords" content="Arkaya Production Standard, AI governance, governance loop, Protocol Signal Decision Evidence, production discipline, content provenance, C2PA, governance evidence, Arkaya Risk">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-teal: #2A393C;
+    --slate-teal: #364748;
+    --bronze: #C89358;
+    --bronze-soft: rgba(200, 147, 88, 0.18);
+    --bronze-line: rgba(200, 147, 88, 0.45);
+    --charcoal: #41413F;
+    --off-white: #F4F5EF;
+    --off-white-soft: rgba(244, 245, 239, 0.78);
+    --off-white-faint: rgba(244, 245, 239, 0.55);
+    --rule: rgba(42, 57, 60, 0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--off-white);
+    background: var(--deep-teal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--bronze); color: var(--deep-teal); }
+
+  .container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* Header */
+  header {
+    background: var(--off-white);
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    z-index: 10;
+  }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-link { display: inline-block; line-height: 0; }
+  .logo { height: 76px; width: auto; display: block; }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--charcoal);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 200ms ease;
+    position: relative;
+    padding: 4px 0;
+  }
+  nav a.active { color: var(--bronze); }
+  nav a:hover { color: var(--bronze); }
+  nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background: var(--bronze);
+    transition: width 200ms ease;
+  }
+  nav a.active::after,
+  nav a:hover::after { width: 100%; }
+
+  /* Hero */
+  .hero {
+    padding: 96px 0 72px 0;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -10%;
+    width: 65%;
+    height: 100%;
+    background: radial-gradient(ellipse at top right, rgba(200, 147, 88, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 500;
+    margin-bottom: 28px;
+  }
+  .hero-headline {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(28px, 4.4vw, 48px);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    color: var(--off-white);
+    max-width: 980px;
+    margin-bottom: 36px;
+  }
+  .hero-lede {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(16px, 1.55vw, 19px);
+    line-height: 1.55;
+    color: var(--off-white-soft);
+    max-width: 880px;
+    border-left: 2px solid var(--bronze);
+    padding-left: 22px;
+  }
+
+  /* Content */
+  .content {
+    background: var(--off-white);
+    color: var(--charcoal);
+    padding: 96px 0 100px 0;
+  }
+  .content-inner { max-width: 880px; }
+
+  .section-block { margin-bottom: 56px; }
+  .section-block:last-child { margin-bottom: 0; }
+
+  .section-eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(24px, 3.2vw, 32px);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--deep-teal);
+    margin-bottom: 20px;
+  }
+  .section-body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--charcoal);
+  }
+  .section-body p { margin-bottom: 16px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-body strong { color: var(--deep-teal); font-weight: 600; }
+  .section-body a { color: var(--deep-teal); text-decoration: underline; text-decoration-color: var(--bronze); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  .section-body a:hover { color: var(--bronze); }
+
+  /* Four-stage loop */
+  .loop-stages {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    margin: 28px 0 12px 0;
+  }
+  .stage {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    align-items: start;
+    padding: 22px 26px;
+    background: rgba(54, 71, 72, 0.04);
+    border: 1px solid rgba(54, 71, 72, 0.10);
+    border-radius: 3px;
+  }
+  .stage-label {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--deep-teal);
+    letter-spacing: -0.005em;
+  }
+  .stage-body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--charcoal);
+  }
+
+  /* Trajectory */
+  .trajectory {
+    background: var(--bronze-soft);
+    border: 1px solid var(--bronze-line);
+    border-radius: 3px;
+    padding: 28px 32px;
+    margin-top: 28px;
+  }
+  .trajectory h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--deep-teal);
+    margin-bottom: 14px;
+  }
+  .trajectory p {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--charcoal);
+    margin-bottom: 12px;
+  }
+  .trajectory p:last-child { margin-bottom: 0; }
+  .trajectory .version-tag {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    color: var(--deep-teal);
+  }
+
+  /* References */
+  .references {
+    margin-top: 56px;
+    padding-top: 36px;
+    border-top: 1px solid var(--rule);
+  }
+  .references h2 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 600;
+    margin-bottom: 22px;
+  }
+  .references ol {
+    list-style: none;
+    counter-reset: ref-counter;
+    padding-left: 0;
+  }
+  .references li {
+    counter-increment: ref-counter;
+    padding-left: 38px;
+    position: relative;
+    margin-bottom: 18px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--charcoal);
+  }
+  .references li::before {
+    content: counter(ref-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--bronze);
+    width: 26px;
+    text-align: right;
+  }
+  .references a { color: var(--deep-teal); text-decoration: underline; text-decoration-color: var(--bronze); }
+
+  /* Production note */
+  .production-note {
+    margin-top: 48px;
+    padding: 26px 30px;
+    background: var(--deep-teal);
+    color: var(--off-white);
+    border-radius: 3px;
+    border-left: 3px solid var(--bronze);
+  }
+  .production-note h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .production-note dl {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--off-white-soft);
+  }
+  .production-note dt {
+    display: inline;
+    font-weight: 600;
+    color: var(--off-white);
+  }
+  .production-note dd {
+    display: inline;
+    margin-left: 4px;
+    color: var(--off-white-soft);
+  }
+  .production-note dd::after {
+    content: '';
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Closing line */
+  .closing {
+    background: var(--deep-teal);
+    padding: 96px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .closing::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 1px;
+    background: var(--bronze-line);
+    max-width: 200px;
+  }
+  .closing p {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+    color: var(--off-white);
+    margin-top: 40px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--deep-teal);
+    padding: 56px 0 40px 0;
+    border-top: 1px solid rgba(200, 147, 88, 0.18);
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 28px;
+  }
+  .footer-meta {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    color: var(--off-white-faint);
+    line-height: 1.7;
+    letter-spacing: 0.4px;
+  }
+  .footer-meta a {
+    color: var(--bronze);
+    text-decoration: none;
+  }
+  .footer-meta a:hover { text-decoration: underline; }
+  .footer-standard {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11.5px;
+    color: var(--off-white-faint);
+    letter-spacing: 0.6px;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(200, 147, 88, 0.12);
+  }
+  .footer-standard a {
+    color: var(--bronze);
+    text-decoration: none;
+  }
+  .footer-standard a:hover { text-decoration: underline; }
+  .footer-legal {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10px;
+    color: rgba(244, 245, 239, 0.35);
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+
+  /* Mobile */
+  @media (max-width: 760px) {
+    .container { padding: 0 22px; }
+    .hero { padding: 60px 0 50px 0; }
+    .content { padding: 56px 0 70px 0; }
+    .header-inner { flex-direction: row; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .logo { height: 56px; }
+    nav { gap: 18px; }
+    .stage { grid-template-columns: 1fr; gap: 8px; padding: 18px 22px; }
+    .stage-label { font-size: 18px; }
+    .closing { padding: 70px 0; }
+    .trajectory { padding: 22px 24px; }
+    .production-note { padding: 22px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="/" class="logo-link" aria-label="Arkaya Risk. Building resilience capital.">
+      <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
+    </a>
+    <nav>
+      <a href="/schema">Schema</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/standard" class="active">The Standard</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">The Arkaya Production Standard · v1</div>
+    <h1 class="hero-headline">How Arkaya governs its own production.</h1>
+    <p class="hero-lede">
+      The architecture Arkaya proposes for the market is the architecture Arkaya applies to itself.<br>
+      Self-imposed. Publicly published. Evidenced on every artefact issued.
+    </p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="container content-inner">
+
+    <div class="section-block">
+      <div class="section-eyebrow">Status</div>
+      <h2 class="section-title">A self-imposed standard, publicly published.</h2>
+      <div class="section-body">
+        <p>The Arkaya Production Standard is not a regulatory or industry-recognised framework. It draws on recognised principles, including Boyd's OODA, Beer's Viable System Model and Ashby's Law of Requisite Variety, and applies them to Arkaya's own work.</p>
+        <p>Readers are invited to test any Arkaya artefact against the Standard. The Standard publishes on whole-integer versions and updates when the discipline behind it changes materially.</p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-eyebrow">The four stages</div>
+      <h2 class="section-title">Arkaya's governance loop, applied to Arkaya.</h2>
+      <div class="section-body">
+        <p>The Arkaya governance loop has four stages: Protocol, Signal, Human Decision, Evidence. The same loop Arkaya proposes for the corporations and capital-market counterparties we work with governs Arkaya's own production.</p>
+      </div>
+
+      <div class="loop-stages">
+        <div class="stage">
+          <div class="stage-label">Protocol</div>
+          <div class="stage-body">Every artefact Arkaya issues is produced against the Arkaya Production Standard v1. The Standard names the tools used in drafting, the verification steps performed before delivery, the human approver and their role, and the version under which the artefact issues. Authored by Arkaya, not by the tool.</div>
+        </div>
+        <div class="stage">
+          <div class="stage-label">Signal</div>
+          <div class="stage-body">Drafting uses Claude (Anthropic) and a defined set of subscription research sources. Live monitoring runs through Google Alerts on the subject terms covered by each document, with primary-source feeds from regulators, exchanges, insurers and brokers. Signal flows continuously. It feeds verification; it does not substitute for it.</div>
+        </div>
+        <div class="stage">
+          <div class="stage-label">Human Decision</div>
+          <div class="stage-body">Every artefact is approved by a named human before issue. The approver, David McKibbin, Founder of Arkaya Risk, checks the locked formulations, case figures, source citations and construction. Trained human judgment at protocol-defined latency. No artefact issues without approval.</div>
+        </div>
+        <div class="stage">
+          <div class="stage-label">Evidence</div>
+          <div class="stage-body">Each artefact carries three permanent evidence elements: a numbered reference block with substantive content (not bare citations), a Production Note on the back page recording how it was produced, and an integer version recording iteration history. Read in series, these produce trajectory: time-series proof that Arkaya's production matched its own Standard at each issue.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-eyebrow">The scope of AI inside the Standard</div>
+      <h2 class="section-title">AI sits inside the Standard.</h2>
+      <div class="section-body">
+        <p>AI is one input among several governed by the Standard. The Standard governs production. AI sits inside the Standard; the Standard does not sit inside AI. This distinction matters because Arkaya is positioned as the operating system across every governance discipline, not as a participant in any one of them. The Standard demonstrates the position.</p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-eyebrow">What this is not</div>
+      <h2 class="section-title">Not a disclaimer.</h2>
+      <div class="section-body">
+        <p>The Standard is not a disclaimer. It is not a compliance footer asserting that AI was used. It does not claim that AI use eliminates error, bias or omission. It claims that production at Arkaya is bounded by a written standard, monitored by named sources, approved by a named human and evidenced in every artefact issued.</p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-eyebrow">Trajectory</div>
+      <h2 class="section-title">Whole-integer versions. Built, not asserted.</h2>
+      <div class="section-body">
+        <p>The Standard publishes on whole-integer versions. Each version is itself evidenced and dated.</p>
+      </div>
+
+      <div class="trajectory">
+        <p><span class="version-tag">v1, now.</span> The human-readable Production Note on every artefact. Tools, verification, named approver, version, date.</p>
+        <p><span class="version-tag">v2, second half of 2026.</span> A cryptographic stamp on each artefact: signed with an Arkaya private key, the SHA-256 hash of the file embedded in the Production Note, verifiable by any reader.</p>
+        <p><span class="version-tag">v3, through 2026 and 2027.</span> Adoption of C2PA Content Credentials, the open provenance standard backed by Adobe, Microsoft, Sony, OpenAI, the BBC and Leica. Machine-readable, interoperable provenance on top of the human-readable note.</p>
+      </div>
+    </div>
+
+    <div class="references">
+      <h2>References</h2>
+      <ol>
+        <li>Arkaya governance loop architecture. The Loop is the operational realisation of Beer's Viable System Model (Brain of the Firm, 1972) and Boyd's OODA loop at environmental cadence, applied here to Arkaya's own production rather than to a client governance system.</li>
+        <li>Meta-governance positioning. Arkaya is positioned as the operating system across every governance discipline, distinct from the single-domain governance cohort. The Standard is titled to defend this position rather than the narrower one of AI governance alone.</li>
+        <li>Witnessed thesis. The Standard reflects the founder's training in the London Market post-Big Bang 1986 and the risk-as-signal feedback loop that functioned correctly post-9/11 at AIG with Ajit Jain and National Indemnity, before twenty years of cheap credit suppressed it. The Standard applies that testing mechanism to Arkaya production itself.</li>
+        <li>Reference-block discipline. Numbered references with substantive content, not bare citations. The reference block evidences the authenticate-and-verify approach Arkaya proposes architecturally; the Standard mirrors the product position in its own publication form.</li>
+        <li>C2PA Content Credentials. Coalition for Content Provenance and Authenticity, technical specification v2.0 (2024) with v2.1 in progress through 2026. Backed by Adobe, Microsoft, Sony, OpenAI, the BBC and Leica. The emerging open standard for cryptographically signed content provenance, named here as the v3 trajectory target for the Arkaya Production Standard. <a href="https://c2pa.org" target="_blank" rel="noopener">c2pa.org</a></li>
+        <li>Closing line and brand frame. The Standard ends on the locked closing line at its full register: the Standard is itself a built artefact, evidenced and dated, not an assertion.</li>
+      </ol>
+    </div>
+
+    <div class="production-note">
+      <h3>Production Note</h3>
+      <dl>
+        <dt>Standard:</dt><dd>Arkaya Production Standard v1.</dd>
+        <dt>Drafting tools:</dt><dd>Claude (Anthropic). Research synthesis assisted; all assertions verified against primary sources.</dd>
+        <dt>Verification:</dt><dd>Primary sources named at references 1 to 6. Google Alerts cross-check on Arkaya brand terms and C2PA spec evolution. Citation audit complete pre-delivery.</dd>
+        <dt>Human approver:</dt><dd>David McKibbin, Founder, Arkaya Risk.</dd>
+        <dt>Version:</dt><dd>v1. Issued: 23 May 2026.</dd>
+      </dl>
+    </div>
+
+  </div>
+</section>
+
+<section class="closing">
+  <div class="container">
+    <p>Resilience Capital is built.<br>Not asserted.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-meta">
+        Arkaya Risk · trading name of Centinel 10 Ltd<br>
+        Founded by David McKibbin<br>
+        <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a> · +44 (0)7972 178 759<br>
+        <a href="https://www.linkedin.com/in/davidmckibbin" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="footer-legal">
+        © 2026 Centinel 10 Ltd. All rights reserved.
+      </div>
+    </div>
+    <div class="footer-standard">
+      Produced under Arkaya Production Standard v1. Methodology: <a href="/standard">arkayarisk.com/standard</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -483,6 +483,20 @@
     text-decoration: none;
   }
   .footer-meta a:hover { text-decoration: underline; }
+  .footer-standard {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11.5px;
+    color: var(--off-white-faint);
+    letter-spacing: 0.6px;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(200, 147, 88, 0.12);
+  }
+  .footer-standard a {
+    color: var(--bronze);
+    text-decoration: none;
+  }
+  .footer-standard a:hover { text-decoration: underline; }
   .footer-legal {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 10px;
@@ -556,6 +570,7 @@
     <nav>
       <a href="/schema">Schema</a>
       <a href="/solutions">Solutions</a>
+      <a href="/standard">The Standard</a>
     </nav>
   </div>
 </header>
@@ -632,15 +647,20 @@
 </section>
 
 <footer>
-  <div class="container footer-inner">
-    <div class="footer-meta">
-      Arkaya Risk · trading name of Centinel 10 Ltd<br>
-      Founded by David McKibbin<br>
-      <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a> · +44 (0)7972 178 759<br>
-      <a href="https://www.linkedin.com/in/davidmckibbin" target="_blank" rel="noopener">LinkedIn</a>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-meta">
+        Arkaya Risk · trading name of Centinel 10 Ltd<br>
+        Founded by David McKibbin<br>
+        <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a> · +44 (0)7972 178 759<br>
+        <a href="https://www.linkedin.com/in/davidmckibbin" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="footer-legal">
+        © 2026 Centinel 10 Ltd. All rights reserved.
+      </div>
     </div>
-    <div class="footer-legal">
-      © 2026 Centinel 10 Ltd. All rights reserved.
+    <div class="footer-standard">
+      Produced under Arkaya Production Standard v1. Methodology: <a href="/standard">arkayarisk.com/standard</a>
     </div>
   </div>
 </footer>
