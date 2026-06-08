@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custos Infinity — the maturity scale, made continuous</title>
+<style>
+  :root{
+    --deep-teal:#2A393C;--slate-teal:#364748;--bronze:#C89358;
+    --charcoal:#41413F;--offwhite:#F4F5EF;--danger:#9A4B3B;--ok:#5C7A5E;--line:#D8DAD1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{min-height:100%;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    background:var(--offwhite);color:var(--charcoal);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:8px;-webkit-font-smoothing:antialiased;gap:8px;}
+  .frame{width:100%;max-width:960px;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 18px 50px rgba(42,57,60,.10);}
+  .top{display:flex;align-items:center;justify-content:space-between;padding:11px 26px;border-bottom:1px solid var(--line);gap:14px;}
+  .top h1{font-size:15.5px;font-weight:600;color:var(--deep-teal);letter-spacing:.2px;}
+  .top h1 sup{font-size:9px;vertical-align:super;color:var(--bronze);}
+  .tag{font-size:10.5px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--slate-teal);background:var(--offwhite);border:1px solid var(--line);border-radius:20px;padding:5px 11px;white-space:nowrap;}
+  .stage{position:relative;height:366px;overflow:hidden;background:linear-gradient(180deg,#fff 0%,#fbfbf8 100%);padding:16px 22px 8px;}
+  svg{width:100%;height:100%;display:block;overflow:visible;}
+  .bandline{stroke:#EAEBE4;stroke-width:1;}
+  .bandfill{opacity:.45;}
+  .bandlbl{fill:#9a9c93;font-size:9.5px;font-weight:700;letter-spacing:.7px;}
+  .axtitle{fill:#9a9c93;font-size:10.5px;font-weight:600;}
+  .axt{fill:#9a9c93;font-size:11px;}
+  .pathA{fill:none;stroke:var(--danger);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;}
+  .pathB{fill:none;stroke:var(--ok);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;}
+  .dotA{fill:var(--danger);}.dotB{fill:var(--ok);}
+  .snapline{stroke:var(--bronze);stroke-width:1.5;stroke-dasharray:4 4;}
+  .snaplbl{fill:var(--bronze);font-size:10.5px;font-weight:700;}
+  .loopnote{fill:var(--bronze);font-size:10px;font-style:italic;}
+  .endlbl{font-size:12px;font-weight:700;}
+  .sublbl{font-size:10px;font-weight:600;}
+  .pmk{stroke:var(--bronze);stroke-width:1.5;}
+  .pmkt{fill:var(--deep-teal);font-size:9.5px;font-weight:600;}
+  .fade{opacity:0;transition:opacity .7s ease;}
+  .fade.show{opacity:1;}
+  .closeover{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:rgba(255,255,255,.93);opacity:0;transition:opacity .7s ease;pointer-events:none;padding:30px;text-align:center;}
+  .closeover.show{opacity:1;}
+  .closeover .kicker{font-size:13px;font-weight:700;letter-spacing:.4px;color:var(--bronze);margin-bottom:16px;text-transform:uppercase;}
+  .closeover .q{font-size:18px;font-weight:700;color:var(--deep-teal);line-height:1.4;max-width:700px;}
+  .caption{min-height:52px;display:flex;align-items:center;justify-content:center;text-align:center;padding:9px 30px;border-top:1px solid var(--line);background:#fff;}
+  .caption p{font-size:14px;color:var(--charcoal);line-height:1.5;max-width:780px;transition:opacity .4s ease;}
+  .caption strong{color:var(--deep-teal);}
+  .controls{display:flex;align-items:center;justify-content:space-between;padding:8px 26px;border-top:1px solid var(--line);background:#fbfbf8;}
+  .left-ctrl{display:flex;align-items:center;gap:14px;}
+  .dots{display:flex;gap:8px;align-items:center;}
+  .dots .d{width:8px;height:8px;border-radius:50%;background:var(--line);transition:all .3s;}
+  .dots .d.on{background:var(--bronze);transform:scale(1.25);}
+  .btn{font-size:12px;font-weight:600;border:none;border-radius:7px;padding:8px 15px;cursor:pointer;letter-spacing:.3px;}
+  .btn-pp{color:var(--deep-teal);background:#fff;border:1px solid var(--line);}.btn-pp:hover{background:var(--offwhite);}
+  .btn-rp{color:#fff;background:var(--deep-teal);}.btn-rp:hover{background:var(--slate-teal);}
+  .foot{padding:8px 26px 10px;border-top:1px solid var(--line);background:#fff;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .foot .nots{font-size:9.5px;color:#8a8c82;line-height:1.5;max-width:730px;}
+  .foot .nots b{color:var(--slate-teal);}
+  .foot .mk{font-size:10px;color:var(--slate-teal);font-weight:600;letter-spacing:.4px;white-space:nowrap;}
+  .nav{display:flex;gap:10px;align-items:center;}
+  .nav a{font-size:12px;font-weight:600;text-decoration:none;color:var(--deep-teal);background:#fff;border:1px solid var(--line);border-radius:20px;padding:8px 16px;transition:background .2s;}
+  .nav a:hover{background:var(--offwhite);}
+  .navlinks{display:flex;gap:14px;align-items:center;}
+  .navlinks a{font-size:11.5px;font-weight:600;text-decoration:none;color:var(--slate-teal);white-space:nowrap;}
+  .navlinks a:hover{color:var(--bronze);}
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="top">
+    <h1>Custos<sup>™</sup> Infinity — an annual assessment is a snapshot. The maturity scale, made continuous.</h1>
+    <span class="tag">Illustrative · synthetic data</span>
+  </div>
+
+  <div class="stage" id="stage">
+    <svg id="chart" viewBox="0 0 860 400" preserveAspectRatio="xMidYMid meet">
+      <g id="bands"></g>
+      <text class="axtitle" transform="rotate(-90 16 200)" x="16" y="200" text-anchor="middle">Governance maturity</text>
+      <g id="xlab"></g>
+      <g id="snap" class="fade"></g>
+      <g id="lines"></g>
+      <g id="dotsA" class="fade"></g>
+      <g id="dotsB" class="fade"></g>
+      <g id="loopnote" class="fade"></g>
+      <g id="annot" class="fade"></g>
+      <g id="pricing" class="fade"></g>
+    </svg>
+    <div class="closeover" id="closeover">
+      <div class="kicker">Custos does not score governance</div>
+      <div class="q">The counterparty owns the scale and the judgement. Custos Infinity makes the evidence continuous, so a once-a-year assessment becomes a live trajectory the counterparty can observe directly.</div>
+    </div>
+  </div>
+
+  <div class="caption"><p id="cap">&nbsp;</p></div>
+
+  <div class="controls">
+    <div class="left-ctrl">
+      <button class="btn btn-pp" id="pp">&#10073;&#10073; Pause</button>
+      <div class="dots" id="dots"><span class="d on"></span><span class="d"></span><span class="d"></span><span class="d"></span><span class="d"></span></div>
+    </div>
+    <div class="navlinks"><a href="/solutions">&larr; Back to Solutions</a></div>
+    <button class="btn btn-rp" id="replay">&#9654; Replay</button>
+  </div>
+
+  <div class="foot">
+    <div class="nots"><b>The maturity scale shown &mdash; Ad hoc, Fragmented, Defined, Integrated, Agile &mdash; is a neutral, illustrative model.</b> The framework, the bands and the placement belong to whichever counterparty is pricing the obligation: an insurer's underwriting guidelines, a lender's credit policy, an acquirer's due-diligence scorecard, a regulator's standard. They are interchangeable by counterparty and by the obligations being conferred. <b>Custos supplies the continuous, verified evidence and does not score governance.</b> Illustrative and synthetic.</div>
+    <div class="mk">AKR &middot; illustrative demonstration</div>
+  </div>
+</div>
+
+
+
+<script>
+(function(){
+  var SVGNS="http://www.w3.org/2000/svg";
+  // governance maturity (neutral 5-level scale), 13 periods T-6..T+6, identical "Defined" at T=0 (idx 6)
+  var dataA=[64,62,60,58,56,54,53,49,44,40,36,32,30];
+  var dataB=[42,43,45,47,49,51,53,58,64,71,78,84,88];
+  function xFor(i){return 92+(i/12)*660;}
+  function yFor(v){return 330-((v-8)/88)*290;} // 8..96 -> 330..40
+  function el(t,a,x){var e=document.createElementNS(SVGNS,t);for(var k in a)e.setAttribute(k,a[k]);if(x!=null)e.textContent=x;return e;}
+
+  // 5 bands: Ad hoc 8-26, Fragmented 26-44, Defined 44-62, Integrated 62-80, Agile 80-96
+  var bands=document.getElementById('bands');
+  var defs=[[8,26,'AD HOC','#faf6f0'],[26,44,'FRAGMENTED','#fbf8f3'],[44,62,'DEFINED','#fbfbf6'],[62,80,'INTEGRATED','#f4f7f3'],[80,96,'AGILE','#eef3ee']];
+  defs.forEach(function(b){
+    var yt=yFor(b[1]),yb=yFor(b[0]);
+    bands.appendChild(el('rect',{x:92,y:yt,width:660,height:(yb-yt),fill:b[3],'class':'bandfill'}));
+    bands.appendChild(el('line',{x1:92,x2:752,y1:yb,y2:yb,'class':'bandline'}));
+    bands.appendChild(el('text',{x:84,y:(yt+yb)/2+3,'text-anchor':'end','class':'bandlbl'},b[2]));
+  });
+  bands.appendChild(el('line',{x1:92,x2:752,y1:yFor(96),y2:yFor(96),'class':'bandline'}));
+
+  var xlab=document.getElementById('xlab');
+  [[0,'T-6'],[3,'T-3'],[6,'Annual review'],[9,'T+3'],[12,'T+6']].forEach(function(p){
+    xlab.appendChild(el('text',{x:xFor(p[0]),y:356,'text-anchor':'middle','class':'axt'},p[1]));
+  });
+
+  var snap=document.getElementById('snap');
+  snap.appendChild(el('line',{x1:xFor(6),x2:xFor(6),y1:46,y2:344,'class':'snapline'}));
+  snap.appendChild(el('text',{x:xFor(6),y:40,'text-anchor':'middle','class':'snaplbl'},'POINT-IN-TIME ASSESSMENT'));
+  snap.appendChild(el('circle',{cx:xFor(6),cy:yFor(53),r:6,fill:'#C89358',stroke:'#fff','stroke-width':2}));
+  snap.appendChild(el('text',{x:xFor(6)+12,y:yFor(53)-8,'class':'snaplbl'},'both: Defined'));
+
+  function pathD(d){var s='';for(var i=0;i<d.length;i++){s+=(i?'L':'M')+xFor(i).toFixed(1)+' '+yFor(d[i]).toFixed(1)+' ';}return s.trim();}
+  var lines=document.getElementById('lines');
+  var pA=el('path',{d:pathD(dataA),'class':'pathA'});
+  var pB=el('path',{d:pathD(dataB),'class':'pathB'});
+  lines.appendChild(pA);lines.appendChild(pB);
+  var lenA=pA.getTotalLength(),lenB=pB.getTotalLength();
+  [[pA,lenA],[pB,lenB]].forEach(function(p){p[0].style.strokeDasharray=p[1];p[0].style.strokeDashoffset=p[1];});
+
+  var dotsA=document.getElementById('dotsA'),dotsB=document.getElementById('dotsB');
+  for(var i=0;i<13;i++){dotsA.appendChild(el('circle',{cx:xFor(i),cy:yFor(dataA[i]),r:3,'class':'dotA'}));
+    dotsB.appendChild(el('circle',{cx:xFor(i),cy:yFor(dataB[i]),r:3,'class':'dotB'}));}
+
+  document.getElementById('loopnote').appendChild(el('text',{x:96,y:60,'class':'loopnote'},'Each point = one sealed Protocol → Signal → Decision → Evidence loop'));
+
+  var annot=document.getElementById('annot');
+  annot.appendChild(el('text',{x:xFor(12)+10,y:yFor(30)+4,'class':'endlbl',fill:'#9A4B3B'},'Company A'));
+  annot.appendChild(el('text',{x:xFor(12)+10,y:yFor(30)+19,'class':'sublbl',fill:'#9A4B3B'},'evidence drifting down'));
+  annot.appendChild(el('text',{x:xFor(12)+10,y:yFor(88)+4,'class':'endlbl',fill:'#5C7A5E'},'Company B'));
+  annot.appendChild(el('text',{x:xFor(12)+10,y:yFor(88)+19,'class':'sublbl',fill:'#5C7A5E'},'evidence climbing'));
+
+  var pricing=document.getElementById('pricing');
+  [[8,'Renewal'],[10,'Refinancing'],[12,'Claim']].forEach(function(p){
+    pricing.appendChild(el('line',{x1:xFor(p[0]),x2:xFor(p[0]),y1:336,y2:344,'class':'pmk'}));
+    pricing.appendChild(el('circle',{cx:xFor(p[0]),cy:336,r:3.5,fill:'#C89358'}));
+    pricing.appendChild(el('text',{x:xFor(p[0]),y:372,'text-anchor':'middle','class':'pmkt'},p[1]));
+  });
+
+  var caps={
+    b1:"A counterparty assesses governance maturity on a scale &mdash; <strong>Ad hoc, Fragmented, Defined, Integrated, Agile</strong>. Today that assessment is a point-in-time snapshot. At this review, both companies are placed at <strong>Defined</strong> &mdash; same rating, same terms, same price.",
+    b2:"Each point is one sealed Protocol &rarr; Signal &rarr; Decision &rarr; Evidence loop. Run the loop without end, and the evidence <strong>turns the counterparty's own scale into a live trajectory</strong> the snapshot cannot see.",
+    b3:"Same placement at the review; opposite directions underneath. One company's evidence is <strong>drifting toward Fragmented</strong>; the other's is <strong>climbing toward Agile</strong>.",
+    b4:"Today a counterparty infers governance quality from questionnaires, attestations and point-in-time reviews. Continuous evidence lets it <strong>observe the trajectory rather than infer it</strong> &mdash; and see the drift now, at renewal, refinancing or claim, not at the next annual review.",
+    b5:"&nbsp;"
+  };
+  var capEl=document.getElementById('cap');
+  function setCap(h){capEl.style.opacity=0;setTimeout(function(){capEl.innerHTML=h;capEl.style.opacity=1;},220);}
+  var dots=[].slice.call(document.querySelectorAll('.dots .d'));
+  function dot(i){dots.forEach(function(d,idx){d.classList.toggle('on',idx===i);});}
+  function show(id,on){document.getElementById(id).classList[on?'add':'remove']('show');}
+
+  function resetAll(){
+    ['snap','dotsA','dotsB','loopnote','annot','pricing','closeover'].forEach(function(id){show(id,false);});
+    pA.style.transition='none';pB.style.transition='none';
+    pA.style.strokeDashoffset=lenA;pB.style.strokeDashoffset=lenB;
+    capEl.innerHTML='&nbsp;';
+  }
+
+  var steps=[];
+  function at(ms,fn){steps.push({at:ms,fn:fn,done:false});}
+  function build(){
+    steps=[];
+    at(0,function(){dot(0);setCap(caps.b1);});
+    at(400,function(){show('snap',true);});
+    at(7000,function(){
+      dot(1);setCap(caps.b2);
+      pA.style.transition='stroke-dashoffset 4.2s ease';pB.style.transition='stroke-dashoffset 4.2s ease';
+      pA.style.strokeDashoffset=0;pB.style.strokeDashoffset=0;
+    });
+    at(10200,function(){show('dotsA',true);show('dotsB',true);show('loopnote',true);});
+    at(14500,function(){dot(2);setCap(caps.b3);show('annot',true);});
+    at(21500,function(){dot(3);setCap(caps.b4);show('pricing',true);});
+    at(30000,function(){dot(4);setCap(caps.b5);show('closeover',true);});
+    at(35500,function(){pause();});
+  }
+
+  var elapsed=0,last=0,paused=true,rafId=null,END=35600;
+  function frame(ts){if(paused)return;if(!last)last=ts;elapsed+=ts-last;last=ts;
+    steps.forEach(function(s){if(!s.done&&elapsed>=s.at){s.done=true;s.fn();}});
+    if(elapsed<END){rafId=requestAnimationFrame(frame);}else{setPP(false);}}
+  function play(){if(!paused)return;paused=false;last=0;setPP(true);rafId=requestAnimationFrame(frame);}
+  function pause(){paused=true;if(rafId)cancelAnimationFrame(rafId);setPP(false);}
+  function setPP(p){document.getElementById('pp').innerHTML=p?'&#10073;&#10073; Pause':'&#9654; Play';}
+  function restart(){pause();elapsed=0;last=0;build();resetAll();play();}
+  document.getElementById('pp').addEventListener('click',function(){paused?play():pause();});
+  document.getElementById('replay').addEventListener('click',restart);
+  build();resetAll();play();
+})();
+</script>
+</body>
+</html>
