@@ -431,6 +431,35 @@
   }
   .demonstrator-rest a:hover { border-bottom-color: var(--bronze); }
 
+  /* Custos Loop brand mark — §06 visual (the engine at Layer 2) */
+  .loop-mark {
+    margin-top: 40px;
+    background: var(--off-white);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--bronze);
+    padding: 36px 38px 32px;
+    border-radius: 4px;
+  }
+  .loop-mark-svg {
+    display: block;
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    margin: 0 auto 24px;
+  }
+  .loop-mark-note {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--charcoal);
+    max-width: 660px;
+    margin: 0 auto;
+  }
+  .loop-mark-note strong {
+    color: var(--bronze);
+    font-weight: 600;
+  }
+
   .closing {
     background: var(--deep-teal);
     padding: 90px 0;
@@ -505,6 +534,8 @@
     nav { gap: 18px; }
     .bridge, .up-card { padding: 30px 26px; }
     .demonstrator { padding: 56px 0; }
+    .loop-mark { padding: 28px 22px; }
+    .loop-mark-svg { max-width: 320px; }
   }
 </style>
 </head>
@@ -717,6 +748,37 @@
       The operating system is built.<br>
       Demonstrable to qualified counterparties under NDA.
     </p>
+    <figure class="loop-mark" aria-label="The Custos Loop brand mark. Protocol, Signal, HITL Decision, Evidence. Improvement is what it produces.">
+      <svg class="loop-mark-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img">
+        <text x="500" y="92" text-anchor="middle" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="17" fill="#C89358" letter-spacing="4.5" font-weight="600">THE CUSTOS LOOP</text>
+        <line x1="430" y1="108" x2="570" y2="108" stroke="#C89358" stroke-width="1.4"/>
+        <circle cx="500" cy="522" r="268" fill="none" stroke="#2A393C" stroke-width="3.4"/>
+        <g transform="translate(689.50,332.50) rotate(45)"><path d="M -10,-9 L 13,0 L -10,9 Z" fill="#2A393C"/></g>
+        <g transform="translate(689.50,711.50) rotate(135)"><path d="M -10,-9 L 13,0 L -10,9 Z" fill="#2A393C"/></g>
+        <g transform="translate(310.50,711.50) rotate(225)"><path d="M -10,-9 L 13,0 L -10,9 Z" fill="#2A393C"/></g>
+        <g transform="translate(310.50,332.50) rotate(315)"><path d="M -10,-9 L 13,0 L -10,9 Z" fill="#2A393C"/></g>
+        <circle cx="500" cy="254" r="9" fill="#C89358"/>
+        <text x="500" y="202" text-anchor="middle" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="20" font-weight="600" fill="#2A393C" letter-spacing="1.6">PROTOCOL</text>
+        <text x="500" y="225" text-anchor="middle" font-family="'Fraunces', Georgia, serif" font-size="14.5" font-style="italic" fill="#364748">authored by the board</text>
+        <circle cx="768" cy="522" r="9" fill="#C89358"/>
+        <text x="802" y="518" text-anchor="start" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="20" font-weight="600" fill="#2A393C" letter-spacing="1.6">SIGNAL</text>
+        <text x="802" y="540" text-anchor="start" font-family="'Fraunces', Georgia, serif" font-size="14.5" font-style="italic" fill="#364748">from live controls</text>
+        <circle cx="500" cy="790" r="9" fill="#C89358"/>
+        <text x="500" y="836" text-anchor="middle" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="20" font-weight="600" fill="#2A393C" letter-spacing="1.6">HITL DECISION</text>
+        <text x="500" y="859" text-anchor="middle" font-family="'Fraunces', Georgia, serif" font-size="14.5" font-style="italic" fill="#364748">the accountable judgment</text>
+        <circle cx="232" cy="522" r="9" fill="#C89358"/>
+        <text x="198" y="518" text-anchor="end" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="20" font-weight="600" fill="#2A393C" letter-spacing="1.6">EVIDENCE</text>
+        <text x="198" y="540" text-anchor="end" font-family="'Fraunces', Georgia, serif" font-size="14.5" font-style="italic" fill="#364748">captured against obligation</text>
+        <text x="500" y="545" text-anchor="middle" font-family="'Fraunces', Georgia, serif" font-size="62" font-weight="600" fill="#2A393C">Custos</text>
+        <text x="600" y="518" font-family="'Fraunces', Georgia, serif" font-size="23" fill="#C89358">&#8482;</text>
+        <line x1="430" y1="902" x2="570" y2="902" stroke="#C89358" stroke-width="1.4"/>
+        <text x="500" y="936" text-anchor="middle" font-family="'Fraunces', Georgia, serif" font-size="23" font-style="italic" fill="#364748">Improvement is what it produces.</text>
+      </svg>
+      <p class="loop-mark-note">
+        <strong>Protocol:</strong> board-authored executable. <strong>Signal:</strong> from live controls. <strong>HITL Decision:</strong> the act, named, not the role. <strong>Evidence:</strong> of the HITL decision against obligation. Improvement is what the loop produces.
+      </p>
+    </figure>
+
     <p class="demonstrator-rest">
       To request a demonstration, contact <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a>.<br>
       Access is gated and subject to qualification.
