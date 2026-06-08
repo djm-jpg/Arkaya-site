@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arkaya GET. The Governance Evidence Taxonomy.</title>
 <meta name="description" content="Arkaya GET. The Governance Evidence Taxonomy. Eight-field schema for evidence of governance. Open. Observable. Multi-engine. Cryptographically verifiable. The schema counterparties read to price governance risk.">
-<meta name="keywords" content="Governance Evidence Taxonomy, GET, schema authority, governance evidence, eight-field schema, observable primitives, Custos Loop, multi-engine certification, schema neutrality, Dynamic Risk Maturity Assessment, DRMA, capital markets, W3C precedent">
+<meta name="keywords" content="Governance Evidence Taxonomy, GET, schema authority, governance evidence, eight-field schema, observable primitives, GET conformance, multi-engine certification, schema neutrality, Dynamic Risk Maturity Assessment, DRMA, capital markets, W3C precedent">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
@@ -431,45 +431,34 @@
   .discipline-body strong { font-weight: 600; color: var(--deep-teal); }
   .discipline-body em { font-style: italic; color: var(--slate-teal); }
 
-  /* Custos Loop visual */
-  .loop {
+  /* Custos Loop brand mark — §04 visual */
+  .loop-mark {
     margin-top: 36px;
-    background: var(--deep-teal);
-    color: var(--off-white);
-    padding: 42px 38px;
+    background: var(--off-white);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--bronze);
+    padding: 36px 38px 32px;
     border-radius: 4px;
   }
-  .loop-title {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 11px;
-    letter-spacing: 2.4px;
-    text-transform: uppercase;
-    color: var(--bronze);
-    font-weight: 600;
-    margin-bottom: 18px;
+  .loop-mark-svg {
+    display: block;
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    margin: 0 auto 24px;
   }
-  .loop-formula {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    font-size: clamp(20px, 2.6vw, 26px);
-    line-height: 1.4;
-    color: var(--off-white);
-    margin-bottom: 24px;
-    letter-spacing: -0.005em;
-  }
-  .loop-formula .arrow {
-    color: var(--bronze);
-    margin: 0 12px;
-    font-style: normal;
-  }
-  .loop-note {
+  .loop-mark-note {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
-    line-height: 1.6;
-    color: rgba(244, 245, 239, 0.78);
-    max-width: 640px;
+    line-height: 1.65;
+    color: var(--charcoal);
+    max-width: 660px;
+    margin: 0 auto;
   }
-  .loop-note strong { color: var(--bronze); font-weight: 500; }
+  .loop-mark-note strong {
+    color: var(--bronze);
+    font-weight: 600;
+  }
 
   /* Pull-quote */
   .pull {
@@ -590,7 +579,8 @@
     .header-inner { flex-direction: row; align-items: center; gap: 14px; flex-wrap: wrap; }
     .logo { height: 56px; }
     nav { gap: 18px; }
-    .loop { padding: 32px 26px; }
+    .loop-mark { padding: 28px 22px; }
+    .loop-mark-svg { max-width: 320px; }
     .layer {
       grid-template-columns: 1fr;
       gap: 12px;
@@ -633,6 +623,7 @@
     <nav>
       <a href="/schema" class="active">Schema</a>
       <a href="/solutions">Solutions</a>
+      <a href="/standard">The Standard</a>
     </nav>
   </div>
 </header>
@@ -683,7 +674,7 @@
 
       <div class="engine-boundary">
         <div class="boundary-label">Engine boundary</div>
-        <div class="boundary-content"><strong>Custos Loop.</strong> Multi-engine certified. Engines read Layer 0 telemetry and emit schema-conformant evidence at AI cadence.</div>
+        <div class="boundary-content"><strong>GET conformance.</strong> Engines read Layer 0 telemetry and emit GET-conformant evidence at AI cadence; the GET Conformance Programme certifies them.</div>
       </div>
 
       <div class="layer layer-0">
@@ -729,13 +720,13 @@
       Hazard found its home at Edward Lloyd's coffee house in 1688. Credit at Moody's in 1909, formalised by the SEC's NRSRO designation in 1975 and embedded in bank capital adequacy under Basel II in 2004. <strong>Governance is now the third domain</strong>, and it has been priced by inference rather than evidence for forty years.
     </p>
     <p>
-      It has always been a distinct domain of risk. What it lacked was the observation infrastructure to be classified as one — so it got lumped into compliance, ESG and operational risk. Carl Woese took decades to establish Archaea as the third domain of life, separate from Bacteria and Eukarya, on the strength of molecular sequencing. Agentic AI is doing the same work for governance: forcing the failure mode into a register no prior frame can hide.
+      It has always been a distinct domain of risk. What it lacked was the observation infrastructure to be classified as one, so it got lumped into compliance, ESG and operational risk. Carl Woese took decades to establish Archaea as the third domain of life, separate from Bacteria and Eukarya, on the strength of molecular sequencing. Agentic AI is doing the same work for governance: forcing the failure mode into a register no prior frame can hide.
     </p>
     <p>
-      Archaea is also the domain that thrives where the others cannot — hydrothermal vents at 122°C (hyperthermophiles), polar seas (psychrophiles), pH-0 sulphuric pools (acidophiles), saturated brines (halophiles), alkaline soda lakes (alkaliphiles), deep-ocean pressures (piezophiles) and ionising radiation (radioresistants). The specialised biology that lets these organisms survive hostile conditions is structurally what resilience capital does for an organisation. It is not the absence of stress; it is the apparatus that turns stress into evidence the system can read.
+      Archaea is also the domain that thrives where the others cannot, in hydrothermal vents, polar seas, acid pools and saturated brines. The biology that lets these organisms survive hostile conditions is structurally what resilience capital does for an organisation. It is not the absence of stress. It is the apparatus that turns stress into evidence the system can read.
     </p>
     <p>
-      The Governance Evidence Taxonomy is the schema that resolves that. It translates risk across the disciplines that price it — insurance, finance, audit, legal, accounting — and makes that translation machine-readable. Eight observable fields. Cryptographically verifiable. Trajectory-aware. Read by every counterparty: D&amp;O, cyber and W&amp;I underwriters; lenders; acquirers; reinsurers; claims handlers; defence counsel.
+      The Governance Evidence Taxonomy is the schema that resolves that. It translates risk across the disciplines that price it: insurance, finance, audit, legal and accounting. It makes that translation machine-readable. Eight observable fields. Cryptographically verifiable. Trajectory-aware. Read by every counterparty: D&amp;O, cyber and W&amp;I underwriters; lenders; acquirers; reinsurers; claims handlers; defence counsel.
     </p>
     <div class="pull">
       <p>The declaration is never trusted, only verified, and only current.</p>
@@ -822,25 +813,15 @@
       Engines sit at the boundary between Layer 0 source systems and Layer 1 evidence. An engine is software that reads source telemetry and emits GET-conformant evidence at the cadence the schema requires. The cadence cannot be met by point-in-time review; the engines are AI engines by necessity, not by choice.
     </p>
     <p>
-      The methodology engines must implement is fixed:
+      Conformance is defined by the schema, not by any one engine. To be GET-conformant, evidence must record a named human decision against the obligation it bears on, carry its provenance and chain of custody, and link to that obligation at the cadence the schema sets. What conformant evidence must demonstrate is fixed by the schema. How an engine produces it is the engine's own.
     </p>
 
-    <div class="loop">
-      <div class="loop-title">The Custos Loop</div>
-      <div class="loop-formula">
-        Protocol <span class="arrow">→</span> Signal <span class="arrow">→</span> HITL Decision <span class="arrow">→</span> Evidence
-      </div>
-      <p class="loop-note">
-        <strong>Protocol:</strong> board-authored executable. <strong>Signal:</strong> from live controls. <strong>HITL Decision:</strong> the act, named, not the role. <strong>Evidence:</strong> of the HITL decision against obligation. Improvement is what the loop produces.
-      </p>
-    </div>
-
     <div class="pull">
-      <p>Schema authored by Arkaya. Engines built by certified partners. Counterparties read both.</p>
+      <p>Schema stewarded by the Custodian. Engines certified against it. Counterparties read both.</p>
     </div>
 
     <p>
-      Custos is the certification framework, not a single-vendor engine. The conformance suite, reference adapter and schema-to-engine adapter sit at Arkaya as part of the schema authority remit. Engines are tested against the framework for schema fidelity. Engine substitution preserves counterparty continuity by design. <em>Multi-engine by certification, not by accident.</em>
+      The GET Conformance Programme, run by the Custodian, certifies engines against the schema. The conformance suite and the reference adapter sit with the Custodian as part of that programme. Engines are tested for schema fidelity, and a certified engine can be substituted without breaking counterparty continuity. Custos is one certified engine; it and the other commercial engines sit at Layer 2. <em>Multi-engine by certification, not by accident.</em>
     </p>
   </div>
 </section>
@@ -881,7 +862,7 @@
     <div class="discipline">
       <div class="discipline-label">Trajectory over state</div>
       <div class="discipline-body">
-        Field 08, maturity calibration with trajectory, signals where governance is moving, not where it sits today. Two organisations at the same Foundational level diverge by Established within a rolling cycle. Trajectory is what counterparties price.
+        Field 08, maturity calibration with trajectory, signals where governance is moving, not where it sits today. Two organisations placed at the same level on a counterparty's own maturity scale diverge within a rolling cycle. Trajectory is what counterparties price.
       </div>
     </div>
 

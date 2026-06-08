@@ -368,6 +368,69 @@
   }
 
   /* Closing */
+  /* §06 demonstrator section */
+  .wtin {
+    background: var(--off-white);
+    padding: 72px 0;
+  }
+  .wtin-lede {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: clamp(16px, 1.8vw, 18px);
+    line-height: 1.6;
+    color: var(--charcoal);
+    max-width: 720px;
+    margin-bottom: 26px;
+  }
+  .wtin-list {
+    display: grid;
+    gap: 14px;
+    max-width: 780px;
+  }
+  .wtin-item {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--charcoal);
+    border-left: 2px solid var(--bronze);
+    padding-left: 16px;
+  }
+  .wtin-item strong {
+    color: var(--deep-teal);
+    font-weight: 600;
+  }
+  .demonstrator {
+    background: var(--deep-teal);
+    padding: 84px 0;
+    border-bottom: 1px solid rgba(200, 147, 88, 0.18);
+  }
+  .demonstrator .section-num {
+    color: var(--bronze);
+  }
+  .demonstrator-lede {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(22px, 2.8vw, 30px);
+    line-height: 1.35;
+    color: var(--off-white);
+    letter-spacing: -0.01em;
+    max-width: 720px;
+    margin-top: 4px;
+    margin-bottom: 24px;
+  }
+  .demonstrator-rest {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: rgba(244, 245, 239, 0.78);
+    max-width: 640px;
+  }
+  .demonstrator-rest a {
+    color: var(--bronze);
+    text-decoration: none;
+    border-bottom: 1px solid var(--bronze-line);
+  }
+  .demonstrator-rest a:hover { border-bottom-color: var(--bronze); }
+
   .closing {
     background: var(--deep-teal);
     padding: 90px 0;
@@ -441,6 +504,7 @@
     .logo { height: 56px; }
     nav { gap: 18px; }
     .bridge, .up-card { padding: 30px 26px; }
+    .demonstrator { padding: 56px 0; }
   }
 </style>
 </head>
@@ -454,6 +518,7 @@
     <nav>
       <a href="/schema">Schema</a>
       <a href="/solutions" class="active">Solutions</a>
+      <a href="/standard">The Standard</a>
     </nav>
   </div>
 </header>
@@ -606,7 +671,7 @@
     <div class="moments">
 
       <div class="moments-row">
-        <div class="moment-name">Governance velocity</div>
+        <div class="moment-name">Governance Velocity</div>
         <div class="moment-desc">Evidenced to <strong>keep pace</strong> with agentic-AI speed.</div>
       </div>
 
@@ -626,6 +691,36 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<section class="wtin">
+  <div class="container-narrow">
+    <div class="section-num">What this is not</div>
+    <h2>The boundaries of the schema.</h2>
+    <p class="wtin-lede">The discipline that calms a sophisticated reader is the explicit statement of what the architecture does not claim. Each line below is enforced structurally, not asserted.</p>
+    <div class="wtin-list">
+      <div class="wtin-item"><strong>Not a regulatory replacement.</strong> The schema is referenced, not adopted. Supervisors are not displaced.</div>
+      <div class="wtin-item"><strong>Not an audit opinion.</strong> Engines emit evidence against obligation. They do not certify accounts.</div>
+      <div class="wtin-item"><strong>Not a continuous-compliance certification.</strong> The record shows behaviour against obligation, not a pass mark.</div>
+      <div class="wtin-item"><strong>Not a governance score.</strong> No rating, benchmark or score is issued from Layer 1. Counterparties price.</div>
+      <div class="wtin-item"><strong>Does not replace board accountability.</strong> The board authors the Protocol and owns the decision.</div>
+      <div class="wtin-item"><strong>Does not redefine accounting recognition thresholds.</strong> IAS 37 and ASC 450 stand. The schema surfaces the obligation earlier.</div>
+    </div>
+  </div>
+</section>
+
+<section class="demonstrator">
+  <div class="container-narrow">
+    <div class="section-num">§ 06 · The operating system</div>
+    <p class="demonstrator-lede">
+      The operating system is built.<br>
+      Demonstrable to qualified counterparties under NDA.
+    </p>
+    <p class="demonstrator-rest">
+      To request a demonstration, contact <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a>.<br>
+      Access is gated and subject to qualification.
+    </p>
   </div>
 </section>
 
