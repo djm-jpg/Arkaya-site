@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arkaya Risk. Building resilience capital.</title>
-<meta name="description" content="Arkaya stewards the Governance Evidence Taxonomy. The schema counterparties read to price governance risk. Open, multi-engine, observable. Two pillars: Arkaya GET (schema authority) and Arkaya GET Solutions (commercial services).">
+<meta name="description" content="Governance is priced only after the event, because the decision trail cannot be reconstructed before it. Arkaya makes it reconstructable. The open Governance Evidence Taxonomy capital markets read to price governance risk. Open, multi-engine, observable.">
 <meta name="keywords" content="Governance Evidence Taxonomy, GET, governance evidence, schema authority, capital markets, insurance, private equity, Lloyd's, resilience capital, governance premium, Provision 29, covenant surveillance, AI governance, model drift, Dynamic Risk Maturity Assessment, DRMA">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,6 +116,24 @@
     background: radial-gradient(ellipse at top right, rgba(200, 147, 88, 0.08) 0%, transparent 60%);
     pointer-events: none;
   }
+  .hero-kicker {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(20px, 2.6vw, 28px);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+    color: var(--off-white);
+    max-width: 900px;
+    margin-bottom: 40px;
+  }
+  .hero-kicker .beat {
+    display: block;
+    opacity: 0;
+    animation: fadeUp 800ms ease forwards;
+  }
+  .hero-kicker .beat-1 { animation-delay: 300ms; }
+  .hero-kicker .beat-2 { animation-delay: 1100ms; }
+  .hero-kicker .beat-3 { animation-delay: 1900ms; }
   .hero-eyebrow {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 11px;
@@ -125,7 +143,7 @@
     font-weight: 500;
     margin-bottom: 38px;
     opacity: 0;
-    animation: fadeUp 700ms ease 300ms forwards;
+    animation: fadeUp 700ms ease 2800ms forwards;
   }
   .hero-headline {
     font-family: 'Fraunces', serif;
@@ -142,9 +160,9 @@
     opacity: 0;
     animation: fadeUp 1100ms ease forwards;
   }
-  .hero-headline .line-1 { animation-delay: 1100ms; }
-  .hero-headline .line-2 { animation-delay: 2900ms; }
-  .hero-headline .line-3 { animation-delay: 4700ms; }
+  .hero-headline .line-1 { animation-delay: 3600ms; }
+  .hero-headline .line-2 { animation-delay: 5400ms; }
+  .hero-headline .line-3 { animation-delay: 7200ms; }
   .hero-headline .third {
     color: var(--off-white);
     font-weight: 400;
@@ -161,7 +179,7 @@
     border-left: 2px solid var(--bronze);
     padding-left: 22px;
     opacity: 0;
-    animation: fadeUp 1000ms ease 6200ms forwards;
+    animation: fadeUp 1000ms ease 8700ms forwards;
   }
 
   @keyframes fadeUp {
@@ -314,6 +332,105 @@
   .engine-boundary .boundary-content strong {
     font-weight: 600;
     color: var(--off-white);
+  }
+
+  /* Meta-governance claim — between hero and pillars */
+  .meta-claim {
+    background: var(--off-white);
+    padding: 64px 0 12px 0;
+  }
+  .meta-claim-inner {
+    max-width: 880px;
+    border-left: 2px solid var(--bronze);
+    padding-left: 24px;
+  }
+  .meta-claim-line {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(20px, 2.4vw, 26px);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+    color: var(--deep-teal);
+    margin-bottom: 8px;
+  }
+  .meta-claim-line:last-child { margin-bottom: 0; }
+  .meta-claim-lede { font-weight: 500; }
+  .meta-claim-rest { font-weight: 400; }
+
+  /* Evidence band — priced after the event */
+  .evidence {
+    background: var(--off-white);
+    padding: 60px 0 8px 0;
+  }
+  .evidence-head {
+    max-width: 880px;
+    margin-bottom: 34px;
+  }
+  .evidence-eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .evidence-lede {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(18px, 2.1vw, 23px);
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--deep-teal);
+  }
+  .evidence-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .evidence-card {
+    border-top: 3px solid var(--bronze);
+    background: rgba(42, 57, 60, 0.03);
+    padding: 28px 30px 30px 30px;
+  }
+  .evidence-tag {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--slate-teal);
+    margin-bottom: 16px;
+  }
+  .evidence-figure {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(34px, 4.4vw, 46px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--deep-teal);
+  }
+  .evidence-figure-label {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: var(--charcoal);
+    margin: 8px 0 18px 0;
+  }
+  .evidence-body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+  }
+  .evidence-source {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--slate-teal);
+    font-style: italic;
+    border-top: 1px solid var(--rule);
+    padding-top: 12px;
   }
 
   /* Two pillars */
@@ -548,9 +665,15 @@
   @media (max-width: 760px) {
     .container { padding: 0 22px; }
     .hero { padding: 70px 0 60px 0; }
+    .hero-kicker { margin-bottom: 28px; }
+    .meta-claim { padding: 44px 0 8px 0; }
+    .meta-claim-inner { padding-left: 18px; }
     .pillars { padding: 56px 0 80px 0; }
     .objective { margin-bottom: 38px; }
     .pillars-grid { grid-template-columns: 1fr; gap: 18px; }
+    .evidence { padding: 44px 0 4px 0; }
+    .evidence-grid { grid-template-columns: 1fr; gap: 18px; }
+    .evidence-card { padding: 24px 24px 26px 24px; }
     .pillar { padding: 32px 28px; }
     .header-inner { flex-direction: row; align-items: center; gap: 14px; flex-wrap: wrap; }
     .logo { height: 56px; }
@@ -577,6 +700,11 @@
 
 <section class="hero">
   <div class="container">
+    <p class="hero-kicker">
+      <span class="beat beat-1">Governance is often priced only after the event,</span>
+      <span class="beat beat-2">because the decision trail cannot be reconstructed before it.</span>
+      <span class="beat beat-3">Arkaya makes it reconstructable.</span>
+    </p>
     <div class="hero-eyebrow">The Third Domain of Risk</div>
     <h1 class="hero-headline">
       <span class="line line-1">Hazard found its home at Edward Lloyd's coffee house in<br>1688, 22 years after the Great Fire of London.</span>
@@ -586,6 +714,41 @@
     <p class="hero-bridge">
       Arkaya is building the evidence layer capital markets need to price it at the speed of agentic&nbsp;AI.<br>Governance becomes evidence a counterparty can underwrite against, not an assertion they price as risk.
     </p>
+  </div>
+</section>
+
+<section class="meta-claim">
+  <div class="container">
+    <div class="meta-claim-inner">
+      <p class="meta-claim-line meta-claim-lede">Arkaya is meta-governance, not AI governance.</p>
+      <p class="meta-claim-line meta-claim-rest">AI governance platforms run one discipline at audit cadence.</p>
+      <p class="meta-claim-line meta-claim-rest">Arkaya runs every governance discipline at environmental metabolism.</p>
+    </div>
+  </div>
+</section>
+
+<section class="evidence">
+  <div class="container">
+    <div class="evidence-head">
+      <div class="evidence-eyebrow">Priced after the event</div>
+      <p class="evidence-lede">Automated decisions have already crystallised nine and ten figure losses, reconstructed only after the event. The trail those reconstructions assembled too late is the trail Arkaya produces continuously.</p>
+    </div>
+    <div class="evidence-grid">
+      <div class="evidence-card">
+        <div class="evidence-tag">Automated decisioning · Government · Australia</div>
+        <div class="evidence-figure">A$2.4bn</div>
+        <div class="evidence-figure-label">total repayment and compensation</div>
+        <p class="evidence-body">Robodebt averaged annual income across fortnightly periods and raised welfare debts later ruled unlawful. A$1.8bn was settled in 2020, a further A$475m (about US$309m) in 2025. A royal commission found the responsible department held legal advice warning of unlawfulness in 2018 and proceeded. The decision trail surfaced years after the loss.</p>
+        <p class="evidence-source">Royal Commission into the Robodebt Scheme, final report 2023; Reuters, 2025.</p>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-tag">Model governance · Corporate · United States</div>
+        <div class="evidence-figure">$540m+</div>
+        <div class="evidence-figure-label">inventory write-down, Zillow Offers</div>
+        <p class="evidence-body">Algorithmic home-buying priced off the Zestimate model, which overpaid as the 2021 market turned. A $304m write-down in Q3 2021, a further $240m to $265m guided for Q4, the unit closed and about 2,000 staff cut, a quarter of the workforce. The model outputs existed internally. Continuous, externally verifiable evidence of the risk did not.</p>
+        <p class="evidence-source">Zillow Group SEC Form 8-K, third quarter 2021.</p>
+      </div>
+    </div>
   </div>
 </section>
 
