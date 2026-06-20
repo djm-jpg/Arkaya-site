@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What a governance evidence record looks like. Arkaya Risk.</title>
+<meta name="description" content="The format of a governance evidence record: the eight observable fields, the states its exception field can hold, and how a counterparty reads it. An illustrative template, not a client record and not a result.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep-teal:#2A393C;--slate-teal:#364748;--bronze:#C89358;
+    --bronze-soft:rgba(200,147,88,0.18);--bronze-line:rgba(200,147,88,0.45);
+    --charcoal:#41413F;--off-white:#F4F5EF;--off-white-soft:rgba(244,245,239,0.78);
+    --off-white-faint:rgba(244,245,239,0.55);--rule:rgba(42,57,60,0.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,sans-serif;font-weight:400;line-height:1.55;color:var(--off-white);background:var(--deep-teal);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+  ::selection{background:var(--bronze);color:var(--deep-teal)}
+  .container{width:100%;max-width:1180px;margin:0 auto;padding:0 28px}
+  header{background:var(--off-white);padding:18px 0;border-bottom:1px solid var(--rule);position:relative;z-index:10}
+  .header-inner{display:flex;justify-content:space-between;align-items:center}
+  .logo-link{display:inline-block;line-height:0}.logo{height:76px;width:auto;display:block}
+  nav{display:flex;gap:28px;align-items:center}
+  nav a{font-family:'IBM Plex Sans',sans-serif;color:var(--charcoal);text-decoration:none;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;font-weight:500;transition:color 200ms ease;position:relative;padding:4px 0}
+  nav a.active,nav a:hover{color:var(--bronze)}
+  nav a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--bronze);transition:width 200ms ease}
+  nav a:hover::after{width:100%}
+  .eyebrow{font-family:'IBM Plex Sans',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--bronze);font-weight:500;margin-bottom:18px}
+  .e-hero{padding:90px 0 74px 0;position:relative}
+  .e-hero::before{content:'';position:absolute;top:0;right:-10%;width:65%;height:100%;background:radial-gradient(ellipse at top right,rgba(200,147,88,0.08) 0%,transparent 60%);pointer-events:none}
+  .e-headline{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(28px,4.6vw,52px);line-height:1.12;letter-spacing:-0.02em;color:var(--off-white);max-width:18ch;margin-bottom:26px}
+  .e-lede{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(16px,1.7vw,21px);line-height:1.5;color:var(--off-white-soft);max-width:64ch;border-left:2px solid var(--bronze);padding-left:22px}
+  .e-tag{display:inline-block;margin-top:26px;font-family:'IBM Plex Sans',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:var(--bronze);border:1px solid var(--bronze-line);padding:8px 14px;border-radius:2px}
+  .light{background:var(--off-white);color:var(--charcoal);padding:80px 0}
+  .light .eyebrow{margin-bottom:14px}
+  .sec-title{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(24px,3.4vw,36px);line-height:1.18;letter-spacing:-0.015em;color:var(--deep-teal);margin-bottom:30px;max-width:24ch}
+  /* before / after */
+  .ba{border:1px solid var(--rule);border-radius:3px;overflow:hidden;max-width:1000px}
+  .ba-before{background:rgba(42,57,60,0.03);padding:26px 30px;border-bottom:1px solid var(--rule)}
+  .ba-after{background:#fff;padding:26px 30px}
+  .ba-lbl{font-family:'IBM Plex Sans',sans-serif;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+  .ba-before .ba-lbl{color:var(--slate-teal)}.ba-after .ba-lbl{color:var(--bronze)}
+  .ba-stmt{font-family:'Fraunces',serif;font-style:italic;font-size:18px;line-height:1.45;color:var(--deep-teal)}
+  .ba-tag{display:block;margin-top:12px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--slate-teal)}
+  table.reg{width:100%;border-collapse:collapse;font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;margin-top:4px}
+  table.reg th{text-align:left;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--slate-teal);font-weight:600;padding:9px 12px;border-bottom:2px solid var(--bronze)}
+  table.reg td{padding:11px 12px;border-bottom:1px solid var(--rule);color:var(--charcoal);vertical-align:top}
+  table.reg td.ob{font-weight:600;color:var(--deep-teal)}
+  .exc{font-weight:600;color:var(--bronze)}.clr{color:var(--slate-teal)}
+  .regcap{font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;color:var(--slate-teal);font-style:italic;margin-top:14px;max-width:80ch}
+  /* eight-field grid */
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:6px;max-width:1000px}
+  .field{background:rgba(54,71,72,0.04);border:1px solid rgba(54,71,72,0.10);border-radius:3px;padding:18px 22px}
+  .field-id{font-family:'IBM Plex Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:rgba(65,65,63,0.55)}
+  .field-name{font-family:'Fraunces',serif;font-weight:500;font-size:18px;letter-spacing:-0.005em;color:var(--deep-teal);margin:5px 0 7px 0}
+  .field-val{font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.5;color:var(--charcoal)}
+  .field.span{grid-column:1/-1;background:var(--bronze-soft);border:1px solid var(--bronze-line)}
+  /* read */
+  .reads{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1000px}
+  .read{border-top:3px solid var(--bronze);background:rgba(42,57,60,0.03);padding:22px 24px}
+  .read-pr{font-family:'IBM Plex Sans',sans-serif;font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;font-weight:600;color:var(--slate-teal);margin-bottom:10px}
+  .read p{font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.6;color:var(--charcoal)}
+  /* decision (dark) */
+  .dark{background:var(--deep-teal);padding:84px 0;border-top:1px solid var(--bronze-soft)}
+  .dark .eyebrow{margin-bottom:14px}
+  .dark .sec-title{color:var(--off-white)}
+  .decision{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1000px}
+  .dcol{background:rgba(244,245,239,0.05);border-top:3px solid var(--bronze);border-radius:3px;padding:26px 28px}
+  .dcol.proc{border-top-color:rgba(244,245,239,0.25)}
+  .dcol h3{font-family:'Fraunces',serif;font-weight:400;font-size:19px;color:var(--off-white);margin-bottom:14px}
+  .dcol ul{list-style:none}
+  .dcol li{font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.55;color:var(--off-white-soft);padding-left:20px;position:relative;margin-bottom:10px}
+  .dcol li::before{content:'›';position:absolute;left:0;color:var(--bronze);font-weight:700}
+  .noprice{font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--off-white-faint);font-style:italic;margin-top:22px;max-width:80ch}
+  .honesty{background:rgba(42,57,60,0.03);border:1px dashed var(--bronze-line);border-radius:3px;padding:24px 28px;max-width:1000px}
+  .honesty p{font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.65;color:var(--charcoal)}
+  .honesty strong{color:var(--deep-teal);font-weight:600}
+  .closing{background:var(--deep-teal);padding:100px 0;text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--bronze-soft)}
+  .closing::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60%;height:1px;background:var(--bronze-line);max-width:200px}
+  .closing p{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,4vw,48px);line-height:1.3;letter-spacing:-0.015em;color:var(--off-white);margin-top:40px;max-width:760px;margin-left:auto;margin-right:auto;padding:0 20px}
+  footer{background:var(--deep-teal);padding:56px 0 40px 0;border-top:1px solid rgba(200,147,88,0.18)}
+  .footer-inner{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:28px}
+  .footer-meta{font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:var(--off-white-faint);line-height:1.7;letter-spacing:0.4px}
+  .footer-meta a{color:var(--bronze);text-decoration:none}
+  .footer-legal{font-family:'IBM Plex Sans',sans-serif;font-size:10px;color:rgba(244,245,239,0.35);letter-spacing:1.4px;text-transform:uppercase}
+  .footer-standard{font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;color:var(--off-white-faint);letter-spacing:0.6px;margin-top:18px;padding-top:18px;border-top:1px solid rgba(200,147,88,0.12)}
+  .footer-standard a{color:var(--bronze);text-decoration:none}
+  @media (max-width:760px){.container{padding:0 22px}.e-hero{padding:60px 0 50px}.light,.dark{padding:54px 0}.fields,.reads,.decision{grid-template-columns:1fr}.header-inner{flex-wrap:wrap;gap:14px}.logo{height:56px}nav{gap:18px}.closing{padding:70px 0}
+    table.reg,table.reg tbody,table.reg tr,table.reg td{display:block}table.reg thead{display:none}table.reg td{border:none;padding:2px 0}table.reg tr{border-bottom:1px solid var(--rule);padding:12px 0}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="/" class="logo-link" aria-label="Arkaya Risk. Building resilience capital.">
+      <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
+    </a>
+    <nav>
+      <a href="/schema">Schema</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/standard">The Standard</a>
+    </nav>
+  </div>
+</header>
+
+<section class="e-hero">
+  <div class="container">
+    <div class="eyebrow">Example record format</div>
+    <h1 class="e-headline">What a governance evidence record looks like.</h1>
+    <p class="e-lede">The site describes governance evidence. This page shows its format: the fields a record carries, the states its exception field can hold, and how a counterparty reads it. Every value here is an illustrative placeholder. It is a template, not a client and not a result.</p>
+    <span class="e-tag">Format specimen · no client data · no score issued</span>
+  </div>
+</section>
+
+<section class="light">
+  <div class="container">
+    <div class="eyebrow">Assertion, then evidence</div>
+    <h2 class="sec-title">The same obligations, asserted once and evidenced continuously.</h2>
+    <div class="ba">
+      <div class="ba-before">
+        <div class="ba-lbl">Before · the assertion</div>
+        <div class="ba-stmt">"The board confirms that the firm's risk management and internal control systems are effective."</div>
+        <span class="ba-tag">Signed once, at the reporting date. Point-in-time. Nothing behind it a counterparty can read.</span>
+      </div>
+      <div class="ba-after">
+        <div class="ba-lbl">After · the evidence record (format)</div>
+        <table class="reg">
+          <thead><tr><th>Obligation</th><th>Evidence source</th><th>Observation</th><th>Exception state</th><th>Verified</th></tr></thead>
+          <tbody>
+            <tr><td class="ob">Third-party access control</td><td>Helpdesk access logs</td><td>Continuous</td><td class="exc">Open</td><td>Signed</td></tr>
+            <tr><td class="ob">Privileged-access review</td><td>IAM change log</td><td>Event-triggered</td><td class="clr">Clear</td><td>Signed</td></tr>
+            <tr><td class="ob">Model-override governance</td><td>Override log, risk-committee minutes</td><td>Monthly review</td><td class="exc">In review</td><td>Signed</td></tr>
+            <tr><td class="ob">Incident notification</td><td>Regulator-of-record filing</td><td>On event</td><td class="exc">In progress</td><td>Filed</td></tr>
+            <tr><td class="ob">Board protocol adherence</td><td>Decision log vs protocol</td><td>Monthly</td><td class="clr">Within bounds</td><td>Signed</td></tr>
+          </tbody>
+        </table>
+        <div class="regcap">Illustrative format. The exception-state field can hold open, in-review, in-progress or clear; the states shown are placeholders, not a client's record. This is not a pass mark and no score is issued. The point is that the field exists and is populated against each obligation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light" style="padding-top:0">
+  <div class="container">
+    <div class="eyebrow">The record</div>
+    <h2 class="sec-title">The eight observable fields, and what each holds.</h2>
+    <div class="fields">
+      <div class="field"><div class="field-id">Field 01</div><div class="field-name">Counterparty</div><div class="field-val">Who reads and prices. Example: a D&amp;O underwriter at renewal.</div></div>
+      <div class="field"><div class="field-id">Field 02</div><div class="field-name">Decision being priced</div><div class="field-val">The capital moment. Example: renewal of management liability cover for a firm running automated pricing models.</div></div>
+      <div class="field"><div class="field-id">Field 03</div><div class="field-name">Risk if misrepresented</div><div class="field-val">What goes wrong if the evidence is wrong. Example: avoidance; model-risk exclusion bite at claim.</div></div>
+      <div class="field"><div class="field-id">Field 04</div><div class="field-name">Evidence primitives</div><div class="field-val">The observable atoms. Model-override events, HITL decisions, risk-committee minutes, audit logs, with counts and timestamps per period. Not summaries.</div></div>
+      <div class="field"><div class="field-id">Field 05</div><div class="field-name">Temporal cadence</div><div class="field-val">At what frequency each primitive is observed. Continuous, event-triggered, or periodic.</div></div>
+      <div class="field"><div class="field-id">Field 06</div><div class="field-name">Provenance</div><div class="field-val">Where each primitive came from. Source system to engine to signing key, chain of custody preserved.</div></div>
+      <div class="field"><div class="field-id">Field 07</div><div class="field-name">Verification mode</div><div class="field-val">How it was verified. Cryptographic signature, regulator-of-record filing, third-party attestation, or self-declared and flagged.</div></div>
+      <div class="field span"><div class="field-id">Field 08</div><div class="field-name">Maturity calibration with trajectory</div><div class="field-val">A maturity level with its direction of travel. Example: Foundational, rising to Established over the period (DRMA). Trajectory, not score.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="light" style="padding-top:0">
+  <div class="container">
+    <div class="eyebrow">The read</div>
+    <h2 class="sec-title">How a counterparty reads the primitives.</h2>
+    <div class="reads">
+      <div class="read"><div class="read-pr">Override frequency</div><p>Override events are logged and signed, not asserted. As the committee tightens thresholds the rate falls. The read: the control is being exercised, not just documented.</p></div>
+      <div class="read"><div class="read-pr">Escalation discipline</div><p>HITL decisions are routed to the named accountable role within the protocol window, recorded against the obligation with timestamps. The read: the human decision is on the record.</p></div>
+      <div class="read"><div class="read-pr">Board oversight</div><p>Risk-committee minutes show the model risk reviewed and acted on, not noted. The read: the protocol the board authored is live, not shelfware.</p></div>
+      <div class="read"><div class="read-pr">Trajectory</div><p>Maturity rising on the record over the period. The read: an improving firm being priced, not a static snapshot.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="container">
+    <div class="eyebrow">The decision the format supports</div>
+    <h2 class="sec-title">The same risk, read two ways.</h2>
+    <div class="decision">
+      <div class="dcol">
+        <h3>Read against the evidence record</h3>
+        <ul>
+          <li>Affirmative AI cover offered, rather than left silent.</li>
+          <li>The model-risk exclusion narrowed to the residual the evidence does not cover.</li>
+          <li>Cover continued at renewal, with the trajectory on the file.</li>
+          <li>At a later claim, the contemporaneous record answers the rescission question.</li>
+        </ul>
+      </div>
+      <div class="dcol proc">
+        <h3>Read against a procurement file</h3>
+        <ul>
+          <li>Governance asserted in a questionnaire, signed once at inception.</li>
+          <li>Silent AI exposure left in the wording, priced as unknown or excluded.</li>
+          <li>Deterioration invisible until a claim surfaces it.</li>
+          <li>At claim, the representation is contested with no record to read.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="noprice">Illustrative contrast. No premium figure is shown, and no score is issued from the schema. The counterparty reads the primitives and prices its own risk.</p>
+  </div>
+</section>
+
+<section class="light">
+  <div class="container">
+    <div class="honesty">
+      <p><strong>What this specimen is.</strong> A format, populated with example states, not a client record and not a result. The figures, obligations and exception states are placeholders chosen to show the shape a record takes; none are drawn from any engagement. No governance score is produced. A worked walkthrough, and in time a real anonymised record from a live engagement, is available to qualified counterparties under NDA. This page shows the form so a reader knows what to ask for.</p>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="container">
+    <p>Resilience Capital is built.<br>Not asserted.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-meta">
+        Arkaya Risk · trading name of Centinel 10 Ltd<br>
+        Founded by David McKibbin<br>
+        <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a> · +44 (0)7972 178 759<br>
+        <a href="https://www.linkedin.com/in/davidmckibbin" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="footer-legal">© 2026 Centinel 10 Ltd. All rights reserved.</div>
+    </div>
+    <div class="footer-standard">
+      Produced under Arkaya Production Standard v1. Methodology: <a href="/standard">arkayarisk.com/standard</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
