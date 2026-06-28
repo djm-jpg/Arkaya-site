@@ -88,7 +88,9 @@
   .footer-legal{font-family:'IBM Plex Sans',sans-serif;font-size:10px;color:rgba(244,245,239,0.35);letter-spacing:1.4px;text-transform:uppercase}
   .footer-standard{font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;color:var(--off-white-faint);letter-spacing:0.6px;margin-top:18px;padding-top:18px;border-top:1px solid rgba(200,147,88,0.12)}
   .footer-standard a{color:var(--bronze);text-decoration:none}
-  @media (max-width:760px){.container{padding:0 22px}.e-hero{padding:60px 0 50px}.light,.dark{padding:54px 0}.fields,.reads,.decision{grid-template-columns:1fr}.header-inner{flex-wrap:wrap;gap:14px}.logo{height:56px}nav{gap:18px}.closing{padding:70px 0}
+  .code{background:var(--deep-teal);border-radius:4px;padding:22px 24px;max-width:1000px;overflow-x:auto;border-left:3px solid var(--bronze)}
+  .code pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;line-height:1.6;color:var(--off-white-soft);white-space:pre;margin:0}
+  @media (max-width:760px){.container{padding:0 22px}.e-hero{padding:60px 0 50px}.code{padding:16px 16px}.code pre{font-size:11px}.light,.dark{padding:54px 0}.fields,.reads,.decision{grid-template-columns:1fr}.header-inner{flex-wrap:wrap;gap:14px}.logo{height:56px}nav{gap:18px}.closing{padding:70px 0}
     table.reg,table.reg tbody,table.reg tr,table.reg td{display:block}table.reg thead{display:none}table.reg td{border:none;padding:2px 0}table.reg tr{border-bottom:1px solid var(--rule);padding:12px 0}}
 </style>
 </head>
@@ -158,8 +160,44 @@
       <div class="field"><div class="field-id">Field 05</div><div class="field-name">Temporal cadence</div><div class="field-val">At what frequency each primitive is observed. Continuous, event-triggered, or periodic.</div></div>
       <div class="field"><div class="field-id">Field 06</div><div class="field-name">Provenance</div><div class="field-val">Where each primitive came from. Source system to engine to signing key, chain of custody preserved.</div></div>
       <div class="field"><div class="field-id">Field 07</div><div class="field-name">Verification mode</div><div class="field-val">How it was verified. Cryptographic signature, regulator-of-record filing, third-party attestation, or self-declared and flagged.</div></div>
-      <div class="field span"><div class="field-id">Field 08</div><div class="field-name">Maturity calibration with trajectory</div><div class="field-val">A maturity level with its direction of travel. Example: Foundational, rising to Established over the period (DRMA). Trajectory, not score.</div></div>
+      <div class="field span"><div class="field-id">Field 08</div><div class="field-name">Maturity calibration with trajectory</div><div class="field-val">A maturity level with its direction of travel, read over a rolling 90-day window (the window_days field in the record). Example: Foundational, rising to Established (DRMA). Trajectory, not score.</div></div>
     </div>
+  </div>
+</section>
+
+<section class="light" style="padding-top:0">
+  <div class="container">
+    <div class="eyebrow">Machine-readable</div>
+    <h2 class="sec-title">The same record, as a counterparty's system ingests it.</h2>
+    <div class="code"><pre>{
+  "record": "governance-evidence-record",
+  "schema": "GET-v1",
+  "counterparty": "management-liability underwriter, renewal",
+  "decision_priced": "management liability renewal; automated pricing models in use",
+  "risk_if_misrepresented": "avoidance; model-risk exclusion bite at claim",
+  "obligations": [
+    {
+      "obligation": "third-party access control",
+      "primitive": "helpdesk access logs",
+      "cadence": "continuous",
+      "provenance": "SIEM -&gt; engine -&gt; signing key",
+      "verification": "cryptographic-signature",
+      "exception_state": "open"
+    },
+    {
+      "obligation": "model-override governance",
+      "primitive": "override log; risk-committee minutes",
+      "cadence": "monthly-review",
+      "provenance": "MLOps -&gt; engine -&gt; signing key",
+      "verification": "cryptographic-signature",
+      "exception_state": "in-review"
+    }
+  ],
+  "maturity": { "level": "Foundational", "trajectory": "rising", "window_days": 90 },
+  "score": null,
+  "note": "illustrative placeholder values, not a client record"
+}</pre></div>
+    <div class="regcap">Illustrative JSON. The field names and values mirror the eight fields above; the values are placeholders, not client data, and the score field is null because the schema issues no score. A conformant engine emits a signed record in this shape, and the counterparty's system reads it without human interpretation.</div>
   </div>
 </section>
 
