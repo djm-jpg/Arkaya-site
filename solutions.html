@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arkaya GET Solutions. Commercial services running on the schema.</title>
-<meta name="description" content="Arkaya GET Solutions. Product design services across the capital stack. Corporates at the Five Moments. Insurers, brokers, lenders and acquirers reading the schema at the pricing layer. Resilience capital evidenced, not asserted.">
-<meta name="keywords" content="governance evidence, capital event bridge, Five Moments, governance premium, resilience capital, refinancing, exit diligence, claims, covenant surveillance, Provision 29, Lloyd's, Dynamic Risk Maturity Assessment, DRMA">
+<title>Arkaya GET Solutions. Underwrite AI risk on evidence, not on a questionnaire.</title>
+<meta name="description" content="Continuous covenant underwriting: first-party evidence of an insured's AI estate, read into rating, retention, limit, recovery, reserving and capital. The first product, the economics, the evidence ladder, and how it starts.">
+<meta name="keywords" content="continuous covenant underwriting, AI liability, evidence-based underwriting, calibration, evidence ladder, governance evidence, governance premium, resilience capital, Five Moments, DRMA, Lloyd's">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
@@ -37,39 +37,14 @@
   }
   ::selection { background: var(--bronze); color: var(--deep-teal); }
 
-  .container {
-    width: 100%;
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 0 28px;
-  }
-  .container-narrow {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 28px;
-  }
+  .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+  .container-narrow { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 28px; }
 
-  header {
-    background: var(--off-white);
-    padding: 18px 0;
-    border-bottom: 1px solid var(--rule);
-  }
-  .header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .logo-link {
-    display: inline-block;
-    line-height: 0;
-  }
-  .logo {
-    height: 76px;
-    width: auto;
-    display: block;
-  }
-  nav { display: flex; gap: 28px; align-items: center; }
+  header { background: var(--off-white); padding: 18px 0; border-bottom: 1px solid var(--rule); }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; }
+  .logo-link { display: inline-block; line-height: 0; }
+  .logo { height: 76px; width: auto; display: block; }
+  nav { display: flex; gap: 26px; align-items: center; }
   nav a {
     font-family: 'IBM Plex Sans', sans-serif;
     color: var(--charcoal);
@@ -85,457 +60,117 @@
   nav a.active { color: var(--bronze); }
   nav a:hover { color: var(--bronze); }
   nav a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0;
-    height: 1px;
-    background: var(--bronze);
-    transition: width 200ms ease;
+    content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px;
+    background: var(--bronze); transition: width 200ms ease;
   }
   nav a.active::after, nav a:hover::after { width: 100%; }
 
-  .title-block {
-    padding: 88px 0 56px 0;
-    border-bottom: 1px solid var(--rule);
-    background: var(--off-white-deep);
-  }
-  .eyebrow {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--bronze);
-    font-weight: 600;
-    margin-bottom: 22px;
-  }
-  .page-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    font-size: clamp(38px, 6vw, 72px);
-    line-height: 1.05;
-    letter-spacing: -0.025em;
-    color: var(--deep-teal);
-    margin-bottom: 16px;
-  }
-  .page-subtitle {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-style: italic;
-    font-size: clamp(20px, 2.6vw, 28px);
-    line-height: 1.3;
-    color: var(--slate-teal);
-    max-width: 720px;
-    margin-bottom: 32px;
-  }
-  .title-meta {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: var(--charcoal-soft);
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .title-meta span::before {
-    content: '·';
-    color: var(--bronze);
-    margin-right: 8px;
-  }
+  .title-block { padding: 88px 0 56px 0; border-bottom: 1px solid var(--rule); background: var(--off-white-deep); }
+  .eyebrow { font-family: 'IBM Plex Sans', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--bronze); font-weight: 600; margin-bottom: 22px; }
+  .page-title { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(38px, 6vw, 72px); line-height: 1.05; letter-spacing: -0.025em; color: var(--deep-teal); margin-bottom: 16px; }
+  .page-subtitle { font-family: 'Fraunces', serif; font-weight: 300; font-style: italic; font-size: clamp(20px, 2.6vw, 28px); line-height: 1.3; color: var(--slate-teal); max-width: 720px; margin-bottom: 32px; }
+  .title-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--charcoal-soft); display: flex; gap: 24px; flex-wrap: wrap; }
+  .title-meta span::before { content: '·'; color: var(--bronze); margin-right: 8px; }
   .title-meta span:first-child::before { content: ''; margin: 0; }
 
-  section {
-    padding: 80px 0;
-    border-bottom: 1px solid var(--rule);
-  }
+  section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
   section:last-of-type { border-bottom: none; }
-  .section-num {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 1.6px;
-    text-transform: uppercase;
-    color: var(--bronze);
-    font-weight: 500;
-    margin-bottom: 18px;
-  }
-  h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    font-size: clamp(26px, 3.6vw, 38px);
-    line-height: 1.18;
-    letter-spacing: -0.015em;
-    color: var(--deep-teal);
-    margin-bottom: 24px;
-  }
-  p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--charcoal);
-    margin-bottom: 18px;
-    max-width: 720px;
-  }
+  .section-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--bronze); font-weight: 500; margin-bottom: 18px; }
+  h2 { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(26px, 3.6vw, 38px); line-height: 1.18; letter-spacing: -0.015em; color: var(--deep-teal); margin-bottom: 24px; }
+  p { font-size: 16px; line-height: 1.7; color: var(--charcoal); margin-bottom: 18px; max-width: 720px; }
   p strong { font-weight: 600; color: var(--deep-teal); }
   p em { font-style: italic; color: var(--slate-teal); }
 
   /* Audience blocks */
-  .audiences {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 18px;
-    margin-top: 36px;
-  }
-  .audience {
-    background: var(--off-white);
-    border: 1px solid var(--rule);
-    padding: 36px 30px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 4px;
-    transition: transform 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
-    position: relative;
-    overflow: hidden;
-  }
-  .audience::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 100%;
-    background: var(--bronze);
-    opacity: 0;
-    transition: opacity 250ms ease;
-  }
-  .audience:hover {
-    transform: translateY(-3px);
-    border-color: var(--bronze-line);
-    box-shadow: 0 12px 32px -16px rgba(42, 57, 60, 0.18);
-  }
+  .audiences { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 36px; }
+  .audience { background: var(--off-white); border: 1px solid var(--rule); padding: 36px 30px; display: flex; flex-direction: column; border-radius: 4px; transition: transform 250ms ease, border-color 250ms ease, box-shadow 250ms ease; position: relative; overflow: hidden; }
+  .audience::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--bronze); opacity: 0; transition: opacity 250ms ease; }
+  .audience:hover { transform: translateY(-3px); border-color: var(--bronze-line); box-shadow: 0 12px 32px -16px rgba(42, 57, 60, 0.18); }
   .audience:hover::before { opacity: 1; }
-  .audience-tag {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10.5px;
-    letter-spacing: 1.6px;
-    text-transform: uppercase;
-    color: var(--bronze);
-    font-weight: 500;
-    margin-bottom: 14px;
-  }
-  .audience-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-size: 24px;
-    color: var(--deep-teal);
-    margin-bottom: 14px;
-    letter-spacing: -0.01em;
-    line-height: 1.15;
-  }
-  .audience-layer {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10.5px;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: var(--charcoal-soft);
-    margin-bottom: 20px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--rule);
-  }
-  .audience-body {
-    font-size: 14px;
-    line-height: 1.65;
-    color: var(--charcoal);
-    flex: 1;
-  }
+  .audience-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--bronze); font-weight: 500; margin-bottom: 14px; }
+  .audience-title { font-family: 'Fraunces', serif; font-weight: 500; font-size: 22px; color: var(--deep-teal); margin-bottom: 14px; letter-spacing: -0.01em; line-height: 1.15; }
+  .audience-body { font-size: 14px; line-height: 1.65; color: var(--charcoal); flex: 1; }
   .audience-body p { font-size: 14px; line-height: 1.65; margin-bottom: 12px; }
-  .audience-body p:last-child { margin-bottom: 0; }
+  .audience-cta { margin-top: 18px; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 600; }
+  .audience-cta a { color: var(--bronze); text-decoration: none; border-bottom: 1px solid var(--bronze-line); }
+  .audience-cta a:hover { border-bottom-color: var(--bronze); }
 
-  /* Five Moments table */
-  .moments {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 0;
-    margin-top: 32px;
-    border: 1px solid var(--rule);
-    background: var(--rule);
-  }
-  .moments-row {
-    display: contents;
-  }
-  .moments-row > div {
-    background: var(--off-white);
-    padding: 22px 26px;
-  }
-  .moment-name {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-size: 18px;
-    color: var(--deep-teal);
-    letter-spacing: -0.005em;
-  }
-  .moment-desc {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 14px;
-    line-height: 1.55;
-    color: var(--charcoal);
-  }
+  /* Two-column row table (moments / ladder / economics) */
+  .moments { display: grid; grid-template-columns: 280px 1fr; gap: 0; margin-top: 32px; border: 1px solid var(--rule); background: var(--rule); }
+  .moments-row { display: contents; }
+  .moments-row > div { background: var(--off-white); padding: 22px 26px; }
+  .moment-name { font-family: 'Fraunces', serif; font-weight: 500; font-size: 18px; color: var(--deep-teal); letter-spacing: -0.005em; }
+  .moment-desc { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; line-height: 1.55; color: var(--charcoal); }
   .moment-desc strong { color: var(--deep-teal); font-weight: 600; }
 
-  /* Pull-quote */
-  .pull {
-    margin: 40px 0 8px 0;
-    padding: 30px 0 30px 28px;
-    border-left: 3px solid var(--bronze);
-    max-width: 760px;
-  }
-  .pull p {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-style: italic;
-    font-size: clamp(20px, 2.4vw, 26px);
-    line-height: 1.4;
-    color: var(--deep-teal);
-    margin: 0;
-    letter-spacing: -0.005em;
-  }
+  /* Three-column comparison */
+  .compare { display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: 0; margin-top: 32px; border: 1px solid var(--rule); background: var(--rule); }
+  .compare > div { background: var(--off-white); padding: 18px 22px; font-size: 13.5px; line-height: 1.55; color: var(--charcoal); }
+  .compare .ch { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 1.3px; text-transform: uppercase; color: var(--bronze); font-weight: 600; background: var(--off-white-deep); }
+  .compare .cl { font-family: 'Fraunces', serif; font-size: 15px; color: var(--deep-teal); font-weight: 500; }
+  .compare .cd strong { color: var(--deep-teal); font-weight: 600; }
 
-  /* Bridge visual */
-  .bridge {
-    background: var(--deep-teal);
-    color: var(--off-white);
-    padding: 48px 40px;
-    border-radius: 4px;
-    margin-top: 32px;
-  }
-  .bridge-title {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 11px;
-    letter-spacing: 2.4px;
-    text-transform: uppercase;
-    color: var(--bronze);
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-  .bridge-formula {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-size: clamp(22px, 3vw, 32px);
-    line-height: 1.3;
-    color: var(--off-white);
-    letter-spacing: -0.01em;
-    margin-bottom: 22px;
-  }
-  .bridge-formula em { color: var(--bronze); font-style: normal; font-weight: 400; }
-  .bridge-note {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 14.5px;
-    line-height: 1.65;
-    color: rgba(244, 245, 239, 0.78);
-    max-width: 640px;
-  }
+  /* Pull-quote */
+  .pull { margin: 40px 0 8px 0; padding: 30px 0 30px 28px; border-left: 3px solid var(--bronze); max-width: 760px; }
+  .pull p { font-family: 'Fraunces', serif; font-weight: 300; font-style: italic; font-size: clamp(20px, 2.4vw, 26px); line-height: 1.4; color: var(--deep-teal); margin: 0; letter-spacing: -0.005em; }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; margin-top: 34px; }
+  .step { background: var(--off-white); border: 1px solid var(--rule); border-top: 3px solid var(--bronze); padding: 26px 22px; border-radius: 4px; }
+  .step-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1.4px; color: var(--bronze); font-weight: 600; margin-bottom: 12px; }
+  .step-name { font-family: 'Fraunces', serif; font-weight: 500; font-size: 17px; color: var(--deep-teal); margin-bottom: 10px; line-height: 1.2; }
+  .step-body { font-size: 13.5px; line-height: 1.55; color: var(--charcoal); }
 
   /* UP block */
-  .up-card {
-    background: var(--off-white);
-    border: 1px solid var(--bronze-line);
-    padding: 36px 34px;
-    border-radius: 4px;
-    margin-top: 32px;
-    max-width: 760px;
-  }
-  .up-tag {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 10.5px;
-    letter-spacing: 2.4px;
-    text-transform: uppercase;
-    color: var(--bronze);
-    font-weight: 600;
-    margin-bottom: 14px;
-  }
-  .up-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-size: 26px;
-    color: var(--deep-teal);
-    margin-bottom: 14px;
-    letter-spacing: -0.01em;
-  }
-  .up-body {
-    font-size: 15px;
-    line-height: 1.65;
-    color: var(--charcoal);
-  }
+  .up-card { background: var(--off-white); border: 1px solid var(--bronze-line); padding: 36px 34px; border-radius: 4px; margin-top: 32px; max-width: 760px; }
+  .up-tag { font-family: 'IBM Plex Sans', sans-serif; font-size: 10.5px; letter-spacing: 2.4px; text-transform: uppercase; color: var(--bronze); font-weight: 600; margin-bottom: 14px; }
+  .up-title { font-family: 'Fraunces', serif; font-weight: 500; font-size: 24px; color: var(--deep-teal); margin-bottom: 14px; letter-spacing: -0.01em; }
+  .up-body { font-size: 15px; line-height: 1.65; color: var(--charcoal); margin: 0; }
 
-  /* Closing */
-  /* §06 demonstrator section */
-  .wtin {
-    background: var(--off-white);
-    padding: 72px 0;
-  }
-  .wtin-lede {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: clamp(16px, 1.8vw, 18px);
-    line-height: 1.6;
-    color: var(--charcoal);
-    max-width: 720px;
-    margin-bottom: 26px;
-  }
-  .wtin-list {
-    display: grid;
-    gap: 14px;
-    max-width: 780px;
-  }
-  .wtin-item {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 15.5px;
-    line-height: 1.55;
-    color: var(--charcoal);
-    border-left: 2px solid var(--bronze);
-    padding-left: 16px;
-  }
-  .wtin-item strong {
-    color: var(--deep-teal);
-    font-weight: 600;
-  }
-  .demonstrator {
-    background: var(--deep-teal);
-    padding: 84px 0;
-    border-bottom: 1px solid rgba(200, 147, 88, 0.18);
-  }
-  .demonstrator .section-num {
-    color: var(--bronze);
-  }
-  .demonstrator-lede {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-size: clamp(22px, 2.8vw, 30px);
-    line-height: 1.35;
-    color: var(--off-white);
-    letter-spacing: -0.01em;
-    max-width: 720px;
-    margin-top: 4px;
-    margin-bottom: 24px;
-  }
-  .demonstrator-rest {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 15px;
-    line-height: 1.65;
-    color: rgba(244, 245, 239, 0.78);
-    max-width: 640px;
-  }
-  .demonstrator-rest a {
-    color: var(--bronze);
-    text-decoration: none;
-    border-bottom: 1px solid var(--bronze-line);
-  }
-  .demonstrator-rest a:hover { border-bottom-color: var(--bronze); }
+  /* What this is not */
+  .wtin { background: var(--off-white-deep); padding: 72px 0; border-bottom: 1px solid var(--rule); }
+  .wtin-lede { font-family: 'IBM Plex Sans', sans-serif; font-size: clamp(16px, 1.8vw, 18px); line-height: 1.6; color: var(--charcoal); max-width: 720px; margin-bottom: 26px; }
+  .wtin-list { display: grid; gap: 14px; max-width: 780px; }
+  .wtin-item { font-family: 'IBM Plex Sans', sans-serif; font-size: 15.5px; line-height: 1.55; color: var(--charcoal); border-left: 2px solid var(--bronze); padding-left: 16px; }
+  .wtin-item strong { color: var(--deep-teal); font-weight: 600; }
 
-  /* Custos Loop brand mark — §06 visual (the engine at Layer 2) */
-  .loop-mark {
-    margin-top: 40px;
-    background: var(--off-white);
-    border: 1px solid var(--rule);
-    border-left: 3px solid var(--bronze);
-    padding: 36px 38px 32px;
-    border-radius: 4px;
-  }
-  .loop-mark-svg {
-    display: block;
-    width: 100%;
-    max-width: 460px;
-    height: auto;
-    margin: 0 auto 24px;
-  }
-  .loop-mark-note {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 14px;
-    line-height: 1.65;
-    color: var(--charcoal);
-    max-width: 660px;
-    margin: 0 auto;
-  }
-  .loop-mark-note strong {
-    color: var(--bronze);
-    font-weight: 600;
-  }
-
-  .closing {
-    background: var(--deep-teal);
-    padding: 90px 0;
-    text-align: center;
-    border-bottom: none;
-  }
-  .closing p {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: clamp(28px, 4vw, 48px);
-    line-height: 1.3;
-    letter-spacing: -0.015em;
-    color: var(--off-white);
-    margin: 0 auto;
-    max-width: 760px;
-    padding: 0 20px;
-  }
-  .closing-back {
-    display: inline-block;
-    margin-top: 36px;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 12.5px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--bronze);
-    text-decoration: none;
-    font-weight: 600;
-  }
+  .closing { background: var(--deep-teal); padding: 90px 0; text-align: center; border-bottom: none; }
+  .closing p { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(28px, 4vw, 48px); line-height: 1.3; letter-spacing: -0.015em; color: var(--off-white); margin: 0 auto; max-width: 760px; padding: 0 20px; }
+  .closing-back { display: inline-block; margin-top: 36px; font-family: 'IBM Plex Sans', sans-serif; font-size: 12.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--bronze); text-decoration: none; font-weight: 600; }
   .closing-back:hover { text-decoration: underline; }
 
-  footer {
-    background: var(--deep-teal);
-    padding: 40px 0;
-    border-top: 1px solid rgba(200, 147, 88, 0.18);
-  }
-  .footer-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 28px;
-  }
-  .footer-meta {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 12px;
-    color: rgba(244, 245, 239, 0.55);
-    line-height: 1.7;
-    letter-spacing: 0.4px;
-  }
-  .footer-meta a {
-    color: var(--bronze);
-    text-decoration: none;
-  }
+  footer { background: var(--deep-teal); padding: 40px 0; border-top: 1px solid rgba(200, 147, 88, 0.18); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 28px; }
+  .footer-meta { font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; color: rgba(244, 245, 239, 0.55); line-height: 1.7; letter-spacing: 0.4px; }
+  .footer-meta a { color: var(--bronze); text-decoration: none; }
   .footer-meta a:hover { text-decoration: underline; }
-  .footer-legal {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 10px;
-    color: rgba(244, 245, 239, 0.35);
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-  }
+  .footer-legal { font-family: 'IBM Plex Sans', sans-serif; font-size: 10px; color: rgba(244, 245, 239, 0.35); letter-spacing: 1.4px; text-transform: uppercase; }
+
+  /* Worked example */
+  .worked { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 30px; }
+  .worked-col { background: var(--off-white); border: 1px solid var(--rule); border-top: 3px solid var(--bronze); padding: 28px 26px; border-radius: 4px; }
+  .worked-col.muted { border-top-color: rgba(65,65,63,0.3); }
+  .worked-grade { font-family: 'Fraunces', serif; font-weight: 500; font-size: 22px; color: var(--deep-teal); margin-bottom: 4px; }
+  .worked-mode { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--charcoal-soft); margin-bottom: 18px; }
+  .worked-offer { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
+  .worked-offer li { display: flex; justify-content: space-between; gap: 14px; font-size: 14px; line-height: 1.5; padding: 11px 0; border-bottom: 1px solid var(--rule); }
+  .worked-offer .k { color: var(--charcoal-soft); }
+  .worked-offer .v { color: var(--deep-teal); font-weight: 600; text-align: right; }
+  .worked-note { font-family: 'IBM Plex Sans', sans-serif; font-size: 12.5px; font-style: italic; line-height: 1.55; color: var(--slate-teal); margin-top: 18px; max-width: 720px; }
 
   @media (max-width: 760px) {
+    .worked { grid-template-columns: 1fr; }
     .container, .container-narrow { padding: 0 22px; }
     .title-block { padding: 60px 0 44px 0; }
     section { padding: 56px 0; }
     .audiences { grid-template-columns: 1fr; gap: 14px; }
     .moments { grid-template-columns: 1fr; }
+    .compare { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
     .header-inner { flex-direction: row; align-items: center; gap: 14px; flex-wrap: wrap; }
     .logo { height: 56px; }
-    nav { gap: 18px; }
-    .bridge, .up-card { padding: 30px 26px; }
-    .demonstrator { padding: 56px 0; }
-    .loop-mark { padding: 28px 22px; }
-    .loop-mark-svg { max-width: 320px; }
+    nav { gap: 16px; }
+    .up-card { padding: 30px 26px; }
   }
 </style>
 </head>
@@ -549,6 +184,7 @@
     <nav>
       <a href="/schema">Schema</a>
       <a href="/solutions" class="active">Solutions</a>
+      <a href="/ecosystem">Ecosystem</a>
       <a href="/evidence">Evidence</a>
       <a href="/standard">The Standard</a>
     </nav>
@@ -558,235 +194,226 @@
 <section class="title-block">
   <div class="container">
     <div class="eyebrow">Pillar two · Commercial services</div>
-    <h1 class="page-title">Arkaya GET Solutions</h1>
-    <p class="page-subtitle">Commercial services that run on the schema. From the pricing layer to the capital event.</p>
+    <h1 class="page-title">Underwrite AI risk on evidence, not on a questionnaire.</h1>
+    <p class="page-subtitle">Continuous covenant underwriting. The first product running on the schema.</p>
     <div class="title-meta">
-      <span>Corporates · Layer 3</span>
-      <span>Insurance sector · Layer 2</span>
-      <span>Finance sector · Layer 2</span>
+      <span>AI liability, the first class</span>
+      <span>Insurance · Finance · Corporates</span>
+      <span>Pricing layer · Layer 2</span>
     </div>
   </div>
 </section>
 
 <section>
   <div class="container-narrow">
-    <div class="section-num">§ 01 · Proposition</div>
-    <h2>Capital is priced. Governance is evidenced. The two meet at the schema.</h2>
+    <div class="section-num">§ 01 · The first product</div>
+    <h2>Continuous covenant underwriting.</h2>
     <p>
-      Every capital event resolves into a single question. Can the organisation prove its governance works, or is it asserting it? Most organisations are asserting. Counterparties pricing risk against assertion price it badly, or refuse to price it at all. <strong>The governance premium is what you earn by making it observable.</strong>
+      Arkaya supplies continuous, first-party evidence of an insured's AI estate, measured against an eligibility floor at inception and monitored across the term. It replaces the underwriting questionnaire with a record read against obligation rather than self-reported once a year. The underwriter prices it; Arkaya does not.
     </p>
     <p>
-      Arkaya GET Solutions delivers the commercial services that turn schema-conformant evidence into resilience capital. Product design at the pricing layer for the counterparties that read the schema. Corporate-side services at the capital events where the price is set.
+      The covenant schema is class-agnostic. AI liability is the first class written against it, because the underwriting asymmetry is largest there. Cyber, technology E&amp;O, D&amp;O and operational resilience follow.
     </p>
     <div class="pull">
-      <p>Earned by the organisations that can evidence their governance and priced by the counterparties that can read it.</p>
+      <p>The governance premium is what you earn by making it observable.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--off-white-deep);">
+  <div class="container-narrow">
+    <div class="section-num">§ 02 · Why now</div>
+    <h2>The market is splitting on AI rather than pricing it.</h2>
+    <p>
+      Mainstream carriers are excluding it. The ISO general-liability AI exclusion endorsements took effect on 1 January 2026 across forms underpinning most US commercial liability, and the major carriers have filed to adopt them. A thin specialty cohort writes affirmative cover at the top, a handful of products worldwide.
+    </p>
+    <p>
+      Exclusion at the bottom and scarce capacity at the top is the wedge. There is demand for first-party and third-party AI cover and no credible basis for writing it profitably without continuous evidence of the insured's AI estate. <strong>That evidence is what makes the risk selectable in between.</strong>
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-num">§ 03 · Why it pays</div>
+    <h2>Evidence moves the line between transfer and silent retention.</h2>
+    <p>
+      For the insurer, the value lands in five places. For the corporate, it is the cover and credit a counterparty will commit; withdraw it and the residual returns at once, unprovided until probability is high, sitting unfunded until it crystallises at full cost.
+    </p>
+
+    <div class="moments">
+      <div class="moments-row"><div class="moment-name">Selectable at all</div><div class="moment-desc">AI risk becomes <strong>writable</strong>, where today it is excluded or declined.</div></div>
+      <div class="moments-row"><div class="moment-name">A measured estate</div><div class="moment-desc">The underwriter prices a <strong>measured</strong> estate, not a declared one.</div></div>
+      <div class="moments-row"><div class="moment-name">Drift caught mid-term</div><div class="moment-desc">Boundary and register drift is detected <strong>during the term</strong>, not at the next renewal.</div></div>
+      <div class="moments-row"><div class="moment-name">Smaller dispute surface</div><div class="moment-desc">A contemporaneous record <strong>compresses the causation dispute</strong> at claim.</div></div>
+      <div class="moments-row"><div class="moment-name">Aggregation visible</div><div class="moment-desc">AI exposure is <strong>aggregated across the book</strong> for exposure management and reinsurance.</div></div>
+    </div>
+    <p style="margin-top: 24px;">
+      It also widens the writable book. An applicant below an honest floor gets a route to becoming insurable rather than excluded.
+    </p>
+  </div>
+</section>
+
+<section style="background: var(--off-white-deep);">
+  <div class="container">
+    <div class="section-num">§ 04 · How the carrier reads it</div>
+    <h2>Calibration, and the evidence ladder.</h2>
+    <p>
+      Arkaya supplies the evidence; the underwriter prices it. The calibration layer states how to read a governance evidence record into rating, retention, limit, recovery, reserving and capital, in direction and mechanism. The thresholds and the rate response are the carrier's. <em>The schema and the conformance test are Arkaya's; the calibration, the position and the rating are not.</em>
+    </p>
+    <p>Every answer carries a grade, and the grade caps the credit available beneath it.</p>
+
+    <div class="moments">
+      <div class="moments-row"><div class="moment-name">Verifiable</div><div class="moment-desc">Independently checkable from the sealed record, without the vendor's or Arkaya's code.</div></div>
+      <div class="moments-row"><div class="moment-name">Evidenced</div><div class="moment-desc">Rests on the produced record.</div></div>
+      <div class="moments-row"><div class="moment-name">Attested</div><div class="moment-desc">Rests on a named officer's signature.</div></div>
+      <div class="moments-row"><div class="moment-name">Asserted</div><div class="moment-desc">Unproven. Attracts no credit.</div></div>
+    </div>
+
+    <h2 style="margin-top: 56px;">What the read looks like at the desk.</h2>
+    <p>Two insureds, same sector, same limit sought. One produces continuous, verifiable evidence of its AI estate; the other answers an annual questionnaire. The underwriter reads the difference and prices it.</p>
+
+    <div class="worked">
+      <div class="worked-col">
+        <div class="worked-grade">Insured A &middot; Verifiable</div>
+        <div class="worked-mode">Continuous first-party evidence</div>
+        <ul class="worked-offer">
+          <li><span class="k">Cover</span><span class="v">Affirmative AI cover offered</span></li>
+          <li><span class="k">Limit</span><span class="v">Full limit available</span></li>
+          <li><span class="k">Retention</span><span class="v">Lower</span></li>
+          <li><span class="k">Terms</span><span class="v">Drift caught and re-rated mid-term</span></li>
+        </ul>
+      </div>
+      <div class="worked-col muted">
+        <div class="worked-grade">Insured B &middot; Asserted</div>
+        <div class="worked-mode">Annual questionnaire</div>
+        <ul class="worked-offer">
+          <li><span class="k">Cover</span><span class="v">AI exclusion applied</span></li>
+          <li><span class="k">Limit</span><span class="v">Reduced or declined</span></li>
+          <li><span class="k">Retention</span><span class="v">Higher</span></li>
+          <li><span class="k">Terms</span><span class="v">Priced on a declared, unverified estate</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="worked-note">Illustrative, to show the direction of the read. The carrier sets the rating, the limit and the retention against its own book; these are not Arkaya figures, not a quoted outcome, and not a promise of cover. Direction and mechanism only.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-num">§ 05 · How it starts</div>
+    <h2>Four steps, each one evidenced.</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">01</div><div class="step-name">First engagement</div><div class="step-body">The board authors the Protocol and ranks the domains material to enterprise value.</div></div>
+      <div class="step"><div class="step-num">02</div><div class="step-name">First evidence record</div><div class="step-body">The loop produces a signed record against obligation, in the eight-field format.</div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-name">First underwriting decision</div><div class="step-body">The carrier reads the record into rating, retention and limit at inception.</div></div>
+      <div class="step"><div class="step-num">04</div><div class="step-name">First measurable value</div><div class="step-body">The renewal re-read shows trajectory, and the terms move with it.</div></div>
     </div>
   </div>
 </section>
 
 <section style="background: var(--off-white-deep);">
   <div class="container">
-    <div class="section-num">§ 02 · Audiences</div>
-    <h2>Three tracks, one schema.</h2>
-    <p>Services are organised by where the capital decision is made. Pricing layer for counterparties. Resilience capital layer for the organisations they price.</p>
+    <div class="section-num">§ 06 · By audience</div>
+    <h2>One schema, read where the capital decision is made.</h2>
+    <p>The product is one; the buyer is three. Each reads the same evidence and prices a different decision.</p>
 
     <div class="audiences">
-
       <div class="audience">
-        <div class="audience-tag">Track 01</div>
-        <div class="audience-title">Corporates</div>
-        <div class="audience-layer">Layer 3 · Resilience capital</div>
+        <div class="audience-tag">Insurance sector · Layer 2</div>
+        <div class="audience-title">Price against evidence, not attestation</div>
         <div class="audience-body">
-          <p>Service design for boards, audit committees and risk functions at the five capital moments. Governance evidence built to be read by insurers at renewal, lenders at refinancing, acquirers at exit and counsel at claim.</p>
-          <p>Engagements include <em>Dynamic Risk Maturity Assessment</em> (DRMA) and event-readiness work calibrated to the obligations a specific capital moment will test. Detailed scope held under NDA.</p>
+          <p>Underwriters, syndicates, brokers and reinsurers. D&amp;O, cyber and W&amp;I read against schema-conformant evidence at renewal, claim and exit. Affirmative AI cover and silent-exposure closure in scope.</p>
         </div>
+        <div class="audience-cta"><a href="mailto:djm@arkayarisk.com?subject=Insurer%20Pre-NDA%20Brief">Request the Insurer Brief →</a></div>
       </div>
 
       <div class="audience">
-        <div class="audience-tag">Track 02</div>
-        <div class="audience-title">Insurance sector</div>
-        <div class="audience-layer">Layer 2 · Pricing</div>
+        <div class="audience-tag">Finance sector · Layer 2</div>
+        <div class="audience-title">Read governance at signing, and through the hold</div>
         <div class="audience-body">
-          <p>Product design services to underwriters, syndicates, brokers and reinsurers. D&amp;O, cyber and W&amp;I pricing read against schema-conformant evidence. Affirmative AI cover and silent-exposure closure in scope.</p>
-          <p>Detailed service inventory and standing intelligence products held under NDA.</p>
+          <p>Acquirers, refinancing lenders, PE sponsors and diligence advisers. Evidence read against debt covenants and SPA triggers, covenant surveillance through the holding period, pre-exit readiness.</p>
         </div>
+        <div class="audience-cta"><a href="mailto:djm@arkayarisk.com?subject=Finance%20Pre-NDA%20Brief">Request the Finance Brief →</a></div>
       </div>
 
       <div class="audience">
-        <div class="audience-tag">Track 03</div>
-        <div class="audience-title">Finance sector</div>
-        <div class="audience-layer">Layer 2 · Pricing</div>
+        <div class="audience-tag">Corporates · Layer 3</div>
+        <div class="audience-title">Build the premium before the event tests it</div>
         <div class="audience-body">
-          <p>Product design services to acquirers, refinancing lenders, PE sponsors and diligence advisers. Governance evidence read at the moment of signing, covenant surveillance through the holding period, and pre-exit readiness.</p>
-          <p>Framework-level work on crystallisation cost across pricing and capital. Detailed methodology held under NDA.</p>
+          <p>Boards, audit committees and risk functions. A Dynamic Risk Maturity Assessment and event-readiness work calibrated to the obligations your next capital moment will test, built to be read by insurers, lenders and acquirers. Detailed scope held under NDA.</p>
         </div>
+        <div class="audience-cta"><a href="mailto:djm@arkayarisk.com?subject=Corporate%20Pre-NDA%20Brief">Request the Corporate Brief →</a></div>
       </div>
-
     </div>
   </div>
 </section>
 
 <section>
-  <div class="container-narrow">
-    <div class="section-num">§ 03 · The capital-event bridge</div>
-    <h2>Five Moments. The schema is read at each.</h2>
-    <p>
-      The capital-event bridge maps governance maturity to the five moments at which it is priced. Each moment has its own counterparty, its own decision and its own risk of misrepresentation. The schema is the common reading.
-    </p>
+  <div class="container">
+    <div class="section-num">§ 07 · What this replaces</div>
+    <h2>One word does most of the work: first-party.</h2>
+    <p>So the reader does not have to infer the distinction.</p>
 
-    <div class="moments">
+    <div class="compare">
+      <div class="ch">Today's instrument</div>
+      <div class="ch">What it sees</div>
+      <div class="ch">The Arkaya difference</div>
 
-      <div class="moments-row">
-        <div class="moment-name">Renewal</div>
-        <div class="moment-desc">D&amp;O, cyber and broader management liability cover. Carrier-side reading of governance evidence at the renewal cycle. <strong>Avoidance, exclusion bite</strong> and affirmative cover in scope.</div>
-      </div>
+      <div class="cl">GRC and AI-governance platforms</div>
+      <div class="cd">One discipline at audit cadence.</div>
+      <div class="cd"><strong>Every</strong> discipline, read continuously, at the speed decisions are made.</div>
 
-      <div class="moments-row">
-        <div class="moment-name">Claim</div>
-        <div class="moment-desc">Coverage determination at the moment of crystallisation. Defence counsel and claims handlers read the schema for representations made at inception against behaviour evidenced through the period. <strong>Rescission risk</strong> in scope.</div>
-      </div>
+      <div class="cl">Cyber-ratings and external scans</div>
+      <div class="cd">The perimeter, not the inside. The AI estate is carried by declaration.</div>
+      <div class="cd">First-party evidence of the insured's own estate, from inside.</div>
 
-      <div class="moments-row">
-        <div class="moment-name">Exit</div>
-        <div class="moment-desc">Acquirer due diligence and W&amp;I cover scope. Governance evidence at signing read against historic obligations. <strong>Enterprise value at sale</strong> and indemnity carve-outs in scope.</div>
-      </div>
+      <div class="cl">The underwriting questionnaire</div>
+      <div class="cd">The AI estate only through example questions put to the applicant.</div>
+      <div class="cd">A measured estate, captured at source and read against obligation.</div>
 
-      <div class="moments-row">
-        <div class="moment-name">Refinancing</div>
-        <div class="moment-desc">Lender pricing at execution. Governance evidence read against debt covenants and the events of default the facility codifies. <strong>All-in finance cost</strong> in scope.</div>
-      </div>
-
-      <div class="moments-row">
-        <div class="moment-name">Covenant surveillance</div>
-        <div class="moment-desc">Continuous reading through the holding period. Going-concern stress and covenant trigger calibration tested against actual control state. <strong>Standstill and acceleration risk</strong> in scope.</div>
-      </div>
-
+      <div class="cl">Rating agencies</div>
+      <div class="cd">A summary judgment, issued and trusted.</div>
+      <div class="cd">Observable primitives the counterparty prices itself. No score issued.</div>
     </div>
 
-    <div class="bridge">
-      <div class="bridge-title">The bridge</div>
-      <div class="bridge-formula">
-        Schema-conformant evidence <em>→</em> Counterparty pricing <em>→</em> Resilience capital
-      </div>
-      <p class="bridge-note">
-        The same eight-field schema is read at every moment. The reading differs by counterparty. The price differs by what the reading reveals. Resilience capital follows.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<section style="background: var(--off-white-deep);">
-  <div class="container-narrow">
-    <div class="section-num">§ 04 · Engagement</div>
-    <h2>How services are delivered.</h2>
-    <p>
-      Engagements proceed through a structured pre-NDA sequence: a brief setting out the architectural fit, a paper specifying the Layer 1 interface in operational detail, and a post-NDA package covering the specific capital event in scope. <strong>Evidence comes from exercise, not existence.</strong>
-    </p>
-    <p>
-      The discipline that holds the architecture together is that <em>schema decisions are not commercial decisions</em>. The services rest on the integrity of the schema, not the other way round. Detailed service inventory, methodology and commercial terms held under the NDA.
-    </p>
-    <p>
-      To commence, contact <a href="mailto:djm@arkayarisk.com" style="color: var(--bronze); text-decoration: none; border-bottom: 1px solid var(--bronze-line);">djm@arkayarisk.com</a>.
+    <p style="margin-top: 26px;">
+      The single-domain AI governance platforms each optimise within the AI discipline at the cadence they inherited. None runs every governance discipline at the velocity the environment now sets.
     </p>
   </div>
 </section>
 
-<section>
-  <div class="container-narrow">
-    <div class="section-num">§ 05 · Outcomes</div>
-    <h2>Four outcomes, each one evidenced.</h2>
-    <p>
-      These follow from the schema being read, not asserted. Each is priced on the record, before the event forces the test, not reconstructed after it.
-    </p>
-
-    <div class="moments">
-
-      <div class="moments-row">
-        <div class="moment-name">Governance Velocity</div>
-        <div class="moment-desc">Evidenced to <strong>keep pace</strong> with agentic-AI speed.</div>
-      </div>
-
-      <div class="moments-row">
-        <div class="moment-name">Pricing accuracy</div>
-        <div class="moment-desc">Risk is <strong>more accurately priced</strong> at each of the Five Pricing Moments.</div>
-      </div>
-
-      <div class="moments-row">
-        <div class="moment-name">Timing-risk window</div>
-        <div class="moment-desc">Timing-risk events are mapped so that the <strong>exposure window is compressed</strong>.</div>
-      </div>
-
-      <div class="moments-row">
-        <div class="moment-name">Dispute surface</div>
-        <div class="moment-desc">A contemporaneous, admissible record, read against where insurance, event of default and SPA trigger language lacks specificity, compresses the <strong>unfunded contingent liability</strong> that can arise and tests whether the risk-transfer instrument and its triggers perform as anticipated, before the event forces the test.</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="wtin">
+<section class="wtin" style="border-bottom: 1px solid var(--rule);">
   <div class="container-narrow">
     <div class="section-num">What this is not</div>
-    <h2>The boundaries of the schema.</h2>
-    <p class="wtin-lede">The discipline that calms a sophisticated reader is the explicit statement of what the architecture does not claim. Each line below is enforced structurally, not asserted.</p>
+    <h2>The boundaries of the product.</h2>
+    <p class="wtin-lede">The discipline that calms a sophisticated reader is the explicit statement of what the architecture does not claim. Each line is enforced structurally, not asserted.</p>
     <div class="wtin-list">
       <div class="wtin-item"><strong>Not a regulatory replacement.</strong> The schema is referenced, not adopted. Supervisors are not displaced.</div>
       <div class="wtin-item"><strong>Not an audit opinion.</strong> Engines emit evidence against obligation. They do not certify accounts.</div>
       <div class="wtin-item"><strong>Not a continuous-compliance certification.</strong> The record shows behaviour against obligation, not a pass mark.</div>
       <div class="wtin-item"><strong>Not a governance score.</strong> No rating, benchmark or score is issued from Layer 1. Counterparties price.</div>
+      <div class="wtin-item"><strong>Not a delegated underwriting authority.</strong> Pricing and the bind decision stay with the underwriter.</div>
       <div class="wtin-item"><strong>Does not replace board accountability.</strong> The board authors the Protocol and owns the decision.</div>
       <div class="wtin-item"><strong>Does not redefine accounting recognition thresholds.</strong> IAS 37 and ASC 450 stand. The schema surfaces the obligation earlier.</div>
     </div>
   </div>
 </section>
 
-<section class="demonstrator">
+<section>
   <div class="container-narrow">
-    <div class="section-num">§ 06 · The operating system</div>
-    <p class="demonstrator-lede">
-      The operating system is built.<br>
-      Demonstrable to qualified counterparties under NDA.
+    <div class="section-num">§ 08 · The retained share</div>
+    <h2>Where retention is by design, it can be financed.</h2>
+    <p>
+      Not every exposure is transferred. The deductible and coinsurance every programme keeps is retained by design.
     </p>
-    <figure class="loop-mark" aria-label="The Custos Loop brand mark. Protocol, Signal, HITL Decision, Evidence. Improvement is what it produces.">
-      <svg class="loop-mark-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img">
-        <text x="500" y="92" text-anchor="middle" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="17" fill="#C89358" letter-spacing="4.5" font-weight="600">THE CUSTOS LOOP</text>
-        <line x1="430" y1="108" x2="570" y2="108" stroke="#C89358" stroke-width="1.4"/>
-        <circle cx="500" cy="522" r="268" fill="none" stroke="#2A393C" stroke-width="3.4"/>
-        <g transform="translate(689.50,332.50) rotate(45)"><path d="M -10,-9 L 13,0 L -10,9 Z" fill="#2A393C"/></g>
-        <g transform="translate(689.50,711.50) rotate(135)"><path d="M -10,-9 L 13,0 L -10,9 Z" fill="#2A393C"/></g>
-        <g transform="translate(310.50,711.50) rotate(225)"><path d="M -10,-9 L 13,0 L -10,9 Z" fill="#2A393C"/></g>
-        <g transform="translate(310.50,332.50) rotate(315)"><path d="M -10,-9 L 13,0 L -10,9 Z" fill="#2A393C"/></g>
-        <circle cx="500" cy="254" r="9" fill="#C89358"/>
-        <text x="500" y="202" text-anchor="middle" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="20" font-weight="600" fill="#2A393C" letter-spacing="1.6">PROTOCOL</text>
-        <text x="500" y="225" text-anchor="middle" font-family="'Fraunces', Georgia, serif" font-size="14.5" font-style="italic" fill="#364748">authored by the board</text>
-        <circle cx="768" cy="522" r="9" fill="#C89358"/>
-        <text x="802" y="518" text-anchor="start" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="20" font-weight="600" fill="#2A393C" letter-spacing="1.6">SIGNAL</text>
-        <text x="802" y="540" text-anchor="start" font-family="'Fraunces', Georgia, serif" font-size="14.5" font-style="italic" fill="#364748">from live controls</text>
-        <circle cx="500" cy="790" r="9" fill="#C89358"/>
-        <text x="500" y="836" text-anchor="middle" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="20" font-weight="600" fill="#2A393C" letter-spacing="1.6">HITL DECISION</text>
-        <text x="500" y="859" text-anchor="middle" font-family="'Fraunces', Georgia, serif" font-size="14.5" font-style="italic" fill="#364748">the accountable judgment</text>
-        <circle cx="232" cy="522" r="9" fill="#C89358"/>
-        <text x="198" y="518" text-anchor="end" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="20" font-weight="600" fill="#2A393C" letter-spacing="1.6">EVIDENCE</text>
-        <text x="198" y="540" text-anchor="end" font-family="'Fraunces', Georgia, serif" font-size="14.5" font-style="italic" fill="#364748">captured against obligation</text>
-        <text x="500" y="545" text-anchor="middle" font-family="'Fraunces', Georgia, serif" font-size="62" font-weight="600" fill="#2A393C">Custos</text>
-        <text x="600" y="518" font-family="'Fraunces', Georgia, serif" font-size="23" fill="#C89358">&#8482;</text>
-        <line x1="430" y1="902" x2="570" y2="902" stroke="#C89358" stroke-width="1.4"/>
-        <text x="500" y="936" text-anchor="middle" font-family="'Fraunces', Georgia, serif" font-size="23" font-style="italic" fill="#364748">Improvement is what it produces.</text>
-      </svg>
-      <p class="loop-mark-note">
-        <strong>Protocol:</strong> board-authored executable. <strong>Signal:</strong> from live controls. <strong>HITL Decision:</strong> the act, named, not the role. <strong>Evidence:</strong> of the HITL decision against obligation. Improvement is what the loop produces.
+    <div class="up-card">
+      <div class="up-tag">The underwriting platform · from Centinel 10</div>
+      <div class="up-title">Contingent capital for the retained share.</div>
+      <p class="up-body">
+        The same evidence that keeps transfer available lets the share retained by design be financed as contingent capital, rather than absorbed by the balance sheet and left unprovided until it crystallises. The instrument heritage is XS Reserve, the excess-of-loss trade credit reserve that won a 2016 Business Insurance Innovation Award, now held within Centinel 10 Ltd.
       </p>
-    </figure>
-
-    <p class="demonstrator-rest">
-      To request a demonstration, contact <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a>.<br>
-      Access is gated and subject to qualification.
-    </p>
-    <p class="demonstrator-rest" style="margin-top: 16px;">
-      <a href="/infinity">Watch the trajectory →</a> — a public, illustrative teaser of Custos Infinity. Synthetic data, no score. The operating-system demonstrator itself stays gated; request access above.
-    </p>
+    </div>
   </div>
 </section>
 

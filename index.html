@@ -661,10 +661,27 @@
   }
   .founder-body p:last-child { margin-bottom: 0; }
 
+  /* Proposition band — commercial five-second payload */
+  .proposition { background: var(--off-white); color: var(--charcoal); padding: 84px 0 88px; border-top: 1px solid var(--rule); }
+  .prop-eyebrow { font-family: 'IBM Plex Sans', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--bronze); font-weight: 500; margin-bottom: 20px; }
+  .prop-line { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(26px, 3.6vw, 42px); line-height: 1.2; letter-spacing: -0.015em; color: var(--deep-teal); max-width: 920px; margin-bottom: 20px; }
+  .prop-line strong { font-weight: 600; }
+  .prop-sub { font-family: 'IBM Plex Sans', sans-serif; font-size: 17px; line-height: 1.6; color: var(--charcoal); max-width: 680px; }
+  .dependency { margin-top: 28px; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; letter-spacing: 0.3px; color: var(--slate-teal); max-width: 720px; }
+  .dependency strong { color: var(--deep-teal); font-weight: 600; }
+  .prop-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 34px; }
+  .prop-cta { font-family: 'IBM Plex Sans', sans-serif; font-size: 12.5px; letter-spacing: 1.6px; text-transform: uppercase; font-weight: 600; text-decoration: none; padding: 14px 24px; border-radius: 3px; transition: transform 200ms ease; }
+  .prop-cta.primary { background: var(--deep-teal); color: var(--off-white); }
+  .prop-cta.secondary { background: transparent; color: var(--deep-teal); border: 1px solid rgba(42, 57, 60, 0.25); }
+  .prop-cta:hover { transform: translateY(-2px); }
+  .flow-wrap { margin: 8px 0 40px; max-width: 1000px; }
+  .flow-svg { width: 100%; height: auto; display: block; }
+
   /* Mobile */
   @media (max-width: 760px) {
     .container { padding: 0 22px; }
     .hero { padding: 70px 0 60px 0; }
+    .proposition { padding: 52px 0 60px; }
     .hero-kicker { margin-bottom: 28px; }
     .meta-claim { padding: 44px 0 8px 0; }
     .meta-claim-inner { padding-left: 18px; }
@@ -693,6 +710,7 @@
     <nav>
       <a href="/schema">Schema</a>
       <a href="/solutions">Solutions</a>
+      <a href="/ecosystem">Ecosystem</a>
       <a href="/evidence">Evidence</a>
       <a href="/standard">The Standard</a>
     </nav>
@@ -715,6 +733,51 @@
     <p class="hero-bridge">
       Arkaya is building the evidence layer capital markets need to price it at the speed of agentic&nbsp;AI.<br>Governance becomes evidence a counterparty can underwrite against, not an assertion they price as risk.
     </p>
+  </div>
+</section>
+
+<section class="proposition">
+  <div class="container">
+    <div class="prop-eyebrow">What Arkaya does</div>
+    <p class="prop-line">Arkaya lets insurers and capital providers price governance <strong>continuously, on verifiable evidence</strong>, not on a once-a-year questionnaire.</p>
+    <p class="prop-sub">The first product is continuous covenant underwriting, with AI liability as the first class written against the schema.</p>
+
+    <div class="flow-wrap">
+      <svg class="flow-svg" viewBox="0 0 1000 210" role="img" aria-label="Governance evidence feeds underwriting, which sets capital, which sets enterprise value. Arkaya holds the evidence layer.">
+        <!-- arrows -->
+        <g stroke="#C89358" stroke-width="3" fill="#C89358">
+          <line x1="212" y1="85" x2="252" y2="85"/><path d="M252,78 L266,85 L252,92 Z"/>
+          <line x1="477" y1="85" x2="517" y2="85"/><path d="M517,78 L531,85 L517,92 Z"/>
+          <line x1="742" y1="85" x2="782" y2="85"/><path d="M782,78 L796,85 L782,92 Z"/>
+        </g>
+        <!-- node 1 (Arkaya) -->
+        <rect x="0" y="40" width="205" height="90" rx="4" fill="#C89358"/>
+        <text x="102" y="80" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="21" font-weight="600" fill="#2A393C">Governance</text>
+        <text x="102" y="106" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="21" font-weight="600" fill="#2A393C">evidence</text>
+        <text x="102" y="158" text-anchor="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12.5" fill="#364748" letter-spacing="0.4">Arkaya · the layer</text>
+        <!-- node 2 -->
+        <rect x="265" y="40" width="205" height="90" rx="4" fill="#ECEDE6" stroke="#2A393C" stroke-width="1.4"/>
+        <text x="367" y="80" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="21" font-weight="500" fill="#2A393C">Underwriting</text>
+        <text x="367" y="106" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="21" font-weight="500" fill="#2A393C">&amp; pricing</text>
+        <text x="367" y="158" text-anchor="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12.5" fill="#364748" letter-spacing="0.4">the counterparty reads it</text>
+        <!-- node 3 -->
+        <rect x="530" y="40" width="205" height="90" rx="4" fill="#ECEDE6" stroke="#2A393C" stroke-width="1.4"/>
+        <text x="632" y="93" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="21" font-weight="500" fill="#2A393C">Capital</text>
+        <text x="632" y="158" text-anchor="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12.5" fill="#364748" letter-spacing="0.4">cover · credit · terms</text>
+        <!-- node 4 -->
+        <rect x="795" y="40" width="205" height="90" rx="4" fill="#ECEDE6" stroke="#2A393C" stroke-width="1.4"/>
+        <text x="897" y="80" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="21" font-weight="500" fill="#2A393C">Enterprise</text>
+        <text x="897" y="106" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="21" font-weight="500" fill="#2A393C">value</text>
+        <text x="897" y="158" text-anchor="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="12.5" fill="#364748" letter-spacing="0.4">the price of the whole</text>
+      </svg>
+    </div>
+
+    <p class="dependency"><strong>GET</strong> is the open schema. <strong>Continuous covenant underwriting</strong> is the product that runs on it. The schema enables the product; the product is not a second, competing offer.</p>
+
+    <div class="prop-ctas">
+      <a href="/solutions" class="prop-cta primary">See the product</a>
+      <a href="/schema" class="prop-cta secondary">Read the schema</a>
+    </div>
   </div>
 </section>
 
@@ -780,9 +843,9 @@
         <span class="pillar-tag">Pillar two</span>
         <h3 class="pillar-title">Arkaya GET Solutions</h3>
         <p class="pillar-desc">
-          Commercial services that run on the schema. Product design for insurers, brokers, lenders, acquirers and reinsurers at the pricing layer. Corporate-side services at the five capital moments.
+          Continuous covenant underwriting, with AI liability as the first class. First-party evidence read into rating, retention, limit and capital, for insurers, lenders and acquirers at the pricing layer.
         </p>
-        <span class="pillar-go">See the solutions</span>
+        <span class="pillar-go">See the product</span>
       </a>
 
     </div>

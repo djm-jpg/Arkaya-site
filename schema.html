@@ -623,6 +623,7 @@
     <nav>
       <a href="/schema" class="active">Schema</a>
       <a href="/solutions">Solutions</a>
+      <a href="/ecosystem">Ecosystem</a>
       <a href="/evidence">Evidence</a>
       <a href="/standard">The Standard</a>
     </nav>
@@ -634,6 +635,7 @@
     <div class="eyebrow">Pillar one · Schema custody</div>
     <h1 class="page-title">Arkaya GET</h1>
     <p class="page-subtitle">The Governance Evidence Taxonomy. The schema counterparties read.</p>
+    <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16px; line-height:1.6; color:var(--charcoal); max-width:680px; margin-bottom:30px;">In plain terms: the shared format insurers, lenders and acquirers use to read a company&#8217;s governance as evidence, rather than take it on trust. Everything below is how that format works.</p>
     <div class="title-meta">
       <span>Open output</span>
       <span>Multi-engine by design</span>
@@ -789,8 +791,29 @@
 </section>
 
 <section>
+  <div class="container">
+    <div class="section-num">§ 03 · The domain layer</div>
+    <h2>Eight governance domains.</h2>
+    <p>
+      The schema organises by what an organisation governs, not what it is exposed to. A taxonomy of risk types is incomplete by construction: cyber was not a category a generation ago, AI was not one five years ago. Governance domains are stable. A new risk arrives as evidence inside an existing domain, not as a new domain. The board ranks the domains material to enterprise value; the counterparty calibrates the grade; each domain carries evidence on a four-grade ladder: <strong>Asserted, Attested, Evidenced, Verifiable</strong>.
+    </p>
+
+    <div class="fields">
+      <div class="field"><div class="field-num">Domain 01</div><div class="field-name">People &amp; culture</div><div class="field-desc">Key-person dependency, succession, competence, incentives, accountability, conduct, whistleblowing.</div></div>
+      <div class="field"><div class="field-num">Domain 02</div><div class="field-name">Strategy &amp; change</div><div class="field-desc">Governance of transformation, M&amp;A, major programmes and change execution.</div></div>
+      <div class="field"><div class="field-num">Domain 03</div><div class="field-name">Operations &amp; resilience</div><div class="field-desc">Operational continuity, resilience, process control, incident management.</div></div>
+      <div class="field"><div class="field-num">Domain 04</div><div class="field-name">Third party &amp; supply chain</div><div class="field-desc">Outsourcing, vendor and supply-chain governance, concentration, fourth-party exposure.</div></div>
+      <div class="field"><div class="field-num">Domain 05</div><div class="field-name">Financial &amp; capital</div><div class="field-desc">Capital adequacy, liquidity, solvency, treasury, collateral.</div></div>
+      <div class="field"><div class="field-num">Domain 06</div><div class="field-name">Regulatory &amp; conduct</div><div class="field-desc">Regulatory compliance, conduct, financial crime, market integrity.</div></div>
+      <div class="field"><div class="field-num">Domain 07</div><div class="field-name">Digital, data &amp; AI</div><div class="field-desc">Technology, cyber, data governance and quality, model and AI governance.</div></div>
+      <div class="field"><div class="field-num">Domain 08</div><div class="field-name">Legal &amp; contractual</div><div class="field-desc">Litigation, contractual exposure, intellectual property, sanctions, competition.</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="container-narrow">
-    <div class="section-num">§ 03 · Schema neutrality</div>
+    <div class="section-num">§ 04 · Schema neutrality</div>
     <p class="epigraph">"All I want to know is where I'm going to die, so I'll never go there."</p>
     <div class="epigraph-attr">— Charles Munger</div>
     <h2>Schema decisions are not commercial decisions.</h2>
@@ -808,7 +831,7 @@
 
 <section style="background: var(--off-white-deep);">
   <div class="container-narrow">
-    <div class="section-num">§ 04 · Engines and the schema interface</div>
+    <div class="section-num">§ 05 · Engines and the schema interface</div>
     <h2>How engines emit Layer 1 evidence.</h2>
     <p>
       Engines sit at the boundary between Layer 0 source systems and Layer 1 evidence. An engine is software that reads source telemetry and emits GET-conformant evidence at the cadence the schema requires. The cadence cannot be met by point-in-time review; the engines are AI engines by necessity, not by choice.
@@ -822,14 +845,14 @@
     </div>
 
     <p>
-      The GET Conformance Programme, run by the Custodian, certifies engines against the schema. The conformance suite and the reference adapter sit with the Custodian as part of that programme. Engines are tested for schema fidelity, and a certified engine can be substituted without breaking counterparty continuity. Custos is one certified engine; it and the other commercial engines sit at Layer 2. <em>Multi-engine by certification, not by accident.</em>
+      The GET Conformance Programme, run by the Custodian, certifies engines against the schema. The conformance suite and the reference adapter sit with the Custodian as part of that programme. Engines are tested for schema fidelity, and a certified engine can be substituted without breaking counterparty continuity. The ecosystem is named, not generic: Custos Infinity and Voyager AI are conformant engines, RiskHelm is the underwriting read surface, and Ethical Edge and XS Global sit at distribution and capacity, all at Layer 2 against the same Layer 1 contract. Where a programme retains risk by design, the underwriting platform from Centinel 10 finances the retained share as contingent capital. <em>Multi-engine by certification, not by accident.</em>
     </p>
   </div>
 </section>
 
 <section>
   <div class="container-narrow">
-    <div class="section-num">§ 05 · Architectural disciplines</div>
+    <div class="section-num">§ 06 · Architectural disciplines</div>
     <h2>The rules the schema enforces.</h2>
 
     <div class="discipline">
