@@ -94,6 +94,10 @@
   .audience-cta { margin-top: 18px; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 600; }
   .audience-cta a { color: var(--bronze); text-decoration: none; border-bottom: 1px solid var(--bronze-line); }
   .audience-cta a:hover { border-bottom-color: var(--bronze); }
+  .brief-form { margin-top: 18px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .brief-form input[type=email] { flex: 1 1 150px; min-width: 0; padding: 8px 10px; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; color: var(--charcoal); background: var(--off-white); border: 1px solid var(--rule); }
+  .brief-form button { font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 600; color: var(--bronze); background: none; border: none; border-bottom: 1px solid var(--bronze-line); padding: 8px 0; cursor: pointer; white-space: nowrap; }
+  .brief-form button:hover { border-bottom-color: var(--bronze); }
 
   /* Two-column row table (moments / ladder / economics) */
   .moments { display: grid; grid-template-columns: 280px 1fr; gap: 0; margin-top: 32px; border: 1px solid var(--rule); background: var(--rule); }
@@ -217,7 +221,7 @@
       The covenant schema is class-agnostic. AI liability is the first class written against it, because the underwriting asymmetry is largest there. Cyber, technology E&amp;O, D&amp;O and operational resilience follow.
     </p>
     <div class="pull">
-      <p>The governance premium is what you earn by making it observable.</p>
+      <p>The governance premium is what you earn by making it visible.</p>
     </div>
   </div>
 </section>
@@ -244,9 +248,9 @@
 <section>
   <div class="container">
     <div class="section-num">§ 03 · Why it pays</div>
-    <h2>Evidence moves the line between transfer and silent retention.</h2>
+    <h2>What the evidence moves.</h2>
     <p>
-      For the insurer, the value lands in five places. For the corporate, it is the cover and credit a counterparty will commit; withdraw it and the residual returns at once, unprovided until probability is high, sitting unfunded until it crystallises at full cost.
+      A premium is three things: the expected loss, the loading for uncertainty, and the cost of the capital held behind the policy. Evidence acts on the second and third. The uncertainty loading is the documented surcharge underwriters apply to risks they cannot characterise; reduce the ambiguity and the loading falls. At Lloyd's the capital channel flows in full: every syndicate's capital requirement is calculated on an internal model, so evidence that narrows the distribution reaches the capital held, not only the rate.
     </p>
 
     <div class="moments">
@@ -256,6 +260,32 @@
       <div class="moments-row"><div class="moment-name">Smaller dispute surface</div><div class="moment-desc">A contemporaneous record <strong>compresses the causation dispute</strong> at claim.</div></div>
       <div class="moments-row"><div class="moment-name">Aggregation visible</div><div class="moment-desc">AI exposure is <strong>aggregated across the book</strong> for exposure management and reinsurance.</div></div>
     </div>
+    <div class="compare" style="margin-top: 32px;">
+      <div class="ch">Seat</div>
+      <div class="ch">What the evidence moves</div>
+      <div class="ch">Where it lands</div>
+
+      <div class="cl">Insurer</div>
+      <div class="cd">The ambiguity loading on an uncharacterisable class, the capital held behind the book, and the loss-adjustment and dispute cost at claim.</div>
+      <div class="cd"><strong>Loss ratio, capital efficiency, expense ratio</strong></div>
+
+      <div class="cl">Lender</div>
+      <div class="cd">The spread priced on incomplete information and the margin of conservatism capitalised against weak data.</div>
+      <div class="cd"><strong>Net interest margin, RWA</strong></div>
+
+      <div class="cl">Acquirer / sponsor</div>
+      <div class="cd">The diligence discount, the escrow and holdback, the W&amp;I retention, and covenant surveillance through the hold.</div>
+      <div class="cd"><strong>Entry price, retained exposure, IRR</strong></div>
+
+      <div class="cl">Corporate (the user)</div>
+      <div class="cd">The premium and terms at renewal, the all-in cost at refinancing, the recovery and dispute surface at claim, and the price of the whole at exit.</div>
+      <div class="cd"><strong>Cost of risk, cost of capital, enterprise value</strong></div>
+
+      <div class="cl">Reinsurer / HoldCo / GP</div>
+      <div class="cd">Sight of a delegated portfolio's true control state between periodic reviews.</div>
+      <div class="cd"><strong>Aggregation risk, capacity deployed</strong></div>
+    </div>
+
     <p style="margin-top: 24px;">
       It also widens the writable book. An applicant below an honest floor gets a route to becoming insurable rather than excluded.
     </p>
@@ -333,7 +363,13 @@
         <div class="audience-body">
           <p>Underwriters, syndicates, brokers and reinsurers. D&amp;O, cyber and W&amp;I read against schema-conformant evidence at renewal, claim and exit. Affirmative AI cover and silent-exposure closure in scope.</p>
         </div>
-        <div class="audience-cta"><a href="mailto:djm@arkayarisk.com?subject=Insurer%20Pre-NDA%20Brief">Request the Insurer Brief →</a></div>
+        <form name="brief-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="brief-form">
+          <input type="hidden" name="form-name" value="brief-request">
+          <input type="hidden" name="seat" value="insurer">
+          <p style="display:none;"><label>Leave blank: <input name="bot-field"></label></p>
+          <input type="email" name="email" placeholder="Work email" required aria-label="Work email">
+          <button type="submit">Request the Insurer Brief →</button>
+        </form>
       </div>
 
       <div class="audience">
@@ -342,7 +378,13 @@
         <div class="audience-body">
           <p>Acquirers, refinancing lenders, PE sponsors and diligence advisers. Evidence read against debt covenants and SPA triggers, covenant surveillance through the holding period, pre-exit readiness.</p>
         </div>
-        <div class="audience-cta"><a href="mailto:djm@arkayarisk.com?subject=Finance%20Pre-NDA%20Brief">Request the Finance Brief →</a></div>
+        <form name="brief-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="brief-form">
+          <input type="hidden" name="form-name" value="brief-request">
+          <input type="hidden" name="seat" value="finance">
+          <p style="display:none;"><label>Leave blank: <input name="bot-field"></label></p>
+          <input type="email" name="email" placeholder="Work email" required aria-label="Work email">
+          <button type="submit">Request the Finance Brief →</button>
+        </form>
       </div>
 
       <div class="audience">
@@ -351,7 +393,13 @@
         <div class="audience-body">
           <p>Boards, audit committees and risk functions. A Dynamic Risk Maturity Assessment and event-readiness work calibrated to the obligations your next capital moment will test, built to be read by insurers, lenders and acquirers. Detailed scope held under NDA.</p>
         </div>
-        <div class="audience-cta"><a href="mailto:djm@arkayarisk.com?subject=Corporate%20Pre-NDA%20Brief">Request the Corporate Brief →</a></div>
+        <form name="brief-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="brief-form">
+          <input type="hidden" name="form-name" value="brief-request">
+          <input type="hidden" name="seat" value="corporate">
+          <p style="display:none;"><label>Leave blank: <input name="bot-field"></label></p>
+          <input type="email" name="email" placeholder="Work email" required aria-label="Work email">
+          <button type="submit">Request the Corporate Brief →</button>
+        </form>
       </div>
     </div>
   </div>
