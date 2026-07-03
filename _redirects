@@ -1,7 +1,7 @@
 /doctrine     /doctrine.html     200
 /schema       /schema.html       200
 /solutions    /solutions.html    200
-/ecosystem    /ecosystem.html    200
+/ecosystem    /solutions    301
 /founder      /founder.html      200
 /evidence     /evidence.html     200
 /standard     /standard.html     200
