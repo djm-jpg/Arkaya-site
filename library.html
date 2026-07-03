@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Arkaya Library. The papers behind the architecture.</title>
+<meta name="description" content="The Arkaya Library. The Arkaya Thesis in four papers: the economic mechanism, the cross-market generalisation, the implementation architecture, and the answer to the strongest objections. Each carries its Production Note.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep-teal:#2A393C;--slate-teal:#364748;--bronze:#C89358;
+    --bronze-soft:rgba(200,147,88,0.18);--bronze-line:rgba(200,147,88,0.45);
+    --charcoal:#41413F;--off-white:#F4F5EF;--off-white-soft:rgba(244,245,239,0.78);
+    --off-white-faint:rgba(244,245,239,0.55);--rule:rgba(42,57,60,0.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,sans-serif;font-weight:400;line-height:1.55;color:var(--off-white);background:var(--deep-teal);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+  ::selection{background:var(--bronze);color:var(--deep-teal)}
+  .container{width:100%;max-width:1180px;margin:0 auto;padding:0 28px}
+  header{background:var(--off-white);padding:18px 0;border-bottom:1px solid var(--rule);position:relative;z-index:10}
+  .header-inner{display:flex;justify-content:space-between;align-items:center}
+  .logo-link{display:inline-block;line-height:0}
+  .logo{height:76px;width:auto;display:block}
+  nav{display:flex;gap:28px;align-items:center}
+  nav a{font-family:'IBM Plex Sans',sans-serif;color:var(--charcoal);text-decoration:none;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;font-weight:500;transition:color 200ms ease;position:relative;padding:4px 0}
+  nav a.active{color:var(--bronze)}nav a:hover{color:var(--bronze)}
+  nav a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--bronze);transition:width 200ms ease}
+  nav a.active::after,nav a:hover::after{width:100%}
+  .eyebrow{font-family:'IBM Plex Sans',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--bronze);font-weight:500;margin-bottom:18px}
+  /* hero */
+  .f-hero{padding:96px 0 80px 0;position:relative}
+  .f-hero::before{content:'';position:absolute;top:0;right:-10%;width:65%;height:100%;background:radial-gradient(ellipse at top right,rgba(200,147,88,0.08) 0%,transparent 60%);pointer-events:none}
+  .f-name{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(34px,6vw,64px);line-height:1.05;letter-spacing:-0.02em;color:var(--off-white);margin-bottom:14px}
+  .f-role{font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--bronze);font-weight:500;margin-bottom:34px}
+  .f-witness{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(18px,2.1vw,24px);line-height:1.45;color:var(--off-white-soft);max-width:880px;border-left:2px solid var(--bronze);padding-left:24px}
+  /* glance + timeline on off-white */
+  .light{background:var(--off-white);color:var(--charcoal);padding:88px 0}
+  .light .eyebrow{margin-bottom:18px}
+  .glance-card{border-top:3px solid var(--bronze);background:rgba(42,57,60,0.03);padding:30px 34px;max-width:880px}
+  .glance-card p{font-family:'IBM Plex Sans',sans-serif;font-size:16.5px;line-height:1.7;color:var(--charcoal)}
+  .tl{margin-top:8px;max-width:880px;position:relative;padding-left:30px}
+  .tl::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:var(--bronze-line)}
+  .tl-row{position:relative;margin-bottom:22px}
+  .tl-row::before{content:'';position:absolute;left:-30px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--bronze)}
+  .tl-row.now::before{background:var(--deep-teal);box-shadow:0 0 0 4px var(--bronze-soft)}
+  .tl-yr{font-family:'Fraunces',serif;font-weight:500;font-size:18px;color:var(--deep-teal);letter-spacing:-0.005em}
+  .tl-tx{font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.55;color:var(--charcoal);margin-top:2px;max-width:740px}
+  /* narrative on teal */
+  .dark{background:var(--deep-teal);padding:90px 0;border-top:1px solid var(--bronze-soft)}
+  .narr{max-width:840px}
+  .narr-block{margin-bottom:38px}
+  .narr-block:last-child{margin-bottom:0}
+  .narr-eyebrow{font-family:'IBM Plex Sans',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--bronze);font-weight:500;margin-bottom:14px}
+  .narr-body{border-left:2px solid var(--bronze);padding-left:24px}
+  .narr-body p{font-family:'IBM Plex Sans',sans-serif;font-size:15.5px;line-height:1.7;color:var(--off-white-soft);margin-bottom:16px}
+  .narr-body p:last-child{margin-bottom:0}
+  /* closing */
+  .closing{background:var(--deep-teal);padding:100px 0;text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--bronze-soft)}
+  .closing::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60%;height:1px;background:var(--bronze-line);max-width:200px}
+  .closing p{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,4vw,48px);line-height:1.3;letter-spacing:-0.015em;color:var(--off-white);margin-top:40px;max-width:760px;margin-left:auto;margin-right:auto;padding:0 20px}
+  footer{background:var(--deep-teal);padding:56px 0 40px 0;border-top:1px solid rgba(200,147,88,0.18)}
+  .footer-inner{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:28px}
+  .footer-meta{font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:var(--off-white-faint);line-height:1.7;letter-spacing:0.4px}
+  .footer-meta a{color:var(--bronze);text-decoration:none}.footer-meta a:hover{text-decoration:underline}
+  .footer-legal{font-family:'IBM Plex Sans',sans-serif;font-size:10px;color:rgba(244,245,239,0.35);letter-spacing:1.4px;text-transform:uppercase}
+  .footer-standard{font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;color:var(--off-white-faint);letter-spacing:0.6px;margin-top:18px;padding-top:18px;border-top:1px solid rgba(200,147,88,0.12)}
+  .footer-standard a{color:var(--bronze);text-decoration:none}
+  @media (max-width:760px){.container{padding:0 22px}.f-hero{padding:64px 0 56px}.light,.dark{padding:60px 0}.header-inner{flex-wrap:wrap;gap:14px}.logo{height:56px}nav{gap:18px}.closing{padding:70px 0}}
+
+  .paper-card{background:var(--off-white);border:1px solid var(--rule);border-left:3px solid var(--bronze);border-radius:4px;padding:28px 30px;margin-bottom:18px}
+  .paper-num{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--bronze);margin-bottom:8px}
+  .paper-title{font-family:'Fraunces',serif;font-size:22px;color:var(--deep-teal);margin-bottom:8px}
+  .paper-desc{font-size:15px;line-height:1.65;color:var(--charcoal);max-width:680px;margin-bottom:12px}
+  .paper-note{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate-teal)}
+  .lib-form{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0 8px}
+  .lib-form input[type=email]{flex:1 1 280px;padding:12px 14px;border:1px solid var(--rule);background:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:15px}
+  .lib-form button{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--bronze);background:none;border:none;border-bottom:1px solid var(--bronze);padding:10px 2px;cursor:pointer}
+  .dl{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--bronze);text-decoration:none;border-bottom:1px solid var(--bronze);padding-bottom:2px}
+  #libLinks{display:none}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="/" class="logo-link" aria-label="Arkaya Risk. Building resilience capital.">
+      <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
+    </a>
+    <nav>
+      <a href="/doctrine">Doctrine</a>
+      <a href="/schema">Schema</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/evidence">Evidence</a>
+      <a href="/standard">Standard</a>
+    </nav>
+  </div>
+</header>
+
+<section class="f-hero">
+  <div class="container">
+    <div class="eyebrow">The library</div>
+    <h1 class="f-name" style="font-size:clamp(30px,4.5vw,52px)">The papers behind the architecture.</h1>
+    <p class="f-witness">One argument in four papers: the economic mechanism, the cross-market generalisation, the implementation architecture, and the answer to the strongest objections. Every paper carries numbered references with substantive content and a Production Note recording how it was made.</p>
+  </div>
+</section>
+
+<section class="light">
+  <div class="container">
+    <div class="eyebrow">Start here</div>
+    <div class="paper-card">
+      <div class="paper-num">The Arkaya Thesis · summary</div>
+      <div class="paper-title">One argument in four papers.</div>
+      <p class="paper-desc">The short introduction: the problem, the idea, and where each paper fits. No equations, no detailed economics.</p>
+      <a class="dl" href="/arkaya-thesis-summary.pdf" download>Download the summary &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="light" style="padding-top:0">
+  <div class="container">
+    <div class="eyebrow">The papers</div>
+    <div class="paper-card">
+      <div class="paper-num">Paper 1</div>
+      <div class="paper-title">Why governance becomes a financial signal.</div>
+      <p class="paper-desc">The centrepiece. The economics of verifiable evidence as a signal priced across insurance, credit, trade finance and diligence: the Financial Signal Principle stated and defended.</p>
+    </div>
+    <div class="paper-card">
+      <div class="paper-num">Paper 2</div>
+      <div class="paper-title">Why evidence changes insurance pricing.</div>
+      <p class="paper-desc">The first and sharpest instance. How evidence acts on the uncertainty loading and the capital held behind the policy, from the single risk to the reinsurance programme.</p>
+    </div>
+    <div class="paper-card">
+      <div class="paper-num">Paper 4</div>
+      <div class="paper-title">The governance signal under radical uncertainty.</div>
+      <p class="paper-desc">The objections taken seriously. Taleb, Marks and Soros conceded rather than contested, and the claim restated at the size that survives them.</p>
+    </div>
+
+    <p style="margin-top:26px">The papers are free. A work email is the only ask; the sender learns who is reading.</p>
+    <form name="library-download" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="lib-form" id="libForm">
+      <input type="hidden" name="form-name" value="library-download">
+      <p style="display:none"><label>Leave blank: <input name="bot-field"></label></p>
+      <input type="email" name="email" placeholder="Work email" required aria-label="Work email">
+      <button type="submit">Request the papers &rarr;</button>
+    </form>
+    <p class="paper-note" id="libError" style="display:none;color:#8a3b3b">Something failed in transit. Email djm@arkayarisk.com and the papers will come by return.</p>
+    <div id="libLinks">
+      <p style="margin-top:10px"><a class="dl" href="/arkaya-paper-1-financial-signal.pdf" download>Paper 1 &rarr;</a>&nbsp;&nbsp;&nbsp;<a class="dl" href="/arkaya-paper-2-insurance-pricing.pdf" download>Paper 2 &rarr;</a>&nbsp;&nbsp;&nbsp;<a class="dl" href="/arkaya-paper-4-radical-uncertainty.pdf" download>Paper 4 &rarr;</a></p>
+    </div>
+    <script>
+      document.getElementById('libForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        var f = e.target;
+        fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(new FormData(f)).toString()})
+          .then(function(r){ if(!r.ok) throw 0; f.style.display='none'; document.getElementById('libLinks').style.display='block'; })
+          .catch(function(){ document.getElementById('libError').style.display='block'; });
+      });
+    </script>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="container">
+    <p>Resilience Capital is built.<br>Not asserted.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-meta">
+        Arkaya Risk · being formed in the UK; presently a trading style of Centinel 10 Ltd<br>
+        Founded by David J McKibbin<br>
+        <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a> · +44 (0)7972 178759<br>
+        <a href="https://www.linkedin.com/in/davidmckibbin" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="footer-legal">Arkaya Risk is currently being formed in the UK and is presently a trading style of Centinel 10 Ltd, a company registered in England and Wales (no. 11906608).<br>
+        © 2026 Centinel 10 Ltd. All rights reserved.</div>
+    </div>
+    <div class="footer-standard">
+      Produced under Arkaya Production Standard v1. Methodology: <a href="/standard">arkayarisk.com/standard</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
