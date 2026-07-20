@@ -293,6 +293,12 @@
   }
   .lr-row.reverify .lr-ver { color: #C89358; transition: color 300ms ease; }
 
+
+  .nav-group { display: flex; gap: inherit; align-items: center; }
+  .nav-group + .nav-group { border-left: 1px solid rgba(200,147,88,0.4); padding-left: 22px; margin-left: -6px; }
+  .nav-glabel { font-family: 'IBM Plex Sans', sans-serif; font-size: 8.5px; letter-spacing: 1.8px; text-transform: uppercase; font-weight: 600; color: rgba(65,65,63,0.45); margin-right: 2px; }
+  @media (max-width: 900px) { .nav-glabel { display: none; } .nav-group + .nav-group { padding-left: 14px; } }
+
   @media (max-width: 760px) {
     .worked { grid-template-columns: 1fr; }
     .container, .container-narrow { padding: 0 22px; }
@@ -316,12 +322,20 @@
     <a href="/" class="logo-link" aria-label="Arkaya Risk. Building resilience capital.">
       <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
     </a>
-    <nav>
-      <a href="/doctrine">Doctrine</a>
-      <a href="/schema">Schema</a>
-      <a href="/solutions" class="active">Solutions</a>
-      <a href="/evidence">Evidence</a>
-      <a href="/standard">Standard</a>
+    <nav aria-label="Site">
+      <span class="nav-group"><span class="nav-glabel">Understand</span>
+<a href="/solutions" class="active">Solutions</a>
+<a href="/evidence">Evidence</a>
+</span>
+      <span class="nav-group"><span class="nav-glabel">Evaluate</span>
+<a href="/schema">Schema</a>
+<a href="/doctrine">Doctrine</a>
+<a href="/founder">Founders</a>
+</span>
+      <span class="nav-group"><span class="nav-glabel">Verify</span>
+<a href="/library">Library</a>
+<a href="/standard">Standard</a>
+</span>
     </nav>
   </div>
 </header>
@@ -539,9 +553,10 @@
   </div>
 </section>
 
-<section>
+<section id="test">
   <div class="container">
     <div class="section-num">§ 05 · The test</div>
+    <h2>The falsification condition.</h2>
     <p>
       The claim is falsifiable and held as a hypothesis: an evidenced counterparty obtains measurably better terms than an otherwise identical unevidenced one. The result is pending. The experiment is a carrier pilot, and the invitation is open to the desks that can run it. If the evidence does not move the terms, the thesis fails on its own stated ground.
     </p>
@@ -565,6 +580,16 @@
       <div class="step"><div class="step-num">03</div><div class="step-name">First underwriting decision</div><div class="step-body">The carrier reads the record into rating, retention and limit at inception.</div></div>
       <div class="step"><div class="step-num">04</div><div class="step-name">First measurable value</div><div class="step-body">The renewal re-read shows trajectory, and the terms move with it.</div></div>
     </div>
+
+    <div class="up-card" style="margin-top:44px;">
+      <div class="up-tag">The shape of the engagement</div>
+      <div class="up-title">What you get, and what stays yours.</div>
+      <p class="up-body" style="margin-bottom:14px;"><strong>The deliverable</strong> is the evidence feed and the record read at the desk: first-party evidence of the AI estate, measured against an eligibility floor at inception and monitored across the term.</p>
+      <p class="up-body" style="margin-bottom:14px;"><strong>The record is the insured's.</strong> Portability is a schema property: evidence generated against the schema moves with the insured across engines, insurers and capital events without re-basing. No vendor, and not Arkaya, holds it captive.</p>
+      <p class="up-body" style="margin-bottom:14px;"><strong>The pilot</strong> is the §05 experiment run on a live desk: the floor at inception, the term monitored, the terms offered compared against the unevidenced book. If the evidence does not move the terms, the thesis fails on its own stated ground.</p>
+      <p class="up-body"><strong>Detailed scope, implementation timelines and pricing</strong> sit in the post-NDA package: working session, sprint map, term sheet.</p>
+    </div>
+
   </div>
 </section>
 
@@ -715,8 +740,9 @@
   <div class="container footer-inner">
     <div class="footer-meta">
       Arkaya Risk · being formed in the UK; presently a trading style of Centinel 10 Ltd<br>
-      Founded by David J McKibbin<br>
+      Founded by David J McKibbin and Simon Hudson<br>
       <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a> · +44 (0)7972 178759<br>
+        <a href="mailto:smh@arkayarisk.com">smh@arkayarisk.com</a> · +1 (914) 309-6397<br>
       <a href="https://www.linkedin.com/in/davidmckibbin" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div class="footer-legal">

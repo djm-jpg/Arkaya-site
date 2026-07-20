@@ -23,7 +23,7 @@
 <meta name="twitter:title" content="Arkaya Risk. AI governance evidence capital markets can price.">
 <meta name="twitter:description" content="AI risk is being excluded, not priced. Arkaya supplies continuous first-party governance evidence: the open record insurers, lenders and acquirers read to price it.">
 <meta name="twitter:image" content="https://arkayarisk.com/og-card.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Arkaya Risk", "legalName": "Centinel 10 Ltd", "url": "https://arkayarisk.com/", "logo": "https://arkayarisk.com/arkaya-logo-sm.png", "slogan": "Governability infrastructure for the autonomous economy", "description": "AI risk is being excluded, not priced. Arkaya supplies continuous first-party governance evidence: the open record insurers, lenders and acquirers read to price it.", "email": "djm@arkayarisk.com", "founder": {"@type": "Person", "name": "David J McKibbin", "jobTitle": "Founder", "sameAs": "https://www.linkedin.com/in/davidmckibbin"}, "sameAs": ["https://www.linkedin.com/in/davidmckibbin"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Arkaya Risk", "legalName": "Centinel 10 Ltd", "url": "https://arkayarisk.com/", "logo": "https://arkayarisk.com/arkaya-logo-sm.png", "slogan": "Governability infrastructure for the autonomous economy", "description": "AI risk is being excluded, not priced. Arkaya supplies continuous first-party governance evidence: the open record insurers, lenders and acquirers read to price it.", "email": "djm@arkayarisk.com", "founder": [{"@type": "Person", "name": "David J McKibbin", "jobTitle": "Co-Founder", "sameAs": "https://www.linkedin.com/in/davidmckibbin"}, {"@type": "Person", "name": "Simon Hudson", "jobTitle": "Co-Founder"}], "sameAs": ["https://www.linkedin.com/in/davidmckibbin"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -818,6 +818,12 @@
   }
   .lr-row.reverify .lr-ver { color: #C89358; transition: color 300ms ease; }
 
+
+  .nav-group { display: flex; gap: inherit; align-items: center; }
+  .nav-group + .nav-group { border-left: 1px solid rgba(200,147,88,0.4); padding-left: 22px; margin-left: -6px; }
+  .nav-glabel { font-family: 'IBM Plex Sans', sans-serif; font-size: 8.5px; letter-spacing: 1.8px; text-transform: uppercase; font-weight: 600; color: rgba(65,65,63,0.45); margin-right: 2px; }
+  @media (max-width: 900px) { .nav-glabel { display: none; } .nav-group + .nav-group { padding-left: 14px; } }
+
   /* Mobile */
   @media (max-width: 760px) {
     .container { padding: 0 22px; }
@@ -848,12 +854,20 @@
     <a href="/" class="logo-link" aria-label="Arkaya Risk. Building resilience capital.">
       <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
     </a>
-    <nav>
-      <a href="/doctrine">Doctrine</a>
-      <a href="/schema">Schema</a>
-      <a href="/solutions">Solutions</a>
-      <a href="/evidence">Evidence</a>
-      <a href="/standard">Standard</a>
+    <nav aria-label="Site">
+      <span class="nav-group"><span class="nav-glabel">Understand</span>
+<a href="/solutions">Solutions</a>
+<a href="/evidence">Evidence</a>
+</span>
+      <span class="nav-group"><span class="nav-glabel">Evaluate</span>
+<a href="/schema">Schema</a>
+<a href="/doctrine">Doctrine</a>
+<a href="/founder">Founders</a>
+</span>
+      <span class="nav-group"><span class="nav-glabel">Verify</span>
+<a href="/library">Library</a>
+<a href="/standard">Standard</a>
+</span>
     </nav>
   </div>
 </header>
@@ -957,6 +971,16 @@
       <a href="/solutions" class="prop-cta primary">See the product</a>
       <a href="/schema" class="prop-cta secondary">Read the schema</a>
     </div>
+  </div>
+</section>
+
+
+<section style="background:var(--deep-teal);color:var(--off-white);padding:64px 0;border-top:1px solid rgba(200,147,88,0.18);">
+  <div class="container">
+    <div style="font-family:'IBM Plex Sans',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--bronze);font-weight:600;margin-bottom:18px;">The test</div>
+    <p style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(20px,2.6vw,28px);line-height:1.4;letter-spacing:-0.005em;color:var(--off-white);max-width:920px;margin:0 0 14px;">The claim is held as a hypothesis with its failure condition stated: an evidenced counterparty obtains measurably better terms than an otherwise identical unevidenced one.</p>
+    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:16px;line-height:1.6;color:var(--off-white-soft);max-width:720px;margin:0 0 26px;">If the evidence does not move the terms, the thesis fails on its own stated ground. The experiment is a carrier pilot, and the invitation is open.</p>
+    <a href="/solutions#test" style="display:inline-block;font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;text-decoration:none;padding:13px 22px;border-radius:3px;background:var(--bronze);color:var(--deep-teal);">Run the experiment</a>
   </div>
 </section>
 
@@ -1072,12 +1096,13 @@
 <section class="founder">
   <div class="container">
     <div class="founder-inner">
-      <div class="founder-eyebrow">The founder</div>
-      <h2 class="founder-name">David J McKibbin</h2>
+      <div class="founder-eyebrow">The founders</div>
+      <h2 class="founder-name">David J McKibbin &amp; Simon Hudson</h2>
       <div class="founder-body">
         <p>Arkaya's thesis is witnessed, not constructed. David held the FCA Chief Executive controlled function (SMF1) and has met the five capital moments from every side of the table: underwriting, broking on the sell-side, and corporate on the buy-side.</p>
         <p>After 9/11 he underwrote an AIG property book co-underwritten 50:50 with Berkshire Hathaway's National Indemnity, from inside two diametrically opposed governance models, both AAA-rated at the time. One later required a government rescue. The other did not.</p>
-        <p style="margin-top:24px;"><a href="/founder" class="pillar-go">Read the full profile</a></p>
+        <p>David co-founded Arkaya with Simon Hudson, who is based in the United States.</p>
+        <p style="margin-top:24px;"><a href="/founder" class="pillar-go">Meet the founders</a></p>
       </div>
     </div>
   </div>
@@ -1096,8 +1121,9 @@
     <div class="footer-inner">
       <div class="footer-meta">
         Arkaya Risk · being formed in the UK; presently a trading style of Centinel 10 Ltd<br>
-        Founded by David J McKibbin<br>
+        Founded by David J McKibbin and Simon Hudson<br>
         <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a> · +44 (0)7972 178759<br>
+        <a href="mailto:smh@arkayarisk.com">smh@arkayarisk.com</a> · +1 (914) 309-6397<br>
         <a href="https://www.linkedin.com/in/davidmckibbin" target="_blank" rel="noopener">LinkedIn</a>
       </div>
       <div class="footer-legal">

@@ -86,7 +86,7 @@
   .footer-legal{font-family:'IBM Plex Sans',sans-serif;font-size:10px;color:rgba(244,245,239,0.35);letter-spacing:1.4px;text-transform:uppercase}
   .footer-standard{font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;color:var(--off-white-faint);letter-spacing:0.6px;margin-top:18px;padding-top:18px;border-top:1px solid rgba(200,147,88,0.12)}
   .footer-standard a{color:var(--bronze);text-decoration:none}
-  @media (max-width:760px){.container{padding:0 22px}.f-hero{padding:64px 0 56px}.light,.dark{padding:60px 0}.header-inner{flex-wrap:wrap;gap:14px}.logo{height:56px}nav{gap:18px}.closing{padding:70px 0}}
+    .nav-group { display: flex; gap: inherit; align-items: center; }  .nav-group + .nav-group { border-left: 1px solid rgba(200,147,88,0.4); padding-left: 22px; margin-left: -6px; }  .nav-glabel { font-family: 'IBM Plex Sans', sans-serif; font-size: 8.5px; letter-spacing: 1.8px; text-transform: uppercase; font-weight: 600; color: rgba(65,65,63,0.45); margin-right: 2px; }  @media (max-width: 900px) { .nav-glabel { display: none; } .nav-group + .nav-group { padding-left: 14px; } } @media (max-width:760px){.container{padding:0 22px}.f-hero{padding:64px 0 56px}.light,.dark{padding:60px 0}.header-inner{flex-wrap:wrap;gap:14px}.logo{height:56px}nav{gap:18px}.closing{padding:70px 0}}
 
   .paper-card{background:var(--off-white);border:1px solid var(--rule);border-left:3px solid var(--bronze);border-radius:4px;padding:28px 30px;margin-bottom:18px}
   .paper-num{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--bronze);margin-bottom:8px}
@@ -108,12 +108,20 @@
     <a href="/" class="logo-link" aria-label="Arkaya Risk. Building resilience capital.">
       <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
     </a>
-    <nav>
-      <a href="/doctrine">Doctrine</a>
-      <a href="/schema">Schema</a>
-      <a href="/solutions">Solutions</a>
-      <a href="/evidence">Evidence</a>
-      <a href="/standard">Standard</a>
+    <nav aria-label="Site">
+      <span class="nav-group"><span class="nav-glabel">Understand</span>
+<a href="/solutions">Solutions</a>
+<a href="/evidence">Evidence</a>
+</span>
+      <span class="nav-group"><span class="nav-glabel">Evaluate</span>
+<a href="/schema">Schema</a>
+<a href="/doctrine">Doctrine</a>
+<a href="/founder">Founders</a>
+</span>
+      <span class="nav-group"><span class="nav-glabel">Verify</span>
+<a href="/library" class="active">Library</a>
+<a href="/standard">Standard</a>
+</span>
     </nav>
   </div>
 </header>
@@ -191,8 +199,9 @@
     <div class="footer-inner">
       <div class="footer-meta">
         Arkaya Risk · being formed in the UK; presently a trading style of Centinel 10 Ltd<br>
-        Founded by David J McKibbin<br>
+        Founded by David J McKibbin and Simon Hudson<br>
         <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a> · +44 (0)7972 178759<br>
+        <a href="mailto:smh@arkayarisk.com">smh@arkayarisk.com</a> · +1 (914) 309-6397<br>
         <a href="https://www.linkedin.com/in/davidmckibbin" target="_blank" rel="noopener">LinkedIn</a>
       </div>
       <div class="footer-legal">Arkaya Risk is currently being formed in the UK and is presently a trading style of Centinel 10 Ltd, a company registered in England and Wales (no. 11906608).<br>
