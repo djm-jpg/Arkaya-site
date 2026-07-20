@@ -4,8 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Arkaya ecosystem. One operation, read from a finite set of seats.</title>
-<meta name="description" content="Why the breadth works. One governance-evidence operation read from three roles, Subject, Supervisor and Pricer. The schema is open and stewarded independently; multiple engines emit against it; any engine can be substituted. The layer the market is priced through.">
-<meta name="keywords" content="Arkaya ecosystem, governance evidence, Subject Supervisor Pricer, Layer 1, Layer 2, multi-engine, schema independence, infrastructure, capital stack, resilience capital">
+<meta name="description" content="One governance-evidence operation read from three roles: Subject, Supervisor and Pricer. The schema is open and independently stewarded; multiple engines emit against it.">
+<link rel="canonical" href="https://arkayarisk.com/solutions">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arkaya Risk">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="The Arkaya ecosystem. One operation, read from a finite set of seats.">
+<meta property="og:description" content="One governance-evidence operation read from three roles: Subject, Supervisor and Pricer. The schema is open and independently stewarded; multiple engines emit against it.">
+<meta property="og:url" content="https://arkayarisk.com/solutions">
+<meta property="og:image" content="https://arkayarisk.com/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Arkaya Risk. Make the autonomous economy governable, and therefore priceable.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Arkaya ecosystem. One operation, read from a finite set of seats.">
+<meta name="twitter:description" content="One governance-evidence operation read from three roles: Subject, Supervisor and Pricer. The schema is open and independently stewarded; multiple engines emit against it.">
+<meta name="twitter:image" content="https://arkayarisk.com/og-card.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -97,6 +114,12 @@
   .footer-meta a:hover { text-decoration: underline; }
   .footer-legal { font-family: 'IBM Plex Sans', sans-serif; font-size: 10px; color: rgba(244, 245, 239, 0.35); letter-spacing: 1.4px; text-transform: uppercase; }
 
+
+  .nav-group { display: flex; gap: inherit; align-items: center; }
+  .nav-group + .nav-group { border-left: 1px solid rgba(200,147,88,0.4); padding-left: 22px; margin-left: -6px; }
+  .nav-glabel { font-family: 'IBM Plex Sans', sans-serif; font-size: 8.5px; letter-spacing: 1.8px; text-transform: uppercase; font-weight: 600; color: rgba(65,65,63,0.45); margin-right: 2px; }
+  @media (max-width: 900px) { .nav-glabel { display: none; } .nav-group + .nav-group { padding-left: 14px; } }
+
   @media (max-width: 760px) {
     .container, .container-narrow { padding: 0 22px; }
     .title-block { padding: 60px 0 44px 0; }
@@ -118,13 +141,20 @@
     <a href="/" class="logo-link" aria-label="Arkaya Risk. Building resilience capital.">
       <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
     </a>
-    <nav>
-      <a href="/doctrine">Doctrine</a>
-      <a href="/schema">Schema</a>
-      <a href="/solutions">Solutions</a>
-      
-      <a href="/evidence">Evidence</a>
-      <a href="/standard">Standard</a>
+    <nav aria-label="Site">
+      <span class="nav-group"><span class="nav-glabel">Understand</span>
+<a href="/solutions" class="active">Solutions</a>
+<a href="/evidence">Evidence</a>
+</span>
+      <span class="nav-group"><span class="nav-glabel">Evaluate</span>
+<a href="/schema">Schema</a>
+<a href="/doctrine">Doctrine</a>
+<a href="/founder">Founders</a>
+</span>
+      <span class="nav-group"><span class="nav-glabel">Verify</span>
+<a href="/library">Library</a>
+<a href="/standard">Standard</a>
+</span>
     </nav>
   </div>
 </header>
@@ -243,8 +273,9 @@
   <div class="container footer-inner">
     <div class="footer-meta">
       Arkaya Risk · being formed in the UK; presently a trading style of Centinel 10 Ltd<br>
-      Founded by David J McKibbin<br>
+      Founded by David J McKibbin and Simon Hudson<br>
       <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a> · +44 (0)7972 178759<br>
+        <a href="mailto:smh@arkayarisk.com">smh@arkayarisk.com</a> · +1 (914) 309-6397<br>
       <a href="https://www.linkedin.com/in/davidmckibbin" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div class="footer-legal">

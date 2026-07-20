@@ -3,9 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arkaya GET. The Governance Evidence Taxonomy.</title>
-<meta name="description" content="Arkaya GET. The Governance Evidence Taxonomy. Eight-field schema for evidence of governance. Open. Observable. Multi-engine. Cryptographically verifiable. The schema counterparties read to price governance risk. The evidence standard for governability.">
-<meta name="keywords" content="Governance Evidence Taxonomy, GET, schema authority, governance evidence, eight-field schema, observable primitives, GET conformance, multi-engine certification, schema neutrality, Dynamic Risk Maturity Assessment, DRMA, capital markets, W3C precedent">
+<title>The Governance Evidence Taxonomy (GET). The open schema capital markets read to price governance risk.</title>
+<meta name="description" content="The open, machine-readable schema for governance evidence across every domain, from AI to supply chain. Eight observable fields, cryptographically verifiable, no score issued.">
+<link rel="canonical" href="https://arkayarisk.com/schema">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arkaya Risk">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="The Governance Evidence Taxonomy (GET). The open schema capital markets read to price governance risk.">
+<meta property="og:description" content="The open, machine-readable schema for governance evidence across every domain, from AI to supply chain. Eight observable fields, cryptographically verifiable, no score issued.">
+<meta property="og:url" content="https://arkayarisk.com/schema">
+<meta property="og:image" content="https://arkayarisk.com/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Arkaya Risk. Make the autonomous economy governable, and therefore priceable.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Governance Evidence Taxonomy (GET). The open schema capital markets read to price governance risk.">
+<meta name="twitter:description" content="The open, machine-readable schema for governance evidence across every domain, from AI to supply chain. Eight observable fields, cryptographically verifiable, no score issued.">
+<meta name="twitter:image" content="https://arkayarisk.com/og-card.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -566,6 +583,12 @@
     text-transform: uppercase;
   }
 
+
+  .nav-group { display: flex; gap: inherit; align-items: center; }
+  .nav-group + .nav-group { border-left: 1px solid rgba(200,147,88,0.4); padding-left: 22px; margin-left: -6px; }
+  .nav-glabel { font-family: 'IBM Plex Sans', sans-serif; font-size: 8.5px; letter-spacing: 1.8px; text-transform: uppercase; font-weight: 600; color: rgba(65,65,63,0.45); margin-right: 2px; }
+  @media (max-width: 900px) { .nav-glabel { display: none; } .nav-group + .nav-group { padding-left: 14px; } }
+
   /* Mobile */
   @media (max-width: 760px) {
     .container, .container-narrow { padding: 0 22px; }
@@ -620,12 +643,20 @@
     <a href="/" class="logo-link" aria-label="Arkaya Risk. Building resilience capital.">
       <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
     </a>
-    <nav>
-      <a href="/doctrine">Doctrine</a>
-      <a href="/schema" class="active">Schema</a>
-      <a href="/solutions">Solutions</a>
-      <a href="/evidence">Evidence</a>
-      <a href="/standard">Standard</a>
+    <nav aria-label="Site">
+      <span class="nav-group"><span class="nav-glabel">Understand</span>
+<a href="/solutions">Solutions</a>
+<a href="/evidence">Evidence</a>
+</span>
+      <span class="nav-group"><span class="nav-glabel">Evaluate</span>
+<a href="/schema" class="active">Schema</a>
+<a href="/doctrine">Doctrine</a>
+<a href="/founder">Founders</a>
+</span>
+      <span class="nav-group"><span class="nav-glabel">Verify</span>
+<a href="/library">Library</a>
+<a href="/standard">Standard</a>
+</span>
     </nav>
   </div>
 </header>
@@ -856,6 +887,21 @@
     <p>
       The schema's independence is institutional, not asserted. Under the Schema Independence Charter, no commercial counterparty and no commercial function inside Arkaya may overrule a schema decision, and schema custody is not a revenue line: there is no fee for inclusion and no paid tier of the schema. Arkaya is Custodian of the schema and Founding Assessor; on handover to the Custos Foundation the assessor function devolves to accredited labs, while the Custodian role persists. Regulators reference such standards; they do not adopt them, and the regulator polices the structure of a rating, not its substance.
     </p>
+
+    <div style="border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin-top:36px;max-width:800px;">
+      <div style="background:var(--deep-teal);padding:14px 24px;">
+        <span style="font-family:'IBM Plex Sans',sans-serif;font-size:11px;letter-spacing:2.4px;text-transform:uppercase;font-weight:600;color:var(--off-white);">The independence architecture</span>
+      </div>
+      <div style="height:3px;background:var(--bronze);"></div>
+      <div style="padding:24px 26px;background:var(--off-white);">
+        <p style="font-family:'Fraunces',serif;font-style:italic;font-size:16.5px;line-height:1.5;color:var(--deep-teal);margin:0 0 12px;">&#8220;No commercial counterparty and no commercial function inside Arkaya may overrule a schema decision.&#8221;</p>
+        <p style="font-family:'Fraunces',serif;font-style:italic;font-size:16.5px;line-height:1.5;color:var(--deep-teal);margin:0 0 18px;">&#8220;Schema custody is not a revenue line. There is no fee for inclusion, no priority path for a paying counterparty, no expedited primitive, and no commercial tier of the schema.&#8221;</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--slate-teal);margin:0 0 18px;">Schema Independence Charter, operative clauses.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.6;color:var(--charcoal);margin:0 0 10px;"><strong style="color:var(--deep-teal);">Custody devolves to the Custos Foundation on four milestone gates:</strong> first pilot completed; first independent assessor accredited; first non-Arkaya engine implementation operational at Level 1 conformance; first annual publication cycle completed. Indicative timing 2029 at earliest.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;line-height:1.6;color:var(--charcoal);margin:0;">On handover the assessor function devolves to accredited labs; the Custodian role persists with the Foundation. Independence asserted is not independence enforced: the Charter governs the institution that holds the schema.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -973,8 +1019,9 @@
   <div class="container footer-inner">
     <div class="footer-meta">
       Arkaya Risk · being formed in the UK; presently a trading style of Centinel 10 Ltd<br>
-      Founded by David J McKibbin<br>
+      Founded by David J McKibbin and Simon Hudson<br>
       <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a> · +44 (0)7972 178759<br>
+        <a href="mailto:smh@arkayarisk.com">smh@arkayarisk.com</a> · +1 (914) 309-6397<br>
       <a href="https://www.linkedin.com/in/davidmckibbin" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div class="footer-legal">
