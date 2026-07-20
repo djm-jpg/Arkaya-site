@@ -3,8 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What a governance evidence record looks like. Arkaya Risk.</title>
-<meta name="description" content="The format of a governance evidence record: the eight observable fields, the states its exception field can hold, and how a counterparty reads it. An illustrative template, not a client record and not a result.">
+<title>What an AI governance evidence record looks like. Arkaya Risk.</title>
+<meta name="description" content="The format of a governance evidence record: eight observable fields, the exception states, and how an underwriter or lender reads it. An illustrative template; no client data, no score issued.">
+<link rel="canonical" href="https://arkayarisk.com/evidence">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arkaya Risk">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="What an AI governance evidence record looks like. Arkaya Risk.">
+<meta property="og:description" content="The format of a governance evidence record: eight observable fields, the exception states, and how an underwriter or lender reads it. An illustrative template; no client data, no score issued.">
+<meta property="og:url" content="https://arkayarisk.com/evidence">
+<meta property="og:image" content="https://arkayarisk.com/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Arkaya Risk. Make the autonomous economy governable, and therefore priceable.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What an AI governance evidence record looks like. Arkaya Risk.">
+<meta name="twitter:description" content="The format of a governance evidence record: eight observable fields, the exception states, and how an underwriter or lender reads it. An illustrative template; no client data, no score issued.">
+<meta name="twitter:image" content="https://arkayarisk.com/og-card.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -202,6 +220,41 @@
   </div>
 </section>
 
+
+<section class="light" style="padding-top:0">
+  <div class="container">
+    <div class="eyebrow">Provenance</div>
+    <h2 class="sec-title">The chain of custody, end to end.</h2>
+    <figure style="margin:0;max-width:1000px;" aria-label="Provenance chain: source system to engine to signing key to sealed record to counterparty. Chain of custody preserved end to end; the counterparty verifies from the sealed record.">
+      <svg viewBox="0 0 1000 190" style="width:100%;height:auto;display:block;" role="img">
+        <title>The provenance chain</title>
+        <g stroke="#C89358" stroke-width="3" fill="#C89358">
+          <line x1="172" y1="72" x2="192" y2="72"/><path d="M192,65 L205,72 L192,79 Z"/>
+          <line x1="377" y1="72" x2="397" y2="72"/><path d="M397,65 L410,72 L397,79 Z"/>
+          <line x1="582" y1="72" x2="602" y2="72"/><path d="M602,65 L615,72 L602,79 Z"/>
+          <line x1="787" y1="72" x2="807" y2="72"/><path d="M807,65 L820,72 L807,79 Z"/>
+        </g>
+        <rect x="10" y="36" width="160" height="72" rx="4" fill="#ECEDE6" stroke="#2A393C" stroke-width="1.4"/>
+        <text x="90" y="79" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="17" font-weight="500" fill="#2A393C">Source system</text>
+        <text x="90" y="136" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="11.5" fill="#364748">telemetry at source</text>
+        <rect x="215" y="36" width="160" height="72" rx="4" fill="#ECEDE6" stroke="#2A393C" stroke-width="1.4"/>
+        <text x="295" y="79" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="17" font-weight="500" fill="#2A393C">Engine</text>
+        <text x="295" y="136" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="11.5" fill="#364748">emits against the schema</text>
+        <rect x="420" y="36" width="160" height="72" rx="4" fill="#ECEDE6" stroke="#2A393C" stroke-width="1.4"/>
+        <text x="500" y="79" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="17" font-weight="500" fill="#2A393C">Signing key</text>
+        <text x="500" y="136" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="11.5" fill="#364748">custody preserved</text>
+        <rect x="625" y="36" width="160" height="72" rx="4" fill="#2A393C"/>
+        <text x="705" y="79" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="17" font-weight="500" fill="#F4F5EF">Sealed record</text>
+        <text x="705" y="136" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="11.5" fill="#364748">cryptographically verifiable</text>
+        <rect x="830" y="36" width="160" height="72" rx="4" fill="#C89358"/>
+        <text x="910" y="79" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="17" font-weight="600" fill="#2A393C">Counterparty</text>
+        <text x="910" y="136" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="11.5" fill="#364748">reads, verifies, prices</text>
+        <text x="500" y="176" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="12" font-style="italic" fill="#364748">Field 06 in one picture. The counterparty verifies from the sealed record, without the vendor&#8217;s or Arkaya&#8217;s code.</text>
+      </svg>
+    </figure>
+  </div>
+</section>
+
 <section class="light" style="padding-top:0">
   <div class="container">
     <div class="eyebrow">The read</div>
@@ -248,6 +301,12 @@
     <div class="honesty">
       <p><strong>What this specimen is.</strong> A format, populated with example states, not a client record and not a result. The figures, obligations and exception states are placeholders chosen to show the shape a record takes; none are drawn from any engagement. No governance score is produced. A worked walkthrough, and in time a real anonymised record from a live engagement, is available to qualified counterparties under NDA. This page shows the form so a reader knows what to ask for.</p>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p><a href="/library" class="pillar-go" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--bronze);text-decoration:none;border-bottom:1px solid var(--bronze);padding-bottom:2px">Read the papers behind the architecture &rarr;</a></p>
   </div>
 </section>
 

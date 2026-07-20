@@ -3,9 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arkaya GET Solutions. Underwrite AI risk on evidence, not on a questionnaire.</title>
-<meta name="description" content="Continuous covenant underwriting: first-party evidence of an insured's AI estate, read into rating, retention, limit, recovery, reserving and capital. The first product, the economics, the evidence ladder, and how it starts.">
-<meta name="keywords" content="continuous covenant underwriting, AI liability, evidence-based underwriting, calibration, evidence ladder, governance evidence, governance premium, resilience capital, Five Moments, DRMA, Lloyd's">
+<title>AI liability insurance on evidence, not questionnaires. Arkaya GET Solutions.</title>
+<meta name="description" content="Continuous covenant underwriting for AI risk: a live, first-party evidence feed on the insured's AI estate, read into rating, retention, limit and capital. AI liability first.">
+<link rel="canonical" href="https://arkayarisk.com/solutions">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arkaya Risk">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="AI liability insurance on evidence, not questionnaires. Arkaya GET Solutions.">
+<meta property="og:description" content="Continuous covenant underwriting for AI risk: a live, first-party evidence feed on the insured's AI estate, read into rating, retention, limit and capital. AI liability first.">
+<meta property="og:url" content="https://arkayarisk.com/solutions">
+<meta property="og:image" content="https://arkayarisk.com/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Arkaya Risk. Make the autonomous economy governable, and therefore priceable.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI liability insurance on evidence, not questionnaires. Arkaya GET Solutions.">
+<meta name="twitter:description" content="Continuous covenant underwriting for AI risk: a live, first-party evidence feed on the insured's AI estate, read into rating, retention, limit and capital. AI liability first.">
+<meta name="twitter:image" content="https://arkayarisk.com/og-card.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -162,6 +179,120 @@
   .worked-offer .v { color: var(--deep-teal); font-weight: 600; text-align: right; }
   .worked-note { font-family: 'IBM Plex Sans', sans-serif; font-size: 12.5px; font-style: italic; line-height: 1.55; color: var(--slate-teal); margin-top: 18px; max-width: 720px; }
 
+
+  .lr {
+    background: #222F32;
+    border: 1px solid rgba(200, 147, 88, 0.35);
+    border-radius: 4px;
+    padding: 0;
+    max-width: 560px;
+    width: 100%;
+    box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.55);
+    font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+    overflow: hidden;
+  }
+  .lr-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    border-bottom: 1px solid rgba(200, 147, 88, 0.22);
+    background: rgba(0, 0, 0, 0.18);
+  }
+  .lr-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #C89358; flex: none;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .lr-dot { animation: lr-pulse 2.4s ease-in-out infinite; }
+    @keyframes lr-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(200, 147, 88, 0.5); }
+      50% { box-shadow: 0 0 0 6px rgba(200, 147, 88, 0); }
+    }
+  }
+  .lr-title {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 10.5px; letter-spacing: 1.8px; font-weight: 500;
+    color: #F4F5EF; text-transform: uppercase; white-space: nowrap;
+  }
+  .lr-meta {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 10px; letter-spacing: 0.6px;
+    color: rgba(244, 245, 239, 0.5);
+    margin-left: auto; white-space: nowrap;
+  }
+  .lr-rows { padding: 6px 0; }
+  .lr-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
+    align-items: center;
+    padding: 9px 18px;
+    border-bottom: 1px solid rgba(244, 245, 239, 0.06);
+  }
+  .lr-row:last-child { border-bottom: none; }
+  .lr-ob { min-width: 0; }
+  .lr-ob-name {
+    font-size: 12.5px; font-weight: 500; color: #F4F5EF;
+    line-height: 1.3; letter-spacing: 0.2px;
+  }
+  .lr-ob-src {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; color: rgba(244, 245, 239, 0.45);
+    letter-spacing: 0.4px; margin-top: 2px;
+  }
+  .lr-exc {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; letter-spacing: 1px; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 2px; white-space: nowrap;
+  }
+  .lr-exc.open, .lr-exc.review, .lr-exc.progress {
+    color: #C89358; border: 1px solid rgba(200, 147, 88, 0.5);
+    background: rgba(200, 147, 88, 0.1);
+  }
+  .lr-exc.clear {
+    color: rgba(244, 245, 239, 0.65); border: 1px solid rgba(244, 245, 239, 0.18);
+    background: transparent;
+  }
+  .lr-ver {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; letter-spacing: 0.8px;
+    color: rgba(244, 245, 239, 0.7); white-space: nowrap;
+  }
+  .lr-ver .tick { color: #C89358; font-weight: 700; }
+  .lr-foot {
+    border-top: 1px solid rgba(200, 147, 88, 0.22);
+    padding: 12px 18px 14px 18px;
+    background: rgba(0, 0, 0, 0.18);
+  }
+  .lr-prov {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; letter-spacing: 0.5px;
+    color: rgba(244, 245, 239, 0.5);
+    margin-bottom: 8px;
+  }
+  .lr-prov .arr { color: #C89358; }
+  .lr-seal {
+    display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 10.5px; letter-spacing: 0.5px; color: #F4F5EF;
+  }
+  .lr-sig { color: #C89358; }
+  .lr-verify { color: rgba(244, 245, 239, 0.85); }
+  .lr-verify .tick { color: #C89358; font-weight: 700; }
+  .lr-note {
+    font-size: 10px; letter-spacing: 0.6px;
+    color: rgba(244, 245, 239, 0.38);
+    margin-top: 10px; font-style: italic;
+  }
+  /* animation states: rows hidden until revealed when .lr-anim is set */
+  .lr-anim .lr-row, .lr-anim .lr-prov, .lr-anim .lr-seal { opacity: 0; transform: translateY(6px); }
+  .lr-anim .lr-row.on, .lr-anim .lr-prov.on, .lr-anim .lr-seal.on {
+    opacity: 1; transform: translateY(0);
+    transition: opacity 420ms ease, transform 420ms ease;
+  }
+  .lr-row.reverify .lr-ver { color: #C89358; transition: color 300ms ease; }
+
   @media (max-width: 760px) {
     .worked { grid-template-columns: 1fr; }
     .container, .container-narrow { padding: 0 22px; }
@@ -219,6 +350,50 @@
     <p>
       The covenant schema is class-agnostic. AI liability is the first class written against it, because the underwriting asymmetry is largest there. Cyber, technology E&amp;O, D&amp;O and operational resilience follow.
     </p>
+    <div style="margin:36px 0 10px;">
+<div class="lr" data-lr aria-label="Specimen governance evidence record, assembling live. Illustrative values only; no client data; no score issued.">
+  <div class="lr-head">
+    <span class="lr-dot" aria-hidden="true"></span>
+    <span class="lr-title">Governance evidence record</span>
+    <span class="lr-meta">GET-v1 · <span data-lr-clock>continuous</span></span>
+  </div>
+  <div class="lr-rows">
+    <div class="lr-row" data-exc="open">
+      <div class="lr-ob"><div class="lr-ob-name">Third-party access control</div><div class="lr-ob-src">helpdesk access logs · continuous</div></div>
+      <span class="lr-exc open">open</span>
+      <span class="lr-ver">signed <span class="tick">&#10003;</span></span>
+    </div>
+    <div class="lr-row" data-exc="clear">
+      <div class="lr-ob"><div class="lr-ob-name">Privileged-access review</div><div class="lr-ob-src">IAM change log · event-triggered</div></div>
+      <span class="lr-exc clear">clear</span>
+      <span class="lr-ver">signed <span class="tick">&#10003;</span></span>
+    </div>
+    <div class="lr-row" data-exc="review">
+      <div class="lr-ob"><div class="lr-ob-name">Model-override governance</div><div class="lr-ob-src">override log · monthly review</div></div>
+      <span class="lr-exc review">in review</span>
+      <span class="lr-ver">signed <span class="tick">&#10003;</span></span>
+    </div>
+    <div class="lr-row" data-exc="progress">
+      <div class="lr-ob"><div class="lr-ob-name">Incident notification</div><div class="lr-ob-src">regulator-of-record filing · on event</div></div>
+      <span class="lr-exc progress">in progress</span>
+      <span class="lr-ver">filed <span class="tick">&#10003;</span></span>
+    </div>
+    <div class="lr-row" data-exc="clear">
+      <div class="lr-ob"><div class="lr-ob-name">Board protocol adherence</div><div class="lr-ob-src">decision log vs protocol · monthly</div></div>
+      <span class="lr-exc clear">within bounds</span>
+      <span class="lr-ver">signed <span class="tick">&#10003;</span></span>
+    </div>
+  </div>
+  <div class="lr-foot">
+    <div class="lr-prov">provenance: source system <span class="arr">&#8594;</span> engine <span class="arr">&#8594;</span> signing key · chain of custody preserved</div>
+    <div class="lr-seal">
+      <span>record sealed · sig <span class="lr-sig" data-lr-sig>0x8f3ac21e9b47d05e</span></span>
+      <span class="lr-verify">verified offline <span class="tick">&#10003;</span> · score: null</span>
+    </div>
+    <div class="lr-note">Format specimen · illustrative values · no client data · no score issued</div>
+  </div>
+</div>
+    </div>
     <div class="pull">
       <p>The governance premium is what you earn by making it visible.</p>
     </div>
@@ -306,6 +481,34 @@
       <div class="moments-row"><div class="moment-name">Attested</div><div class="moment-desc">Rests on a named officer's signature.</div></div>
       <div class="moments-row"><div class="moment-name">Asserted</div><div class="moment-desc">Unproven. Attracts no credit.</div></div>
     </div>
+
+    <figure style="margin:36px 0 6px; max-width:860px;" aria-label="The evidence ladder. Four grades: Asserted attracts no credit; Attested rests on a named officer's signature; Evidenced rests on the produced record; Verifiable is independently checkable from the sealed record. Credit available rises with the grade.">
+      <svg viewBox="0 0 1000 320" style="width:100%;height:auto;display:block;" role="img">
+        <title>The evidence ladder</title>
+        <!-- rising credit line -->
+        <g stroke="#C89358" stroke-width="2" stroke-dasharray="6,6" fill="none">
+          <path d="M 130 218 L 370 178 L 610 138 L 850 98"/>
+        </g>
+        <path d="M 850 98 l -14 -3 l 10 11 z" fill="#C89358"/>
+        <text x="470" y="122" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11.5" letter-spacing="1.2" fill="#C89358">CREDIT AVAILABLE</text>
+        <!-- steps -->
+        <rect x="20"  y="230" width="220" height="60"  fill="none" stroke="#41413F" stroke-width="1.4" stroke-dasharray="4,4"/>
+        <rect x="260" y="200" width="220" height="90"  fill="#364748" opacity="0.55"/>
+        <rect x="500" y="160" width="220" height="130" fill="#2A393C"/>
+        <rect x="740" y="120" width="220" height="170" fill="#C89358"/>
+        <text x="130" y="262" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="20" font-weight="500" fill="#41413F">Asserted</text>
+        <text x="370" y="248" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="20" font-weight="500" fill="#F4F5EF">Attested</text>
+        <text x="610" y="228" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="20" font-weight="500" fill="#F4F5EF">Evidenced</text>
+        <text x="850" y="208" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="21" font-weight="600" fill="#2A393C">Verifiable</text>
+        <!-- glosses -->
+        <text x="130" y="308" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="12" fill="#41413F">Unproven. No credit.</text>
+        <text x="370" y="308" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="12" fill="#41413F">A named officer&#8217;s signature.</text>
+        <text x="610" y="308" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="12" fill="#41413F">The produced record.</text>
+        <text x="850" y="308" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="12" fill="#41413F">Checkable from the sealed record.</text>
+      </svg>
+      <figcaption style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;line-height:1.6;color:var(--slate-teal);margin-top:12px;padding-left:16px;border-left:2px solid var(--bronze);max-width:680px;">The evidence ladder. The grade caps the credit available beneath it; only the top grade is independently checkable without the vendor&#8217;s or Arkaya&#8217;s code.</figcaption>
+    </figure>
+
 
     <h2 style="margin-top: 56px;">What the read looks like at the desk.</h2>
     <p>Two insureds, same sector, same limit sought. One produces continuous, verifiable evidence of its AI estate; the other answers a periodic questionnaire. The underwriter reads the difference and prices it.</p>
@@ -523,5 +726,67 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var records = document.querySelectorAll('[data-lr]');
+  if (!records.length) return;
+  var HEX = '0123456789abcdef';
+  function scramble(el, finalText, dur) {
+    var start = null, len = finalText.length;
+    function frame(ts) {
+      if (!start) start = ts;
+      var p = Math.min(1, (ts - start) / dur), out = '';
+      for (var i = 0; i < len; i++) {
+        if (finalText[i] === 'x' && i === 1) { out += 'x'; continue; }
+        out += (i / len < p) ? finalText[i] : HEX[Math.floor(Math.random() * 16)];
+      }
+      el.textContent = out;
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+  function tickClock(el) {
+    function t() {
+      var d = new Date();
+      el.textContent = d.toISOString().slice(11, 19) + ' UTC';
+    }
+    t(); setInterval(t, 1000);
+  }
+  records.forEach(function (rec) {
+    var clock = rec.querySelector('[data-lr-clock]');
+    if (clock) tickClock(clock);
+    if (reduced) return;
+    rec.classList.add('lr-anim');
+    var seq = [].slice.call(rec.querySelectorAll('.lr-row'))
+      .concat([rec.querySelector('.lr-prov'), rec.querySelector('.lr-seal')]);
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        io.disconnect();
+        seq.forEach(function (el, i) {
+          setTimeout(function () {
+            el.classList.add('on');
+            if (el.classList.contains('lr-seal')) {
+              var sig = rec.querySelector('[data-lr-sig]');
+              if (sig) scramble(sig, sig.textContent, 1100);
+            }
+          }, 350 + i * 380);
+        });
+        // quiet life: one row re-verifies every 8s
+        setTimeout(function () {
+          var rows = rec.querySelectorAll('.lr-row');
+          setInterval(function () {
+            var r = rows[Math.floor(Math.random() * rows.length)];
+            r.classList.add('reverify');
+            setTimeout(function () { r.classList.remove('reverify'); }, 900);
+          }, 8000);
+        }, 350 + seq.length * 380);
+      });
+    }, { threshold: 0.35 });
+    io.observe(rec);
+  });
+})();
+</script>
 </body>
 </html>

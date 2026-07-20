@@ -3,27 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>David J McKibbin, Founder. Arkaya Risk.</title>
-<meta name="description" content="Arkaya's thesis is witnessed, not constructed. David J McKibbin held the FCA Chief Executive controlled function (SMF1) and has met the five capital moments from every side of the table.">
-<link rel="canonical" href="https://arkayarisk.com/founder">
+<title>The Arkaya Library. The research behind pricing AI governance risk.</title>
+<meta name="description" content="The Arkaya Thesis in four papers: the economic mechanism, the cross-market generalisation, the implementation architecture, and the answer to the strongest objections.">
+<link rel="canonical" href="https://arkayarisk.com/library">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Arkaya Risk">
 <meta property="og:locale" content="en_GB">
-<meta property="og:title" content="David J McKibbin, Founder. Arkaya Risk.">
-<meta property="og:description" content="Arkaya's thesis is witnessed, not constructed. David J McKibbin held the FCA Chief Executive controlled function (SMF1) and has met the five capital moments from every side of the table.">
-<meta property="og:url" content="https://arkayarisk.com/founder">
+<meta property="og:title" content="The Arkaya Library. The research behind pricing AI governance risk.">
+<meta property="og:description" content="The Arkaya Thesis in four papers: the economic mechanism, the cross-market generalisation, the implementation architecture, and the answer to the strongest objections.">
+<meta property="og:url" content="https://arkayarisk.com/library">
 <meta property="og:image" content="https://arkayarisk.com/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Arkaya Risk. Make the autonomous economy governable, and therefore priceable.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="David J McKibbin, Founder. Arkaya Risk.">
-<meta name="twitter:description" content="Arkaya's thesis is witnessed, not constructed. David J McKibbin held the FCA Chief Executive controlled function (SMF1) and has met the five capital moments from every side of the table.">
+<meta name="twitter:title" content="The Arkaya Library. The research behind pricing AI governance risk.">
+<meta name="twitter:description" content="The Arkaya Thesis in four papers: the economic mechanism, the cross-market generalisation, the implementation architecture, and the answer to the strongest objections.">
 <meta name="twitter:image" content="https://arkayarisk.com/og-card.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": {"@type": "Person", "name": "David J McKibbin", "jobTitle": "Founder, Arkaya Risk", "worksFor": {"@type": "Organization", "name": "Arkaya Risk", "url": "https://arkayarisk.com/"}, "sameAs": "https://www.linkedin.com/in/davidmckibbin"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -88,6 +87,18 @@
   .footer-standard{font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;color:var(--off-white-faint);letter-spacing:0.6px;margin-top:18px;padding-top:18px;border-top:1px solid rgba(200,147,88,0.12)}
   .footer-standard a{color:var(--bronze);text-decoration:none}
   @media (max-width:760px){.container{padding:0 22px}.f-hero{padding:64px 0 56px}.light,.dark{padding:60px 0}.header-inner{flex-wrap:wrap;gap:14px}.logo{height:56px}nav{gap:18px}.closing{padding:70px 0}}
+
+  .paper-card{background:var(--off-white);border:1px solid var(--rule);border-left:3px solid var(--bronze);border-radius:4px;padding:28px 30px;margin-bottom:18px}
+  .paper-num{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--bronze);margin-bottom:8px}
+  .paper-title{font-family:'Fraunces',serif;font-size:22px;color:var(--deep-teal);margin-bottom:8px}
+  .paper-desc{font-size:15px;line-height:1.65;color:var(--charcoal);max-width:680px;margin-bottom:12px}
+  .paper-note{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--slate-teal)}
+  .lib-form{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0 8px}
+  .lib-form input[type=email]{flex:1 1 280px;padding:12px 14px;border:1px solid var(--rule);background:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:15px}
+  .lib-form button{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--bronze);background:none;border:none;border-bottom:1px solid var(--bronze);padding:10px 2px;cursor:pointer}
+  .dl{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--bronze);text-decoration:none;border-bottom:1px solid var(--bronze);padding-bottom:2px}
+  #libLinks{display:none}
+
 </style>
 </head>
 <body>
@@ -109,73 +120,63 @@
 
 <section class="f-hero">
   <div class="container">
-    <div class="eyebrow">The founder</div>
-    <h1 class="f-name">David J McKibbin</h1>
-    <div class="f-role">Founder, Arkaya Risk · Former FCA SMF1</div>
-    <p class="f-witness">Arkaya's thesis is witnessed, not constructed. He has met the five capital moments from every side of the table: underwriting, broking on the sell-side, and corporate on the buy-side.</p>
+    <div class="eyebrow">The library</div>
+    <h1 class="f-name" style="font-size:clamp(30px,4.5vw,52px)">The papers behind the architecture.</h1>
+    <p class="f-witness">One argument in four papers: the economic mechanism, the cross-market generalisation, the implementation architecture, and the answer to the strongest objections. Every paper carries numbered references with substantive content and a Production Note recording how it was made.</p>
   </div>
 </section>
 
 <section class="light">
   <div class="container">
-    <div class="eyebrow">At a glance</div>
-    <div class="glance-card">
-      <p>David J McKibbin founded Arkaya Risk after four decades across the London insurance and structured trade credit market, industrial conglomerates and regulated financial services. He entered the market after the Big Bang of 1986, underwrote an energy and property portfolio including a post-9/11 AIG property book co-underwritten 50:50 with Berkshire Hathaway's National Indemnity. He witnessed governance failure at close range through the Greensill collapse at GFG Alliance, co-founded the award-winning XS Reserve trade credit instrument now held within Centinel 10 Ltd, and held the FCA Chief Executive controlled function (SMF1). Insurance was built as the financial canary that prices risk on evidence; compliance culture hollowed that function out; Arkaya uses AI to reinstate it.</p>
+    <div class="eyebrow">Start here</div>
+    <div class="paper-card">
+      <div class="paper-num">The Arkaya Thesis · summary</div>
+      <div class="paper-title">One argument in four papers.</div>
+      <p class="paper-desc">The short introduction: the problem, the idea, and where each paper fits. No equations, no detailed economics.</p>
+      <a class="dl" href="/arkaya-thesis-summary.pdf" download>Download the summary &rarr;</a>
     </div>
   </div>
 </section>
 
 <section class="light" style="padding-top:0">
   <div class="container">
-    <div class="eyebrow">Trajectory</div>
-    <div class="tl">
-      <div class="tl-row"><div class="tl-yr">1986</div><div class="tl-tx">Enters the London Market after the Big Bang; tariff pricing gives way to free-market risk assessment.</div></div>
-      <div class="tl-row"><div class="tl-yr">Early career</div><div class="tl-tx">Turns down Barings; it becomes the textbook governance collapse.</div></div>
-      <div class="tl-row"><div class="tl-yr">Post-9/11</div><div class="tl-tx">Nominated underwriter on an AIG property book co-underwritten 50:50 with National Indemnity, a Berkshire Hathaway company, written net.</div></div>
-      <div class="tl-row"><div class="tl-yr">2008</div><div class="tl-tx">AIG trade finance division; works with the firm's trade-receivables technology.</div></div>
-      <div class="tl-row"><div class="tl-yr">GFG Alliance</div><div class="tl-tx">Insurance Director and M&amp;A deal team; direct exposure to the Greensill collapse.</div></div>
-      <div class="tl-row"><div class="tl-yr">2016</div><div class="tl-tx">Co-founds XS Reserve; its excess-of-loss trade credit reserve instrument wins a Business Insurance Innovation Award.</div></div>
-      <div class="tl-row"><div class="tl-yr">SMF1</div><div class="tl-tx">Held the FCA Chief Executive controlled function, the most senior controlled role the regulator pre-approves.</div></div>
-      <div class="tl-row now"><div class="tl-yr">Now</div><div class="tl-tx">Founds Arkaya Risk; the intellectual property sits within Centinel 10 Ltd.</div></div>
+    <div class="eyebrow">The papers</div>
+    <div class="paper-card">
+      <div class="paper-num">Paper 1</div>
+      <div class="paper-title">Why governance becomes a financial signal.</div>
+      <p class="paper-desc">The centrepiece. The economics of verifiable evidence as a signal priced across insurance, credit, trade finance and diligence: the Financial Signal Principle stated and defended.</p>
     </div>
-  </div>
-</section>
+    <div class="paper-card">
+      <div class="paper-num">Paper 2</div>
+      <div class="paper-title">Why evidence changes insurance pricing.</div>
+      <p class="paper-desc">The first and sharpest instance. How evidence acts on the uncertainty loading and the capital held behind the policy, from the single risk to the reinsurance programme.</p>
+    </div>
+    <div class="paper-card">
+      <div class="paper-num">Paper 4</div>
+      <div class="paper-title">The governance signal under radical uncertainty.</div>
+      <p class="paper-desc">The objections taken seriously. Taleb, Marks and Soros conceded rather than contested, and the claim restated at the size that survives them.</p>
+    </div>
 
-<section class="dark">
-  <div class="container">
-    <div class="narr">
-      <div class="narr-block">
-        <div class="narr-eyebrow">The London Market</div>
-        <div class="narr-body">
-          <p>He entered the London Market after the Big Bang of 1986, as the reinsurance markets moved from tariff-rated pricing to genuine free-market risk assessment. The discipline he trained in was falsificationist before he would have called it that: the underwriter's job is not to find reasons a risk is sound, but to identify the condition that would prove it is not, price that condition, and decide whether the premium compensates. He turned down Barings at the start of his career; it became the textbook governance collapse.</p>
-        </div>
-      </div>
-      <div class="narr-block">
-        <div class="narr-eyebrow">9/11 and the AIG–Berkshire contrast</div>
-        <div class="narr-body">
-          <p>After 9/11 he was the nominated underwriter on an AIG property book co-underwritten 50:50 with National Indemnity, Berkshire Hathaway's vehicle for large and complex risk, written net account, to exploit the wholesale facultative capacity vacuum the attacks opened. Both AIG and Berkshire were AAA-rated at the time. He underwrote from inside two diametrically opposed business models.</p>
-          <p>AIG's discipline resided in Maurice Greenberg's personal oversight; when he was forced out in 2005 the architecture did not hold and the firm required the largest government bailout in financial history. Berkshire's discipline was structural: it charged more, wrote less, and retains a AA rating today. Governance as architecture versus governance as person. The difference was not capital.</p>
-        </div>
-      </div>
-      <div class="narr-block">
-        <div class="narr-eyebrow">GFG Alliance and Greensill</div>
-        <div class="narr-body">
-          <p>What followed was two decades of watching that discipline eroded, as abundant credit socialised the cost of being wrong and suppressed the feedback loop that should punish fragile risk management. His closest sight of governance failure came at GFG Alliance, where he served as Insurance Director and sat on the M&amp;A deal team during the group's rapid expansion. The Greensill exposure, and the collapse that followed, showed what happens when governance is asserted rather than demonstrated: the structure holds until it does not, and the rupture is never proportionate to the warning signs. The governance failure preceded the financial failure. It always does.</p>
-        </div>
-      </div>
-      <div class="narr-block">
-        <div class="narr-eyebrow">Building the instrument</div>
-        <div class="narr-body">
-          <p>In AIG's trade finance division in 2008 he worked on ABS/ABL transactions with the trade-receivables technology the firm had built and adopted. It was only selectively adopted in other finance houses depending on business culture, regulation and incentives. He co-founded XS Reserve with Alastair Malcolm; its excess-of-loss trade credit reserve instrument won a 2016 Business Insurance Innovation Award, and the intellectual property now sits within Centinel 10 Ltd, the company behind Arkaya. He held the FCA Chief Executive controlled function, the most senior controlled function the regulator pre-approves, before founding Arkaya.</p>
-        </div>
-      </div>
-      <div class="narr-block">
-        <div class="narr-eyebrow">The thesis</div>
-        <div class="narr-body">
-          <p>Insurance was designed as the financial canary, the risk signal that governs capital disbursement and makes economic growth legible. Compliance culture hollowed that function out, substituting documentation for assessment. Arkaya uses AI to reinstate the testing mechanism: making governance risk continuously visible, independently verifiable, and legible to the capital markets that need to price it. The instrument is built by someone who underwrote the difference and recognises how AI allows governance risk to now be priced before it crystallises, rather than hit investors after.</p>
-        </div>
-      </div>
+    <p style="margin-top:26px">The papers are free. A work email is the only ask; the sender learns who is reading.</p>
+    <form name="library-download" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="lib-form" id="libForm">
+      <input type="hidden" name="form-name" value="library-download">
+      <p style="display:none"><label>Leave blank: <input name="bot-field"></label></p>
+      <input type="email" name="email" placeholder="Work email" required aria-label="Work email">
+      <button type="submit">Request the papers &rarr;</button>
+    </form>
+    <p class="paper-note" id="libError" style="display:none;color:#8a3b3b">Something failed in transit. Email djm@arkayarisk.com and the papers will come by return.</p>
+    <div id="libLinks">
+      <p style="margin-top:10px"><a class="dl" href="/arkaya-paper-1-financial-signal.pdf" download>Paper 1 &rarr;</a>&nbsp;&nbsp;&nbsp;<a class="dl" href="/arkaya-paper-2-insurance-pricing.pdf" download>Paper 2 &rarr;</a>&nbsp;&nbsp;&nbsp;<a class="dl" href="/arkaya-paper-4-radical-uncertainty.pdf" download>Paper 4 &rarr;</a></p>
     </div>
+    <script>
+      document.getElementById('libForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        var f = e.target;
+        fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(new FormData(f)).toString()})
+          .then(function(r){ if(!r.ok) throw 0; f.style.display='none'; document.getElementById('libLinks').style.display='block'; })
+          .catch(function(){ document.getElementById('libError').style.display='block'; });
+      });
+    </script>
   </div>
 </section>
 
