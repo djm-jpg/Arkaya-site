@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arkaya Risk. AI governance evidence capital markets can price.</title>
+<meta name="description" content="AI risk is being excluded, not priced. Arkaya supplies continuous first-party governance evidence: the open record insurers, lenders and acquirers read to price it.">
+<link rel="canonical" href="https://arkayarisk.com/">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arkaya Risk">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Arkaya Risk. AI governance evidence capital markets can price.">
+<meta property="og:description" content="AI risk is being excluded, not priced. Arkaya supplies continuous first-party governance evidence: the open record insurers, lenders and acquirers read to price it.">
+<meta property="og:url" content="https://arkayarisk.com/">
+<meta property="og:image" content="https://arkayarisk.com/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Arkaya Risk. Make the autonomous economy governable, and therefore priceable.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Arkaya Risk. AI governance evidence capital markets can price.">
+<meta name="twitter:description" content="AI risk is being excluded, not priced. Arkaya supplies continuous first-party governance evidence: the open record insurers, lenders and acquirers read to price it.">
+<meta name="twitter:image" content="https://arkayarisk.com/og-card.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Arkaya Risk", "legalName": "Centinel 10 Ltd", "url": "https://arkayarisk.com/", "logo": "https://arkayarisk.com/arkaya-logo-sm.png", "slogan": "Governability infrastructure for the autonomous economy", "description": "AI risk is being excluded, not priced. Arkaya supplies continuous first-party governance evidence: the open record insurers, lenders and acquirers read to price it.", "email": "djm@arkayarisk.com", "founder": [{"@type": "Person", "name": "David J McKibbin", "jobTitle": "Co-Founder", "sameAs": "https://www.linkedin.com/in/davidmckibbin"}, {"@type": "Person", "name": "Simon Hudson", "jobTitle": "Co-Founder"}], "sameAs": ["https://www.linkedin.com/in/davidmckibbin"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-teal: #2A393C;
+    --slate-teal: #364748;
+    --bronze: #C89358;
+    --bronze-soft: rgba(200, 147, 88, 0.18);
+    --bronze-line: rgba(200, 147, 88, 0.45);
+    --charcoal: #41413F;
+    --off-white: #F4F5EF;
+    --off-white-soft: rgba(244, 245, 239, 0.78);
+    --off-white-faint: rgba(244, 245, 239, 0.55);
+    --rule: rgba(42, 57, 60, 0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--off-white);
+    background: var(--deep-teal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--bronze); color: var(--deep-teal); }
+
+  .container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* Header */
+  header {
+    background: var(--off-white);
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    z-index: 10;
+  }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-link {
+    display: inline-block;
+    line-height: 0;
+  }
+  .logo {
+    height: 76px;
+    width: auto;
+    display: block;
+  }
+  nav {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+  nav a {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--charcoal);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 200ms ease;
+    position: relative;
+    padding: 4px 0;
+  }
+  nav a.active { color: var(--bronze); }
+  nav a:hover { color: var(--bronze); }
+  nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background: var(--bronze);
+    transition: width 200ms ease;
+  }
+  nav a.active::after,
+  nav a:hover::after { width: 100%; }
+
+  /* Hero */
+  .hero {
+    padding: 110px 0 80px 0;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -10%;
+    width: 65%;
+    height: 100%;
+    background: radial-gradient(ellipse at top right, rgba(200, 147, 88, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-kicker {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(20px, 2.6vw, 28px);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+    color: var(--off-white);
+    max-width: 900px;
+    margin-bottom: 40px;
+  }
+  .hero-kicker .beat {
+    display: block;
+    opacity: 0;
+    animation: fadeUp 800ms ease forwards;
+  }
+  .hero-kicker .beat-1 { animation-delay: 200ms; }
+  .hero-kicker .beat-2 { animation-delay: 650ms; }
+  .hero-kicker .beat-3 { animation-delay: 1100ms; }
+  .hero-eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 500;
+    margin-bottom: 38px;
+    opacity: 0;
+    animation: fadeUp 700ms ease 1600ms forwards;
+  }
+  .hero-headline {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(24px, 4vw, 44px);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--off-white-soft);
+    max-width: 1180px;
+    margin-bottom: 44px;
+  }
+  .hero-headline .line {
+    display: block;
+    opacity: 0;
+    animation: fadeUp 1100ms ease forwards;
+  }
+  .hero-headline .line-1 { animation-delay: 2000ms; }
+  .hero-headline .line-2 { animation-delay: 2900ms; }
+  .hero-headline .line-3 { animation-delay: 3800ms; }
+  .hero-headline .third {
+    color: var(--off-white);
+    font-weight: 400;
+    font-size: 1.15em;
+    margin-top: 6px;
+  }
+  .hero-bridge {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(16px, 1.6vw, 20px);
+    line-height: 1.45;
+    color: var(--off-white-soft);
+    max-width: 1080px;
+    border-left: 2px solid var(--bronze);
+    padding-left: 22px;
+    opacity: 0;
+    animation: fadeUp 1000ms ease 4900ms forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Architecture section (the stack) */
+  .arch {
+    background: var(--off-white);
+    color: var(--charcoal);
+    padding: 96px 0 100px 0;
+    position: relative;
+  }
+  .arch-head {
+    margin-bottom: 56px;
+    max-width: 760px;
+  }
+  .arch-eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+  .arch-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(28px, 4.4vw, 46px);
+    line-height: 1.18;
+    letter-spacing: -0.015em;
+    color: var(--deep-teal);
+    margin-bottom: 20px;
+  }
+  .arch-lede {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    max-width: 640px;
+  }
+
+  /* Four-layer stack */
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 12px 0 0 0;
+    max-width: 980px;
+  }
+  .layer {
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 26px;
+    align-items: center;
+    padding: 22px 26px;
+    border-radius: 3px;
+    transition: transform 250ms ease, box-shadow 250ms ease;
+  }
+  .layer:hover {
+    transform: translateX(4px);
+  }
+  .layer-id {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(65, 65, 63, 0.55);
+  }
+  .layer-id strong {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.005em;
+    color: var(--deep-teal);
+    margin-top: 4px;
+  }
+  .layer-desc {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--charcoal);
+    font-weight: 400;
+  }
+  .layer-desc em {
+    color: var(--deep-teal);
+    font-style: normal;
+    font-weight: 500;
+  }
+  .layer-brand {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .brand-get-solutions {
+    background: rgba(42, 57, 60, 0.08);
+    color: var(--deep-teal);
+    border: 1px solid rgba(42, 57, 60, 0.18);
+  }
+  .brand-get {
+    background: var(--bronze);
+    color: var(--deep-teal);
+  }
+  .layer-3 { background: rgba(54, 71, 72, 0.04); border: 1px solid rgba(54, 71, 72, 0.10); }
+  .layer-2 { background: rgba(54, 71, 72, 0.05); border: 1px solid rgba(54, 71, 72, 0.13); }
+  .layer-1 { background: var(--bronze-soft); border: 1px solid var(--bronze-line); }
+  .layer-1 .layer-id strong { color: var(--deep-teal); }
+  .layer-0 { background: rgba(54, 71, 72, 0.04); border: 1px solid rgba(54, 71, 72, 0.10); }
+  .layer-0 .layer-brand-placeholder {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: rgba(65, 65, 63, 0.55);
+    letter-spacing: 0.2px;
+  }
+
+  .engine-boundary {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 26px;
+    padding: 12px 26px;
+    background: var(--deep-teal);
+    color: var(--off-white);
+    border-radius: 3px;
+    align-items: center;
+  }
+  .engine-boundary .boundary-label {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--bronze);
+  }
+  .engine-boundary .boundary-content {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    color: var(--off-white);
+    letter-spacing: 0.3px;
+  }
+  .engine-boundary .boundary-content strong {
+    font-weight: 600;
+    color: var(--off-white);
+  }
+
+  /* Meta-governance claim: between hero and pillars */
+  .meta-claim {
+    background: var(--off-white);
+    padding: 64px 0 12px 0;
+  }
+  .meta-claim-inner {
+    max-width: 880px;
+    border-left: 2px solid var(--bronze);
+    padding-left: 24px;
+  }
+  .meta-claim-line {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(20px, 2.4vw, 26px);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+    color: var(--deep-teal);
+    margin-bottom: 8px;
+  }
+  .meta-claim-line:last-child { margin-bottom: 0; }
+  .meta-claim-lede { font-weight: 500; }
+  .meta-claim-rest { font-weight: 400; }
+
+  /* Evidence band: priced after the event */
+  .evidence {
+    background: var(--off-white);
+    padding: 60px 0 8px 0;
+  }
+  .evidence-head {
+    max-width: 880px;
+    margin-bottom: 34px;
+  }
+  .evidence-eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .evidence-lede {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(18px, 2.1vw, 23px);
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--deep-teal);
+  }
+  .evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .evidence-card {
+    border-top: 3px solid var(--bronze);
+    background: rgba(42, 57, 60, 0.03);
+    padding: 28px 30px 30px 30px;
+  }
+  .evidence-tag {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--slate-teal);
+    margin-bottom: 16px;
+  }
+  .evidence-figure {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(34px, 4.4vw, 46px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--deep-teal);
+  }
+  .evidence-figure-label {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: var(--charcoal);
+    margin: 8px 0 18px 0;
+  }
+  .evidence-body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+  }
+  .evidence-source {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--slate-teal);
+    font-style: italic;
+    border-top: 1px solid var(--rule);
+    padding-top: 12px;
+  }
+
+  /* Two pillars */
+  .pillars {
+    background: var(--off-white);
+    padding: 96px 0 110px 0;
+  }
+  .objective {
+    margin-bottom: 56px;
+    max-width: 760px;
+  }
+  .objective-eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+  .objective-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--deep-teal);
+    margin-bottom: 22px;
+  }
+  .objective-lede {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: clamp(17px, 1.9vw, 19px);
+    line-height: 1.6;
+    color: var(--charcoal);
+    max-width: 680px;
+  }
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 16px;
+  }
+  .pillar {
+    display: block;
+    background: var(--deep-teal);
+    color: var(--off-white);
+    padding: 42px 38px;
+    text-decoration: none;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 280ms ease, box-shadow 280ms ease;
+  }
+  .pillar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: var(--bronze);
+  }
+  .pillar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px -20px rgba(42, 57, 60, 0.35);
+  }
+  .pillar-tag {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--bronze);
+    margin-bottom: 16px;
+    display: block;
+  }
+  .pillar-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--off-white);
+    margin-bottom: 18px;
+  }
+  .pillar-desc {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--off-white-soft);
+    margin-bottom: 28px;
+  }
+  .pillar-go {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--bronze);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .pillar-go::after {
+    content: '→';
+    font-size: 16px;
+    transition: transform 220ms ease;
+  }
+  .pillar:hover .pillar-go::after { transform: translateX(5px); }
+
+  /* Closing line */
+  .closing {
+    background: var(--deep-teal);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .closing::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 1px;
+    background: var(--bronze-line);
+    max-width: 200px;
+  }
+  .closing::before { display: none; }
+  .closing p {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+    color: var(--off-white);
+    margin-top: 40px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--deep-teal);
+    padding: 56px 0 40px 0;
+    border-top: 1px solid rgba(200, 147, 88, 0.18);
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 28px;
+  }
+  .footer-meta {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    color: var(--off-white-faint);
+    line-height: 1.7;
+    letter-spacing: 0.4px;
+  }
+  .footer-meta a {
+    color: var(--bronze);
+    text-decoration: none;
+  }
+  .footer-meta a:hover { text-decoration: underline; }
+  .footer-standard {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11.5px;
+    color: var(--off-white-faint);
+    letter-spacing: 0.6px;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(200, 147, 88, 0.12);
+  }
+  .footer-standard a {
+    color: var(--bronze);
+    text-decoration: none;
+  }
+  .footer-standard a:hover { text-decoration: underline; }
+  .footer-legal {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10px;
+    color: rgba(244, 245, 239, 0.35);
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+
+  /* Founder */
+  .founder {
+    background: var(--deep-teal);
+    padding: 96px 0 90px 0;
+    border-top: 1px solid rgba(200, 147, 88, 0.18);
+  }
+  .founder-inner { max-width: 860px; }
+  .founder-eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 500;
+    margin-bottom: 22px;
+  }
+  .founder-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(24px, 3.4vw, 34px);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--off-white);
+    margin-bottom: 30px;
+  }
+  .founder-body {
+    border-left: 2px solid var(--bronze);
+    padding-left: 24px;
+    max-width: 760px;
+  }
+  .founder-body p {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--off-white-soft);
+    margin-bottom: 18px;
+  }
+  .founder-body p:last-child { margin-bottom: 0; }
+
+  /* Proposition band: commercial five-second payload */
+  .proposition { background: var(--off-white); color: var(--charcoal); padding: 84px 0 88px; border-top: 1px solid var(--rule); }
+  .prop-eyebrow { font-family: 'IBM Plex Sans', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--bronze); font-weight: 500; margin-bottom: 20px; }
+  .prop-line { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(26px, 3.6vw, 42px); line-height: 1.2; letter-spacing: -0.015em; color: var(--deep-teal); max-width: 920px; margin-bottom: 20px; }
+  .prop-line strong { font-weight: 600; }
+  .prop-sub { font-family: 'IBM Plex Sans', sans-serif; font-size: 17px; line-height: 1.6; color: var(--charcoal); max-width: 680px; }
+  .dependency { margin-top: 28px; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; letter-spacing: 0.3px; color: var(--slate-teal); max-width: 720px; }
+  .dependency strong { color: var(--deep-teal); font-weight: 600; }
+  .prop-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 34px; }
+  .prop-cta { font-family: 'IBM Plex Sans', sans-serif; font-size: 12.5px; letter-spacing: 1.6px; text-transform: uppercase; font-weight: 600; text-decoration: none; padding: 14px 24px; border-radius: 3px; transition: transform 200ms ease; }
+  .prop-cta.primary { background: var(--deep-teal); color: var(--off-white); }
+  .prop-cta.secondary { background: transparent; color: var(--deep-teal); border: 1px solid rgba(42, 57, 60, 0.25); }
+  .prop-cta:hover { transform: translateY(-2px); }
+  .flow-wrap { margin: 8px 0 40px; max-width: 1000px; }
+  .flow-svg { width: 100%; height: auto; display: block; }
+
+
+  /* MTP hero grid with live record */
+  .mtp-grid { display: grid; grid-template-columns: minmax(0,1fr) 500px; gap: 64px; align-items: center; }
+  .mtp-record { justify-self: end; width: 100%; max-width: 560px; }
+  @media (max-width: 1080px) {
+    .mtp-grid { grid-template-columns: 1fr; gap: 48px; }
+    .mtp-record { justify-self: start; }
+  }
+
+  .lr {
+    background: #222F32;
+    border: 1px solid rgba(200, 147, 88, 0.35);
+    border-radius: 4px;
+    padding: 0;
+    max-width: 560px;
+    width: 100%;
+    box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.55);
+    font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+    overflow: hidden;
+  }
+  .lr-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    border-bottom: 1px solid rgba(200, 147, 88, 0.22);
+    background: rgba(0, 0, 0, 0.18);
+  }
+  .lr-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #C89358; flex: none;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .lr-dot { animation: lr-pulse 2.4s ease-in-out infinite; }
+    @keyframes lr-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(200, 147, 88, 0.5); }
+      50% { box-shadow: 0 0 0 6px rgba(200, 147, 88, 0); }
+    }
+  }
+  .lr-title {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 10.5px; letter-spacing: 1.8px; font-weight: 500;
+    color: #F4F5EF; text-transform: uppercase; white-space: nowrap;
+  }
+  .lr-meta {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 10px; letter-spacing: 0.6px;
+    color: rgba(244, 245, 239, 0.5);
+    margin-left: auto; white-space: nowrap;
+  }
+  .lr-rows { padding: 6px 0; }
+  .lr-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
+    align-items: center;
+    padding: 9px 18px;
+    border-bottom: 1px solid rgba(244, 245, 239, 0.06);
+  }
+  .lr-row:last-child { border-bottom: none; }
+  .lr-ob { min-width: 0; }
+  .lr-ob-name {
+    font-size: 12.5px; font-weight: 500; color: #F4F5EF;
+    line-height: 1.3; letter-spacing: 0.2px;
+  }
+  .lr-ob-src {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; color: rgba(244, 245, 239, 0.45);
+    letter-spacing: 0.4px; margin-top: 2px;
+  }
+  .lr-exc {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; letter-spacing: 1px; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 2px; white-space: nowrap;
+  }
+  .lr-exc.open, .lr-exc.review, .lr-exc.progress {
+    color: #C89358; border: 1px solid rgba(200, 147, 88, 0.5);
+    background: rgba(200, 147, 88, 0.1);
+  }
+  .lr-exc.clear {
+    color: rgba(244, 245, 239, 0.65); border: 1px solid rgba(244, 245, 239, 0.18);
+    background: transparent;
+  }
+  .lr-ver {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; letter-spacing: 0.8px;
+    color: rgba(244, 245, 239, 0.7); white-space: nowrap;
+  }
+  .lr-ver .tick { color: #C89358; font-weight: 700; }
+  .lr-foot {
+    border-top: 1px solid rgba(200, 147, 88, 0.22);
+    padding: 12px 18px 14px 18px;
+    background: rgba(0, 0, 0, 0.18);
+  }
+  .lr-prov {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; letter-spacing: 0.5px;
+    color: rgba(244, 245, 239, 0.5);
+    margin-bottom: 8px;
+  }
+  .lr-prov .arr { color: #C89358; }
+  .lr-seal {
+    display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 10.5px; letter-spacing: 0.5px; color: #F4F5EF;
+  }
+  .lr-sig { color: #C89358; }
+  .lr-verify { color: rgba(244, 245, 239, 0.85); }
+  .lr-verify .tick { color: #C89358; font-weight: 700; }
+  .lr-note {
+    font-size: 10px; letter-spacing: 0.6px;
+    color: rgba(244, 245, 239, 0.38);
+    margin-top: 10px; font-style: italic;
+  }
+  /* animation states: rows hidden until revealed when .lr-anim is set */
+  .lr-anim .lr-row, .lr-anim .lr-prov, .lr-anim .lr-seal { opacity: 0; transform: translateY(6px); }
+  .lr-anim .lr-row.on, .lr-anim .lr-prov.on, .lr-anim .lr-seal.on {
+    opacity: 1; transform: translateY(0);
+    transition: opacity 420ms ease, transform 420ms ease;
+  }
+  .lr-row.reverify .lr-ver { color: #C89358; transition: color 300ms ease; }
+
+
+  .nav-group { display: flex; gap: inherit; align-items: center; }
+  .nav-group + .nav-group { border-left: 1px solid rgba(200,147,88,0.4); padding-left: 22px; margin-left: -6px; }
+  .nav-glabel { font-family: 'IBM Plex Sans', sans-serif; font-size: 8.5px; letter-spacing: 1.8px; text-transform: uppercase; font-weight: 600; color: rgba(65,65,63,0.45); margin-right: 2px; }
+  @media (max-width: 900px) { .nav-glabel { display: none; } .nav-group + .nav-group { padding-left: 14px; } }
+
+  /* Mobile */
+  @media (max-width: 760px) {
+    .container { padding: 0 22px; }
+    .hero { padding: 70px 0 60px 0; }
+    .proposition { padding: 52px 0 60px; }
+    .hero-kicker { margin-bottom: 28px; }
+    .meta-claim { padding: 44px 0 8px 0; }
+    .meta-claim-inner { padding-left: 18px; }
+    .pillars { padding: 56px 0 80px 0; }
+    .objective { margin-bottom: 38px; }
+    .pillars-grid { grid-template-columns: 1fr; gap: 18px; }
+    .evidence { padding: 44px 0 4px 0; }
+    .evidence-grid { grid-template-columns: 1fr; gap: 18px; }
+    .evidence-card { padding: 24px 24px 26px 24px; }
+    .pillar { padding: 32px 28px; }
+    .header-inner { flex-direction: row; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .logo { height: 56px; }
+    nav { gap: 18px; }
+    .closing { padding: 70px 0; }
+    .founder { padding: 64px 0 60px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="/" class="logo-link" aria-label="Arkaya Risk. Building resilience capital.">
+      <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
+    </a>
+    <nav aria-label="Site">
+      <span class="nav-group"><span class="nav-glabel">Understand</span>
+<a href="/solutions">Solutions</a>
+<a href="/evidence">Evidence</a>
+</span>
+      <span class="nav-group"><span class="nav-glabel">Evaluate</span>
+<a href="/schema">Schema</a>
+<a href="/doctrine">Doctrine</a>
+<a href="/founder">Founders</a>
+</span>
+      <span class="nav-group"><span class="nav-glabel">Verify</span>
+<a href="/library">Library</a>
+<a href="/standard">Standard</a>
+</span>
+    </nav>
+  </div>
+</header>
+
+<section class="mtp-hero" style="background:var(--deep-teal);color:var(--off-white);padding:94px 0 86px;">
+  <div class="container">
+  <div class="mtp-grid">
+  <div class="mtp-copy">
+    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;letter-spacing:2.2px;text-transform:uppercase;font-weight:600;color:var(--bronze);margin:0 0 26px;">Governability infrastructure for the autonomous economy</p>
+    <h1 style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(34px,5vw,60px);line-height:1.08;letter-spacing:-0.5px;margin:0;color:var(--off-white);">Make the autonomous economy<br>governable, and therefore <span style="color:var(--bronze);">priceable</span>.</h1>
+    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:18px;line-height:1.55;max-width:780px;margin:30px 0 0;color:var(--off-white-soft);">Material decisions are moving from people to machines, and the accountability they rest on is moving from people to architecture. Arkaya makes governability observable, so what machines now decide can be priced: by insurers first, then by all capital.</p>
+  </div>
+  <div class="mtp-record">
+<div class="lr" data-lr aria-label="Specimen governance evidence record, assembling live. Illustrative values only; no client data; no score issued.">
+  <div class="lr-head">
+    <span class="lr-dot" aria-hidden="true"></span>
+    <span class="lr-title">Governance evidence record</span>
+    <span class="lr-meta">GET-v1 · <span data-lr-clock>continuous</span></span>
+  </div>
+  <div class="lr-rows">
+    <div class="lr-row" data-exc="open">
+      <div class="lr-ob"><div class="lr-ob-name">Third-party access control</div><div class="lr-ob-src">helpdesk access logs · continuous</div></div>
+      <span class="lr-exc open">open</span>
+      <span class="lr-ver">signed <span class="tick">&#10003;</span></span>
+    </div>
+    <div class="lr-row" data-exc="clear">
+      <div class="lr-ob"><div class="lr-ob-name">Privileged-access review</div><div class="lr-ob-src">IAM change log · event-triggered</div></div>
+      <span class="lr-exc clear">clear</span>
+      <span class="lr-ver">signed <span class="tick">&#10003;</span></span>
+    </div>
+    <div class="lr-row" data-exc="review">
+      <div class="lr-ob"><div class="lr-ob-name">Model-override governance</div><div class="lr-ob-src">override log · monthly review</div></div>
+      <span class="lr-exc review">in review</span>
+      <span class="lr-ver">signed <span class="tick">&#10003;</span></span>
+    </div>
+    <div class="lr-row" data-exc="progress">
+      <div class="lr-ob"><div class="lr-ob-name">Incident notification</div><div class="lr-ob-src">regulator-of-record filing · on event</div></div>
+      <span class="lr-exc progress">in progress</span>
+      <span class="lr-ver">filed <span class="tick">&#10003;</span></span>
+    </div>
+    <div class="lr-row" data-exc="clear">
+      <div class="lr-ob"><div class="lr-ob-name">Board protocol adherence</div><div class="lr-ob-src">decision log vs protocol · monthly</div></div>
+      <span class="lr-exc clear">within bounds</span>
+      <span class="lr-ver">signed <span class="tick">&#10003;</span></span>
+    </div>
+  </div>
+  <div class="lr-foot">
+    <div class="lr-prov">provenance: source system <span class="arr">&#8594;</span> engine <span class="arr">&#8594;</span> signing key · chain of custody preserved</div>
+    <div class="lr-seal">
+      <span>record sealed · sig <span class="lr-sig" data-lr-sig>0x8f3ac21e9b47d05e</span></span>
+      <span class="lr-verify">verified offline <span class="tick">&#10003;</span> · score: null</span>
+    </div>
+    <div class="lr-note">Format specimen · illustrative values · no client data · no score issued</div>
+  </div>
+</div>
+  </div>
+  </div>
+  </div>
+</section>
+
+<section class="proposition">
+  <div class="container">
+    <div class="prop-eyebrow">What Arkaya does</div>
+    <p class="prop-line">Arkaya turns AI liability from a decline into a priced class, underwritten continuously against governability, the live evidence that control holds, not a periodic questionnaire.</p>
+    <p class="prop-sub">It runs on GET, the open governance-evidence schema, so one signal prices the cover and the capital behind it.</p>
+
+    <div class="flow-wrap">
+      <svg class="flow-svg" viewBox="0 0 1000 210" role="img" aria-label="Governance evidence is calibrated, then underwritten and priced, which sets capital, which sets enterprise value. Arkaya holds the proof layer.">
+        <title>From governance evidence to enterprise value. Arkaya holds the proof layer.</title>
+        <g stroke="#C89358" stroke-width="3" fill="#C89358">
+          <line x1="171" y1="85" x2="199" y2="85"/><path d="M199,78 L213,85 L199,92 Z"/>
+          <line x1="379" y1="85" x2="407" y2="85"/><path d="M407,78 L421,85 L407,92 Z"/>
+          <line x1="587" y1="85" x2="615" y2="85"/><path d="M615,78 L629,85 L615,92 Z"/>
+          <line x1="795" y1="85" x2="823" y2="85"/><path d="M823,78 L837,85 L823,92 Z"/>
+        </g>
+        <rect x="0" y="40" width="168" height="90" rx="4" fill="#C89358"/>
+        <text x="84" y="78" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="19" font-weight="600" fill="#2A393C">Governance</text>
+        <text x="84" y="102" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="19" font-weight="600" fill="#2A393C">evidence</text>
+        <text x="84" y="158" text-anchor="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="11.5" fill="#364748" letter-spacing="0.3">Arkaya · the proof layer</text>
+        <rect x="208" y="40" width="168" height="90" rx="4" fill="#ECEDE6" stroke="#2A393C" stroke-width="1.4"/>
+        <text x="292" y="92" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="19" font-weight="500" fill="#2A393C">Calibration</text>
+        <text x="292" y="158" text-anchor="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="11.5" fill="#364748" letter-spacing="0.3">evidence read into rating</text>
+        <rect x="416" y="40" width="168" height="90" rx="4" fill="#ECEDE6" stroke="#2A393C" stroke-width="1.4"/>
+        <text x="500" y="78" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="19" font-weight="500" fill="#2A393C">Underwriting</text>
+        <text x="500" y="102" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="19" font-weight="500" fill="#2A393C">&amp; pricing</text>
+        <text x="500" y="158" text-anchor="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="11.5" fill="#364748" letter-spacing="0.3">the desk prices</text>
+        <rect x="624" y="40" width="168" height="90" rx="4" fill="#ECEDE6" stroke="#2A393C" stroke-width="1.4"/>
+        <text x="708" y="78" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="19" font-weight="500" fill="#2A393C">Cost of</text>
+        <text x="708" y="102" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="19" font-weight="500" fill="#2A393C">capital</text>
+        <text x="708" y="158" text-anchor="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="11.5" fill="#364748" letter-spacing="0.3">cover · credit · terms</text>
+        <rect x="832" y="40" width="168" height="90" rx="4" fill="#ECEDE6" stroke="#2A393C" stroke-width="1.4"/>
+        <text x="916" y="78" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="19" font-weight="500" fill="#2A393C">Enterprise</text>
+        <text x="916" y="102" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="19" font-weight="500" fill="#2A393C">value</text>
+        <text x="916" y="158" text-anchor="middle" font-family="'IBM Plex Sans',system-ui,sans-serif" font-size="11.5" fill="#364748" letter-spacing="0.3">the price of the whole</text>
+      </svg>
+    </div>
+
+    <p class="dependency"><strong>GET</strong> is the open schema. <strong>Continuous covenant underwriting</strong> is the product that runs on it. The schema enables the product; the product is not a second, competing offer.</p>
+
+    <div class="prop-ctas">
+      <a href="/solutions" class="prop-cta primary">See the product</a>
+      <a href="/schema" class="prop-cta secondary">Read the schema</a>
+    </div>
+  </div>
+</section>
+
+
+<section style="background:var(--deep-teal);color:var(--off-white);padding:64px 0;border-top:1px solid rgba(200,147,88,0.18);">
+  <div class="container">
+    <div style="font-family:'IBM Plex Sans',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--bronze);font-weight:600;margin-bottom:18px;">The test</div>
+    <p style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(20px,2.6vw,28px);line-height:1.4;letter-spacing:-0.005em;color:var(--off-white);max-width:920px;margin:0 0 14px;">The claim is held as a hypothesis with its failure condition stated: an evidenced counterparty obtains measurably better terms than an otherwise identical unevidenced one.</p>
+    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:16px;line-height:1.6;color:var(--off-white-soft);max-width:720px;margin:0 0 26px;">If the evidence does not move the terms, the thesis fails on its own stated ground. The experiment is a carrier pilot, and the invitation is open.</p>
+    <a href="/solutions#test" style="display:inline-block;font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;text-decoration:none;padding:13px 22px;border-radius:3px;background:var(--bronze);color:var(--deep-teal);">Run the experiment</a>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="container">
+    <p class="hero-kicker">
+      <span class="beat beat-1">Governance is often priced only after the event,</span>
+      <span class="beat beat-2">because the decision trail cannot be reconstructed before it.</span>
+      <span class="beat beat-3">Arkaya makes it reconstructable.</span>
+    </p>
+    <div class="hero-eyebrow">The Third Domain of Risk</div>
+    <h2 class="hero-headline">
+      <span class="line line-1">Hazard found its home at Edward Lloyd's coffee house in<br>1688, 22 years after the Great Fire of London.</span>
+      <span class="line line-2">Credit at Moody's in 1909, in the wake of the Panic of 1907.</span>
+      <span class="line line-3 third">Governance is now the third domain of risk.</span>
+    </h2>
+    <p class="hero-bridge">
+      Arkaya is building the evidence standard capital markets need to price it at the speed of agentic&nbsp;AI.<br>Governance becomes evidence a counterparty can underwrite against, not an assertion they price as risk.
+    </p>
+  </div>
+</section>
+
+<section class="meta-claim">
+  <div class="container">
+    <div class="meta-claim-inner">
+      <p class="meta-claim-line meta-claim-lede">Arkaya is meta-governance, not AI governance.</p>
+      <p class="meta-claim-line meta-claim-rest">AI governance platforms run one discipline at human-generated audit cadence.</p>
+      <p class="meta-claim-line meta-claim-rest">Arkaya runs every governance discipline at the cadence the real world now sets.</p>
+      <p class="meta-claim-line meta-claim-rest">AI governance is what companies do; governability is what they can prove.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--off-white-deep,#ECEDE6); padding: 72px 0; border-top: 1px solid var(--rule,rgba(42,57,60,0.12)); border-bottom: 1px solid var(--rule,rgba(42,57,60,0.12));">
+  <div class="container-narrow">
+    <div style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--bronze,#C89358); font-weight:600; margin-bottom:18px;">The difference</div>
+    <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(26px,3.6vw,38px); line-height:1.18; letter-spacing:-0.015em; color:var(--deep-teal,#2A393C); margin:0 0 22px;">GRC and AI-governance platforms record your compliance. The schema makes it evidence a counterparty can price.</h2>
+    <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16px; line-height:1.7; color:var(--charcoal,#41413F); margin:0 0 18px; max-width:680px;">The GRC and AI-governance cohort automates framework mapping, continuous monitoring and audit-ready reporting, then publishes the result as your own trust record. That evidence is scoped to your audit, expressed in each vendor's proprietary controls and scores, and held inside the platform that produced it.</p>
+    <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16px; line-height:1.7; color:var(--charcoal,#41413F); margin:0 0 24px; max-width:680px;">None of them supplies the schema that makes governance evidence <strong style="color:var(--deep-teal,#2A393C);">comparable, portable and adjudicable across parties</strong>. Comparable by conformance to one shared schema, not a proprietary score. Portable across engines, insurers and capital events without re-basing. Adjudicable when parties dispute what it shows, resolved against the schema, not against opinion. Arkaya stewards the schema; it is not the adjudicator.</p>
+    <p style="margin:0;"><a href="/schema" style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; letter-spacing:2px; text-transform:uppercase; color:var(--bronze,#C89358); text-decoration:none; font-weight:600;">See how the schema does it &#8594;</a></p>
+  </div>
+</section>
+
+<section class="evidence">
+  <div class="container">
+    <div class="evidence-head">
+      <div class="evidence-eyebrow">Priced after the event</div>
+      <p class="evidence-lede">Automated decisions have already crystallised nine and ten figure losses, reconstructed only after the event. The trail those reconstructions assembled too late is the trail Arkaya produces continuously.</p>
+    </div>
+    <div class="evidence-grid">
+      <div class="evidence-card">
+        <div class="evidence-tag">Automated decisioning · Government · Australia</div>
+        <div class="evidence-figure">A$2.4bn</div>
+        <div class="evidence-figure-label">total repayment and compensation</div>
+        <p class="evidence-body">Robodebt averaged annual income across fortnightly periods and raised welfare debts later ruled unlawful. A$1.8bn was settled in 2020, a further A$475m (about US$309m) in 2025. A royal commission found the responsible department held legal advice warning of unlawfulness in 2018 and proceeded. The decision trail surfaced years after the loss. <strong>In the schema:</strong> the unlawful-calculation control carries an open exception from the moment that advice lands, readable by a counterparty years before settlement.</p>
+        <p class="evidence-source">Royal Commission into the Robodebt Scheme, final report 2023; Reuters, 2025.</p>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-tag">Model governance · Corporate · United States</div>
+        <div class="evidence-figure">$540m+</div>
+        <div class="evidence-figure-label">inventory write-down, Zillow Offers</div>
+        <p class="evidence-body">Algorithmic home-buying priced off the Zestimate model, which overpaid as the 2021 market turned. A $304m write-down in Q3 2021, a further $240m to $265m guided for Q4, the unit closed and about 2,000 staff cut, a quarter of the workforce. The model outputs existed internally. Continuous, externally verifiable evidence of the risk did not. <strong>In the schema:</strong> the model-override governance field shows the Zestimate's widening error as a populated exception in Q3, not after the write-down.</p>
+        <p class="evidence-source">Zillow Group SEC Form 8-K, third quarter 2021.</p>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-tag">Third-party · cyber · Retail · United Kingdom</div>
+        <div class="evidence-figure">&#8776;15%</div>
+        <div class="evidence-figure-label">of equity value removed at impact, M&amp;S</div>
+        <p class="evidence-body">The April 2025 cyber incident, attributed to Scattered Spider operating through the TCS-run helpdesk, sat inside a multi-year outsourcing arrangement renewed on cost. The insurance performed. M&amp;S's accounts for the year to 28 March 2026 record &pound;131.3m of incident-related costs against &pound;100.0m of insurance proceeds, so the policy settled almost all of the loss it was written to cover. What it did not reach is the equity value the market removed: fifteen months on, the shares stood roughly 10% below their pre-attack level while the FTSE 100 rose by around a quarter. Insurable cost and enterprise consequence are different categories. <strong>In the schema:</strong> the third-party access-control obligation carries an open exception at the helpdesk boundary, readable by an underwriter at renewal, not reconstructed at claim.</p>
+        <p class="evidence-source">M&amp;S Group plc, Full Year Results for the 52 weeks ended 28 March 2026 (costs and proceeds); Cyber Monitoring Centre, 2025 (Category 2, with Co-op, &pound;270m&ndash;&pound;440m). Equity comparison from market data to July 2026; Arkaya's dated composition of the persistent impact is held separately.</p>
+      </div>
+    </div>
+    <p class="evidence-lede" style="margin-top: 30px;">Today’s forensic evidence is retrospective. Arkaya makes forensic evidence prospective.</p>
+    <p style="margin-top:28px;"><a href="/evidence" class="pillar-go">See what a governance evidence record looks like</a></p>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="container">
+
+    <div class="objective">
+      <div class="objective-eyebrow">The proposition</div>
+      <h2 class="objective-title">Two pillars.</h2>
+      <p class="objective-lede">
+        Arkaya stewards the Governance Evidence Taxonomy, the open schema counterparties read to price governance risk. Arkaya GET Solutions is the commercial work that runs on it. Pick your path.
+      </p>
+    </div>
+
+    <div class="pillars-grid">
+
+      <a href="/schema" class="pillar">
+        <span class="pillar-tag">Pillar one</span>
+        <h3 class="pillar-title">Arkaya GET</h3>
+        <p class="pillar-desc">
+          The Governance Evidence Taxonomy. The schema that translates risk and makes it machine-readable. Open. Multi-engine. Eight observable fields. Schema decisions sit on a separate governance track from commercial decisions.
+        </p>
+        <span class="pillar-go">Read the schema</span>
+      </a>
+
+      <a href="/solutions" class="pillar">
+        <span class="pillar-tag">Pillar two</span>
+        <h3 class="pillar-title">Arkaya GET Solutions</h3>
+        <p class="pillar-desc">
+          Continuous covenant underwriting, with AI liability as the first class. First-party evidence read into rating, retention, limit and capital, for insurers, lenders and acquirers at the pricing layer.
+        </p>
+        <span class="pillar-go">See the product</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="founder">
+  <div class="container">
+    <div class="founder-inner">
+      <div class="founder-eyebrow">The founders</div>
+      <h2 class="founder-name">David J McKibbin &amp; Simon Hudson</h2>
+      <div class="founder-body">
+        <p>Arkaya's thesis is witnessed, not constructed. David held the FCA Chief Executive controlled function (SMF1) and has met the five capital moments from every side of the table: underwriting, broking on the sell-side, and corporate on the buy-side.</p>
+        <p>After 9/11 he underwrote an AIG property book co-underwritten 50:50 with Berkshire Hathaway's National Indemnity, from inside two diametrically opposed governance models, both AAA-rated at the time. One later required a government rescue. The other did not.</p>
+        <p>David co-founded Arkaya with Simon Hudson, who is based in the United States.</p>
+        <p style="margin-top:24px;"><a href="/founder" class="pillar-go">Meet the founders</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="container">
+    <p style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.4px; line-height: 2; color: var(--off-white); opacity: 0.85; max-width: 760px; margin: 0 auto; padding: 0 20px; font-weight: 400;">Observable governance becomes measurable. Measurable governance becomes priceable. Priceable governance becomes resilience capital.</p>
+    <div style="width: 60%; max-width: 200px; height: 1px; background: var(--bronze-line); margin: 40px auto 0;"></div>
+    <p>Resilience Capital is built.<br>Not asserted.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-meta">
+        Arkaya Risk · being formed in the UK; presently a trading style of Centinel 10 Ltd<br>
+        Founded by David J McKibbin and Simon Hudson<br>
+        <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a> · +44 (0)7972 178759<br>
+        <a href="mailto:smh@arkayarisk.com">smh@arkayarisk.com</a> · +1 (914) 309-6397<br>
+        <a href="https://www.linkedin.com/in/davidmckibbin" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="footer-legal">
+        Arkaya Risk is currently being formed in the UK and is presently a trading style of Centinel 10 Ltd, a company registered in England and Wales (no. 11906608).<br>
+        © 2026 Centinel 10 Ltd. All rights reserved.
+      </div>
+    </div>
+    <div class="footer-standard">
+      Produced under Arkaya Production Standard v1. Methodology: <a href="/standard">arkayarisk.com/standard</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var records = document.querySelectorAll('[data-lr]');
+  if (!records.length) return;
+  var HEX = '0123456789abcdef';
+  function scramble(el, finalText, dur) {
+    var start = null, len = finalText.length;
+    function frame(ts) {
+      if (!start) start = ts;
+      var p = Math.min(1, (ts - start) / dur), out = '';
+      for (var i = 0; i < len; i++) {
+        if (finalText[i] === 'x' && i === 1) { out += 'x'; continue; }
+        out += (i / len < p) ? finalText[i] : HEX[Math.floor(Math.random() * 16)];
+      }
+      el.textContent = out;
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+  function tickClock(el) {
+    function t() {
+      var d = new Date();
+      el.textContent = d.toISOString().slice(11, 19) + ' UTC';
+    }
+    t(); setInterval(t, 1000);
+  }
+  records.forEach(function (rec) {
+    var clock = rec.querySelector('[data-lr-clock]');
+    if (clock) tickClock(clock);
+    if (reduced) return;
+    rec.classList.add('lr-anim');
+    var seq = [].slice.call(rec.querySelectorAll('.lr-row'))
+      .concat([rec.querySelector('.lr-prov'), rec.querySelector('.lr-seal')]);
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        io.disconnect();
+        seq.forEach(function (el, i) {
+          setTimeout(function () {
+            el.classList.add('on');
+            if (el.classList.contains('lr-seal')) {
+              var sig = rec.querySelector('[data-lr-sig]');
+              if (sig) scramble(sig, sig.textContent, 1100);
+            }
+          }, 350 + i * 380);
+        });
+        // quiet life: one row re-verifies every 8s
+        setTimeout(function () {
+          var rows = rec.querySelectorAll('.lr-row');
+          setInterval(function () {
+            var r = rows[Math.floor(Math.random() * rows.length)];
+            r.classList.add('reverify');
+            setTimeout(function () { r.classList.remove('reverify'); }, 900);
+          }, 8000);
+        }, 350 + seq.length * 380);
+      });
+    }, { threshold: 0.35 });
+    io.observe(rec);
+  });
+})();
+</script>
+</body>
+</html>
