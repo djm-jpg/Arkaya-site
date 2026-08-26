@@ -1,0 +1,11 @@
+# arkayarisk.com
+# Every page is open to search engines and to AI agents, for retrieval and for answering
+# questions about Arkaya. A site index for agents is at /llms.txt; a machine-readable index
+# of the open Layer 1 material is at /.well-known/governance-evidence.json.
+# No Content-Signal line is carried: as of August 2026 no crawler or model operator has
+# confirmed reading one, and this file states only what is enforced.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://arkayarisk.com/sitemap.xml
