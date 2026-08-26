@@ -1,0 +1,9 @@
+{
+  "note": "Public halves of the two fixture keys used by the candidate vector set. Derived from fixed seeds. Never for production use. No production key is published; Arkaya does not sign records.",
+  "encoding": "multikey, multibase base58-btc, Ed25519 public key prefix 0xed01",
+  "keys": {
+    "fixtureKeyA": "z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG",
+    "fixtureKeyB": "z6MknGc3ocHs3zdPiJbnaaqDi58NGb4pk1Sp9WxWufuXSdxf"
+  },
+  "specimenRecordSignedWith": "fixtureKeyA"
+}
