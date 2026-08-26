@@ -185,7 +185,7 @@
       <div class="field"><div class="field-id">Field 03</div><div class="field-name">Risk if misrepresented</div><div class="field-val">What goes wrong if the evidence is wrong. Example: avoidance; model-risk exclusion bite at claim.</div></div>
       <div class="field"><div class="field-id">Field 04</div><div class="field-name">Evidence primitives</div><div class="field-val">The observable atoms. Model-override events, HITL decisions, risk-committee minutes, audit logs, with counts and timestamps per period. Not summaries.</div></div>
       <div class="field"><div class="field-id">Field 05</div><div class="field-name">Temporal cadence</div><div class="field-val">At what frequency each primitive is observed. Continuous, event-triggered, or periodic.</div></div>
-      <div class="field"><div class="field-id">Field 06</div><div class="field-name">Provenance</div><div class="field-val">Where each primitive came from. Source system to engine to signing key, chain of custody preserved.</div></div>
+      <div class="field"><div class="field-id">Field 06</div><div class="field-name">Provenance</div><div class="field-val">Where each primitive came from. Source system to engine to signing key, each hop retained in the record.</div></div>
       <div class="field"><div class="field-id">Field 07</div><div class="field-name">Verification mode</div><div class="field-val">How it was verified. Cryptographic signature, regulator-of-record filing, third-party attestation, or self-declared and flagged.</div></div>
       <div class="field span"><div class="field-id">Field 08</div><div class="field-name">Maturity calibration with trajectory</div><div class="field-val">A maturity level with its direction of travel, read over a rolling 90-day window (the window_days field in the record). Example: Foundational, rising to Established (DRMA). Trajectory, not score.</div></div>
     </div>
@@ -232,8 +232,8 @@
 <section class="light" style="padding-top:0">
   <div class="container">
     <div class="eyebrow">Provenance</div>
-    <h2 class="sec-title">The chain of custody, end to end.</h2>
-    <figure style="margin:0;max-width:1000px;" aria-label="Provenance chain: source system to engine to signing key to sealed record to counterparty. Chain of custody preserved end to end; the counterparty verifies from the sealed record.">
+    <h2 class="sec-title">Provenance, source system to signing key.</h2>
+    <figure style="margin:0;max-width:1000px;" aria-label="Provenance chain: source system to engine to signing key to sealed record to counterparty. Each hop retained in the record; the counterparty runs its own proof check on the sealed record.">
       <svg viewBox="0 0 1000 190" style="width:100%;height:auto;display:block;" role="img">
         <title>The provenance chain</title>
         <g stroke="#C89358" stroke-width="3" fill="#C89358">
@@ -250,7 +250,7 @@
         <text x="295" y="136" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="11.5" fill="#364748">emits against the schema</text>
         <rect x="420" y="36" width="160" height="72" rx="4" fill="#ECEDE6" stroke="#2A393C" stroke-width="1.4"/>
         <text x="500" y="79" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="17" font-weight="500" fill="#2A393C">Signing key</text>
-        <text x="500" y="136" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="11.5" fill="#364748">custody preserved</text>
+        <text x="500" y="136" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="11.5" fill="#364748">provenance retained</text>
         <rect x="625" y="36" width="160" height="72" rx="4" fill="#2A393C"/>
         <text x="705" y="79" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="17" font-weight="500" fill="#F4F5EF">Sealed record</text>
         <text x="705" y="136" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="11.5" fill="#364748">cryptographically verifiable</text>
