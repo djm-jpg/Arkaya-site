@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The architecture. Four layers, and the one Arkaya builds.</title>
+<meta name="description" content="Where Arkaya sits in the chain from source systems to capital: what each layer does, what Arkaya does not do at any of them, and which material is open and which is licensed.">
+<link rel="canonical" href="https://arkayarisk.com/architecture">
+<link rel="describedby" href="/llms.txt" type="text/markdown">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arkaya Risk">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="The architecture. Four layers, and the one Arkaya builds.">
+<meta property="og:description" content="Where Arkaya sits in the chain from source systems to capital: what each layer does, what Arkaya does not do at any of them, and which material is open and which is licensed.">
+<meta property="og:url" content="https://arkayarisk.com/architecture">
+<meta property="og:image" content="https://arkayarisk.com/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Arkaya Risk. Make the autonomous economy governable, and therefore priceable.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The architecture. Four layers, and the one Arkaya builds.">
+<meta name="twitter:description" content="Where Arkaya sits in the chain from source systems to capital: what each layer does, what Arkaya does not do at any of them, and which material is open and which is licensed.">
+<meta name="twitter:image" content="https://arkayarisk.com/og-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-teal: #2A393C;
+    --slate-teal: #364748;
+    --bronze: #C89358;
+    --bronze-soft: rgba(200, 147, 88, 0.18);
+    --bronze-line: rgba(200, 147, 88, 0.45);
+    --charcoal: #41413F;
+    --off-white: #F4F5EF;
+    --off-white-soft: rgba(244, 245, 239, 0.78);
+    --off-white-faint: rgba(244, 245, 239, 0.55);
+    --rule: rgba(42, 57, 60, 0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--off-white);
+    background: var(--deep-teal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--bronze); color: var(--deep-teal); }
+
+  .container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+  header {
+    background: var(--off-white);
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    z-index: 10;
+  }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; }
+  .logo-link { display: inline-block; line-height: 0; }
+  .logo { height: 76px; width: auto; display: block; }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--charcoal);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 200ms ease;
+    position: relative;
+    padding: 4px 0;
+  }
+  nav a.active { color: var(--bronze); }
+  nav a:hover { color: var(--bronze); }
+  nav a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -4px;
+    width: 0; height: 1px;
+    background: var(--bronze);
+    transition: width 200ms ease;
+  }
+  nav a.active::after, nav a:hover::after { width: 100%; }
+
+  .hero { padding: 96px 0 72px 0; position: relative; }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: -10%;
+    width: 65%; height: 100%;
+    background: radial-gradient(ellipse at top right, rgba(200, 147, 88, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px; letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--bronze); font-weight: 500;
+    margin-bottom: 28px;
+  }
+  .hero-headline {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(28px, 4.4vw, 48px);
+    line-height: 1.18; letter-spacing: -0.02em;
+    color: var(--off-white);
+    max-width: 980px; margin-bottom: 36px;
+  }
+  .hero-lede {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(16px, 1.55vw, 19px);
+    line-height: 1.55;
+    color: var(--off-white-soft);
+    max-width: 880px;
+    border-left: 2px solid var(--bronze);
+    padding-left: 22px;
+  }
+
+  .content { background: var(--off-white); color: var(--charcoal); padding: 96px 0 100px 0; }
+  .content-inner { max-width: 880px; }
+
+  .section-block { margin-bottom: 56px; }
+  .section-block:last-child { margin-bottom: 0; }
+
+  .section-eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10.5px; letter-spacing: 2.6px;
+    text-transform: uppercase;
+    color: var(--bronze); font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(24px, 3.2vw, 32px);
+    line-height: 1.2; letter-spacing: -0.015em;
+    color: var(--deep-teal); margin-bottom: 20px;
+  }
+  .section-body { font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; line-height: 1.7; color: var(--charcoal); }
+  .section-body p { margin-bottom: 16px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-body strong { color: var(--deep-teal); font-weight: 600; }
+  .section-body a { color: var(--deep-teal); text-decoration: underline; text-decoration-color: var(--bronze); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  .section-body a:hover { color: var(--bronze); }
+  .section-body code { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.86em; color: var(--bronze); word-break: break-all; }
+  .section-body ul, .section-body ol { margin: 0 0 1.1rem 1.25rem; }
+  .section-body li { margin-bottom: 0.55rem; }
+
+  /* Layer stack */
+  .layers { display: grid; grid-template-columns: 1fr; gap: 8px; margin: 30px 0 8px 0; }
+  .layer {
+    display: grid;
+    grid-template-columns: 128px 1fr;
+    gap: 26px;
+    align-items: start;
+    padding: 24px 28px;
+    background: rgba(54, 71, 72, 0.04);
+    border: 1px solid rgba(54, 71, 72, 0.10);
+    border-radius: 3px;
+  }
+  .layer.arkaya { background: var(--bronze-soft); border-color: var(--bronze-line); }
+  .layer-id {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10.5px; letter-spacing: 2px;
+    text-transform: uppercase; font-weight: 600;
+    color: var(--bronze);
+  }
+  .layer-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 500; font-size: 21px;
+    color: var(--deep-teal);
+    letter-spacing: -0.005em;
+    margin-top: 3px;
+  }
+  .layer-body { font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; line-height: 1.65; color: var(--charcoal); }
+  .layer-body p { margin-bottom: 10px; }
+  .layer-body p:last-child { margin-bottom: 0; }
+  .layer-not {
+    display: block;
+    margin-top: 12px; padding-top: 11px;
+    border-top: 1px solid rgba(54, 71, 72, 0.14);
+    font-size: 14.5px;
+    color: var(--slate-teal);
+  }
+  .layer-not b { font-weight: 600; color: var(--deep-teal); }
+  .layer-owner {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px; letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--slate-teal); opacity: 0.72;
+    margin-top: 8px;
+  }
+
+  /* Sequence */
+  .seq { counter-reset: seq; margin: 26px 0 8px 0; }
+  .seq-row {
+    counter-increment: seq;
+    display: grid; grid-template-columns: 34px 1fr;
+    gap: 18px; align-items: baseline;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .seq-row:last-of-type { border-bottom: none; }
+  .seq-row::before {
+    content: counter(seq, decimal-leading-zero);
+    font-family: 'Fraunces', serif; font-size: 15px;
+    color: var(--bronze); font-weight: 500;
+  }
+  .seq-txt { font-size: 15.5px; line-height: 1.6; }
+  .seq-txt b { color: var(--deep-teal); font-weight: 600; }
+  .seq-note {
+    margin-top: 22px; padding: 20px 24px;
+    background: rgba(54, 71, 72, 0.05);
+    border-left: 3px solid var(--bronze);
+    border-radius: 3px;
+    font-size: 15px; line-height: 1.65;
+  }
+
+  /* Open / licensed */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 28px 0 10px 0; }
+  .split-card { padding: 26px 28px; border-radius: 3px; border: 1px solid rgba(54, 71, 72, 0.12); background: rgba(54, 71, 72, 0.03); }
+  .split-card.licensed { background: var(--deep-teal); border-color: var(--deep-teal); }
+  .split-h {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10.5px; letter-spacing: 2.4px;
+    text-transform: uppercase; font-weight: 600;
+    color: var(--bronze); margin-bottom: 12px;
+  }
+  .split-lede { font-family: 'Fraunces', serif; font-size: 18px; line-height: 1.4; color: var(--deep-teal); margin-bottom: 14px; }
+  .split-card.licensed .split-lede { color: var(--off-white); }
+  .split-card ul { list-style: none; margin: 0; padding: 0; }
+  .split-card li {
+    font-size: 14.5px; line-height: 1.55;
+    padding: 7px 0 7px 18px; position: relative;
+    color: var(--charcoal);
+    border-bottom: 1px solid rgba(54, 71, 72, 0.09);
+  }
+  .split-card li:last-child { border-bottom: none; }
+  .split-card li::before { content: '·'; position: absolute; left: 4px; color: var(--bronze); font-weight: 700; }
+  .split-card.licensed li { color: var(--off-white-soft); border-bottom-color: rgba(200, 147, 88, 0.16); }
+  .split-foot { margin-top: 14px; font-size: 13.5px; line-height: 1.55; color: var(--slate-teal); }
+  .split-card.licensed .split-foot { color: var(--off-white-faint); }
+
+  /* Status */
+  .status-list { margin: 22px 0 0 0; }
+  .status-row {
+    display: grid; grid-template-columns: 190px 1fr;
+    gap: 22px; align-items: baseline;
+    padding: 13px 0; border-bottom: 1px solid var(--rule);
+  }
+  .status-row:last-child { border-bottom: none; }
+  .status-k { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; font-weight: 600; color: var(--deep-teal); }
+  .status-v { font-size: 15px; line-height: 1.6; }
+
+  .closing { background: var(--deep-teal); padding: 96px 0; text-align: center; position: relative; overflow: hidden; }
+  .closing::before {
+    content: ''; position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%; height: 1px; background: var(--bronze-line); max-width: 200px;
+  }
+  .closing p {
+    font-family: 'Fraunces', serif; font-weight: 700;
+    font-size: clamp(28px, 4vw, 48px); line-height: 1.3;
+    letter-spacing: -0.015em; color: var(--off-white);
+    margin-top: 40px; max-width: 760px;
+    margin-left: auto; margin-right: auto; padding: 0 20px;
+  }
+
+  footer { background: var(--deep-teal); padding: 56px 0 40px 0; border-top: 1px solid rgba(200, 147, 88, 0.18); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 28px; }
+  .footer-meta { font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; color: var(--off-white-faint); line-height: 1.7; letter-spacing: 0.4px; }
+  .footer-meta a { color: var(--bronze); text-decoration: none; }
+  .footer-meta a:hover { text-decoration: underline; }
+  .footer-standard {
+    font-family: 'IBM Plex Sans', sans-serif; font-size: 11.5px;
+    color: var(--off-white-faint); letter-spacing: 0.6px;
+    margin-top: 18px; padding-top: 18px;
+    border-top: 1px solid rgba(200, 147, 88, 0.12);
+  }
+  .footer-standard a { color: var(--bronze); text-decoration: none; }
+  .footer-legal {
+    font-family: 'IBM Plex Sans', sans-serif; font-size: 10px;
+    color: rgba(244, 245, 239, 0.35); letter-spacing: 1.4px; text-transform: uppercase;
+  }
+
+  .nav-group { display: flex; gap: inherit; align-items: center; }
+  .nav-group + .nav-group { border-left: 1px solid rgba(200,147,88,0.4); padding-left: 22px; margin-left: -6px; }
+  .nav-glabel { font-family: 'IBM Plex Sans', sans-serif; font-size: 10.5px; letter-spacing: 1.8px; text-transform: uppercase; font-weight: 600; color: rgba(65,65,63,0.78); margin-right: 4px; }
+  @media (max-width: 900px) { .nav-glabel { display: none; } .nav-group + .nav-group { padding-left: 14px; } }
+
+  @media (max-width: 760px) {
+    .container { padding: 0 22px; }
+    .hero { padding: 60px 0 50px 0; }
+    .content { padding: 56px 0 70px 0; }
+    .header-inner { flex-direction: row; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .logo { height: 56px; }
+    nav { gap: 18px; }
+    .layer { grid-template-columns: 1fr; gap: 10px; padding: 20px 22px; }
+    .split { grid-template-columns: 1fr; }
+    .status-row { grid-template-columns: 1fr; gap: 4px; }
+    .closing { padding: 70px 0; }
+  }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"The architecture. Four layers, and the one Arkaya builds.","description":"Where Arkaya sits in the chain from source systems to capital: what each layer does, what Arkaya does not do at any of them, and which material is open and which is licensed.","url":"https://arkayarisk.com/architecture","inLanguage":"en-GB","datePublished":"2026-08-26","isAccessibleForFree":true,"author":{"@type":"Organization","name":"Arkaya Risk Limited","url":"https://arkayarisk.com/"},"publisher":{"@type":"Organization","name":"Arkaya Risk Limited","url":"https://arkayarisk.com/"},"about":["Governance Evidence Taxonomy","governance evidence","capital allocation"],"citation":[{"@type":"CreativeWork","name":"Arkaya Layer 1 implementer pack v1","url":"https://arkayarisk.com/get"}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="/" class="logo-link" aria-label="Arkaya Risk. Building resilience capital.">
+      <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
+    </a>
+    <nav aria-label="Site">
+      <span class="nav-group"><span class="nav-glabel">Understand</span>
+<a href="/solutions">Solutions</a>
+<a href="/evidence">Evidence</a>
+</span>
+      <span class="nav-group"><span class="nav-glabel">Evaluate</span>
+<a href="/schema">Schema</a>
+<a href="/doctrine">Doctrine</a>
+<a href="/founder">Founders</a>
+</span>
+      <span class="nav-group"><span class="nav-glabel">Verify</span>
+<a href="/library">Library</a>
+<a href="/standard">Standard</a>
+</span>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">The architecture</div>
+    <h1 class="hero-headline">Four layers. Arkaya builds one.</h1>
+    <p class="hero-lede">
+      Source systems emit signals; an engine produces a record against the schema; a counterparty reads
+      that record as evidence; Arkaya produces neither the record nor the price.
+    </p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="container content-inner">
+
+    <div class="section-block">
+      <div class="section-eyebrow">Why this page exists</div>
+      <h2 class="section-title">The boundaries are the architecture.</h2>
+      <div class="section-body">
+        <p>Most infrastructure companies describe what they build. The useful description of Arkaya is what it declines to build, because the declining is what makes the rest work. A schema that its steward also produced records against, scored, or priced from would be a rating agency with extra steps, and every counterparty reading it would have to decide how much of the steward's commercial interest was inside the number.</p>
+        <p>So each layer below states three things: what happens there, who owns it, and what Arkaya does not do at it.</p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-eyebrow">§ 01 · The four layers</div>
+      <h2 class="section-title">Where each thing happens, and who does it.</h2>
+      <div class="section-body">
+
+        <div class="layers">
+
+          <div class="layer">
+            <div>
+              <div class="layer-id">Layer 0</div>
+              <div class="layer-name">Observation</div>
+              <div class="layer-owner">Source systems</div>
+            </div>
+            <div class="layer-body">
+              <p>An organisation's own systems emit signals about what its controls did: identity providers, AI gateways, change management, incident tooling, board and committee records. Permanently competitive, multi-vendor by design.</p>
+              <span class="layer-not"><b>Arkaya does not operate here.</b> It builds no connectors and competes with no vendor whose system emits. The schema specifies what a signal must carry to be readable; it does not specify who emits it.</span>
+            </div>
+          </div>
+
+          <div class="layer arkaya">
+            <div>
+              <div class="layer-id">Layer 1 · Arkaya</div>
+              <div class="layer-name">Translation</div>
+              <div class="layer-owner">Arkaya, as Custodian</div>
+            </div>
+            <div class="layer-body">
+              <p>Giving events a fixed shape so that a stranger can read them. This is the Governance Evidence Taxonomy: the eight observable fields, the eight governance domains, and the Layer 1 material that fixes how a record is canonicalised, digested, chained and sealed so a reader who was not present can check it.</p>
+              <p>An engine — software the organisation or its vendor runs — reads Layer 0 signals and produces a record against the schema. The schema then performs structural adjudication and nothing more: did the control exist, did it operate, did it pass its own test across the interval.</p>
+              <span class="layer-not"><b>Arkaya does not produce records and does not sign them.</b> The organisation's engine does, and the record states which key sealed it. Arkaya holds no production signing key, and a passing signature establishes what was sealed, not by whom.</span>
+            </div>
+          </div>
+
+          <div class="layer">
+            <div>
+              <div class="layer-id">Layer 2</div>
+              <div class="layer-name">Allocation</div>
+              <div class="layer-owner">The party putting capital at risk</div>
+            </div>
+            <div class="layer-body">
+              <p>One operation in four steps, performed by an insurer, reinsurer, lender, acquirer or claims handler: observe, verify, price, allocate. Verify here means the proof check that party runs for itself, on the record, the public schema and the signer's public key.</p>
+              <span class="layer-not"><b>Arkaya issues no score, no rating and no benchmark from Layer 1, prices nothing, and sits nowhere in the path of a proof check.</b> A record is checked with stock open-source libraries and no call to any Arkaya service. That is a falsification condition rather than a promise: it is registered acceptance test V-3, run with every Arkaya-operated domain blocked at DNS.</span>
+            </div>
+          </div>
+
+          <div class="layer">
+            <div>
+              <div class="layer-id">Layer 3</div>
+              <div class="layer-name">Accumulation</div>
+              <div class="layer-owner">The organisation</div>
+            </div>
+            <div class="layer-body">
+              <p>Where priced outcomes compound at the firm: capacity at renewal, terms at signing, refinancing pricing at execution, recovery at claim, enterprise value at exit.</p>
+              <span class="layer-not"><b>This layer carries a hypothesis under test, not a mechanism.</b> That governance evidence compounds into enterprise value is the proposition the research argues; it is not something the schema demonstrates, and it is not stated here as though it were.</span>
+            </div>
+          </div>
+
+        </div>
+
+        <p style="margin-top:26px">The <a href="/doctrine">Doctrine</a> is the argument that this sequence exists. The <a href="/schema">Schema</a> is Layer 1 in full. The <a href="/library">Library</a> is the economics beneath it.</p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-eyebrow">§ 02 · What actually passes</div>
+      <h2 class="section-title">Nine steps, and the one thing that is not a step.</h2>
+      <div class="section-body">
+        <p>The chain from an obligation to a capital decision, stated as the sequence it is. Each step has one owner and produces one thing.</p>
+
+        <div class="seq">
+          <div class="seq-row"><div class="seq-txt">An <b>obligation is stated</b> — in a covenant, a policy condition or a board protocol.</div></div>
+          <div class="seq-row"><div class="seq-txt"><b>Signals are emitted</b> by the organisation's own systems.</div></div>
+          <div class="seq-row"><div class="seq-txt">A <b>person decides</b>. The judgement stays human.</div></div>
+          <div class="seq-row"><div class="seq-txt">The <b>decision is recorded</b> against the obligation it bears on.</div></div>
+          <div class="seq-row"><div class="seq-txt">The <b>record is sealed</b>, so that alteration is detectable.</div></div>
+          <div class="seq-row"><div class="seq-txt">The <b>seal carries a proof</b> — the material a party who was not present needs.</div></div>
+          <div class="seq-row"><div class="seq-txt">An <b>allocator runs a proof check</b>, with the record, the public schema and the signer's public key.</div></div>
+          <div class="seq-row"><div class="seq-txt">The <b>schema returns a coverage state</b>: whether conduct of adequate cadence exists against the obligation.</div></div>
+          <div class="seq-row"><div class="seq-txt">The <b>carrier exercises judgement</b> and decides the price.</div></div>
+        </div>
+
+        <div class="seq-note">
+          <p><strong>Verification is not on that list, and its absence is deliberate.</strong> Verification is the name for what results when a party who was not present relies on the outcome. It is a property, not a stage: nobody performs it, Arkaya does not sell it, and no box on a diagram contains it. Translation is the mechanism; verification is the result. A page that drew verification as a step would be selling the result as a product, which is the thing this architecture is built not to do.</p>
+        </div>
+
+        <p style="margin-top:24px">Two limits worth stating in the same breath. A coverage state measures adequacy of coverage and nothing else — a covered obligation is not thereby witnessed, and neither is a statement that governance is good. And the arithmetic of a proof check does not decay while the binding of a key to a party may: the recomputation survives indefinitely, the attribution depends on a document held outside the record by somebody with no continuing interest in it. Both are open work and are described as such on the <a href="/get">implementer pack page</a>.</p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-eyebrow">§ 03 · What is open and what is licensed</div>
+      <h2 class="section-title">The short answer to what you buy.</h2>
+      <div class="section-body">
+        <p>The schema is not for sale, and that is the point rather than a concession: a translation layer that charged for its own contract would not be one. What is licensed sits beside the schema, never inside it.</p>
+
+        <div class="split">
+          <div class="split-card">
+            <div class="split-h">Open · never charged for</div>
+            <div class="split-lede">Everything a stranger needs to build against the schema, or to check a record.</div>
+            <ul>
+              <li>The Governance Evidence Taxonomy itself</li>
+              <li>Cryptographic Profile v5 — canonicalisation, digest, chaining, seal</li>
+              <li>Interface and Conformance Specification v4 — what an emitter emits, what a reader consumes</li>
+              <li>The candidate vector set, 49 checks</li>
+              <li>An independent checker, and a reading-side conformance corpus</li>
+              <li>A specimen record and the fixture keys to check it with</li>
+            </ul>
+            <div class="split-foot">No fee, no licence condition, no account, no call to any Arkaya service. At <a href="/get" style="color:var(--deep-teal)">/get</a>.</div>
+          </div>
+
+          <div class="split-card licensed">
+            <div class="split-h">Licensed · the commercial work</div>
+            <div class="split-lede">The material that turns the schema into an underwriting decision on a named risk.</div>
+            <ul>
+              <li>The mapping library — obligations to observables to source systems</li>
+              <li>The field sets for a given class of risk</li>
+              <li>The covenant benchmark a counterparty reads a coverage state against</li>
+            </ul>
+            <div class="split-foot">This is Arkaya GET Solutions. The first class is continuous covenant underwriting for AI liability: a live, first-party evidence feed on the insured's AI estate, read into rating, retention, limit and capital by the underwriter, who decides all four. See <a href="/solutions" style="color:var(--bronze)">Solutions</a>.</div>
+          </div>
+        </div>
+
+        <p style="margin-top:22px">The boundary is doing real work. Anyone may build an engine, produce records and have them read, without asking Arkaya and without paying Arkaya, because comparability across counterparties only exists if the form is free. What a counterparty pays for is the applied layer: which obligations matter for this risk, which observables evidence them, and what adequate looks like at this cadence.</p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-eyebrow">§ 04 · Status</div>
+      <h2 class="section-title">What is not yet true.</h2>
+      <div class="section-body">
+        <p>Stated here rather than inferred from silence, and in the same words the material itself uses.</p>
+
+        <div class="status-list">
+          <div class="status-row">
+            <div class="status-k">The specifications</div>
+            <div class="status-v">In review, pre-ratification. Version-pin what you build against and expect the pin to move once.</div>
+          </div>
+          <div class="status-row">
+            <div class="status-k">The vectors and corpus</div>
+            <div class="status-v">Candidates. Normative on adoption by the specification that owns them, not because a tool produced them.</div>
+          </div>
+          <div class="status-row">
+            <div class="status-k">Engines</div>
+            <div class="status-v">The conformance programme is a designed open test. Nothing has passed it, so no engine is described here as having done so.</div>
+          </div>
+          <div class="status-row">
+            <div class="status-k">Independent reproduction</div>
+            <div class="status-v">Not yet done. Until a party Arkaya does not pay has built a second implementation without Arkaya's code and returned the same outputs across the published set, the honest description of every open file is <strong>registered, not recognised</strong>.</div>
+          </div>
+          <div class="status-row">
+            <div class="status-k">Signing keys</div>
+            <div class="status-v">No production key exists and none is Arkaya's. The keys published are fixtures, derived from fixed seeds, never for production.</div>
+          </div>
+          <div class="status-row">
+            <div class="status-k">Custody of the schema</div>
+            <div class="status-v">Held by Arkaya as Custodian, and structured to devolve to the Custos Foundation on four milestone gates. Indicative timing 2029 at earliest.</div>
+          </div>
+          <div class="status-row">
+            <div class="status-k">The company</div>
+            <div class="status-v">Pre-revenue.</div>
+          </div>
+        </div>
+
+        <p style="margin-top:24px">A reader who wants the cheapest possible test of all of the above should ignore this page and check a record: the four-step procedure and a specimen are at <a href="/get">/get</a>, and the check runs with the network switched off.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="closing">
+  <div class="container">
+    <p>Resilience Capital is built.<br>Not asserted.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-meta">
+        Arkaya Risk Limited · registered in England and Wales, no. 17380022<br>
+        Founded by David J McKibbin and Simon Hudson<br>
+        <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a> · +44 (0)7972 178759<br>
+        <a href="mailto:smh@arkayarisk.com">smh@arkayarisk.com</a> · +1 (914) 309-6397<br>
+        <a href="https://www.linkedin.com/in/davidmckibbin" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="footer-legal">
+        Arkaya Risk Limited, a company registered in England and Wales (no. 17380022).<br>
+        Registered office: Oxford House, 15-17 Mount Ephraim Road, Tunbridge Wells, England, TN1 1EN.<br>
+        © 2026 Arkaya Risk. All rights reserved.
+      </div>
+    </div>
+    <div class="footer-standard">
+      Produced under Arkaya Production Standard v1. Methodology: <a href="/standard">arkayarisk.com/standard</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
