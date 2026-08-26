@@ -7,6 +7,7 @@ Arkaya Risk Limited is a UK company (England and Wales no. 17380022), pre-revenu
 ## Start here
 
 - [Home](https://arkayarisk.com/): what Arkaya does and where it sits: source systems emit signals, an engine produces a record against the schema, capital allocators read the record and decide the price. Three worked loss cases (Robodebt, Zillow Offers, M&S) read through the schema.
+- [Architecture](https://arkayarisk.com/architecture): where Arkaya sits in the chain from source systems to capital. The four layers, what Arkaya does not do at each, the nine steps a record passes through, and which material is open and which is licensed.
 - [Schema](https://arkayarisk.com/schema): the Governance Evidence Taxonomy. The four-layer architecture, the eight fields, the eight governance domains, the four-grade evidence ladder (Asserted, Attested, Evidenced, Verifiable) and the Schema Independence Charter.
 - [Evidence](https://arkayarisk.com/evidence): what a governance evidence record looks like: the eight observable fields, the exception states and how an underwriter or lender reads it. Illustrative template, no client data, no score issued.
 
