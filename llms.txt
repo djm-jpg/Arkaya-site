@@ -1,0 +1,30 @@
+# Arkaya Risk
+
+> Arkaya stewards the Governance Evidence Taxonomy (GET), an open schema for governance evidence. An organisation's systems emit signals; an engine produces a signed record against the schema stating whether a control existed, ran and passed its own test; insurers, lenders and acquirers read that record as evidence and price governance risk on it. Arkaya produces no evidence, issues no score and prices nothing; a record is checked with the record, the public schema and the signer's public key, with no call to Arkaya.
+
+Arkaya Risk Limited is a UK company (England and Wales no. 17380022), pre-revenue, founded by David J McKibbin and Simon Hudson. The commercial work that runs on the schema is Arkaya GET Solutions, with continuous covenant underwriting for AI liability as the first class. The links below are the site's principal pages; each carries the same copy an agent or a person reads.
+
+## Start here
+
+- [Home](https://arkayarisk.com/): what Arkaya does and where it sits: source systems emit signals, an engine produces a record against the schema, capital allocators read the record and decide the price. Three worked loss cases (Robodebt, Zillow Offers, M&S) read through the schema.
+- [Schema](https://arkayarisk.com/schema): the Governance Evidence Taxonomy. The four-layer architecture, the eight fields, the eight governance domains, the four-grade evidence ladder (Asserted, Attested, Evidenced, Verifiable) and the Schema Independence Charter.
+- [Evidence](https://arkayarisk.com/evidence): what a governance evidence record looks like: the eight observable fields, the exception states and how an underwriter or lender reads it. Illustrative template, no client data, no score issued.
+
+## For agents and implementers
+
+- [Layer 1 implementer pack](https://arkayarisk.com/get): the open material for building against the schema. Cryptographic Profile v5 (W3C Data Integrity, cryptosuite eddsa-jcs-2022, RFC 8785 canonicalisation, Ed25519), Interface and Conformance Specification v4, a candidate vector set with 49 checks, an independent checker script and a reading-side conformance corpus. No fee, no licence condition, no account, no call to any Arkaya service.
+- [Check a sealed record yourself](https://arkayarisk.com/get): the four-step procedure and a specimen record you can check with stock open-source libraries.
+- [Discovery document](https://arkayarisk.com/.well-known/governance-evidence.json): machine-readable index of the schema, the pack, the vectors, the checker, the fixture keys and their digests.
+
+## Understand the argument
+
+- [Solutions](https://arkayarisk.com/solutions): continuous covenant underwriting for AI risk: a live, first-party evidence feed on the insured's AI estate, read into rating, retention, limit and capital.
+- [Doctrine](https://arkayarisk.com/doctrine): five principles for pricing governance risk. Governability is the precondition of insurability; evidence, not assertion, settles underwriting confidence.
+- [Library](https://arkayarisk.com/library): the Arkaya Thesis in four papers: the economic mechanism, the cross-market generalisation, the implementation architecture, and the answer to the strongest objections.
+- [Standard](https://arkayarisk.com/standard): how Arkaya governs its own AI-assisted production, evidenced on every artefact issued.
+- [Founders](https://arkayarisk.com/founder): David J McKibbin (London) and Simon Hudson (United States).
+
+## Optional
+
+- [Sitemap](https://arkayarisk.com/sitemap.xml)
+- [Robots](https://arkayarisk.com/robots.txt)
