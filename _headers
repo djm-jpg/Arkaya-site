@@ -1,0 +1,14 @@
+# Netlify _headers file. Static, no build step. https://docs.netlify.com/routing/headers/
+
+/llms.txt
+  Content-Type: text/markdown; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/.well-known/governance-evidence.json
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+
+/get/v1/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=86400
+  X-Content-Type-Options: nosniff
