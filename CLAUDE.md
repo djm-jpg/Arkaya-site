@@ -23,7 +23,28 @@ red-teamed and deliberately shelved: the benefit was unevidenced and the publish
 to fail is worth more. The decision record is with the Tranche A notes; the shelved machinery is in
 the v5 bundle and can be revived if measurement ever justifies it.
 
-`ecosystem.html` and `infinity.html` are live routes with no navigation entry — deliberate.
+Pages, and whether they are in the navigation:
+
+| In the navigation | Live, not in the navigation |
+|---|---|
+| `index.html` (home) | `architecture.html` — reachable only from body copy and `llms.txt`. **Open decision.** |
+| `solutions.html`, `evidence.html` | `get/index.html` — same. **Open decision.** |
+| `schema.html`, `doctrine.html`, `founder.html` | `ecosystem.html`, `infinity.html` — deliberate, no agent surface |
+| `library.html`, `standard.html` | |
+
+The navigation carries seven items in three groups and has not grown since the page count did. That
+is a decision waiting to be taken, not an oversight: `/architecture` and `/get` are the two newest
+and densest pages and a human cannot currently reach either from the header.
+
+### Adding or retiring a page
+
+Two files must change in step, or the page is invisible to agents and to search:
+
+1. `sitemap.xml`
+2. `llms.txt` — and the entry is locked copy, not metadata; see below
+
+Then decide, explicitly, whether it enters the navigation. A page that enters neither the navigation
+nor `llms.txt` is unreachable and should not have been built.
 
 ## The agent surface
 
@@ -41,7 +62,7 @@ Three files, all static, all authored:
 
 ## The definitional invariant
 
-Carried verbatim wherever the chain is stated — llms.txt, the discovery document, the /get page:
+Carried verbatim wherever the chain is stated — llms.txt, the discovery document, `/architecture`:
 
 > Source systems emit signals; an engine produces a record against the schema; a counterparty reads
 > that record as evidence; Arkaya produces neither the record nor the price.
@@ -52,10 +73,31 @@ If you edit any statement of who produces what, it must match this form exactly.
 
 Site copy is governed by the Arkaya Term Register (v8 at time of writing) and the Brand Voice
 document; neither lives here, and where they differ from anything in this repository, they govern.
-The three rules most often broken: no reserved word in two senses across the site ("canonical" is
-RFC 8785 only, glossed at first use); no status word claiming outside recognition (everything in
-`get/v1/` is **registered, not recognised** until a party Arkaya does not pay has reproduced the
-outputs); and a passing signature establishes **what was sealed, not by whom**.
+
+Four rules, each of which this site has broken at least once and been corrected for:
+
+- **Custody is never unqualified.** Split it: private key control, public key publication, or record
+  retention. The claim this site makes is record retention — "each hop retained in the record".
+  "Chain of custody" was removed from eight places on 26 August and must not return.
+- **Independence means no reliance on Arkaya, and the sentence says which reliance.** It does not
+  mean insulation from commercial pressure; that sense was removed from `/schema` on 26 August.
+  Note the *Schema Independence Charter* keeps its name — renaming a titled instrument is a schema-
+  track act, not a website edit.
+- **Verify is reserved to the allocator's third step** (observe, verify, price, allocate), glossed
+  once at first use as the proof check that party runs for itself. It is never a verb for anything
+  Arkaya, the schema or the software does. `/standard` said "assertions verified" until 26 August;
+  it now says "checked".
+- **No status word claiming outside recognition.** Nothing on this site is certified, established,
+  recognised, adopted, proven, validated or trusted. Everything in `get/v1/` is **registered, not
+  recognised** until a party Arkaya does not pay has reproduced the outputs.
+
+### Specification first, site second
+
+Three uses of the verify family are **not** site copy and must not be corrected here: the evidence
+ladder grade `Verifiable`, Field 07 `Verification mode`, and the SVG label "cryptographically
+verifiable" on `/evidence`. All are names the governing specification owns. Changing the site while
+the specification keeps the words manufactures the same-word-two-senses defect the register's fifth
+check exists to catch. The specification moves first.
 
 ## Changing anything in get/v1/
 
@@ -65,9 +107,20 @@ in place** — an edit silently breaks the one thing an agent can check. To chan
 the pack zip, republish it whole, and update the discovery document's digests in the same commit.
 `get/v1/specimen/` is site-authored, not pack material.
 
+Two pack files — `MANIFEST.json` and `vectors/vectors_v5_candidate.json` — have **no trailing
+newline**, and their digests depend on it. GitHub's web *editor* appends one on every commit and
+will break them; the drag-and-drop *uploader* commits raw bytes and does not. Use the uploader for
+those two files.
+
 ## Deploy
 
-Branch, upload, PR, check the preview, merge. Quick preview checks: every page returns 200 at its
-pretty URL; `/llms.txt`, `/robots.txt`, `/sitemap.xml`, `/.well-known/governance-evidence.json` and
-`/get/v1/MANIFEST.json` all return 200; a PDF still serves. Confirm the production deploy log
-reports header rules processed (the `_headers` file taking effect).
+**Structural change — a new page, a layout change, anything touching `_headers`, `_redirects` or
+`get/v1/`:** branch, PR, check the deploy preview, merge. The preview is the only look you get.
+
+**Small copy correction — a handful of lines, no new files, no structural change:** committing
+straight to `main` is acceptable and was done for the eleven register corrections on 26 August. Know
+that you are skipping the preview when you do it.
+
+Preview checks, whichever route: every page 200 at its pretty URL; `/llms.txt`, `/robots.txt`,
+`/sitemap.xml`, `/.well-known/governance-evidence.json` and `/get/v1/MANIFEST.json` all 200; a PDF
+still serves. Confirm the production deploy log reports header rules processed.
