@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Layer 1 implementer pack. Build against the schema, check a sealed record yourself.</title>
+<meta name="description" content="Specifications, test vectors, an independent checker and a specimen record for producing and reading Arkaya Layer 1 governance evidence. Open material: no fee, no account, no call to any Arkaya service.">
+<link rel="canonical" href="https://arkayarisk.com/get">
+<link rel="describedby" href="/llms.txt" type="text/markdown">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arkaya Risk">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="The Layer 1 implementer pack. Build against the schema, check a sealed record yourself.">
+<meta property="og:description" content="Specifications, test vectors, an independent checker and a specimen record for producing and reading Arkaya Layer 1 governance evidence. Open material: no fee, no account, no call to any Arkaya service.">
+<meta property="og:url" content="https://arkayarisk.com/get">
+<meta property="og:image" content="https://arkayarisk.com/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Arkaya Risk. Make the autonomous economy governable, and therefore priceable.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Layer 1 implementer pack. Build against the schema, check a sealed record yourself.">
+<meta name="twitter:description" content="Specifications, test vectors, an independent checker and a specimen record for producing and reading Arkaya Layer 1 governance evidence. Open material: no fee, no account, no call to any Arkaya service.">
+<meta name="twitter:image" content="https://arkayarisk.com/og-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-teal: #2A393C;
+    --slate-teal: #364748;
+    --bronze: #C89358;
+    --bronze-soft: rgba(200, 147, 88, 0.18);
+    --bronze-line: rgba(200, 147, 88, 0.45);
+    --charcoal: #41413F;
+    --off-white: #F4F5EF;
+    --off-white-soft: rgba(244, 245, 239, 0.78);
+    --off-white-faint: rgba(244, 245, 239, 0.55);
+    --rule: rgba(42, 57, 60, 0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--off-white);
+    background: var(--deep-teal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--bronze); color: var(--deep-teal); }
+
+  .container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* Header */
+  header {
+    background: var(--off-white);
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    z-index: 10;
+  }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-link { display: inline-block; line-height: 0; }
+  .logo { height: 76px; width: auto; display: block; }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--charcoal);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 200ms ease;
+    position: relative;
+    padding: 4px 0;
+  }
+  nav a.active { color: var(--bronze); }
+  nav a:hover { color: var(--bronze); }
+  nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background: var(--bronze);
+    transition: width 200ms ease;
+  }
+  nav a.active::after,
+  nav a:hover::after { width: 100%; }
+
+  /* Hero */
+  .hero {
+    padding: 96px 0 72px 0;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -10%;
+    width: 65%;
+    height: 100%;
+    background: radial-gradient(ellipse at top right, rgba(200, 147, 88, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 500;
+    margin-bottom: 28px;
+  }
+  .hero-headline {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(28px, 4.4vw, 48px);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    color: var(--off-white);
+    max-width: 980px;
+    margin-bottom: 36px;
+  }
+  .hero-lede {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(16px, 1.55vw, 19px);
+    line-height: 1.55;
+    color: var(--off-white-soft);
+    max-width: 880px;
+    border-left: 2px solid var(--bronze);
+    padding-left: 22px;
+  }
+
+  /* Content */
+  .content {
+    background: var(--off-white);
+    color: var(--charcoal);
+    padding: 96px 0 100px 0;
+  }
+  .content-inner { max-width: 880px; }
+
+  .section-block { margin-bottom: 56px; }
+  .section-block:last-child { margin-bottom: 0; }
+
+  .section-eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(24px, 3.2vw, 32px);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--deep-teal);
+    margin-bottom: 20px;
+  }
+  .section-body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--charcoal);
+  }
+  .section-body p { margin-bottom: 16px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-body strong { color: var(--deep-teal); font-weight: 600; }
+  .section-body a { color: var(--deep-teal); text-decoration: underline; text-decoration-color: var(--bronze); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  .section-body a:hover { color: var(--bronze); }
+
+  /* Four-stage loop */
+  .loop-stages {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    margin: 28px 0 12px 0;
+  }
+  .stage {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    align-items: start;
+    padding: 22px 26px;
+    background: rgba(54, 71, 72, 0.04);
+    border: 1px solid rgba(54, 71, 72, 0.10);
+    border-radius: 3px;
+  }
+  .stage-label {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--deep-teal);
+    letter-spacing: -0.005em;
+  }
+  .stage-body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--charcoal);
+  }
+
+  /* Trajectory */
+  .trajectory {
+    background: var(--bronze-soft);
+    border: 1px solid var(--bronze-line);
+    border-radius: 3px;
+    padding: 28px 32px;
+    margin-top: 28px;
+  }
+  .trajectory h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--deep-teal);
+    margin-bottom: 14px;
+  }
+  .trajectory p {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--charcoal);
+    margin-bottom: 12px;
+  }
+  .trajectory p:last-child { margin-bottom: 0; }
+  .trajectory .version-tag {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    color: var(--deep-teal);
+  }
+
+  /* References */
+  .references {
+    margin-top: 56px;
+    padding-top: 36px;
+    border-top: 1px solid var(--rule);
+  }
+  .references h2 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 600;
+    margin-bottom: 22px;
+  }
+  .references ol {
+    list-style: none;
+    counter-reset: ref-counter;
+    padding-left: 0;
+  }
+  .references li {
+    counter-increment: ref-counter;
+    padding-left: 38px;
+    position: relative;
+    margin-bottom: 18px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--charcoal);
+  }
+  .references li::before {
+    content: counter(ref-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--bronze);
+    width: 26px;
+    text-align: right;
+  }
+  .references a { color: var(--deep-teal); text-decoration: underline; text-decoration-color: var(--bronze); }
+
+  /* Production note */
+  .production-note {
+    margin-top: 48px;
+    padding: 26px 30px;
+    background: var(--deep-teal);
+    color: var(--off-white);
+    border-radius: 3px;
+    border-left: 3px solid var(--bronze);
+  }
+  .production-note h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .production-note dl {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--off-white-soft);
+  }
+  .production-note dt {
+    display: inline;
+    font-weight: 600;
+    color: var(--off-white);
+  }
+  .production-note dd {
+    display: inline;
+    margin-left: 4px;
+    color: var(--off-white-soft);
+  }
+  .production-note dd::after {
+    content: '';
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Closing line */
+  .closing {
+    background: var(--deep-teal);
+    padding: 96px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .closing::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 1px;
+    background: var(--bronze-line);
+    max-width: 200px;
+  }
+  .closing p {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+    color: var(--off-white);
+    margin-top: 40px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--deep-teal);
+    padding: 56px 0 40px 0;
+    border-top: 1px solid rgba(200, 147, 88, 0.18);
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 28px;
+  }
+  .footer-meta {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    color: var(--off-white-faint);
+    line-height: 1.7;
+    letter-spacing: 0.4px;
+  }
+  .footer-meta a {
+    color: var(--bronze);
+    text-decoration: none;
+  }
+  .footer-meta a:hover { text-decoration: underline; }
+  .footer-standard {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11.5px;
+    color: var(--off-white-faint);
+    letter-spacing: 0.6px;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(200, 147, 88, 0.12);
+  }
+  .footer-standard a {
+    color: var(--bronze);
+    text-decoration: none;
+  }
+  .footer-standard a:hover { text-decoration: underline; }
+  .footer-legal {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10px;
+    color: rgba(244, 245, 239, 0.35);
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+
+
+  .nav-group { display: flex; gap: inherit; align-items: center; }
+  .nav-group + .nav-group { border-left: 1px solid rgba(200,147,88,0.4); padding-left: 22px; margin-left: -6px; }
+  .nav-glabel { font-family: 'IBM Plex Sans', sans-serif; font-size: 10.5px; letter-spacing: 1.8px; text-transform: uppercase; font-weight: 600; color: rgba(65,65,63,0.78); margin-right: 4px; }
+  @media (max-width: 900px) { .nav-glabel { display: none; } .nav-group + .nav-group { padding-left: 14px; } }
+
+  /* Mobile */
+  @media (max-width: 760px) {
+    .container { padding: 0 22px; }
+    .hero { padding: 60px 0 50px 0; }
+    .content { padding: 56px 0 70px 0; }
+    .header-inner { flex-direction: row; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .logo { height: 56px; }
+    nav { gap: 18px; }
+    .stage { grid-template-columns: 1fr; gap: 8px; padding: 18px 22px; }
+    .stage-label { font-size: 18px; }
+    .closing { padding: 70px 0; }
+    .trajectory { padding: 22px 24px; }
+    .production-note { padding: 22px 24px; }
+  }
+
+  .section-body code { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.86em; color: var(--bronze); word-break: break-all; }
+  .section-body ul, .section-body ol { margin: 0 0 1.1rem 1.25rem; }
+  .section-body li { margin-bottom: 0.55rem; }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Arkaya Layer 1 implementer pack v1","description":"Specifications, candidate test vectors, an independent checker and a specimen record for producing and reading Arkaya Layer 1 governance evidence records (Cryptographic Profile v5, cryptosuite eddsa-jcs-2022).","url":"https://arkayarisk.com/get","version":"1","datePublished":"2026-08-10","dateModified":"2026-08-25","isAccessibleForFree":true,"license":"https://arkayarisk.com/get/v1/README.md","creator":{"@type":"Organization","name":"Arkaya Risk Limited","url":"https://arkayarisk.com/"},"distribution":[{"@type":"DataDownload","name":"MANIFEST.json","encodingFormat":"application/json","contentUrl":"https://arkayarisk.com/get/v1/MANIFEST.json"},{"@type":"DataDownload","name":"vectors_v5_candidate.json","encodingFormat":"application/json","contentUrl":"https://arkayarisk.com/get/v1/vectors/vectors_v5_candidate.json"},{"@type":"DataDownload","name":"Cryptographic Profile v5","encodingFormat":"text/markdown","contentUrl":"https://arkayarisk.com/get/v1/specifications/Arkaya_Layer1_Cryptographic_Profile_v5.md"},{"@type":"DataDownload","name":"governance-evidence.json discovery document","encodingFormat":"application/json","contentUrl":"https://arkayarisk.com/.well-known/governance-evidence.json"}]}</script>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="/" class="logo-link" aria-label="Arkaya Risk. Building resilience capital.">
+      <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
+    </a>
+    <nav aria-label="Site">
+      <span class="nav-group"><span class="nav-glabel">Understand</span>
+<a href="/solutions">Solutions</a>
+<a href="/evidence">Evidence</a>
+</span>
+      <span class="nav-group"><span class="nav-glabel">Evaluate</span>
+<a href="/schema">Schema</a>
+<a href="/doctrine">Doctrine</a>
+<a href="/founder">Founders</a>
+</span>
+      <span class="nav-group"><span class="nav-glabel">Verify</span>
+<a href="/library">Library</a>
+<a href="/standard">Standard</a>
+</span>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Arkaya GET · Layer 1 implementer pack · v1</div>
+    <h1 class="hero-headline">Build against the schema. Check a sealed record yourself.</h1>
+    <p class="hero-lede">
+      The open material for producing and reading Layer 1 evidence records.<br>
+      No fee, no licence condition, no account, and no call to any Arkaya service.
+    </p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="container content-inner">
+
+    <div class="section-block">
+      <div class="section-eyebrow">What this is</div>
+      <h2 class="section-title">The text an implementer builds to, and the bytes a reader checks against.</h2>
+      <div class="section-body">
+        <p>In plain terms: this page holds the specifications, test vectors and a checker that let a third party's engine produce a record against the schema, or let any reader check one, without asking Arkaya anything.</p>
+        <p>The Governance Evidence Taxonomy is the schema counterparties read. This pack is the layer beneath it: how a record is canonicalised, digested, chained and signed so that a reader who was not party to making it can check it. The <a href="/schema">Schema page</a> explains what a record says. This page explains how one is sealed and how a reader tests the seal.</p>
+        <p>Status is stated on every file and it is literal. The specifications are in review and not yet ratified. The vector set and the conformance corpus are candidates. Nothing here is described as certified, established or recognised, because no party Arkaya does not pay yet relies on it. When that changes the status words change with it.</p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-eyebrow">Contents</div>
+      <h2 class="section-title">Eleven text files, one manifest, every file digested.</h2>
+      <div class="section-body">
+        <p>Retrieve from <code>/get/v1/</code>. Each entry carries its digest from <a href="/get/v1/MANIFEST.json">MANIFEST.json</a> in the profile's own form: base58-btc multibase over the multihash-prefixed SHA-256 of the bytes. Check the digest before you read the file.</p>
+        <ul>
+          <li><a href="/get/v1/specifications/Arkaya_Layer1_Cryptographic_Profile_v5.md">Cryptographic Profile v5</a>. W3C Data Integrity, cryptosuite eddsa-jcs-2022, RFC 8785 canonicalisation, Ed25519. Section 8 states the proof-check procedure.</li>
+          <li><a href="/get/v1/specifications/Arkaya_Layer1_Interface_and_Conformance_Specification_v4.md">Interface and Conformance Specification v4</a>. The registered acceptance tests, including V-3: the check re-run with every Arkaya-operated domain blocked at DNS, which must return the same result.</li>
+          <li><a href="/get/v1/vectors/vectors_v5_candidate.json">Candidate vector set v5</a>. Seven records that must pass and fifteen that must fail, each failure with its stated reason. Forty-nine checks.</li>
+          <li><a href="/get/v1/vectors/xverify_v5.mjs">xverify_v5.mjs</a>. An independent checker in JavaScript, written against the specification rather than against the generator. Node 18 or later.</li>
+          <li><a href="/get/v1/vectors/generate_vectors_v5.py">generate_vectors_v5.py</a>. The deterministic generator, so a reader can see how the vectors were produced.</li>
+          <li><a href="/get/v1/corpus/README.md">Reading-side conformance corpus</a>, with <a href="/get/v1/corpus/reference_reader.py">reference_reader.py</a> and <a href="/get/v1/corpus/run_fixtures.py">run_fixtures.py</a>.</li>
+          <li><a href="/get/v1/VERIFY.md">VERIFY.md</a>, <a href="/get/v1/README.md">README.md</a>, <a href="/get/v1/SECURITY.md">SECURITY.md</a>.</li>
+        </ul>
+        <p>Machine-readable index of all of the above, with digests, keys and the procedure as data: <a href="/.well-known/governance-evidence.json">/.well-known/governance-evidence.json</a>. A site index for agents is at <a href="/llms.txt">/llms.txt</a>.</p>
+      </div>
+    </div>
+
+    <div class="section-block" id="check">
+      <div class="section-eyebrow">The check</div>
+      <h2 class="section-title">Four steps, stock libraries, about five minutes.</h2>
+      <div class="section-body">
+        <p>You are not asked to trust that a record checks. You are asked to check it. What a proof check takes is the record, the public schema and the signer's public key, and the key travels with the record.</p>
+        <ol>
+          <li>Take a record and remove its <code>proof</code> member. Canonicalise what remains with an RFC 8785 library. Canonical here means one thing only: the single byte form of a JSON value that RFC 8785 defines, so that two implementations hash the same bytes. SHA-256 the result. Prefix the multihash bytes <code>0x12 0x20</code>, encode base58-btc, prefix <code>z</code>. Compare with the record digest, and with the <code>previousDigest</code> of the record that follows it in the chain.</li>
+          <li>Take the <code>proof</code> object, remove <code>proofValue</code>, canonicalise it. The signing input is SHA-256 of that, concatenated with SHA-256 from step one, in that order.</li>
+          <li>Decode <code>proofValue</code> and the key in <code>verificationMethod</code>. Check the Ed25519 signature over the signing input. A passing signature establishes what was sealed, not by whom; binding the key to a party is a separate question the record does not answer on its own.</li>
+          <li>All must pass. A record that fails says nothing about the control it describes; it is a record that cannot be relied on.</li>
+        </ol>
+        <p>Two ready-made routes. In JavaScript: <code>node xverify_v5.mjs vectors_v5_candidate.json</code> runs all forty-nine checks. In Python: <a href="/get/v1/specimen/check_record.py">check_record.py</a> runs the four steps on one record using <code>jcs</code>, <code>base58</code> and <code>cryptography</code>. Nothing on either list is Arkaya's.</p>
+        <p>A specimen to start on: <a href="/get/v1/specimen/get-v1-specimen-record.json">get-v1-specimen-record.json</a> is vector V-01, the genesis record of the candidate chain, sealed with fixture key A. Its published digest is <code>zQmQJtBuc2C4cwATu1LgXQkPs61Dbb6ybAVzEHREdnrw8Zx</code>. Change one character of the body and re-run the check; it fails on the signature and the digest moves. The fixture keys are in <a href="/get/v1/specimen/fixture-keys.json">fixture-keys.json</a>; they are derived from fixed seeds and are never for production use.</p>
+        <p>The negative case worth running first is N-15: two strings identical on screen but different in Unicode composition produce different digests. The profile performs no normalisation, the producer fixes the form at record creation, and no reader can detect the difference afterwards. It is the divergence an implementer is most likely to introduce without noticing.</p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-eyebrow">What has been checked</div>
+      <h2 class="section-title">One record, one clean environment, 25 August 2026.</h2>
+      <div class="section-body">
+        <p>On 25 August 2026, in a clean build environment operated on Arkaya's own instruction, vector V-01 was reconstructed from the published vector set and checked with the Python route above. The canonical content matched byte for byte, the recomputed digest matched the published digest, and the Ed25519 signature checked against the key carried in the record. A copy with one word of the body altered failed on the signature, as N-01 requires.</p>
+        <p>That is what the check shows and no more. The script was written from VERIFY.md without Arkaya's code, but it covers one vector, not the suite, and it was run at Arkaya's direction, so it does not discharge the test the pack sets for itself: a second implementation, built without our code and without our help, returning the same outputs across the published set. Until a party Arkaya does not pay has done that, the honest description of every file here is registered, not recognised.</p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-eyebrow">What is not here</div>
+      <h2 class="section-title">Four things a reader might expect, and why they are absent.</h2>
+      <div class="section-body">
+        <p>The GET schema as JSON. It exists at v4 and is hash-pinned. It is body vocabulary a reader interprets, not what an emitter validates to seal, and publishing it is a version act on the schema governance track. It follows once that act is taken.</p>
+        <p>The Evidence Record Specification, which defines the envelope an emitter emits. Also pending publication; the vectors show the envelope's shape in the meantime.</p>
+        <p>A production public key. There is none to publish. Arkaya does not sign records; the insured or its engine does, and the record states which. The only keys here are fixtures.</p>
+        <p>A key-rotation and revocation policy. How a reader years from now checks a record sealed today, after the signer's key has been rotated, is open work in the profile. The arithmetic survives, since the key travels with the record; the binding of that key to the party may not, and the profile does not yet say how that binding is preserved. It is stated as open rather than papered over.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="closing">
+  <div class="container">
+    <p>Resilience Capital is built.<br>Not asserted.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-meta">
+        Arkaya Risk Limited · registered in England and Wales, no. 17380022<br>
+        Founded by David J McKibbin and Simon Hudson<br>
+        <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a> · +44 (0)7972 178759<br>
+        <a href="mailto:smh@arkayarisk.com">smh@arkayarisk.com</a> · +1 (914) 309-6397<br>
+        <a href="https://www.linkedin.com/in/davidmckibbin" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="footer-legal">
+        Arkaya Risk Limited, a company registered in England and Wales (no. 17380022).<br>
+        Registered office: Oxford House, 15-17 Mount Ephraim Road, Tunbridge Wells, England, TN1 1EN.<br>
+        © 2026 Arkaya Risk. All rights reserved.
+      </div>
+    </div>
+    <div class="footer-standard">
+      Produced under Arkaya Production Standard v1. Methodology: <a href="/standard">arkayarisk.com/standard</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

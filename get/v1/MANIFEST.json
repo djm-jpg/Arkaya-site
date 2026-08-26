@@ -1,0 +1,55 @@
+{
+ "pack": "Arkaya Layer 1 implementer pack",
+ "version": 1,
+ "dated": "2026-08-10",
+ "status": "Specifications in review, pre-ratification. Vector set and conformance corpus are candidates.",
+ "digestForm": "base58-btc multibase over multihash-prefixed SHA-256, per Cryptographic Profile v5 section 3.3",
+ "openMaterial": "No fee, no licence condition, no account, no call to any Arkaya service.",
+ "contents": "No binaries, no executables, no archives. Nine text files and this manifest. See SECURITY.md.",
+ "files": [
+  {
+   "path": "README.md",
+   "digest": "zQmS6RPnpVRQYQBaSNHnXm1RJUV3nPsenMufnWj44QRQZE3"
+  },
+  {
+   "path": "SECURITY.md",
+   "digest": "zQmbqUoraG2bqohG2KM74ni1UF7245c6sMzor4StEZCvjSb"
+  },
+  {
+   "path": "VERIFY.md",
+   "digest": "zQmdcX2J2RLsVwn8igD4EL1YxBeJkTXz1pvyzn1uBjk4zBN"
+  },
+  {
+   "path": "corpus/README.md",
+   "digest": "zQmX5q7VGg8cpf1ierP3TXa7wFvqgJgE3E4ckJ77g8GhfQg"
+  },
+  {
+   "path": "corpus/reference_reader.py",
+   "digest": "zQmRxw3fpCEp9dcAEuRcmJGDJBBJSgiNGbM5nxTWUujmLZq"
+  },
+  {
+   "path": "corpus/run_fixtures.py",
+   "digest": "zQmaYuJFWrWEcCeiKMSXkeuGCPFnp7X5t8toxTV4TdEvoqT"
+  },
+  {
+   "path": "specifications/Arkaya_Layer1_Cryptographic_Profile_v5.md",
+   "digest": "zQmTBHeJPPptQ46uUiuxU3SYhC1ZqWEsr2bnURs7RD5sovf"
+  },
+  {
+   "path": "specifications/Arkaya_Layer1_Interface_and_Conformance_Specification_v4.md",
+   "digest": "zQmZKaKaaDJfGXuwGuvkU36LwYGuWWA62iws15W7uZyHbKb"
+  },
+  {
+   "path": "vectors/generate_vectors_v5.py",
+   "digest": "zQmRp8UWShhPe56TEPG8bSqf5ZQeHfm1oCgzLkLN5cZBSLA"
+  },
+  {
+   "path": "vectors/vectors_v5_candidate.json",
+   "digest": "zQmU6FJxejX7fjT1X3iEvhPMQsyvfWD5nDcNhGDDnTVqT8P"
+  },
+  {
+   "path": "vectors/xverify_v5.mjs",
+   "digest": "zQmTe9HfHP4tPkWizR9RS4KQ2nLcnREC9s7GyeZ4VDm6aKh"
+  }
+ ]
+}

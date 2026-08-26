@@ -1,32 +1,44 @@
-# Arkaya site — v3 build (Doctrine + MTP refresh)
+# Arkaya-site
 
-v3 site build, 30 June 2026. Authored in the live design system (Fraunces / IBM Plex). Upload-ready to replace the matching files in `djm-jpg/Arkaya-site`. Supersedes the v2 build (20 June 2026).
+Source of **arkayarisk.com**. Static HTML in the live design system (Fraunces / IBM Plex), served by
+Netlify from `main` with no build step.
 
-## What changed (vs Site-Build v2)
+Operating rules — what you may change, what must never be edited in place, the agent surface and the
+language constraints — are in **[CLAUDE.md](CLAUDE.md)**. Read that before editing. This file is
+orientation only.
 
-- **New page: the Doctrine** (`doctrine.html`, route `/doctrine`). Presents the five principles, the priceability chain (evidence to governability to pricing confidence to capital allocation to applications to enterprise value), the two theorems, the insurance-first-instance nesting, and the "what this is not" boundaries. Built in the live design system, reusing the existing chrome and section classes.
-- **Nav, every page:** `Doctrine` added as the first nav item, so it reads Doctrine · Schema · Solutions · Ecosystem · Evidence · Standard. The doctrine is the root the rest derives from.
-- **Homepage hero, MTP-led.** New hero band carrying the MTP as the single H1: **"Make the autonomous economy governable, and therefore priceable."** above the strapline *Governability infrastructure for the autonomous economy*. The previous "Third Domain of Risk" headline is retained beneath it, demoted to H2 so there is exactly one H1 per page.
-- **Proposition line sharpened** to "underwritten continuously against governability, the live evidence that control holds."
-- **Pillar pages refreshed.** Governability, priceability and the autonomous-frontier framing woven into the opening copy of `schema`, `solutions`, `evidence` and `ecosystem`.
-- **Footer legal (all pages)** updated to the ratified line: *Arkaya Risk is currently being formed in the UK and is presently a trading style of Centinel 10 Ltd, a company registered in England and Wales (no. 11906608).* Verified at Companies House.
-- **Contact (all pages)**: founder name corrected to **David J McKibbin**; phone normalised to **+44 (0)7972 178759**.
-- **Language aligned to Brand Voice v17 to v19 increments.** Insurability retained as the first and sharpest instance of priceability; the doctrine wedge ("governability is the precondition of insurability") unchanged.
+## Layout
 
-## Upload set (9 files, replace/add on a branch)
+Flat. Every page sits at the repository root; `.well-known/` and `get/` are the only content
+subdirectories.
 
-`index.html` · `doctrine.html` (new) · `schema.html` · `solutions.html` · `evidence.html` · `ecosystem.html` · `standard.html` · `founder.html` · `_redirects`
+```
+index.html  schema.html  evidence.html  solutions.html  doctrine.html
+library.html  standard.html  founder.html  ecosystem.html  infinity.html
+_redirects  _headers  robots.txt  llms.txt  sitemap.xml
+.well-known/governance-evidence.json     machine-readable index of the open Layer 1 material
+get/index.html                           Layer 1 implementer pack page
+get/v1/                                  the pack itself, hash-pinned — never edit in place
+```
 
-`_redirects` now carries `/doctrine /doctrine.html 200`. `standard.html` and `founder.html` change only in the footer/contact globals and the added Doctrine nav item.
+## Deploy
 
-## QA done before handover
+1. Branch off `main`.
+2. Add file → Upload files → drag the changed and new files. Commit, open PR.
+3. Check the Netlify deploy preview: every page 200 at its pretty URL; `/llms.txt`, `/robots.txt`,
+   `/sitemap.xml`, `/.well-known/governance-evidence.json` and `/get/v1/MANIFEST.json` all 200; a
+   PDF still serves.
+4. Merge. Netlify publishes to the live domain in seconds.
 
-All eight HTML files parse with balanced `<section>` tags and exactly one `<h1>` each. MTP hero present on the homepage; the Doctrine nav item, the ratified legal line and the corrected contact verified on every page; the `/doctrine` route present in `_redirects`. The Netlify deploy-preview click-through is the final visual check before merge (this environment has no headless browser).
+There is no staging environment. The preview is the only place to look before the site is live.
 
-## Deploy (branch + PR), per the v2 process
+## The company
 
-1. New branch, e.g. `v19-doctrine-mtp`.
-2. Add file → Upload files → drag the changed and new files from this folder (`doctrine.html` is an add; the rest replace).
-3. Commit, open PR.
-4. On the PR, open the Netlify Deploy Preview and click through every page: confirm the MTP hero on the homepage, the new `/doctrine` page and its nav link on every page, the governability/priceability copy on the pillar pages, and the updated footer on all pages.
-5. Merge (confirm it goes purple "Merged"). Netlify auto-publishes.
+Arkaya Risk Limited, registered in England and Wales, no. 17380022. Registered office: Oxford House,
+15–17 Mount Ephraim Road, Tunbridge Wells, TN1 1EN. Founded by David J McKibbin and Simon Hudson.
+
+## Where the authority sits
+
+Site copy is governed by the Arkaya Brand Voice and the Arkaya Term Register; neither lives in this
+repository, and neither is restated here. Where this file or CLAUDE.md differs from them, they
+govern.

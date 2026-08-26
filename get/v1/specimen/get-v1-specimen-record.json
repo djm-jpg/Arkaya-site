@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0",
+  "profileIdentifier": "eddsa-jcs-2022",
+  "chainId": "chain-vectors-v5",
+  "sequenceNumber": 0,
+  "previousDigest": "z11111111111111111111111111111111",
+  "recordType": "Signal",
+  "id": "rec-000",
+  "occurredAt": "2026-06-30T09:00:00.000Z",
+  "body": {
+    "observation": "control-exercised"
+  },
+  "proof": {
+    "type": "DataIntegrityProof",
+    "cryptosuite": "eddsa-jcs-2022",
+    "proofPurpose": "assertionMethod",
+    "created": "2026-06-30T09:00:00.000Z",
+    "verificationMethod": "z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG",
+    "proofValue": "z3iHQS27q6W4gqdabRqpmoobDLEm1u3n6iB8Fz93DUqMsD7meqZZVXeExJeunJoZSUhAutUtMJ1K68Qpz9jU7K3vt"
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "$comment": "Machine-readable index of Arkaya's open Layer 1 material. Everything listed is retrievable without an account, a fee or a call to any Arkaya service. Status flags are literal: candidate means not yet adopted; nothing here is described as certified, established or recognised.",
+  "documentType": "ArkayaGovernanceEvidenceDiscovery",
+  "documentVersion": 1,
+  "documentSchema": null,
+  "documentSchemaNote": "A JSON Schema for this document type is queued; until it exists, documentType and documentVersion are the only contract.",
+  "publisher": {
+    "name": "Arkaya Risk Limited",
+    "role": "Temporary Custodian of the Governance Evidence Taxonomy and Founding Assessor",
+    "companyNumber": "17380022",
+    "jurisdiction": "England and Wales",
+    "url": "https://arkayarisk.com/",
+    "contact": "djm@arkayarisk.com"
+  },
+  "issued": "2026-08-25",
+  "humanIndex": "https://arkayarisk.com/llms.txt",
+  "implementerPack": {
+    "name": "Arkaya Layer 1 implementer pack",
+    "version": 1,
+    "dated": "2026-08-10",
+    "status": "Specifications in review, pre-ratification. Vector set and conformance corpus are candidates.",
+    "openMaterial": "No fee, no licence condition, no account, no call to any Arkaya service.",
+    "landing": "https://arkayarisk.com/get",
+    "root": "https://arkayarisk.com/get/v1/",
+    "manifest": "https://arkayarisk.com/get/v1/MANIFEST.json",
+    "digestForm": "base58-btc multibase over multihash-prefixed SHA-256, per Cryptographic Profile v5 section 3.3",
+    "files": [
+      {
+        "path": "README.md",
+        "digest": "zQmS6RPnpVRQYQBaSNHnXm1RJUV3nPsenMufnWj44QRQZE3"
+      },
+      {
+        "path": "SECURITY.md",
+        "digest": "zQmbqUoraG2bqohG2KM74ni1UF7245c6sMzor4StEZCvjSb"
+      },
+      {
+        "path": "VERIFY.md",
+        "digest": "zQmdcX2J2RLsVwn8igD4EL1YxBeJkTXz1pvyzn1uBjk4zBN"
+      },
+      {
+        "path": "corpus/README.md",
+        "digest": "zQmX5q7VGg8cpf1ierP3TXa7wFvqgJgE3E4ckJ77g8GhfQg"
+      },
+      {
+        "path": "corpus/reference_reader.py",
+        "digest": "zQmRxw3fpCEp9dcAEuRcmJGDJBBJSgiNGbM5nxTWUujmLZq"
+      },
+      {
+        "path": "corpus/run_fixtures.py",
+        "digest": "zQmaYuJFWrWEcCeiKMSXkeuGCPFnp7X5t8toxTV4TdEvoqT"
+      },
+      {
+        "path": "specifications/Arkaya_Layer1_Cryptographic_Profile_v5.md",
+        "digest": "zQmTBHeJPPptQ46uUiuxU3SYhC1ZqWEsr2bnURs7RD5sovf"
+      },
+      {
+        "path": "specifications/Arkaya_Layer1_Interface_and_Conformance_Specification_v4.md",
+        "digest": "zQmZKaKaaDJfGXuwGuvkU36LwYGuWWA62iws15W7uZyHbKb"
+      },
+      {
+        "path": "vectors/generate_vectors_v5.py",
+        "digest": "zQmRp8UWShhPe56TEPG8bSqf5ZQeHfm1oCgzLkLN5cZBSLA"
+      },
+      {
+        "path": "vectors/vectors_v5_candidate.json",
+        "digest": "zQmU6FJxejX7fjT1X3iEvhPMQsyvfWD5nDcNhGDDnTVqT8P"
+      },
+      {
+        "path": "vectors/xverify_v5.mjs",
+        "digest": "zQmTe9HfHP4tPkWizR9RS4KQ2nLcnREC9s7GyeZ4VDm6aKh"
+      }
+    ]
+  },
+  "cryptographicProfile": {
+    "version": 5,
+    "proofType": "DataIntegrityProof",
+    "cryptosuite": "eddsa-jcs-2022",
+    "canonicalisation": "RFC 8785 JSON Canonicalization Scheme. 'Canonical' is used in this document only in that sense: the single byte form of a JSON value. No Unicode normalisation is performed by the profile.",
+    "signature": "Ed25519",
+    "signingInput": "SHA-256(canonical proof configuration without proofValue) || SHA-256(canonical record without proof)",
+    "digestReference": "z + base58-btc( 0x12 0x20 || SHA-256(bytes) )",
+    "keyEncoding": "multikey, multibase base58-btc, Ed25519 public key prefix 0xed01",
+    "genesisConstant": "z11111111111111111111111111111111",
+    "genesisNote": "multibase base58-btc over thirty-two zero bytes; valid only at sequenceNumber 0; not multihash-prefixed",
+    "chainMembers": [
+      "chainId",
+      "sequenceNumber",
+      "previousDigest"
+    ],
+    "specification": "https://arkayarisk.com/get/v1/specifications/Arkaya_Layer1_Cryptographic_Profile_v5.md"
+  },
+  "proofCheck": {
+    "whatItTakes": "the record, the public schema and the signer's public key; the key travels with the record",
+    "steps": [
+      "Remove the proof member. Canonicalise the remainder with an RFC 8785 library. SHA-256 it. Prefix 0x12 0x20, encode base58-btc, prefix z. Compare with the record digest and with the previousDigest of the next record in the chain.",
+      "Take the proof object, remove proofValue, canonicalise it. The signing input is SHA-256 of that concatenated with SHA-256 from step 1, in that order.",
+      "Decode proofValue (base58-btc after the z) and the key in verificationMethod (multikey). Check the Ed25519 signature over the signing input. Note that a passing signature establishes what was sealed, not by whom: binding the key to a party is a separate question the record does not answer on its own.",
+      "All must pass. A record that fails is not evidence of anything about the control; it is a record that cannot be relied on."
+    ],
+    "stockLibraries": {
+      "python": [
+        "jcs",
+        "base58",
+        "cryptography"
+      ],
+      "javascript": [
+        "canonicalize",
+        "bs58",
+        "node:crypto"
+      ]
+    },
+    "registeredAcceptanceTests": {
+      "V-1": "cryptographic correctness across the vector set",
+      "V-2": "retrievability of referenced material",
+      "V-3": "V-1 run with every Arkaya-operated domain blocked at DNS; the result must be identical"
+    },
+    "independentChecker": "https://arkayarisk.com/get/v1/vectors/xverify_v5.mjs"
+  },
+  "vectors": {
+    "file": "https://arkayarisk.com/get/v1/vectors/vectors_v5_candidate.json",
+    "status": "candidate; normative on adoption by the profile, not because a tool produced them",
+    "positiveCases": 7,
+    "negativeCases": 15,
+    "checks": 49,
+    "vectorSetDigest": "zQmdNx5qm2CJChsAzG6u5CmehHrbXfJfaoRL3o2bA8VuTEs",
+    "fixtureKeys": {
+      "fixtureKeyA": "z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG",
+      "fixtureKeyB": "z6MknGc3ocHs3zdPiJbnaaqDi58NGb4pk1Sp9WxWufuXSdxf",
+      "warning": "fixture keys, derived from fixed seeds, never for production use; no production signing key is published here and none is Arkaya's, since Arkaya does not sign records"
+    },
+    "specimenRecord": "https://arkayarisk.com/get/v1/specimen/get-v1-specimen-record.json",
+    "specimenRecordDigest": "zQmQJtBuc2C4cwATu1LgXQkPs61Dbb6ybAVzEHREdnrw8Zx"
+  },
+  "schema": {
+    "name": "Governance Evidence Taxonomy",
+    "shortName": "GET",
+    "humanReadable": "https://arkayarisk.com/schema",
+    "machineReadable": null,
+    "machineReadableNote": "The GET schema JSON (v4, hash-pinned) is body vocabulary a reader interprets, not what an emitter validates to seal. Its publication on this site is a version act on the schema governance track and is pending. The envelope an emitter emits is defined by the Evidence Record Specification, which is also not yet published here.",
+    "domains": [
+      "People and culture",
+      "Strategy and change",
+      "Operations and resilience",
+      "Third party and supply chain",
+      "Financial and capital",
+      "Regulatory and conduct",
+      "Digital, data and AI",
+      "Legal and contractual"
+    ],
+    "evidenceLadder": [
+      "Asserted",
+      "Attested",
+      "Evidenced",
+      "Verifiable"
+    ],
+    "schemaGovernance": "Schema decisions run on a governance track separate from commercial decisions. No fee for inclusion, no paid tier of the schema. Schema Independence Charter."
+  },
+  "whatArkayaDoesNotDo": [
+    "produce the record (an engine does, from the signals the organisation's own systems emit; the record is evidence when a counterparty reads it)",
+    "sign records (the insured or its engine does; the record states which)",
+    "issue a score, rating or benchmark from the schema",
+    "price anything (the carrier, lender or acquirer decides what the record is worth)",
+    "sit in the path of a proof check"
+  ],
+  "invariant": "Source systems emit signals; an engine produces a record against the Governance Evidence Taxonomy; a counterparty reads that record as evidence; Arkaya produces neither the record nor the price."
+}

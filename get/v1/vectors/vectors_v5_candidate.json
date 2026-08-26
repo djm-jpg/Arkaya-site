@@ -1,0 +1,520 @@
+{
+ "name": "Arkaya Layer 1 Cryptographic Profile v5 test vectors",
+ "status": "CANDIDATE. Normative on adoption by the profile, not because this tool produced them.",
+ "profileVersion": 5,
+ "vectorSetVersion": 1,
+ "adopted": false,
+ "adoptedOn": null,
+ "immutabilityRule": "On adoption the set is hash-pinned in the Suite Version Register and is never edited. A change produces a new vectorSetVersion; the adopted set is superseded, never revised, so an implementation certified against a set stays certifiable against the bytes it was tested on. Same rule as requirement identifiers under ADR-006 of the Versioning, Compatibility and Change-Control Policy.",
+ "verifiedAgainst": [
+  {
+   "implementation": "python",
+   "canonicaliser": "jcs (PyPI)",
+   "signature": "cryptography (PyCA)",
+   "role": "generator"
+  },
+  {
+   "implementation": "javascript",
+   "canonicaliser": "canonicalize (npm)",
+   "signature": "node:crypto Ed25519",
+   "role": "independent verifier",
+   "harness": "xverify_v5.mjs"
+  }
+ ],
+ "cryptosuite": "eddsa-jcs-2022",
+ "generatedBy": "generate_vectors_v5.py (deterministic; fixed key seeds, fixture timestamps)",
+ "genesisConstant": "z11111111111111111111111111111111",
+ "genesisNote": "Per Evidence Record Specification v1 section 6: multibase base58-btc over thirty-two zero bytes. Not multihash-prefixed, and exempt from the section 3.3 digest-reference form by that section's own carve-out: the constant is the digest of nothing, so a multihash prefix would assert a hash function produced it. Resolved in review at Profile v5.",
+ "keys": {
+  "fixtureKeyA": "z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG",
+  "fixtureKeyB": "z6MknGc3ocHs3zdPiJbnaaqDi58NGb4pk1Sp9WxWufuXSdxf",
+  "warning": "fixture keys, derived from fixed seeds, never for production use"
+ },
+ "positive": [
+  {
+   "id": "V-01",
+   "purpose": "genesis record; previousDigest is the reserved genesis token",
+   "profileSection": "4",
+   "record": {
+    "schemaVersion": "1.0",
+    "profileIdentifier": "eddsa-jcs-2022",
+    "chainId": "chain-vectors-v5",
+    "sequenceNumber": 0,
+    "previousDigest": "z11111111111111111111111111111111",
+    "recordType": "Signal",
+    "id": "rec-000",
+    "occurredAt": "2026-06-30T09:00:00.000Z",
+    "body": {
+     "observation": "control-exercised"
+    },
+    "proof": {
+     "type": "DataIntegrityProof",
+     "cryptosuite": "eddsa-jcs-2022",
+     "proofPurpose": "assertionMethod",
+     "created": "2026-06-30T09:00:00.000Z",
+     "verificationMethod": "z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG",
+     "proofValue": "z3iHQS27q6W4gqdabRqpmoobDLEm1u3n6iB8Fz93DUqMsD7meqZZVXeExJeunJoZSUhAutUtMJ1K68Qpz9jU7K3vt"
+    }
+   },
+   "canonicalContent": "{\"body\":{\"observation\":\"control-exercised\"},\"chainId\":\"chain-vectors-v5\",\"id\":\"rec-000\",\"occurredAt\":\"2026-06-30T09:00:00.000Z\",\"previousDigest\":\"z11111111111111111111111111111111\",\"profileIdentifier\":\"eddsa-jcs-2022\",\"recordType\":\"Signal\",\"schemaVersion\":\"1.0\",\"sequenceNumber\":0}",
+   "canonicalProofConfig": "{\"created\":\"2026-06-30T09:00:00.000Z\",\"cryptosuite\":\"eddsa-jcs-2022\",\"proofPurpose\":\"assertionMethod\",\"type\":\"DataIntegrityProof\",\"verificationMethod\":\"z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG\"}",
+   "recordDigest": "zQmQJtBuc2C4cwATu1LgXQkPs61Dbb6ybAVzEHREdnrw8Zx",
+   "expected": "verify"
+  },
+  {
+   "id": "V-02",
+   "purpose": "chained record; previousDigest is the predecessor's record digest",
+   "profileSection": "4",
+   "record": {
+    "schemaVersion": "1.0",
+    "profileIdentifier": "eddsa-jcs-2022",
+    "chainId": "chain-vectors-v5",
+    "sequenceNumber": 1,
+    "previousDigest": "zQmQJtBuc2C4cwATu1LgXQkPs61Dbb6ybAVzEHREdnrw8Zx",
+    "recordType": "Signal",
+    "id": "rec-001",
+    "occurredAt": "2026-06-30T09:00:01.000Z",
+    "body": {
+     "observation": "control-exercised"
+    },
+    "proof": {
+     "type": "DataIntegrityProof",
+     "cryptosuite": "eddsa-jcs-2022",
+     "proofPurpose": "assertionMethod",
+     "created": "2026-06-30T09:00:01.000Z",
+     "verificationMethod": "z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG",
+     "proofValue": "z4RtZiioymFgpf6MxSBJaRQJXgmwpuYbVr4rLvrwHbLWXwdy5xRjGz6pv3gDuTdL1UpZzR9BCsqvRLPWFWo3H5dmb"
+    }
+   },
+   "canonicalContent": "{\"body\":{\"observation\":\"control-exercised\"},\"chainId\":\"chain-vectors-v5\",\"id\":\"rec-001\",\"occurredAt\":\"2026-06-30T09:00:01.000Z\",\"previousDigest\":\"zQmQJtBuc2C4cwATu1LgXQkPs61Dbb6ybAVzEHREdnrw8Zx\",\"profileIdentifier\":\"eddsa-jcs-2022\",\"recordType\":\"Signal\",\"schemaVersion\":\"1.0\",\"sequenceNumber\":1}",
+   "canonicalProofConfig": "{\"created\":\"2026-06-30T09:00:01.000Z\",\"cryptosuite\":\"eddsa-jcs-2022\",\"proofPurpose\":\"assertionMethod\",\"type\":\"DataIntegrityProof\",\"verificationMethod\":\"z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG\"}",
+   "recordDigest": "zQmduFyYdmVzvgqAWt7xvXZYJi2EpjxDh1bzphZjN2qd95c",
+   "expected": "verify"
+  },
+  {
+   "id": "V-03",
+   "purpose": "ext container is signed and not interpreted",
+   "profileSection": "3.6",
+   "record": {
+    "schemaVersion": "1.0",
+    "profileIdentifier": "eddsa-jcs-2022",
+    "chainId": "chain-vectors-v5",
+    "sequenceNumber": 2,
+    "previousDigest": "zQmduFyYdmVzvgqAWt7xvXZYJi2EpjxDh1bzphZjN2qd95c",
+    "recordType": "Signal",
+    "id": "rec-002",
+    "occurredAt": "2026-06-30T09:00:02.000Z",
+    "body": {
+     "observation": "x"
+    },
+    "ext": {
+     "acme": {
+      "vendorField": "opaque"
+     }
+    },
+    "proof": {
+     "type": "DataIntegrityProof",
+     "cryptosuite": "eddsa-jcs-2022",
+     "proofPurpose": "assertionMethod",
+     "created": "2026-06-30T09:00:02.000Z",
+     "verificationMethod": "z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG",
+     "proofValue": "z23fKnqFWFNnh8zbkXTavWPxtcMegMEZQCDhcbM9qJwTRv93HTyd7PT61MMe8ntqKWfb85C1CPpUM5WiMUf8PUVTw"
+    }
+   },
+   "canonicalContent": "{\"body\":{\"observation\":\"x\"},\"chainId\":\"chain-vectors-v5\",\"ext\":{\"acme\":{\"vendorField\":\"opaque\"}},\"id\":\"rec-002\",\"occurredAt\":\"2026-06-30T09:00:02.000Z\",\"previousDigest\":\"zQmduFyYdmVzvgqAWt7xvXZYJi2EpjxDh1bzphZjN2qd95c\",\"profileIdentifier\":\"eddsa-jcs-2022\",\"recordType\":\"Signal\",\"schemaVersion\":\"1.0\",\"sequenceNumber\":2}",
+   "canonicalProofConfig": "{\"created\":\"2026-06-30T09:00:02.000Z\",\"cryptosuite\":\"eddsa-jcs-2022\",\"proofPurpose\":\"assertionMethod\",\"type\":\"DataIntegrityProof\",\"verificationMethod\":\"z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG\"}",
+   "recordDigest": "zQmTZkAVUYaDNh48uAkXrecHWH2Ycs5wWrqHp6wcFQcFX7w",
+   "expected": "verify"
+  },
+  {
+   "id": "V-04",
+   "purpose": "integer above 2^53 carried as a string, never as a JSON number",
+   "profileSection": "3",
+   "record": {
+    "schemaVersion": "1.0",
+    "profileIdentifier": "eddsa-jcs-2022",
+    "chainId": "chain-vectors-v5",
+    "sequenceNumber": 3,
+    "previousDigest": "zQmTZkAVUYaDNh48uAkXrecHWH2Ycs5wWrqHp6wcFQcFX7w",
+    "recordType": "Signal",
+    "id": "rec-003",
+    "occurredAt": "2026-06-30T09:00:02.000Z",
+    "body": {
+     "amount": "100000000000000000000"
+    },
+    "proof": {
+     "type": "DataIntegrityProof",
+     "cryptosuite": "eddsa-jcs-2022",
+     "proofPurpose": "assertionMethod",
+     "created": "2026-06-30T09:00:02.000Z",
+     "verificationMethod": "z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG",
+     "proofValue": "z61v7cPUKpMdBjPHHqTo9JL5p98TeXMbjY1WjYPyEsYggju5BvmMxcgR2QT1nB6ZkQevrX484autGrRi322Xihwmg"
+    }
+   },
+   "canonicalContent": "{\"body\":{\"amount\":\"100000000000000000000\"},\"chainId\":\"chain-vectors-v5\",\"id\":\"rec-003\",\"occurredAt\":\"2026-06-30T09:00:02.000Z\",\"previousDigest\":\"zQmTZkAVUYaDNh48uAkXrecHWH2Ycs5wWrqHp6wcFQcFX7w\",\"profileIdentifier\":\"eddsa-jcs-2022\",\"recordType\":\"Signal\",\"schemaVersion\":\"1.0\",\"sequenceNumber\":3}",
+   "canonicalProofConfig": "{\"created\":\"2026-06-30T09:00:02.000Z\",\"cryptosuite\":\"eddsa-jcs-2022\",\"proofPurpose\":\"assertionMethod\",\"type\":\"DataIntegrityProof\",\"verificationMethod\":\"z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG\"}",
+   "recordDigest": "zQmeMV7dAuMaxFaxyX7ZywcyXLPZdAE4CHaY4jGWC6CLJZD",
+   "expected": "verify"
+  },
+  {
+   "id": "V-05",
+   "purpose": "key rotation; a record verifies against the key in force when signed",
+   "profileSection": "6",
+   "record": {
+    "schemaVersion": "1.0",
+    "profileIdentifier": "eddsa-jcs-2022",
+    "chainId": "chain-vectors-v5",
+    "sequenceNumber": 4,
+    "previousDigest": "zQmeMV7dAuMaxFaxyX7ZywcyXLPZdAE4CHaY4jGWC6CLJZD",
+    "recordType": "Signal",
+    "id": "rec-004",
+    "occurredAt": "2026-06-30T09:00:02.000Z",
+    "body": {
+     "observation": "post-rotation"
+    },
+    "proof": {
+     "type": "DataIntegrityProof",
+     "cryptosuite": "eddsa-jcs-2022",
+     "proofPurpose": "assertionMethod",
+     "created": "2026-06-30T09:00:02.000Z",
+     "verificationMethod": "z6MknGc3ocHs3zdPiJbnaaqDi58NGb4pk1Sp9WxWufuXSdxf",
+     "proofValue": "z3vKmPuPxAZdYm9DXVkuFBuRU7KnmnkCLXeUMFa1n2QvBnN31Jjis2nkwoYchtSSuVVygSE4ScQfWHsKajQi26Chq"
+    }
+   },
+   "canonicalContent": "{\"body\":{\"observation\":\"post-rotation\"},\"chainId\":\"chain-vectors-v5\",\"id\":\"rec-004\",\"occurredAt\":\"2026-06-30T09:00:02.000Z\",\"previousDigest\":\"zQmeMV7dAuMaxFaxyX7ZywcyXLPZdAE4CHaY4jGWC6CLJZD\",\"profileIdentifier\":\"eddsa-jcs-2022\",\"recordType\":\"Signal\",\"schemaVersion\":\"1.0\",\"sequenceNumber\":4}",
+   "canonicalProofConfig": "{\"created\":\"2026-06-30T09:00:02.000Z\",\"cryptosuite\":\"eddsa-jcs-2022\",\"proofPurpose\":\"assertionMethod\",\"type\":\"DataIntegrityProof\",\"verificationMethod\":\"z6MknGc3ocHs3zdPiJbnaaqDi58NGb4pk1Sp9WxWufuXSdxf\"}",
+   "recordDigest": "zQmTxVWxMz9qDeXuoYe1vjLUsWBNLXvxbjEM6gGYUD1VrDy",
+   "expected": "verify"
+  },
+  {
+   "id": "V-06",
+   "purpose": "empty object and empty array serialise as {} and []",
+   "profileSection": "3.6",
+   "record": {
+    "schemaVersion": "1.0",
+    "profileIdentifier": "eddsa-jcs-2022",
+    "chainId": "chain-vectors-v5",
+    "sequenceNumber": 5,
+    "previousDigest": "zQmTxVWxMz9qDeXuoYe1vjLUsWBNLXvxbjEM6gGYUD1VrDy",
+    "recordType": "Signal",
+    "id": "rec-005",
+    "occurredAt": "2026-06-30T09:00:02.000Z",
+    "body": {
+     "emptyObject": {},
+     "emptyArray": []
+    },
+    "proof": {
+     "type": "DataIntegrityProof",
+     "cryptosuite": "eddsa-jcs-2022",
+     "proofPurpose": "assertionMethod",
+     "created": "2026-06-30T09:00:02.000Z",
+     "verificationMethod": "z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG",
+     "proofValue": "z3VWjeQYz67AaD6H1ExJEnesSs7SvyQFnGy4L7dz7uPF6fcSYmdQ7fHfQknxokPS1P5pmm7NQ5XmL5fiaiX9vw9AS"
+    }
+   },
+   "canonicalContent": "{\"body\":{\"emptyArray\":[],\"emptyObject\":{}},\"chainId\":\"chain-vectors-v5\",\"id\":\"rec-005\",\"occurredAt\":\"2026-06-30T09:00:02.000Z\",\"previousDigest\":\"zQmTxVWxMz9qDeXuoYe1vjLUsWBNLXvxbjEM6gGYUD1VrDy\",\"profileIdentifier\":\"eddsa-jcs-2022\",\"recordType\":\"Signal\",\"schemaVersion\":\"1.0\",\"sequenceNumber\":5}",
+   "canonicalProofConfig": "{\"created\":\"2026-06-30T09:00:02.000Z\",\"cryptosuite\":\"eddsa-jcs-2022\",\"proofPurpose\":\"assertionMethod\",\"type\":\"DataIntegrityProof\",\"verificationMethod\":\"z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG\"}",
+   "recordDigest": "zQmX1YKvoh8vTbBn1vqMrE34Xuv5ndPktKxyJ871Nz6Wr5B",
+   "expected": "verify"
+  },
+  {
+   "id": "V-07",
+   "purpose": "valid surrogate pair preserved as its UTF-8 encoding",
+   "profileSection": "3.6",
+   "record": {
+    "schemaVersion": "1.0",
+    "profileIdentifier": "eddsa-jcs-2022",
+    "chainId": "chain-vectors-v5",
+    "sequenceNumber": 6,
+    "previousDigest": "zQmX1YKvoh8vTbBn1vqMrE34Xuv5ndPktKxyJ871Nz6Wr5B",
+    "recordType": "Signal",
+    "id": "rec-006",
+    "occurredAt": "2026-06-30T09:00:02.000Z",
+    "body": {
+     "text": "a😀b"
+    },
+    "proof": {
+     "type": "DataIntegrityProof",
+     "cryptosuite": "eddsa-jcs-2022",
+     "proofPurpose": "assertionMethod",
+     "created": "2026-06-30T09:00:02.000Z",
+     "verificationMethod": "z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG",
+     "proofValue": "z5X3peQ6mrRvmPde1DrLxgLk9RYy7JBPuNzfo7hRqnrigumWeFHvytNNMELWdfNrbP8gHyxS4D4XaYHYwANRDhU38"
+    }
+   },
+   "canonicalContent": "{\"body\":{\"text\":\"a😀b\"},\"chainId\":\"chain-vectors-v5\",\"id\":\"rec-006\",\"occurredAt\":\"2026-06-30T09:00:02.000Z\",\"previousDigest\":\"zQmX1YKvoh8vTbBn1vqMrE34Xuv5ndPktKxyJ871Nz6Wr5B\",\"profileIdentifier\":\"eddsa-jcs-2022\",\"recordType\":\"Signal\",\"schemaVersion\":\"1.0\",\"sequenceNumber\":6}",
+   "canonicalProofConfig": "{\"created\":\"2026-06-30T09:00:02.000Z\",\"cryptosuite\":\"eddsa-jcs-2022\",\"proofPurpose\":\"assertionMethod\",\"type\":\"DataIntegrityProof\",\"verificationMethod\":\"z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG\"}",
+   "recordDigest": "zQmZrjjSHKtuRaMHsXzxCrnmK7Z1Gz7NDJ8HHDEH2z5rkMr",
+   "expected": "verify"
+  }
+ ],
+ "negative": [
+  {
+   "id": "N-01",
+   "purpose": "tampered byte after sealing",
+   "profileSection": "8",
+   "payload": {
+    "schemaVersion": "1.0",
+    "profileIdentifier": "eddsa-jcs-2022",
+    "chainId": "chain-vectors-v5",
+    "sequenceNumber": 0,
+    "previousDigest": "z11111111111111111111111111111111",
+    "recordType": "Signal",
+    "id": "rec-000",
+    "occurredAt": "2026-06-30T09:00:00.000Z",
+    "body": {
+     "observation": "control-not-exercised"
+    },
+    "proof": {
+     "type": "DataIntegrityProof",
+     "cryptosuite": "eddsa-jcs-2022",
+     "proofPurpose": "assertionMethod",
+     "created": "2026-06-30T09:00:00.000Z",
+     "verificationMethod": "z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG",
+     "proofValue": "z3iHQS27q6W4gqdabRqpmoobDLEm1u3n6iB8Fz93DUqMsD7meqZZVXeExJeunJoZSUhAutUtMJ1K68Qpz9jU7K3vt"
+    }
+   },
+   "expected": "reject",
+   "reason": "the signature no longer covers the content presented"
+  },
+  {
+   "id": "N-02",
+   "purpose": "broken chain link",
+   "profileSection": "4",
+   "payload": {
+    "schemaVersion": "1.0",
+    "profileIdentifier": "eddsa-jcs-2022",
+    "chainId": "chain-vectors-v5",
+    "sequenceNumber": 6,
+    "previousDigest": "zQmewPfdyfZDDNVT3jBntFoADPkqnvCH49DouJXEg2FpDoe",
+    "recordType": "Signal",
+    "id": "rec-006",
+    "occurredAt": "2026-06-30T09:00:02.000Z",
+    "body": {
+     "text": "a😀b"
+    },
+    "proof": {
+     "type": "DataIntegrityProof",
+     "cryptosuite": "eddsa-jcs-2022",
+     "proofPurpose": "assertionMethod",
+     "created": "2026-06-30T09:00:02.000Z",
+     "verificationMethod": "z6MkjchhfUsD6mmvni8mCdXHw216Xrm9bQe2mBH1P5RDjVJG",
+     "proofValue": "z5X3peQ6mrRvmPde1DrLxgLk9RYy7JBPuNzfo7hRqnrigumWeFHvytNNMELWdfNrbP8gHyxS4D4XaYHYwANRDhU38"
+    }
+   },
+   "expected": "reject",
+   "reason": "previousDigest does not match the predecessor's recomputed digest"
+  },
+  {
+   "id": "N-03",
+   "purpose": "unsafe integer encoded as a JSON number",
+   "profileSection": "3",
+   "payload": "{\"amount\":100000000000000000000,\"id\":\"rec-090\"}",
+   "expected": "reject",
+   "reason": "a value outside the safe integer range must be a string"
+  },
+  {
+   "id": "N-04",
+   "purpose": "duplicate object member name",
+   "profileSection": "3.6",
+   "payload": "{\"id\":\"rec-091\",\"id\":\"rec-092\"}",
+   "expected": "reject",
+   "reason": "invalid under I-JSON; rejected, never de-duplicated"
+  },
+  {
+   "id": "N-05",
+   "purpose": "lone surrogate",
+   "profileSection": "3.6",
+   "payload": "{\"text\":\"\\ud800\",\"id\":\"rec-093\"}",
+   "expected": "reject",
+   "reason": "a lone surrogate is invalid and is rejected"
+  },
+  {
+   "id": "N-06",
+   "purpose": "signature computed over a non-canonical serialisation",
+   "profileSection": "3",
+   "payload": {
+    "note": "proofValue produced over pretty-printed JSON rather than JCS output"
+   },
+   "expected": "reject",
+   "reason": "canonicalisation precedes signing; a signature over other bytes does not verify"
+  },
+  {
+   "id": "N-07",
+   "purpose": "timestamp in a non-conformant lexical form: no fractional digits",
+   "profileSection": "3.1",
+   "payload": {
+    "schemaVersion": "1.0",
+    "profileIdentifier": "eddsa-jcs-2022",
+    "chainId": "chain-vectors-v5",
+    "sequenceNumber": 7,
+    "previousDigest": "zQmZrjjSHKtuRaMHsXzxCrnmK7Z1Gz7NDJ8HHDEH2z5rkMr",
+    "recordType": "Signal",
+    "id": "rec-N-07",
+    "occurredAt": "2026-06-30T09:00:00Z",
+    "body": {
+     "observation": "x"
+    }
+   },
+   "expected": "reject",
+   "reason": "exactly one lexical form is conformant: three fractional digits, uppercase T and Z"
+  },
+  {
+   "id": "N-08",
+   "purpose": "timestamp in a non-conformant lexical form: six fractional digits",
+   "profileSection": "3.1",
+   "payload": {
+    "schemaVersion": "1.0",
+    "profileIdentifier": "eddsa-jcs-2022",
+    "chainId": "chain-vectors-v5",
+    "sequenceNumber": 7,
+    "previousDigest": "zQmZrjjSHKtuRaMHsXzxCrnmK7Z1Gz7NDJ8HHDEH2z5rkMr",
+    "recordType": "Signal",
+    "id": "rec-N-08",
+    "occurredAt": "2026-06-30T09:00:00.000000Z",
+    "body": {
+     "observation": "x"
+    }
+   },
+   "expected": "reject",
+   "reason": "exactly one lexical form is conformant: three fractional digits, uppercase T and Z"
+  },
+  {
+   "id": "N-09",
+   "purpose": "timestamp in a non-conformant lexical form: offset form other than Z",
+   "profileSection": "3.1",
+   "payload": {
+    "schemaVersion": "1.0",
+    "profileIdentifier": "eddsa-jcs-2022",
+    "chainId": "chain-vectors-v5",
+    "sequenceNumber": 7,
+    "previousDigest": "zQmZrjjSHKtuRaMHsXzxCrnmK7Z1Gz7NDJ8HHDEH2z5rkMr",
+    "recordType": "Signal",
+    "id": "rec-N-09",
+    "occurredAt": "2026-06-30T09:00:00.000+00:00",
+    "body": {
+     "observation": "x"
+    }
+   },
+   "expected": "reject",
+   "reason": "exactly one lexical form is conformant: three fractional digits, uppercase T and Z"
+  },
+  {
+   "id": "N-10",
+   "purpose": "timestamp in a non-conformant lexical form: lowercase t and z",
+   "profileSection": "3.1",
+   "payload": {
+    "schemaVersion": "1.0",
+    "profileIdentifier": "eddsa-jcs-2022",
+    "chainId": "chain-vectors-v5",
+    "sequenceNumber": 7,
+    "previousDigest": "zQmZrjjSHKtuRaMHsXzxCrnmK7Z1Gz7NDJ8HHDEH2z5rkMr",
+    "recordType": "Signal",
+    "id": "rec-N-10",
+    "occurredAt": "2026-06-30t09:00:00.000z",
+    "body": {
+     "observation": "x"
+    }
+   },
+   "expected": "reject",
+   "reason": "exactly one lexical form is conformant: three fractional digits, uppercase T and Z"
+  },
+  {
+   "id": "N-11",
+   "purpose": "timestamp in a non-conformant lexical form: leap second",
+   "profileSection": "3.1",
+   "payload": {
+    "schemaVersion": "1.0",
+    "profileIdentifier": "eddsa-jcs-2022",
+    "chainId": "chain-vectors-v5",
+    "sequenceNumber": 7,
+    "previousDigest": "zQmZrjjSHKtuRaMHsXzxCrnmK7Z1Gz7NDJ8HHDEH2z5rkMr",
+    "recordType": "Signal",
+    "id": "rec-N-11",
+    "occurredAt": "2026-06-30T23:59:60.000Z",
+    "body": {
+     "observation": "x"
+    }
+   },
+   "expected": "reject",
+   "reason": "exactly one lexical form is conformant: three fractional digits, uppercase T and Z"
+  },
+  {
+   "id": "N-12",
+   "purpose": "JSON null present",
+   "profileSection": "3.2",
+   "payload": {
+    "schemaVersion": "1.0",
+    "profileIdentifier": "eddsa-jcs-2022",
+    "chainId": "chain-vectors-v5",
+    "sequenceNumber": 8,
+    "previousDigest": "zQmZrjjSHKtuRaMHsXzxCrnmK7Z1Gz7NDJ8HHDEH2z5rkMr",
+    "recordType": "Signal",
+    "id": "rec-N12",
+    "occurredAt": "2026-06-30T09:00:02.000Z",
+    "body": {
+     "observation": "x",
+     "optionalField": null
+    }
+   },
+   "expected": "reject",
+   "reason": "null is prohibited; an optional member is present with a value or absent"
+  },
+  {
+   "id": "N-13",
+   "purpose": "digest reference in the prohibited hexadecimal form",
+   "profileSection": "3.3",
+   "payload": {
+    "schemaVersion": "1.0",
+    "profileIdentifier": "eddsa-jcs-2022",
+    "chainId": "chain-vectors-v5",
+    "sequenceNumber": 9,
+    "previousDigest": "sha256:2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881",
+    "recordType": "Signal",
+    "id": "rec-N13",
+    "occurredAt": "2026-06-30T09:00:02.000Z",
+    "body": {
+     "observation": "x"
+    }
+   },
+   "expected": "reject",
+   "reason": "a digest reference is base58-btc multibase over the multihash-prefixed digest"
+  },
+  {
+   "id": "N-14",
+   "purpose": "binding canonicalised with the whole signature block excluded",
+   "profileSection": "3.4",
+   "payload": {
+    "binding": {
+     "bindingId": "bnd-001",
+     "cryptosuite": "eddsa-jcs-2022",
+     "createdAt": "2026-06-30T09:00:00.000Z",
+     "parties": [
+      "party-a",
+      "party-b"
+     ]
+    },
+    "conformantDigest_narrowExclusion": "zQmVdnBsHZhzSwZcJ5rQuTmqFHDwibZfRDhn1DEw5yz8NdQ",
+    "nonConformantDigest_wideExclusion": "zQmde7JiXT8o7dt3U4G9qNfDrxQokqa6XVAFigqE7FtCQXm"
+   },
+   "expected": "reject",
+   "reason": "excluding the whole block removes the signer identity from the signed content; the two digests differ, which is the observable consequence"
+  },
+  {
+   "id": "N-15",
+   "purpose": "two strings identical on screen, different Unicode composition",
+   "profileSection": "3.5",
+   "payload": {
+    "nfc": "café",
+    "nfd": "café",
+    "digestNFC": "zQmfRfE3opNtGe8sRZ9eY1H6csut6wrBuQkDM6j73Ebox69",
+    "digestNFD": "zQmWBQuXeRHJdQ8mXZu4mo6DspiyqWmbnqbmd9r5erUT3xp",
+    "bytesEqual": false
+   },
+   "expected": "reject",
+   "reason": "JCS performs no normalisation; the producer fixes the form at record creation, and no verifier can detect the difference after the event"
+  }
+ ],
+ "vectorSetDigest": "zQmdNx5qm2CJChsAzG6u5CmehHrbXfJfaoRL3o2bA8VuTEs",
+ "vectorSetDigestNote": "Computed over this set with the digest members absent, per Profile v5 section 3.3. Pinned in the register on adoption."
+}
