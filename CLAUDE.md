@@ -100,16 +100,35 @@ fifth check exists to catch. The specification moves first.
 **Establish ownership by grep, not by memory.** An earlier version of this file listed three uses as
 spec-owned. One was not, and the error survived because nobody checked:
 
-- **"cryptographically verifiable" (the SVG sub-label on `/evidence`) is NOT spec-owned.** Searched
-  27 August across all 85KB of `get/v1/specifications/` — the Cryptographic Profile v5 and the
-  Interface and Conformance Specification v4. The phrase appears in neither. It was a lowercase
-  descriptive phrase under a diagram box, not a name, and it was corrected on 27 August to "a
-  stranger can check it". **This file previously forbade that correction. This file was wrong.**
-- **The ladder grades `Asserted` / `Attested` / `Evidenced` / `Verifiable`, and Field 07
-  `Verification mode`, do not appear in those two specifications either.** They are presumed owned by
-  the Taxonomy, which is not in the open pack and has not been checked. Treat them as spec-owned —
-  but the claim is **unverified**, and it should be settled against the Taxonomy before anyone relies
-  on it in either direction.
+All three were re-checked on 27 August against the **full Layer 1 estate** at
+`10-Layer1-Custodian/Specifications/`, not just the two documents in the open pack. Results differ
+from the first pass, which read only `get/v1/` and was too narrow to support what it concluded.
+
+- **Field 07 `Verification mode` IS spec-owned.** Confirmed in the GET Evidence Record Specification
+  v6, enumerated alongside the other seven fields — "provenance requirement, verification mode,
+  maturity calibration". Also in the Loop Record Specification v4 and Conformance Methodology v4.
+  **Do not correct it on the site.**
+- **"cryptographically verifiable" is NOT a name, and the correction stands — but the earlier
+  reasoning here was wrong.** The phrase appears in at least eight live estate documents, including
+  the Evidence Record Specification v6. In every instance it is **descriptive prose, never an
+  enumerated name**: "the cryptographically verifiable chain from a GET evidence record back to its
+  source" — where the name is *Provenance chain*. The site's SVG sub-label was the same kind of
+  description, so correcting it to "a stranger can check it" was right. An earlier version of this
+  file said the phrase "appears in neither specification"; that was true of the two-document open
+  pack and false of the estate. **Right conclusion, wrong evidence. Check the estate, not the pack.**
+- **The four-grade ladder `Asserted` / `Attested` / `Evidenced` / `Verifiable` is defined NOWHERE.**
+  Searched the full Layer 1 estate including `Conformance Suite/`, the `09-Business-Plan` estate, and
+  the `arkaya-brand-voice` locked formulations. No four-grade ladder, no such enumeration. All four
+  words occur in the specifications only as ordinary English, and `asserted` occurs there in the
+  **opposite** sense — "derived by verification, not asserted by a field".
+
+  **This is escalated, not settled.** The Layer 1 Assurance Read Schema v2 states that the envelope
+  carries "no score, grade, rating or premium … including any derived health label", and that
+  "Layer 1 defines no score". `/schema` presents a four-grade ladder as something "the chain carries";
+  `/solutions` prints "CREDIT AVAILABLE" against each grade. Either the ladder is a Layer 2
+  commercial instrument that has never been written down, or it is site copy standing on the Layer 1
+  page against the Layer 1 specification. **Do not correct either page until that is decided** — the
+  fix depends on which it is, and it is not a website decision.
 
 What the specifications *do* use, three times, is **"independently verifiable"** — and each instance
 names the reliance that is absent: "with off-the-shelf tooling", "with standard libraries and no
