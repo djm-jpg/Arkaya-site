@@ -93,11 +93,49 @@ Four rules, each of which this site has broken at least once and been corrected 
 
 ### Specification first, site second
 
-Three uses of the verify family are **not** site copy and must not be corrected here: the evidence
-ladder grade `Verifiable`, Field 07 `Verification mode`, and the SVG label "cryptographically
-verifiable" on `/evidence`. All are names the governing specification owns. Changing the site while
-the specification keeps the words manufactures the same-word-two-senses defect the register's fifth
-check exists to catch. The specification moves first.
+Where the governing specification owns a word, the site does not correct it alone. Changing the site
+while the specification keeps the word manufactures the same-word-two-senses defect the register's
+fifth check exists to catch. The specification moves first.
+
+**Establish ownership by grep, not by memory.** An earlier version of this file listed three uses as
+spec-owned. One was not, and the error survived because nobody checked:
+
+- **"cryptographically verifiable" (the SVG sub-label on `/evidence`) is NOT spec-owned.** Searched
+  27 August across all 85KB of `get/v1/specifications/` — the Cryptographic Profile v5 and the
+  Interface and Conformance Specification v4. The phrase appears in neither. It was a lowercase
+  descriptive phrase under a diagram box, not a name, and it was corrected on 27 August to "a
+  stranger can check it". **This file previously forbade that correction. This file was wrong.**
+- **The ladder grades `Asserted` / `Attested` / `Evidenced` / `Verifiable`, and Field 07
+  `Verification mode`, do not appear in those two specifications either.** They are presumed owned by
+  the Taxonomy, which is not in the open pack and has not been checked. Treat them as spec-owned —
+  but the claim is **unverified**, and it should be settled against the Taxonomy before anyone relies
+  on it in either direction.
+
+What the specifications *do* use, three times, is **"independently verifiable"** — and each instance
+names the reliance that is absent: "with off-the-shelf tooling", "with standard libraries and no
+Arkaya component", "holder-independent". That is the register-compliant form. `/doctrine` uses the
+same phrase without naming any absent reliance, inside Principle Zero, which `/library` records as
+stated and defended in Paper 1. **That one is a real breach and is Paper 1's to fix first.**
+
+### Sweeps read the whole page, not the prose
+
+A register sweep reads the rendered text of **every page in `sitemap.xml`** — navigation, group
+labels, footers, SVG and diagram labels, `alt` text, and `<meta>` descriptions included. Body prose
+is a subset of the object, not the object.
+
+Three defects survived three sweeps in two days because the sweeps read body text and treated
+everything else as chrome:
+
+- the SVG sub-label on `/evidence`, the fifth instance of a phrase removed four times from `/schema`;
+- the conformance-status claim on `/evidence`, because `/schema` had been swept for it and
+  `/evidence` had not;
+- the navigation group label **`Verify`**, on all ten pages, which classified the Library and the
+  Production Standard *as* verification in the most-repeated text position on the site. Corrected to
+  `Examine` on 27 August. Not `Check`: that word now carries a precise meaning on `/schema` and
+  `/evidence` — what a counterparty does to a sealed record — and reusing it as a nav label would
+  blur a word this estate spent two days making exact.
+
+Sweep the sitemap. Sweep whole pages. A page swept for one breach is not swept.
 
 ## Changing anything in get/v1/
 
