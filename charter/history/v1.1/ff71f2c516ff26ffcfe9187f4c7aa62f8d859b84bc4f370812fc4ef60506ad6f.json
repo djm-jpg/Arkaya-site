@@ -1,0 +1,20 @@
+{
+  "current_status": "reserved_to_counsel",
+  "documentary_successor": "v2",
+  "documentary_successor_instrument_date": "2026-07-29",
+  "instrument_date": "2026-05-28",
+  "is_current": false,
+  "published_to_record": "2026-09-14",
+  "reason": "Changes at v1.1: §7 The handover that makes the separation structural: milestone-gated handover (four conditions) replacing the v1 date-triggered handover (CLS major-version 4 or 13 November 2026). All other sections preserved verbatim. Charter v1.1 §7 and Sprint Map v3.1 §8.1 are designed to be read together.",
+  "reason_source": "Source instrument opening Changes statement",
+  "revision_class": "minor_decimal",
+  "revision_class_basis": "Version label; no independent conclusion about whether changes are load-bearing",
+  "source_filename": "Arkaya_Schema_Independence_Charter_v1_1.docx",
+  "source_sha256": "a94a9a4a343deedee550e5ad9372382e6597f6517c8ce42a5cb1d6a8b4050541",
+  "source_status_verbatim": "Status: Internal canonical reference. Counterparty-disclosable. Minor revision over v1 (19 May 2026). Supersedes the bare three-sentence statement carried in the repositioning material.",
+  "source_url": "https://schema.arkayarisk.com/charter/instruments/v1.1/a94a9a4a343deedee550e5ad9372382e6597f6517c8ce42a5cb1d6a8b4050541.docx",
+  "superseded_by": null,
+  "superseded_from": null,
+  "supersession_status": "Legal supersession and effective dates reserved to counsel; documentary sequence only",
+  "version": "v1.1"
+}

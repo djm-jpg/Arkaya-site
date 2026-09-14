@@ -1,0 +1,20 @@
+{
+  "current_status": "reserved_to_counsel",
+  "documentary_successor": "v1.1",
+  "documentary_successor_instrument_date": "2026-05-28",
+  "instrument_date": "2026-05-19",
+  "is_current": false,
+  "published_to_record": "2026-09-14",
+  "reason": null,
+  "reason_source": "First issue; no amendment transition",
+  "revision_class": "whole_integer",
+  "revision_class_basis": "Version label; no independent conclusion about whether changes are load-bearing",
+  "source_filename": "Arkaya_Schema_Independence_Charter_v1.docx",
+  "source_sha256": "ad8e7d647f9c552297a88d1e685ebbe6e43437e66465b28a402e225e504c40ad",
+  "source_status_verbatim": "Status: Internal canonical reference. Counterparty-disclosable. Supersedes the bare three-sentence statement carried in the repositioning material.",
+  "source_url": "https://schema.arkayarisk.com/charter/instruments/v1/ad8e7d647f9c552297a88d1e685ebbe6e43437e66465b28a402e225e504c40ad.docx",
+  "superseded_by": null,
+  "superseded_from": null,
+  "supersession_status": "Legal supersession and effective dates reserved to counsel; documentary sequence only",
+  "version": "v1"
+}

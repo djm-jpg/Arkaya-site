@@ -29,3 +29,6 @@ Arkaya Risk Limited is a UK company (England and Wales no. 17380022), pre-revenu
 
 - [Sitemap](https://arkayarisk.com/sitemap.xml)
 - [Robots](https://arkayarisk.com/robots.txt)
+
+## Charter publication record
+- [Schema Independence Charter Public Version Record](https://schema.arkayarisk.com/charter/): Historical instruments v1, v1.1, v2 and v3, source amendment statements and separate instrument and publication dates. Latest recorded document v3; constituting authority and current Charter effectiveness reserved to counsel. No retrospective effectiveness claimed.

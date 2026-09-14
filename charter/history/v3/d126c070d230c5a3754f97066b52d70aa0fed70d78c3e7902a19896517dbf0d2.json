@@ -1,0 +1,20 @@
+{
+  "current_status": "reserved_to_counsel",
+  "documentary_successor": null,
+  "documentary_successor_instrument_date": null,
+  "instrument_date": "2026-07-29",
+  "is_current": false,
+  "published_to_record": "2026-09-14",
+  "reason": "Changes at v3: §7.6 extended with the transition-conflict discipline (fiduciary duties owed separately in each founder capacity until handover; conflicted decisions published per §6), the enforcement statement (breach of the adopted protections is an act outside the custodian's constitution, restrainable and actionable under company law; the published record cannot be unmade), and the cross-reference to the custodian's articles for appointment, removal, membership and interpretation.",
+  "reason_source": "Source instrument opening Changes statement",
+  "revision_class": "whole_integer",
+  "revision_class_basis": "Version label; no independent conclusion about whether changes are load-bearing",
+  "source_filename": "Arkaya_Schema_Independence_Charter_v3.docx",
+  "source_sha256": "26a4ddd6fd34332236237cd594b8f2217b0db1d6d7651ca39503f5ef642f1515",
+  "source_status_verbatim": "Status: Internal canonical reference. Counterparty-disclosable. Whole-integer revision over v1.1 (28 May 2026), issued in connection with the group formation and for counterparty review.",
+  "source_url": "https://schema.arkayarisk.com/charter/instruments/v3/26a4ddd6fd34332236237cd594b8f2217b0db1d6d7651ca39503f5ef642f1515.docx",
+  "superseded_by": null,
+  "superseded_from": null,
+  "supersession_status": "Legal supersession and effective dates reserved to counsel; documentary sequence only",
+  "version": "v3"
+}
