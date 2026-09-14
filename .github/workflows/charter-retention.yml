@@ -1,0 +1,29 @@
+name: Charter historical retention
+on: [pull_request, push]
+permissions:
+  contents: read
+jobs:
+  retained-bytes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reject alteration or removal of existing historical bytes
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          python3 - <<'PY'
+          import os, subprocess, pathlib, hashlib
+          roots=['charter/history','charter/instruments','charter/records']
+          base=os.environ['BASE']
+          if base and set(base) != {'0'}:
+              changed=subprocess.check_output(['git','diff','--name-status',base,'HEAD','--',*roots],text=True)
+              bad=[line for line in changed.splitlines() if not line.startswith('A\t')]
+              if bad: raise SystemExit('Historical files must not change or disappear: '+repr(bad))
+          for root in roots:
+              for p in pathlib.Path(root).rglob('*'):
+                  if p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest()!=p.stem:
+                      raise SystemExit('Content-address mismatch: '+str(p))
+          print('All historical bytes retained; content addresses match.')
+          PY
