@@ -1,0 +1,20 @@
+{
+  "current_status": "reserved_to_counsel",
+  "documentary_successor": "v3",
+  "documentary_successor_instrument_date": "2026-07-29",
+  "instrument_date": "2026-07-29",
+  "is_current": false,
+  "published_to_record": "2026-09-14",
+  "reason": "Changes at v2: §7.6 names the custodian company: Governance Evidence Taxonomy Limited, a company limited by guarantee in formation whose articles give this Charter constitutional effect, with custody vesting on completion of the group formation sequence and Foundation handover proceeding as a change of control rather than an asset-by-asset transfer. §7.7 records the group implementation licence to Arkaya Risk (Holdings) Limited: perpetual, irrevocable, non-exclusive, unprivileged. The §8 counterparty test instrument, announced at v1.1 and omitted from the issued document, is supplied. Layer references adopt the four-layer economic model numbering (engines Layer 0; allocators Layer 2). All other sections preserved verbatim.",
+  "reason_source": "Source instrument opening Changes statement",
+  "revision_class": "whole_integer",
+  "revision_class_basis": "Version label; no independent conclusion about whether changes are load-bearing",
+  "source_filename": "Arkaya_Schema_Independence_Charter_v2.docx",
+  "source_sha256": "6b4dcc91cf884bde9d377a5052a55a99ef964afadb86ce58610527df84c80f28",
+  "source_status_verbatim": "Status: Internal canonical reference. Counterparty-disclosable. Whole-integer revision over v1.1 (28 May 2026), issued in connection with the group formation and for counterparty review.",
+  "source_url": "https://schema.arkayarisk.com/charter/instruments/v2/6b4dcc91cf884bde9d377a5052a55a99ef964afadb86ce58610527df84c80f28.docx",
+  "superseded_by": null,
+  "superseded_from": null,
+  "supersession_status": "Legal supersession and effective dates reserved to counsel; documentary sequence only",
+  "version": "v2"
+}
