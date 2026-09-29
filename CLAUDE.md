@@ -28,7 +28,7 @@ Pages, and whether they are in the navigation (October ship, OPS_Website_October
 | In the navigation | Live, not in the navigation |
 |---|---|
 | Primary: `emit.html`, `schema.html`, `read.html`, `evidence.html` | `architecture.html`, `get/index.html`: in-page routes from `/schema` (DQ-26) and `llms.txt` |
-| Secondary: `doctrine.html`, `library.html`, `standard.html`, `founder.html` | `infinity.html`: deliberate, no agent surface |
+| Secondary: `doctrine.html`, `library.html`, `standard.html`, `founder.html` | `infinity.html`: kept in the repository, never served; `/infinity` and `/infinity.html` are forced 301s to `/evidence` (DQ-40) |
 | `index.html` (home, one screen) | `solutions.html`, `ecosystem.html`: kept in the repository, never served; `/solutions`, `/ecosystem` and their `.html` paths are forced 301s to `/read` |
 
 The header is identical on every page: EMIT · SCHEMA · READ · EVIDENCE, then Doctrine · Library ·

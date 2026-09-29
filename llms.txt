@@ -2,6 +2,8 @@
 
 > Arkaya stewards the Governance Evidence Taxonomy (GET), an open schema for governance evidence. An organisation's systems emit signals; an engine produces a signed record against the schema stating whether a control existed, ran and passed its own test; insurers, lenders and acquirers read that record as evidence and price governance risk on it. Arkaya produces no evidence, issues no score and prices nothing; a record is checked with the record, the public schema and the signer's public key, with no call to Arkaya.
 
+Source systems emit signals; an engine produces a record against the schema; a counterparty reads that record as evidence; Arkaya produces neither the record nor the price.
+
 Arkaya Risk Limited is a UK company (England and Wales no. 17380022), pre-revenue, founded by David J McKibbin and Simon Hudson. Two pages set out the work on either side of the schema: EMIT, for the systems and companies that produce the record, and READ, for the parties that price it, with continuous covenant underwriting for AI liability as the first class. The links below are the site's principal pages; each carries the same copy an agent or a person reads.
 
 ## Start here
