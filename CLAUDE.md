@@ -23,18 +23,18 @@ red-teamed and deliberately shelved: the benefit was unevidenced and the publish
 to fail is worth more. The decision record is with the Tranche A notes; the shelved machinery is in
 the v5 bundle and can be revived if measurement ever justifies it.
 
-Pages, and whether they are in the navigation:
+Pages, and whether they are in the navigation (October ship, OPS_Website_October_Spec_v5):
 
 | In the navigation | Live, not in the navigation |
 |---|---|
-| `index.html` (home) | `architecture.html` — reachable only from body copy and `llms.txt`. **Open decision.** |
-| `solutions.html`, `evidence.html` | `get/index.html` — same. **Open decision.** |
-| `schema.html`, `doctrine.html`, `founder.html` | `ecosystem.html`, `infinity.html` — deliberate, no agent surface |
-| `library.html`, `standard.html` | |
+| Primary: `emit.html`, `schema.html`, `read.html`, `evidence.html` | `architecture.html`, `get/index.html`: in-page routes from `/schema` (DQ-26) and `llms.txt` |
+| Secondary: `doctrine.html`, `library.html`, `standard.html`, `founder.html` | `infinity.html`: kept in the repository, never served; `/infinity` and `/infinity.html` are forced 301s to `/evidence` (DQ-40) |
+| `index.html` (home, one screen) | `solutions.html`, `ecosystem.html`: kept in the repository, never served; `/solutions`, `/ecosystem` and their `.html` paths are forced 301s to `/read` |
 
-The navigation carries seven items in three groups and has not grown since the page count did. That
-is a decision waiting to be taken, not an oversight: `/architecture` and `/get` are the two newest
-and densest pages and a human cannot currently reach either from the header.
+The header is identical on every page: EMIT · SCHEMA · READ · EVIDENCE, then Doctrine · Library ·
+Standard · Founders. The "Understand / Evaluate / Examine" group labels and the Solutions item were
+retired with the October ship. A redirect over a file that still exists needs the `!` force flag, or
+Netlify serves the file and ignores the rule.
 
 ### Adding or retiring a page
 

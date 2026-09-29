@@ -1,8 +1,13 @@
+/emit         /emit.html         200
+/read         /read.html         200
+/solutions    /read              301!
+/solutions.html /read            301!
+/ecosystem    /read              301!
+/ecosystem.html /read            301!
 /doctrine     /doctrine.html     200
 /schema       /schema.html       200
-/solutions    /solutions.html    200
-/ecosystem    /solutions    301!
 /founder      /founder.html      200
 /evidence     /evidence.html     200
 /standard     /standard.html     200
-/infinity     /infinity.html     200
+/infinity     /evidence          301!
+/infinity.html /evidence         301!

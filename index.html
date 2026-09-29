@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arkaya Risk. AI governance evidence capital markets can price.</title>
-<meta name="description" content="AI risk is being excluded, not priced. Arkaya stewards the open governance-evidence record that insurers, lenders and acquirers read to price it.">
+<meta name="description" content="Without evidence that travels to the insurer, lender or acquirer, AI risk is excluded or priced as uncertainty.">
 <link rel="canonical" href="https://arkayarisk.com/">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Arkaya Risk">
 <meta property="og:locale" content="en_GB">
 <meta property="og:title" content="Arkaya Risk. AI governance evidence capital markets can price.">
-<meta property="og:description" content="AI risk is being excluded, not priced. Arkaya stewards the open governance-evidence record that insurers, lenders and acquirers read to price it.">
+<meta property="og:description" content="Without evidence that travels to the insurer, lender or acquirer, AI risk is excluded or priced as uncertainty.">
 <meta property="og:url" content="https://arkayarisk.com/">
 <meta property="og:image" content="https://arkayarisk.com/og-card.png">
 <meta property="og:image:width" content="1200">
@@ -21,9 +21,9 @@
 <meta property="og:image:alt" content="Arkaya Risk. Make the autonomous economy governable, and therefore priceable.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Arkaya Risk. AI governance evidence capital markets can price.">
-<meta name="twitter:description" content="AI risk is being excluded, not priced. Arkaya stewards the open governance-evidence record that insurers, lenders and acquirers read to price it.">
+<meta name="twitter:description" content="Without evidence that travels to the insurer, lender or acquirer, AI risk is excluded or priced as uncertainty.">
 <meta name="twitter:image" content="https://arkayarisk.com/og-card.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Arkaya Risk", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/", "logo": "https://arkayarisk.com/arkaya-logo-sm.png", "slogan": "Building resilience capital.", "description": "AI risk is being excluded, not priced. Arkaya stewards the open governance-evidence record that insurers, lenders and acquirers read to price it.", "email": "djm@arkayarisk.com",
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Arkaya Risk", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/", "logo": "https://arkayarisk.com/arkaya-logo-sm.png", "slogan": "Building resilience capital.", "description": "Without evidence that travels to the insurer, lender or acquirer, AI risk is excluded or priced as uncertainty.", "email": "djm@arkayarisk.com",
 "identifier": {"@type": "PropertyValue", "propertyID": "GB-COH", "value": "17380022"},
 "alternateName": "Arkaya Risk Limited",
 "address": {"@type": "PostalAddress", "streetAddress": "Oxford House, 15-17 Mount Ephraim Road", "addressLocality": "Tunbridge Wells", "postalCode": "TN1 1EN", "addressCountry": "GB"}, "founder": [{"@type": "Person", "name": "David J McKibbin", "jobTitle": "Co-Founder", "sameAs": "https://www.linkedin.com/in/davidmckibbin"}, {"@type": "Person", "name": "Simon Hudson", "jobTitle": "Co-Founder"}], "sameAs": ["https://www.linkedin.com/in/davidmckibbin"]}</script>
@@ -854,6 +854,28 @@
     .closing { padding: 70px 0; }
     .founder { padding: 64px 0 60px 0; }
   }
+
+  /* October ship: one-screen home */
+  .why-now { font-family: 'IBM Plex Sans', sans-serif; font-size: 17px; line-height: 1.5; color: var(--off-white-soft); margin: 0 0 22px; }
+  .message-line { font-family: 'IBM Plex Sans', sans-serif; font-size: 18px; line-height: 1.6; max-width: 920px; margin: 30px 0 0; color: var(--off-white-soft); }
+  .strip { list-style: none; display: grid; grid-template-columns: 1fr 28px 1.25fr 28px 1fr; gap: 14px; align-items: start; margin: 48px 0 0; padding: 0; max-width: 1080px; }
+  .node { border-top: 1px solid var(--bronze-line); padding-top: 14px; }
+  .node-label { font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; letter-spacing: 2.4px; text-transform: uppercase; font-weight: 600; color: var(--bronze); text-decoration: none; border-bottom: 1px dotted var(--bronze-line); }
+  .node-label:hover { border-bottom-style: solid; }
+  .node-text { font-family: 'IBM Plex Sans', sans-serif; font-size: 14.5px; line-height: 1.6; color: var(--off-white-soft); margin-top: 10px; }
+  .node-arrow { padding-top: 12px; text-align: center; color: var(--bronze); font-size: 18px; }
+  .node-arrow::before { content: '\2192'; }
+  .home-action { margin-top: 44px; }
+  .home-action a { display: inline-block; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; letter-spacing: 1.6px; text-transform: uppercase; font-weight: 600; text-decoration: none; padding: 15px 26px; border-radius: 3px; background: var(--bronze); color: var(--deep-teal); }
+  .home-action a:hover { transform: translateY(-2px); }
+  @media (max-width: 860px) {
+    .strip { grid-template-columns: 1fr; gap: 6px; }
+    .node-arrow { text-align: left; padding: 2px 0 0 4px; }
+    .node-arrow::before { content: '\2193'; }
+  }
+
+  .nav-primary a { letter-spacing: 1.6px; font-weight: 600; }
+  @media (max-width: 760px) { nav { flex-wrap: wrap; row-gap: 10px; } .nav-group { flex-wrap: wrap; row-gap: 10px; } .nav-group + .nav-group { border-left: none; padding-left: 0; margin-left: 0; } }
 </style>
 </head>
 <body>
@@ -864,18 +886,17 @@
       <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
     </a>
     <nav aria-label="Site">
-      <span class="nav-group"><span class="nav-glabel">Understand</span>
-<a href="/solutions">Solutions</a>
-<a href="/evidence">Evidence</a>
+      <span class="nav-group nav-primary">
+<a href="/emit">EMIT</a>
+<a href="/schema">SCHEMA</a>
+<a href="/read">READ</a>
+<a href="/evidence">EVIDENCE</a>
 </span>
-      <span class="nav-group"><span class="nav-glabel">Evaluate</span>
-<a href="/schema">Schema</a>
+      <span class="nav-group nav-secondary">
 <a href="/doctrine">Doctrine</a>
-<a href="/founder">Founders</a>
-</span>
-      <span class="nav-group"><span class="nav-glabel">Examine</span>
 <a href="/library">Library</a>
 <a href="/standard">Standard</a>
+<a href="/founder">Founders</a>
 </span>
     </nav>
   </div>
@@ -883,169 +904,34 @@
 
 <section class="mtp-hero" style="background:var(--deep-teal);color:var(--off-white);padding:94px 0 86px;">
   <div class="container">
-  <div class="mtp-grid">
-  <div class="mtp-copy">
+    <p class="why-now">Decisions are moving at machine speed.<br>Governance evidence is not.</p>
     <h1 style="font-family:'Fraunces',serif;font-weight:400;font-size:clamp(34px,5vw,60px);line-height:1.08;letter-spacing:-0.5px;margin:0;color:var(--off-white);">Make the autonomous economy<br>governable, and therefore <span style="color:var(--bronze);">priceable</span>.</h1>
-    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:18px;line-height:1.55;max-width:780px;margin:30px 0 0;color:var(--off-white-soft);">Material decisions are moving from people to machines, and AI risk is already being excluded rather than priced. Arkaya makes governability observable, so what machines now decide can be priced: by insurers first, then by all capital.</p>
-    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.6;max-width:780px;margin:18px 0 0;color:var(--off-white-faint);">A conformant engine at the insured produces the record. Arkaya stewards the schema, maps it to the underwriting decision and reads it with the desk. Arkaya prices nothing and issues no score.</p>
-    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.6;max-width:780px;margin:10px 0 0;color:var(--off-white-soft);">Organisations that can evidence their governance create options unavailable to those that cannot: at insurance renewal, at refinancing, and at exit.</p>
-  </div>
-  <div class="mtp-record">
-<div class="lr" data-lr aria-label="Specimen governance evidence record, assembling live. Illustrative values only; no client data; no score issued.">
-  <div class="lr-head">
-    <span class="lr-dot" aria-hidden="true"></span>
-    <span class="lr-title">Governance evidence record</span>
-    <span class="lr-meta">GET-v1 · <span data-lr-clock>continuous</span></span>
-  </div>
-  <div class="lr-rows">
-    <div class="lr-row" data-exc="open">
-      <div class="lr-ob"><div class="lr-ob-name">Third-party access control</div><div class="lr-ob-src">helpdesk access logs · continuous</div></div>
-      <span class="lr-exc open">open</span>
-      <span class="lr-ver">signed <span class="tick">&#10003;</span></span>
-    </div>
-    <div class="lr-row" data-exc="clear">
-      <div class="lr-ob"><div class="lr-ob-name">Privileged-access review</div><div class="lr-ob-src">IAM change log · event-triggered</div></div>
-      <span class="lr-exc clear">clear</span>
-      <span class="lr-ver">signed <span class="tick">&#10003;</span></span>
-    </div>
-    <div class="lr-row" data-exc="review">
-      <div class="lr-ob"><div class="lr-ob-name">Model-override governance</div><div class="lr-ob-src">override log · monthly review</div></div>
-      <span class="lr-exc review">in review</span>
-      <span class="lr-ver">signed <span class="tick">&#10003;</span></span>
-    </div>
-    <div class="lr-row" data-exc="progress">
-      <div class="lr-ob"><div class="lr-ob-name">Incident notification</div><div class="lr-ob-src">regulator-of-record filing · on event</div></div>
-      <span class="lr-exc progress">in progress</span>
-      <span class="lr-ver">filed <span class="tick">&#10003;</span></span>
-    </div>
-    <div class="lr-row" data-exc="clear">
-      <div class="lr-ob"><div class="lr-ob-name">Board protocol adherence</div><div class="lr-ob-src">decision log vs protocol · monthly</div></div>
-      <span class="lr-exc clear">within bounds</span>
-      <span class="lr-ver">signed <span class="tick">&#10003;</span></span>
-    </div>
-  </div>
-  <div class="lr-foot">
-    <div class="lr-prov">provenance: source system <span class="arr">&#8594;</span> engine <span class="arr">&#8594;</span> signing key · each hop retained in the record</div>
-    <div class="lr-seal">
-      <span>record sealed · sig <span class="lr-sig" data-lr-sig>0x8f3ac21e9b47d05e</span></span>
-      <span class="lr-verify">proof checked, no call to Arkaya <span class="tick">&#10003;</span> · score: null</span>
-    </div>
-    <div class="lr-note">Format specimen · illustrative values · no client data · no score issued</div>
-  </div>
-</div>
-  </div>
-  </div>
-  </div>
-</section>
+    <p class="message-line">Without evidence that travels to the insurer, lender or acquirer, AI risk is excluded or priced as uncertainty.<br>Arkaya stewards one open schema, so all three can read governance evidence from any platform on a common basis, and price the risk.</p>
 
-<section style="background: var(--off-white-deep,#ECEDE6); padding: 72px 0; border-top: 1px solid var(--rule,rgba(42,57,60,0.12)); border-bottom: 1px solid var(--rule,rgba(42,57,60,0.12));">
-  <div class="container-narrow">
-    <div style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--bronze,#C89358); font-weight:600; margin-bottom:18px;">The difference</div>
-    <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:clamp(26px,3.6vw,38px); line-height:1.18; letter-spacing:-0.015em; color:var(--deep-teal,#2A393C); margin:0 0 22px;">GRC and AI-governance platforms record your compliance. The schema makes it evidence a counterparty can price.</h2>
-    <p style="font-family:'Fraunces',serif; font-size:17.5px; line-height:1.55; color:var(--slate-teal,#364748); margin:0 0 26px; max-width:680px;">Standards describe what should exist. Underwriting prices what demonstrably exists on the date risk attaches. The evidential gap between those two propositions is the opportunity.</p>
-    <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16px; line-height:1.7; color:var(--charcoal,#41413F); margin:0 0 18px; max-width:680px;">That evidence is scoped to your audit, expressed in each vendor's proprietary controls and scores, and held inside the platform that produced it.</p>
-    <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16px; line-height:1.7; color:var(--charcoal,#41413F); margin:0 0 24px; max-width:680px;">None of them supplies the schema that makes governance evidence <strong style="color:var(--deep-teal,#2A393C);">comparable, portable and adjudicable across parties</strong>. Comparable by conformance to one shared schema, not a proprietary score. Portable across engines, insurers and capital events without re-basing. Adjudicable when parties dispute what it shows, resolved against the schema, not against opinion. Arkaya stewards the schema; it is not the adjudicator.</p>
-    <div style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--bronze,#C89358); font-weight:600; margin:34px 0 14px;">Where this sits</div>
-    <div style="max-width:680px; margin:0 0 30px;" aria-label="The four-layer stack. Arkaya occupies Translation only.">
-      <div style="border:1px solid rgba(42,57,60,0.18); background:#fff; padding:14px 18px; margin-bottom:8px;">
-        <div style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:600; color:var(--deep-teal,#2A393C);">Accumulation <span style="font-weight:400; color:var(--bronze,#C89358); text-transform:none; letter-spacing:0.4px; font-size:12px;">&nbsp;· the firm's balance sheet</span></div>
-        <div style="font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; color:var(--charcoal,#41413F); margin-top:4px;">Pricing outcomes compound into resilience capital.</div>
-      </div>
-      <div style="border:1px solid rgba(42,57,60,0.18); background:#fff; padding:14px 18px; margin-bottom:10px;">
-        <div style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:600; color:var(--deep-teal,#2A393C);">Allocation <span style="font-weight:400; color:var(--bronze,#C89358); text-transform:none; letter-spacing:0.4px; font-size:12px;">&nbsp;· the capital allocators</span></div>
-        <div style="font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; color:var(--charcoal,#41413F); margin-top:4px;">Insurers, reinsurers, lenders. They decide the price.</div>
-      </div>
-      <div style="border-left:3px solid var(--bronze,#C89358); background:rgba(200,147,88,0.10); padding:10px 18px; margin-bottom:10px;">
-        <div style="font-family:'Fraunces',serif; font-size:15px; color:var(--deep-teal,#2A393C);">The schema says what the record shows. The carrier decides what it is worth.</div>
-      </div>
-      <div style="border:2px solid var(--bronze,#C89358); background:#fff; padding:14px 18px; margin-bottom:8px;">
-        <div style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:600; color:var(--deep-teal,#2A393C);">Translation <span style="font-weight:600; color:var(--bronze,#C89358); letter-spacing:2px; font-size:11px;">&nbsp;· ARKAYA</span></div>
-        <div style="font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; color:var(--charcoal,#41413F); margin-top:4px;">The schema. Structure only: did the control exist, did it operate, did it pass its own test.</div>
-      </div>
-      <div style="border:1px solid rgba(42,57,60,0.18); background:#fff; padding:14px 18px;">
-        <div style="font-family:'IBM Plex Sans',sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:600; color:var(--deep-teal,#2A393C);">Observation <span style="font-weight:400; color:var(--bronze,#C89358); text-transform:none; letter-spacing:0.4px; font-size:12px;">&nbsp;· the production layer</span></div>
-        <div style="font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; color:var(--charcoal,#41413F); margin-top:4px;">ERP, GRC, identity, cyber, telemetry. Every engine produces events. None produces price.</div>
-      </div>
-    </div>
-    <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16px; line-height:1.7; color:var(--charcoal,#41413F); margin:0 0 24px; max-width:680px;">That visibility is what insurability and financeability rest on: a business's capacity to carry its liabilities and obligations, priced on what the record shows.</p>
-    <p style="margin:0;"><a href="/schema" style="font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; letter-spacing:2px; text-transform:uppercase; color:var(--bronze,#C89358); text-decoration:none; font-weight:600;">See how the schema does it &#8594;</a></p>
-  </div>
-</section>
+    <ol class="strip" aria-label="Emitters, then Arkaya GET, then Readers">
+      <li class="node">
+        <a class="node-label" href="/emit">Emitters</a>
+        <p class="node-text">The insured's own systems and engine produce the record.</p>
+      </li>
+      <li class="node-arrow" aria-hidden="true"></li>
+      <li class="node node-schema">
+        <a class="node-label" href="/schema">Arkaya GET</a>
+        <p class="node-text">One open schema.<br>Comparable across platforms ·<br>Portable between parties ·<br>Examined against a common structure, not reconstructed from assertion.<br>Arkaya stewards it, produces no record and sets no price.</p>
+      </li>
+      <li class="node-arrow" aria-hidden="true"></li>
+      <li class="node">
+        <a class="node-label" href="/read">Readers</a>
+        <p class="node-text">Insurers, lenders, acquirers.<br>They decide sufficiency, price and terms.</p>
+      </li>
+    </ol>
 
-<section class="evidence">
-  <div class="container">
-    <div class="evidence-head">
-      <div class="evidence-eyebrow">Priced after the event</div>
-      <p class="evidence-lede">Automated decisions have already crystallised nine and ten figure losses, reconstructed only after the event. The trail those reconstructions assembled too late is the trail a conformant engine produces continuously, in the format Arkaya stewards.</p>
-    </div>
-    <div class="evidence-grid">
-      <div class="evidence-card">
-        <div class="evidence-tag">Automated decisioning · Government · Australia</div>
-        <div class="evidence-figure">A$2.4bn</div>
-        <div class="evidence-figure-label">total repayment and compensation</div>
-        <p class="evidence-body">Robodebt averaged annual income across fortnightly periods and raised welfare debts later ruled unlawful. A$1.8bn was settled in 2020, a further A$475m (about US$309m) in 2025. A royal commission found the responsible department held legal advice warning of unlawfulness in 2018 and proceeded. The decision trail surfaced years after the loss. <strong>In the schema:</strong> the unlawful-calculation control carries an open exception from the moment that advice lands, readable by a counterparty years before settlement.</p>
-        <p class="evidence-source">Royal Commission into the Robodebt Scheme, final report 2023; Reuters, 2025.</p>
-      </div>
-      <div class="evidence-card">
-        <div class="evidence-tag">Model governance · Corporate · United States</div>
-        <div class="evidence-figure">$540m+</div>
-        <div class="evidence-figure-label">inventory write-down, Zillow Offers</div>
-        <p class="evidence-body">Algorithmic home-buying priced off the Zestimate model, which overpaid as the 2021 market turned. A $304m write-down in Q3 2021, a further $240m to $265m guided for Q4, the unit closed and about 2,000 staff cut, a quarter of the workforce. The model outputs existed internally. A record a counterparty could check did not. <strong>In the schema:</strong> the model-override governance field shows the Zestimate's widening error as a populated exception in Q3, not after the write-down.</p>
-        <p class="evidence-source">Zillow Group SEC Form 8-K, third quarter 2021.</p>
-      </div>
-      <div class="evidence-card">
-        <div class="evidence-tag">Third-party · cyber · Retail · United Kingdom</div>
-        <div class="evidence-figure">&#8776;15%</div>
-        <div class="evidence-figure-label">of M&amp;S equity value at the point of impact</div>
-        <p class="evidence-body">The April 2025 cyber incident, attributed to Scattered Spider operating through the TCS-run helpdesk, sat inside a multi-year outsourcing arrangement renewed on cost. Insurance performed against the loss it covered: roughly &pound;100m of proceeds settled &pound;101.6m of booked incident costs almost exactly, and did not reach the equity value the market removed. Arkaya's composed estimate puts the total equity-value impact near &pound;2.4bn. <strong>In the schema:</strong> the third-party access-control obligation carries an open exception at the helpdesk boundary, readable by an underwriter at renewal, not reconstructed at claim.</p>
-        <p class="evidence-source">Cyber Monitoring Centre, 2025 (Category 2, with Co-op, &pound;270m&ndash;&pound;440m); M&amp;S market disclosures, 2025.</p>
-      </div>
-    </div>
-    <p class="evidence-lede" style="margin-top: 30px;">Today’s forensic evidence is retrospective. Arkaya makes forensic evidence prospective.</p>
-    <p style="margin-top:28px;"><a href="/evidence" class="pillar-go">See what a governance evidence record looks like</a></p>
-  </div>
-</section>
-
-<section class="pillars">
-  <div class="container">
-
-    <div class="objective">
-      <div class="objective-eyebrow">The proposition</div>
-      <h2 class="objective-title">Two pillars.</h2>
-      <p class="objective-lede">
-        Arkaya stewards the Governance Evidence Taxonomy, the open schema counterparties read to price governance risk. Arkaya GET Solutions is the commercial work that runs on it. Pick your path.
-      </p>
-    </div>
-
-    <div class="pillars-grid">
-
-      <a href="/schema" class="pillar">
-        <span class="pillar-tag">Pillar one</span>
-        <h3 class="pillar-title">Arkaya GET</h3>
-        <p class="pillar-desc">
-          The Governance Evidence Taxonomy. The schema that translates risk and makes it machine-readable. Open. Multi-engine. Eight observable fields. Schema decisions sit on a separate governance track from commercial decisions.
-        </p>
-        <span class="pillar-go">Read the schema</span>
-      </a>
-
-      <a href="/solutions" class="pillar">
-        <span class="pillar-tag">Pillar two</span>
-        <h3 class="pillar-title">Arkaya GET Solutions</h3>
-        <p class="pillar-desc">
-          Continuous covenant underwriting, with AI liability as the first class. First-party evidence read into rating, retention, limit and capital, for insurers, lenders and acquirers at the pricing layer.
-        </p>
-        <span class="pillar-go">See the product</span>
-      </a>
-
-    </div>
+    <p class="home-action"><a href="/evidence">See what the reader&nbsp;receives&nbsp;&#8594;</a></p>
   </div>
 </section>
 
 <section class="closing">
   <div class="container">
-    <p style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.4px; line-height: 2; color: var(--off-white); opacity: 0.85; max-width: 760px; margin: 0 auto; padding: 0 20px; font-weight: 400;">Observable governance becomes measurable. Measurable governance becomes priceable. Priceable governance becomes resilience capital.</p>
-    <div style="width: 60%; max-width: 200px; height: 1px; background: var(--bronze-line); margin: 40px auto 0;"></div>
-    <p>Resilience Capital is built.<br>Not asserted.</p>
+    <p>Resilience Capital<br>starts with evidence.</p>
   </div>
 </section>
 

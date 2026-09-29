@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Determine what evidence is sufficient for the decision you must take. Arkaya Risk.</title>
+<meta name="description" content="For insurers, lenders and acquirers: continuous covenant underwriting, calibration, the evidence ladder and the pilot. The reader decides sufficiency, price and terms; Arkaya does not.">
+<link rel="canonical" href="https://arkayarisk.com/read">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arkaya Risk">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Determine what evidence is sufficient for the decision you must take. Arkaya Risk.">
+<meta property="og:description" content="For insurers, lenders and acquirers: continuous covenant underwriting, calibration, the evidence ladder and the pilot. The reader decides sufficiency, price and terms; Arkaya does not.">
+<meta property="og:url" content="https://arkayarisk.com/read">
+<meta property="og:image" content="https://arkayarisk.com/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Arkaya Risk. Make the autonomous economy governable, and therefore priceable.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Determine what evidence is sufficient for the decision you must take. Arkaya Risk.">
+<meta name="twitter:description" content="For insurers, lenders and acquirers: continuous covenant underwriting, calibration, the evidence ladder and the pilot. The reader decides sufficiency, price and terms; Arkaya does not.">
+<meta name="twitter:image" content="https://arkayarisk.com/og-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-teal: #2A393C;
+    --slate-teal: #364748;
+    --bronze: #C89358;
+    --bronze-soft: rgba(200, 147, 88, 0.13);
+    --bronze-line: rgba(200, 147, 88, 0.45);
+    --charcoal: #41413F;
+    --charcoal-soft: rgba(65, 65, 63, 0.78);
+    --off-white: #F4F5EF;
+    --off-white-deep: #ECEDE6;
+    --rule: rgba(42, 57, 60, 0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--charcoal);
+    background: var(--off-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--bronze); color: var(--deep-teal); }
+
+  .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+  .container-narrow { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 28px; }
+
+  header { background: var(--off-white); padding: 18px 0; border-bottom: 1px solid var(--rule); }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; }
+  .logo-link { display: inline-block; line-height: 0; }
+  .logo { height: 76px; width: auto; display: block; }
+  nav { display: flex; gap: 26px; align-items: center; }
+  nav a {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--charcoal);
+    text-decoration: none;
+    font-size: 12.5px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 200ms ease;
+    position: relative;
+    padding: 4px 0;
+  }
+  nav a.active { color: var(--bronze); }
+  nav a:hover { color: var(--bronze); }
+  nav a::after {
+    content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px;
+    background: var(--bronze); transition: width 200ms ease;
+  }
+  nav a.active::after, nav a:hover::after { width: 100%; }
+
+  .title-block { padding: 88px 0 56px 0; border-bottom: 1px solid var(--rule); background: var(--off-white-deep); }
+  .eyebrow { font-family: 'IBM Plex Sans', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--bronze); font-weight: 600; margin-bottom: 22px; }
+  .page-title { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(38px, 6vw, 72px); line-height: 1.05; letter-spacing: -0.025em; color: var(--deep-teal); margin-bottom: 16px; }
+  .page-subtitle { font-family: 'Fraunces', serif; font-weight: 300; font-style: italic; font-size: clamp(20px, 2.6vw, 28px); line-height: 1.3; color: var(--slate-teal); max-width: 720px; margin-bottom: 32px; }
+  .title-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--charcoal-soft); display: flex; gap: 24px; flex-wrap: wrap; }
+  .title-meta span::before { content: '·'; color: var(--bronze); margin-right: 8px; }
+  .title-meta span:first-child::before { content: ''; margin: 0; }
+
+  section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+  .section-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--bronze); font-weight: 500; margin-bottom: 18px; }
+  h2 { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(26px, 3.6vw, 38px); line-height: 1.18; letter-spacing: -0.015em; color: var(--deep-teal); margin-bottom: 24px; }
+  p { font-size: 16px; line-height: 1.7; color: var(--charcoal); margin-bottom: 18px; max-width: 720px; }
+  p strong { font-weight: 600; color: var(--deep-teal); }
+  p em { font-style: italic; color: var(--slate-teal); }
+
+  /* Audience blocks */
+  .audiences { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 36px; }
+  .audience { background: var(--off-white); border: 1px solid var(--rule); padding: 36px 30px; display: flex; flex-direction: column; border-radius: 4px; transition: transform 250ms ease, border-color 250ms ease, box-shadow 250ms ease; position: relative; overflow: hidden; }
+  .audience::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--bronze); opacity: 0; transition: opacity 250ms ease; }
+  .audience:hover { transform: translateY(-3px); border-color: var(--bronze-line); box-shadow: 0 12px 32px -16px rgba(42, 57, 60, 0.18); }
+  .audience:hover::before { opacity: 1; }
+  .audience-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--bronze); font-weight: 500; margin-bottom: 14px; }
+  .audience-title { font-family: 'Fraunces', serif; font-weight: 500; font-size: 22px; color: var(--deep-teal); margin-bottom: 14px; letter-spacing: -0.01em; line-height: 1.15; }
+  .audience-body { font-size: 14px; line-height: 1.65; color: var(--charcoal); flex: 1; }
+  .audience-body p { font-size: 14px; line-height: 1.65; margin-bottom: 12px; }
+  .audience-cta { margin-top: 18px; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 600; }
+  .audience-cta a { color: var(--bronze); text-decoration: none; border-bottom: 1px solid var(--bronze-line); }
+  .audience-cta a:hover { border-bottom-color: var(--bronze); }
+  .brief-form { margin-top: 18px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .brief-form input[type=email] { flex: 1 1 150px; min-width: 0; padding: 8px 10px; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; color: var(--charcoal); background: var(--off-white); border: 1px solid var(--rule); }
+  .brief-form button { font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 600; color: var(--bronze); background: none; border: none; border-bottom: 1px solid var(--bronze-line); padding: 8px 0; cursor: pointer; white-space: nowrap; }
+  .brief-form button:hover { border-bottom-color: var(--bronze); }
+
+  /* Two-column row table (moments / ladder / economics) */
+  .moments { display: grid; grid-template-columns: 280px 1fr; gap: 0; margin-top: 32px; border: 1px solid var(--rule); background: var(--rule); }
+  .moments-row { display: contents; }
+  .moments-row > div { background: var(--off-white); padding: 22px 26px; }
+  .moment-name { font-family: 'Fraunces', serif; font-weight: 500; font-size: 18px; color: var(--deep-teal); letter-spacing: -0.005em; }
+  .moment-desc { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; line-height: 1.55; color: var(--charcoal); }
+  .moment-desc strong { color: var(--deep-teal); font-weight: 600; }
+
+  /* Three-column comparison */
+  .compare { display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: 0; margin-top: 32px; border: 1px solid var(--rule); background: var(--rule); }
+  .compare > div { background: var(--off-white); padding: 18px 22px; font-size: 13.5px; line-height: 1.55; color: var(--charcoal); }
+  .compare .ch { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 1.3px; text-transform: uppercase; color: var(--bronze); font-weight: 600; background: var(--off-white-deep); }
+  .compare .cl { font-family: 'Fraunces', serif; font-size: 15px; color: var(--deep-teal); font-weight: 500; }
+  .compare .cd strong { color: var(--deep-teal); font-weight: 600; }
+
+  /* Pull-quote */
+  .pull { margin: 40px 0 8px 0; padding: 30px 0 30px 28px; border-left: 3px solid var(--bronze); max-width: 760px; }
+  .pull p { font-family: 'Fraunces', serif; font-weight: 300; font-style: italic; font-size: clamp(20px, 2.4vw, 26px); line-height: 1.4; color: var(--deep-teal); margin: 0; letter-spacing: -0.005em; }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; margin-top: 34px; }
+  .step { background: var(--off-white); border: 1px solid var(--rule); border-top: 3px solid var(--bronze); padding: 26px 22px; border-radius: 4px; }
+  .step-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1.4px; color: var(--bronze); font-weight: 600; margin-bottom: 12px; }
+  .step-name { font-family: 'Fraunces', serif; font-weight: 500; font-size: 17px; color: var(--deep-teal); margin-bottom: 10px; line-height: 1.2; }
+  .step-body { font-size: 13.5px; line-height: 1.55; color: var(--charcoal); }
+
+  /* UP block */
+  .up-card { background: var(--off-white); border: 1px solid var(--bronze-line); padding: 36px 34px; border-radius: 4px; margin-top: 32px; max-width: 760px; }
+  .up-tag { font-family: 'IBM Plex Sans', sans-serif; font-size: 10.5px; letter-spacing: 2.4px; text-transform: uppercase; color: var(--bronze); font-weight: 600; margin-bottom: 14px; }
+  .up-title { font-family: 'Fraunces', serif; font-weight: 500; font-size: 24px; color: var(--deep-teal); margin-bottom: 14px; letter-spacing: -0.01em; }
+  .up-body { font-size: 15px; line-height: 1.65; color: var(--charcoal); margin: 0; }
+
+  /* What this is not */
+  .wtin { background: var(--off-white-deep); padding: 72px 0; border-bottom: 1px solid var(--rule); }
+  .wtin-lede { font-family: 'IBM Plex Sans', sans-serif; font-size: clamp(16px, 1.8vw, 18px); line-height: 1.6; color: var(--charcoal); max-width: 720px; margin-bottom: 26px; }
+  .wtin-list { display: grid; gap: 14px; max-width: 780px; }
+  .wtin-item { font-family: 'IBM Plex Sans', sans-serif; font-size: 15.5px; line-height: 1.55; color: var(--charcoal); border-left: 2px solid var(--bronze); padding-left: 16px; }
+  .wtin-item strong { color: var(--deep-teal); font-weight: 600; }
+
+  .closing { background: var(--deep-teal); padding: 90px 0; text-align: center; border-bottom: none; }
+  .closing p { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(28px, 4vw, 48px); line-height: 1.3; letter-spacing: -0.015em; color: var(--off-white); margin: 0 auto; max-width: 760px; padding: 0 20px; }
+  .closing-back { display: inline-block; margin-top: 36px; font-family: 'IBM Plex Sans', sans-serif; font-size: 12.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--bronze); text-decoration: none; font-weight: 600; }
+  .closing-back:hover { text-decoration: underline; }
+
+  footer { background: var(--deep-teal); padding: 40px 0; border-top: 1px solid rgba(200, 147, 88, 0.18); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 28px; }
+  .footer-meta { font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; color: rgba(244, 245, 239, 0.55); line-height: 1.7; letter-spacing: 0.4px; }
+  .footer-meta a { color: var(--bronze); text-decoration: none; }
+  .footer-meta a:hover { text-decoration: underline; }
+  .footer-legal { font-family: 'IBM Plex Sans', sans-serif; font-size: 10px; color: rgba(244, 245, 239, 0.35); letter-spacing: 1.4px; text-transform: uppercase; }
+
+  /* Worked example */
+  .worked { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 30px; }
+  .worked-col { background: rgba(200,147,88,0.07); border: 1px solid var(--rule); border-top: 3px solid var(--bronze); padding: 28px 26px; border-radius: 4px; }
+  .worked-col.muted { background: rgba(65,65,63,0.05); border-top-color: rgba(65,65,63,0.35); }
+  .worked-grade { font-family: 'Fraunces', serif; font-weight: 500; font-size: 22px; color: var(--deep-teal); margin-bottom: 4px; }
+  .worked-mode { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--charcoal-soft); margin-bottom: 18px; }
+  .worked-offer { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
+  .worked-offer li { display: flex; justify-content: space-between; gap: 14px; font-size: 14px; line-height: 1.5; padding: 11px 0; border-bottom: 1px solid var(--rule); }
+  .worked-offer .k { color: var(--charcoal-soft); }
+  .worked-offer .v { color: var(--deep-teal); font-weight: 600; text-align: right; }
+  .worked-note { font-family: 'IBM Plex Sans', sans-serif; font-size: 12.5px; font-style: italic; line-height: 1.55; color: var(--slate-teal); margin-top: 18px; max-width: 720px; }
+
+
+  .lr {
+    background: #222F32;
+    border: 1px solid rgba(200, 147, 88, 0.35);
+    border-radius: 4px;
+    padding: 0;
+    max-width: 560px;
+    width: 100%;
+    box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.55);
+    font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+    overflow: hidden;
+  }
+  .lr-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    border-bottom: 1px solid rgba(200, 147, 88, 0.22);
+    background: rgba(0, 0, 0, 0.18);
+  }
+  .lr-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #C89358; flex: none;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .lr-dot { animation: lr-pulse 2.4s ease-in-out infinite; }
+    @keyframes lr-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(200, 147, 88, 0.5); }
+      50% { box-shadow: 0 0 0 6px rgba(200, 147, 88, 0); }
+    }
+  }
+  .lr-title {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 10.5px; letter-spacing: 1.8px; font-weight: 500;
+    color: #F4F5EF; text-transform: uppercase; white-space: nowrap;
+  }
+  .lr-meta {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 10px; letter-spacing: 0.6px;
+    color: rgba(244, 245, 239, 0.5);
+    margin-left: auto; white-space: nowrap;
+  }
+  .lr-rows { padding: 6px 0; }
+  .lr-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
+    align-items: center;
+    padding: 9px 18px;
+    border-bottom: 1px solid rgba(244, 245, 239, 0.06);
+  }
+  .lr-row:last-child { border-bottom: none; }
+  .lr-ob { min-width: 0; }
+  .lr-ob-name {
+    font-size: 12.5px; font-weight: 500; color: #F4F5EF;
+    line-height: 1.3; letter-spacing: 0.2px;
+  }
+  .lr-ob-src {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; color: rgba(244, 245, 239, 0.45);
+    letter-spacing: 0.4px; margin-top: 2px;
+  }
+  .lr-exc {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; letter-spacing: 1px; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 2px; white-space: nowrap;
+  }
+  .lr-exc.open, .lr-exc.review, .lr-exc.progress {
+    color: #C89358; border: 1px solid rgba(200, 147, 88, 0.5);
+    background: rgba(200, 147, 88, 0.1);
+  }
+  .lr-exc.clear {
+    color: rgba(244, 245, 239, 0.65); border: 1px solid rgba(244, 245, 239, 0.18);
+    background: transparent;
+  }
+  .lr-ver {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; letter-spacing: 0.8px;
+    color: rgba(244, 245, 239, 0.7); white-space: nowrap;
+  }
+  .lr-ver .tick { color: #C89358; font-weight: 700; }
+  .lr-foot {
+    border-top: 1px solid rgba(200, 147, 88, 0.22);
+    padding: 12px 18px 14px 18px;
+    background: rgba(0, 0, 0, 0.18);
+  }
+  .lr-prov {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; letter-spacing: 0.5px;
+    color: rgba(244, 245, 239, 0.5);
+    margin-bottom: 8px;
+  }
+  .lr-prov .arr { color: #C89358; }
+  .lr-seal {
+    display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 10.5px; letter-spacing: 0.5px; color: #F4F5EF;
+  }
+  .lr-sig { color: #C89358; }
+  .lr-verify { color: rgba(244, 245, 239, 0.85); }
+  .lr-verify .tick { color: #C89358; font-weight: 700; }
+  .lr-note {
+    font-size: 10px; letter-spacing: 0.6px;
+    color: rgba(244, 245, 239, 0.38);
+    margin-top: 10px; font-style: italic;
+  }
+  /* animation states: rows hidden until revealed when .lr-anim is set */
+  .lr-anim .lr-row, .lr-anim .lr-prov, .lr-anim .lr-seal { opacity: 0; transform: translateY(6px); }
+  .lr-anim .lr-row.on, .lr-anim .lr-prov.on, .lr-anim .lr-seal.on {
+    opacity: 1; transform: translateY(0);
+    transition: opacity 420ms ease, transform 420ms ease;
+  }
+  .lr-row.reverify .lr-ver { color: #C89358; transition: color 300ms ease; }
+
+
+  .nav-group { display: flex; gap: inherit; align-items: center; }
+  .nav-group + .nav-group { border-left: 1px solid rgba(200,147,88,0.4); padding-left: 22px; margin-left: -6px; }
+  .nav-glabel { font-family: 'IBM Plex Sans', sans-serif; font-size: 10.5px; letter-spacing: 1.8px; text-transform: uppercase; font-weight: 600; color: rgba(65,65,63,0.78); margin-right: 4px; }
+  @media (max-width: 900px) { .nav-glabel { display: none; } .nav-group + .nav-group { padding-left: 14px; } }
+
+  @media (max-width: 760px) {
+    .worked { grid-template-columns: 1fr; }
+    .container, .container-narrow { padding: 0 22px; }
+    .title-block { padding: 60px 0 44px 0; }
+    section { padding: 56px 0; }
+    .audiences { grid-template-columns: 1fr; gap: 14px; }
+    .moments { grid-template-columns: 1fr; }
+    .compare { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .header-inner { flex-direction: row; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .logo { height: 56px; }
+    nav { gap: 16px; }
+    .up-card { padding: 30px 26px; }
+  }
+
+  section p a:not(.closing-back) { color: var(--bronze); text-decoration: none; border-bottom: 1px solid var(--bronze-line, rgba(200,147,88,0.45)); }
+  .emit-list { margin: 18px 0 0 20px; }
+  .emit-list li { margin-bottom: 10px; line-height: 1.6; }
+  .route-line { font-family: 'IBM Plex Sans', sans-serif; font-size: 13.5px; margin-top: 14px; }
+  .route-line a { color: var(--bronze); text-decoration: none; font-weight: 600; letter-spacing: 1px; }
+  .open-q { font-family: 'Fraunces', serif; font-style: italic; font-size: 18px; color: var(--deep-teal); margin-top: 10px; }
+  .boundary-line { font-family: 'Fraunces', serif; font-size: clamp(20px, 2.4vw, 26px); line-height: 1.35; color: var(--deep-teal); }
+  .roles-note { font-size: 14px; color: var(--slate-teal); margin-top: 18px; }
+  .brief-form select { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; padding: 12px 14px; border: 1px solid rgba(42,57,60,0.25); border-radius: 3px; background: #fff; color: var(--charcoal); }
+
+  .nav-primary a { letter-spacing: 1.6px; font-weight: 600; }
+  @media (max-width: 760px) { nav { flex-wrap: wrap; row-gap: 10px; } .nav-group { flex-wrap: wrap; row-gap: 10px; } .nav-group + .nav-group { border-left: none; padding-left: 0; margin-left: 0; } }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Determine what evidence is sufficient for the decision you must take. Arkaya Risk.", "url": "https://arkayarisk.com/read", "description": "For insurers, lenders and acquirers: continuous covenant underwriting, calibration, the evidence ladder and the pilot. The reader decides sufficiency, price and terms; Arkaya does not.", "isPartOf": {"@type": "WebSite", "name": "Arkaya Risk", "url": "https://arkayarisk.com/"}, "publisher": {"@type": "Organization", "name": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}</script>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="/" class="logo-link" aria-label="Arkaya Risk. Building resilience capital.">
+      <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
+    </a>
+    <nav aria-label="Site">
+      <span class="nav-group nav-primary">
+<a href="/emit">EMIT</a>
+<a href="/schema">SCHEMA</a>
+<a href="/read" class="active" aria-current="page">READ</a>
+<a href="/evidence">EVIDENCE</a>
+</span>
+      <span class="nav-group nav-secondary">
+<a href="/doctrine">Doctrine</a>
+<a href="/library">Library</a>
+<a href="/standard">Standard</a>
+<a href="/founder">Founders</a>
+</span>
+    </nav>
+  </div>
+</header>
+
+<section class="title-block">
+  <div class="container">
+    <div class="eyebrow">Read</div>
+    <h1 class="page-title">Determine what evidence is sufficient for the decision you must take.</h1>
+    <p class="route-line">Producing evidence rather than reading it? <a href="/emit">&#8594; EMIT</a></p>
+    <p class="page-subtitle">For the parties that assume or price the risk: insurers, reinsurers, MGAs and coverholders, lenders, acquirers and sponsors, claims and dispute functions, and the boards and aggregators accountable for a delegated portfolio they cannot fully see.</p>
+    <p class="open-q">Is that evidence sufficient for the risk I am taking?</p>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow">
+    <div class="section-num">§ 01 · The first product</div>
+    <h2>Continuous covenant underwriting.</h2>
+    <p style="font-size:17px;color:var(--deep-teal);border-left:3px solid var(--bronze);padding-left:16px;margin-bottom:22px;"><strong>What you buy:</strong> a continuous, first-party evidence feed on an insured's AI estate, read against the open covenant schema and delivered to the underwriting desk. Not a questionnaire and not a consulting report; an evidence service the underwriter prices against.</p>
+    <p>
+      A conformant engine at the insured produces continuous, first-party evidence of its AI estate; Arkaya maps that evidence to the underwriting decision and reads it with the desk, read against an eligibility floor at inception and monitored across the term. It replaces the underwriting questionnaire with a record read against obligation rather than self-reported periodically. The underwriter prices it; Arkaya does not.
+    </p>
+    <p>
+      The covenant schema is class-agnostic. AI liability is the first class written against it, because the underwriting asymmetry is largest there. Cyber, technology E&amp;O, D&amp;O and operational resilience follow.
+    </p>
+    <p><a href="/evidence" class="closing-back" style="color:var(--bronze);">See the record format &#8594;</a></p>
+    <div class="pull">
+      <p>The governance premium is what you earn by making it visible.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--off-white-deep);">
+  <div class="container-narrow">
+    <div class="section-num">§ 02 · Why now</div>
+    <h2>Some insurers have adopted generative-AI exclusions.</h2>
+    <p>
+      The exclusions are based on standard language that Verisk's Insurance Services Office made available in 2025. Insurers can attach them to commercial general liability policies.
+    </p>
+    <p>
+      Arkaya's hypothesis is that continuous evidence of an insured's AI estate could help insurers assess whether, and on what terms, to offer cover. The underwriting decision remains with the insurer.
+    </p>
+    <p>
+      A machine-readable schema is only as good as the evidence that feeds it. Evidence produced at human cadence, the periodic questionnaire and the point-in-time attestation, cannot describe an estate that changes between checkpoints. Machine-readable underwriting needs evidence produced at machine cadence: captured continuously, at source, as the estate moves. The decision stays human and is recorded; the observation runs at the speed of the thing observed.
+    </p>
+    <div class="pull">
+      <p>Machine-readable underwriting requires machine-cadence evidence. The decision stays human; the observation does not.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-num">§ 03 · Why it pays</div>
+    <h2>What the evidence moves.</h2>
+    <p>
+      A premium reflects expected loss, uncertainty and the cost of capital held behind the policy. Where a risk cannot be characterised, that uncertainty may affect price, terms or capacity. Better evidence can reduce the information gap; the insurer decides what, if anything, changes in price or terms. At Lloyd's the capital channel flows in full: every syndicate's capital requirement is calculated on an internal model, so evidence that narrows the distribution reaches the capital held, not only the rate.
+    </p>
+
+    <div class="moments">
+      <div class="moments-row"><div class="moment-name">A writable class</div><div class="moment-desc">AI risk becomes <strong>writable</strong>, where today it is excluded or declined.</div></div>
+      <div class="moments-row"><div class="moment-name">An evidenced estate</div><div class="moment-desc">The underwriter prices an <strong>evidenced</strong> estate, not a declared one.</div></div>
+      <div class="moments-row"><div class="moment-name">Drift caught mid-term</div><div class="moment-desc">Boundary and register drift is detected <strong>during the term</strong>, not at the next renewal.</div></div>
+      <div class="moments-row"><div class="moment-name">Smaller dispute surface</div><div class="moment-desc">A contemporaneous record <strong>compresses the causation dispute</strong> at claim.</div></div>
+      <div class="moments-row"><div class="moment-name">Aggregation visible</div><div class="moment-desc">AI exposure is <strong>aggregated across the book</strong> for exposure management and reinsurance.</div></div>
+    </div>
+    <div class="compare" style="margin-top: 32px;">
+      <div class="ch">Seat</div>
+      <div class="ch">What the evidence moves</div>
+      <div class="ch">Where it lands</div>
+
+      <div class="cl">Insurer</div>
+      <div class="cd">The uncertainty around an uncharacterisable class, the capital held behind the book, and the loss-adjustment and dispute cost at claim.</div>
+      <div class="cd"><strong>Loss ratio, capital efficiency, expense ratio</strong></div>
+
+      <div class="cl">Lender</div>
+      <div class="cd">The spread priced on incomplete information and the margin of conservatism capitalised against weak data.</div>
+      <div class="cd"><strong>Net interest margin, RWA</strong></div>
+
+      <div class="cl">Acquirer / sponsor</div>
+      <div class="cd">The diligence discount, the escrow and holdback, the W&amp;I retention, and covenant surveillance through the hold.</div>
+      <div class="cd"><strong>Entry price, retained exposure, IRR</strong></div>
+
+      <div class="cl">Corporate (the user)</div>
+      <div class="cd">The premium and terms at renewal, the all-in cost at refinancing, the recovery and dispute surface at claim, and the price of the whole at exit.</div>
+      <div class="cd"><strong>Cost of risk, cost of capital, enterprise value</strong></div>
+
+      <div class="cl">Reinsurer / HoldCo / GP</div>
+      <div class="cd">Sight of a delegated portfolio's true control state between periodic reviews.</div>
+      <div class="cd"><strong>Aggregation risk, capacity deployed</strong></div>
+    </div>
+
+    <p style="margin-top: 24px;">
+      It also widens the writable book. An applicant below an honest floor gets a route to becoming insurable rather than excluded.
+    </p>
+  </div>
+</section>
+
+<section style="background: var(--off-white-deep);">
+  <div class="container">
+    <div class="section-num">§ 04 · How the carrier reads it</div>
+    <h2>Calibration, and the evidence ladder.</h2>
+    <p>
+      The conformant engine produces the evidence; Arkaya maps the record to the underwriting decision and reads it with the desk; the underwriter prices it. The calibration layer states how to read a governance evidence record into rating, retention, limit, recovery, reserving and capital, in direction and mechanism. The thresholds and the rate response are the carrier's. <em>The schema and the conformance test are Arkaya's; the calibration, the position and the rating are not.</em>
+    </p>
+    <p>Each answer sits on one of four rungs of the evidence ladder, set by its provenance and not by Arkaya. The rung caps the evidential weight the desk can give it; the desk decides the weight.</p>
+
+    <div class="moments">
+      <div class="moments-row"><div class="moment-name">Verifiable</div><div class="moment-desc">Independently checkable from the sealed record, without the vendor's or Arkaya's code.</div></div>
+      <div class="moments-row"><div class="moment-name">Evidenced</div><div class="moment-desc">Rests on the produced record.</div></div>
+      <div class="moments-row"><div class="moment-name">Attested</div><div class="moment-desc">Rests on a named officer's signature.</div></div>
+      <div class="moments-row"><div class="moment-name">Asserted</div><div class="moment-desc">Unproven. Carries no evidential weight.</div></div>
+    </div>
+
+    <figure style="margin:36px 0 6px; max-width:860px;" aria-label="The evidence ladder. Four rungs: Asserted carries no evidential weight; Attested rests on a named officer's signature; Evidenced rests on the produced record; Verifiable is independently checkable from the sealed record. The evidential weight available rises with the rung.">
+      <svg viewBox="0 0 1000 320" style="width:100%;height:auto;display:block;" role="img">
+        <title>The evidence ladder</title>
+        <!-- rising evidential-weight line -->
+        <g stroke="#C89358" stroke-width="2" stroke-dasharray="6,6" fill="none">
+          <path d="M 130 218 L 370 178 L 610 138 L 850 98"/>
+        </g>
+        <path d="M 850 98 l -14 -3 l 10 11 z" fill="#C89358"/>
+        <text x="470" y="122" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11.5" letter-spacing="1.2" fill="#C89358">EVIDENTIAL WEIGHT AVAILABLE</text>
+        <!-- steps -->
+        <rect x="20"  y="230" width="220" height="60"  fill="none" stroke="#41413F" stroke-width="1.4" stroke-dasharray="4,4"/>
+        <rect x="260" y="200" width="220" height="90"  fill="#364748" opacity="0.55"/>
+        <rect x="500" y="160" width="220" height="130" fill="#2A393C"/>
+        <rect x="740" y="120" width="220" height="170" fill="#C89358"/>
+        <text x="130" y="262" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="20" font-weight="500" fill="#41413F">Asserted</text>
+        <text x="370" y="248" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="20" font-weight="500" fill="#F4F5EF">Attested</text>
+        <text x="610" y="228" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="20" font-weight="500" fill="#F4F5EF">Evidenced</text>
+        <text x="850" y="208" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="21" font-weight="600" fill="#2A393C">Verifiable</text>
+        <!-- glosses -->
+        <text x="130" y="308" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="12" fill="#41413F">Unproven. No evidential weight.</text>
+        <text x="370" y="308" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="12" fill="#41413F">A named officer&#8217;s signature.</text>
+        <text x="610" y="308" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="12" fill="#41413F">The produced record.</text>
+        <text x="850" y="308" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="12" fill="#41413F">Checkable from the sealed record.</text>
+      </svg>
+      <figcaption style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;line-height:1.6;color:var(--slate-teal);margin-top:12px;padding-left:16px;border-left:2px solid var(--bronze);max-width:680px;">The evidence ladder. The rung caps the evidential weight available beneath it; only the top rung is independently checkable without the vendor&#8217;s or Arkaya&#8217;s code.</figcaption>
+    </figure>
+
+
+    <h2 style="margin-top: 56px;">What the read looks like at the desk.</h2>
+    <p>Two insureds, same sector, same limit sought. One produces continuous evidence of its AI estate that the underwriter can check independently; the other answers a periodic questionnaire. The underwriter reads the difference and prices it.</p>
+
+    <div class="worked">
+      <div class="worked-col">
+        <div class="worked-grade">Insured A &middot; Verifiable</div>
+        <div class="worked-mode">Continuous first-party evidence</div>
+        <ul class="worked-offer">
+          <li><span class="k">Cover</span><span class="v">Affirmative AI cover offered</span></li>
+          <li><span class="k">Limit</span><span class="v">Full limit available</span></li>
+          <li><span class="k">Retention</span><span class="v">Lower</span></li>
+          <li><span class="k">Terms</span><span class="v">Drift caught and re-rated mid-term</span></li>
+        </ul>
+      </div>
+      <div class="worked-col muted">
+        <div class="worked-grade">Insured B &middot; Asserted</div>
+        <div class="worked-mode">Periodic questionnaire</div>
+        <ul class="worked-offer">
+          <li><span class="k">Cover</span><span class="v">AI exclusion applied</span></li>
+          <li><span class="k">Limit</span><span class="v">Reduced or declined</span></li>
+          <li><span class="k">Retention</span><span class="v">Higher</span></li>
+          <li><span class="k">Terms</span><span class="v">Priced on a declared estate that is not independently checkable</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="worked-note">Illustrative, to show the direction of the read. The carrier sets the rating, the limit and the retention against its own book; these are not Arkaya figures, not a quoted outcome, and not a promise of cover. Direction and mechanism only.</p>
+  </div>
+</section>
+
+<section id="test">
+  <div class="container">
+    <div class="section-num">§ 05 · The test</div>
+    <h2>The falsification condition.</h2>
+    <p>
+      The claim is falsifiable and held as a hypothesis: an evidenced counterparty obtains measurably better terms than an otherwise identical unevidenced one. The result is pending. The experiment is a carrier pilot, and the invitation is open to the desks that can run it. If the evidence does not move the terms, the thesis fails on its own stated ground.
+    </p>
+    <form name="brief-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="brief-form">
+      <input type="hidden" name="form-name" value="brief-request">
+      <input type="hidden" name="seat" value="pilot">
+      <p style="display:none;"><label>Leave blank: <input name="bot-field"></label></p>
+      <input type="email" name="email" placeholder="Work email" required aria-label="Work email">
+      <button type="submit">Request the Pilot Brief →</button>
+    </form>
+  </div>
+</section>
+
+<section style="background: var(--off-white-deep);">
+  <div class="container-narrow">
+    <div class="section-num">§ 06 · Reading across a portfolio</div>
+    <h2>The same record, read across a delegated portfolio.</h2>
+    <p>An insurance holding company board, an MGA aggregator or a general partner may be accountable for coverholders, portfolio companies or captives it cannot fully see between periodic reviews. Each underlying entity or system produces its own record. The reader reads those records across the portfolio, obligation by obligation. No aggregate state is asserted across obligations: the portfolio view is a set of records, each read on its own terms, not a score for the whole.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-num">§ 07 · How it starts</div>
+    <h2>The reader's steps, each one evidenced.</h2>
+    <p>Steps one and two, the Protocol and the first record, are the emitter's and sit on the <a href="/emit">EMIT</a> page.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">03</div><div class="step-name">First underwriting decision</div><div class="step-body">The carrier reads the record into rating, retention and limit at inception.</div></div>
+      <div class="step"><div class="step-num">04</div><div class="step-name">First commercial value</div><div class="step-body">The renewal re-read shows trajectory, and the terms move with it.</div></div>
+    </div>
+
+    <div class="up-card" style="margin-top:44px;">
+      <div class="up-tag">The shape of the engagement</div>
+      <div class="up-title">What you get, and what stays yours.</div>
+      <p class="up-body" style="margin-bottom:14px;"><strong>The deliverable</strong> is the evidence feed and the record read at the desk: first-party evidence of the AI estate, read against an eligibility floor at inception and monitored across the term.</p>
+      <p class="up-body" style="margin-bottom:14px;"><strong>The record is the insured's.</strong> Portability is a schema property: evidence generated against the schema moves with the insured across engines, insurers and capital events without re-basing. No vendor, and not Arkaya, holds it captive.</p>
+      <p class="up-body" style="margin-bottom:14px;"><strong>The pilot</strong> is the §05 experiment run on a live desk: the floor at inception, the term monitored, the terms offered compared against the unevidenced book. If the evidence does not move the terms, the thesis fails on its own stated ground.</p>
+      <p class="up-body"><strong>Detailed scope, implementation timelines and pricing</strong> sit in the post-NDA package: working session, sprint map, term sheet.</p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-num">§ 08 · What this replaces</div>
+    <h2>One word does most of the work: first-party.</h2>
+    <p>So the reader does not have to infer the distinction.</p>
+
+    <div class="section-num" style="margin-top: 34px;">The market has priced surveyed state before</div>
+    <p>
+      The factory mutual system has conditioned premium on engineering-surveyed controls since 1835. Telematics repriced motor in both directions. Cyber desks already buy external ratings, whose opaque scores the no-score discipline refuses. Continuous governance evidence extends a 190-year habit; it does not ask the market to form a new one.
+    </p>
+
+    <div class="compare">
+      <div class="ch">Today's instrument</div>
+      <div class="ch">What it sees</div>
+      <div class="ch">The Arkaya difference</div>
+
+      <div class="cl">GRC and AI-governance platforms</div>
+      <div class="cd">One discipline at audit cadence.</div>
+      <div class="cd"><strong>Every</strong> discipline, read continuously, at the speed decisions are made.</div>
+
+      <div class="cl">Cyber-ratings and external scans</div>
+      <div class="cd">The perimeter, not the inside. The AI estate is carried by declaration.</div>
+      <div class="cd">First-party evidence of the insured's own estate, from inside.</div>
+
+      <div class="cl">The underwriting questionnaire</div>
+      <div class="cd">The AI estate only through example questions put to the applicant.</div>
+      <div class="cd">An evidenced estate, captured at source and read against obligation.</div>
+
+      <div class="cl">Rating agencies</div>
+      <div class="cd">A summary judgment, issued and trusted.</div>
+      <div class="cd">Observable primitives the counterparty prices itself. No score issued.</div>
+    </div>
+
+    <p style="margin-top: 26px;">
+      The single-domain AI governance platforms each optimise within the AI discipline at the cadence they inherited. None runs every governance discipline at the velocity the environment now sets.
+    </p>
+  </div>
+</section>
+
+<section class="wtin" style="border-bottom: 1px solid var(--rule);">
+  <div class="container-narrow">
+    <div class="section-num">What this is not</div>
+    <h2>The boundaries of the product.</h2>
+    <p class="wtin-lede">The discipline that calms a sophisticated reader is the explicit statement of what the architecture does not claim. Each line is enforced structurally, not asserted.</p>
+    <div class="wtin-list">
+      <div class="wtin-item"><strong>Not a regulatory replacement.</strong> The schema is referenced, not adopted. Supervisors are not displaced.</div>
+      <div class="wtin-item"><strong>Not an audit opinion.</strong> Engines emit evidence against obligation. They do not certify accounts.</div>
+      <div class="wtin-item"><strong>Not a continuous-compliance certification.</strong> The record shows behaviour against obligation, not a pass mark.</div>
+      <div class="wtin-item"><strong>Not a governance score.</strong> No rating, benchmark or score is issued from Layer 1. Counterparties price.</div>
+      <div class="wtin-item"><strong>Not a delegated underwriting authority.</strong> Pricing and the bind decision stay with the underwriter.</div>
+      <div class="wtin-item"><strong>Does not replace board accountability.</strong> The board authors the Protocol and owns the decision.</div>
+      <div class="wtin-item"><strong>Does not redefine accounting recognition thresholds.</strong> IAS 37 and ASC 450 stand. The schema surfaces the obligation earlier.</div>
+      <div class="wtin-item"><strong>Not both sides of one record.</strong> Where a reader appoints Arkaya to assess a company's record, Arkaya does not also advise that company on presenting it. One role per record.</div>
+    </div>
+  </div>
+</section>
+
+
+<section style="background: var(--off-white-deep);">
+  <div class="container">
+    <div class="section-num">Three roles, one operation</div>
+    <p>One buyer can hold more than one role: an insurer is a subject to its group board, a supervisor of its own coverholders, and a pricer at its desk.</p>
+    <div class="moments">
+      <div class="moments-row"><div class="moment-name">Subject</div><div class="moment-desc">Generates first-party evidence about itself. The corporate or CFO, the insurer, the portfolio company.</div></div>
+      <div class="moments-row"><div class="moment-name">Supervisor</div><div class="moment-desc">Consumes evidence across a delegated portfolio it is accountable for but cannot fully see. The insurance HoldCo board, the MGA aggregator, the private equity general partner.</div></div>
+      <div class="moments-row"><div class="moment-name">Pricer</div><div class="moment-desc">Reads a subject's evidence to price one risk or transaction. The underwriter, the lender, the acquirer.</div></div>
+    </div>
+    <p class="roles-note">The Subject sits on the EMIT side, which has its own page; Supervisor and Pricer read.</p>
+    <p class="boundary-line" style="margin-top: 34px;">The reader determines sufficiency, price and terms.<br>Arkaya does not.</p>
+    <form name="reader-brief" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="brief-form">
+      <input type="hidden" name="form-name" value="reader-brief">
+      <p style="display:none;"><label>Leave blank: <input name="bot-field"></label></p>
+      <label style="display:block;width:100%;font-size:13px;color:var(--slate-teal);margin-bottom:6px;" for="reader-brief-which">Which brief is relevant?</label>
+      <select id="reader-brief-which" name="brief" required>
+        <option value="" disabled selected>Choose one</option>
+        <option value="insurance">Insurance</option>
+        <option value="finance">Finance</option>
+        <option value="other">Other or not sure</option>
+      </select>
+      <input type="email" name="email" placeholder="Work email" required aria-label="Work email">
+      <button type="submit">Request the Reader Brief &#8594;</button>
+    </form>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="container-narrow">
+    <p>Resilience Capital is built.<br>Not asserted.</p>
+    <a href="/schema" class="closing-back">← Read the schema</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-meta">
+      Arkaya Risk Limited · registered in England and Wales, no. 17380022<br>
+      Founded by David J McKibbin and Simon Hudson<br>
+      <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a> · +44 (0)7972 178759<br>
+        <a href="mailto:smh@arkayarisk.com">smh@arkayarisk.com</a> · +1 (914) 309-6397<br>
+      <a href="https://www.linkedin.com/in/davidmckibbin" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="footer-legal">
+      Arkaya Risk Limited, a company registered in England and Wales (no. 17380022).<br>
+        Registered office: Oxford House, 15-17 Mount Ephraim Road, Tunbridge Wells, England, TN1 1EN.<br>
+        © 2026 Arkaya Risk. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var records = document.querySelectorAll('[data-lr]');
+  if (!records.length) return;
+  var HEX = '0123456789abcdef';
+  function scramble(el, finalText, dur) {
+    var start = null, len = finalText.length;
+    function frame(ts) {
+      if (!start) start = ts;
+      var p = Math.min(1, (ts - start) / dur), out = '';
+      for (var i = 0; i < len; i++) {
+        if (finalText[i] === 'x' && i === 1) { out += 'x'; continue; }
+        out += (i / len < p) ? finalText[i] : HEX[Math.floor(Math.random() * 16)];
+      }
+      el.textContent = out;
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+  function tickClock(el) {
+    function t() {
+      var d = new Date();
+      el.textContent = d.toISOString().slice(11, 19) + ' UTC';
+    }
+    t(); setInterval(t, 1000);
+  }
+  records.forEach(function (rec) {
+    var clock = rec.querySelector('[data-lr-clock]');
+    if (clock) tickClock(clock);
+    if (reduced) return;
+    rec.classList.add('lr-anim');
+    var seq = [].slice.call(rec.querySelectorAll('.lr-row'))
+      .concat([rec.querySelector('.lr-prov'), rec.querySelector('.lr-seal')]);
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        io.disconnect();
+        seq.forEach(function (el, i) {
+          setTimeout(function () {
+            el.classList.add('on');
+            if (el.classList.contains('lr-seal')) {
+              var sig = rec.querySelector('[data-lr-sig]');
+              if (sig) scramble(sig, sig.textContent, 1100);
+            }
+          }, 350 + i * 380);
+        });
+        // quiet life: one row re-verifies every 8s
+        setTimeout(function () {
+          var rows = rec.querySelectorAll('.lr-row');
+          setInterval(function () {
+            var r = rows[Math.floor(Math.random() * rows.length)];
+            r.classList.add('reverify');
+            setTimeout(function () { r.classList.remove('reverify'); }, 900);
+          }, 8000);
+        }, 350 + seq.length * 380);
+      });
+    }, { threshold: 0.35 });
+    io.observe(rec);
+  });
+})();
+</script>
+</body>
+</html>

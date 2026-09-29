@@ -436,6 +436,9 @@
     .trajectory { padding: 22px 24px; }
     .production-note { padding: 22px 24px; }
   }
+
+  .nav-primary a { letter-spacing: 1.6px; font-weight: 600; }
+  @media (max-width: 760px) { nav { flex-wrap: wrap; row-gap: 10px; } .nav-group { flex-wrap: wrap; row-gap: 10px; } .nav-group + .nav-group { border-left: none; padding-left: 0; margin-left: 0; } }
 </style>
 </head>
 <body>
@@ -446,18 +449,17 @@
       <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
     </a>
     <nav aria-label="Site">
-      <span class="nav-group"><span class="nav-glabel">Understand</span>
-<a href="/solutions">Solutions</a>
-<a href="/evidence">Evidence</a>
+      <span class="nav-group nav-primary">
+<a href="/emit">EMIT</a>
+<a href="/schema">SCHEMA</a>
+<a href="/read">READ</a>
+<a href="/evidence">EVIDENCE</a>
 </span>
-      <span class="nav-group"><span class="nav-glabel">Evaluate</span>
-<a href="/schema">Schema</a>
-<a href="/doctrine" class="active">Doctrine</a>
-<a href="/founder">Founders</a>
-</span>
-      <span class="nav-group"><span class="nav-glabel">Examine</span>
+      <span class="nav-group nav-secondary">
+<a href="/doctrine" class="active" aria-current="page">Doctrine</a>
 <a href="/library">Library</a>
 <a href="/standard">Standard</a>
+<a href="/founder">Founders</a>
 </span>
     </nav>
   </div>
@@ -607,7 +609,7 @@
     <p style="font-family:'Fraunces',serif; font-weight:300; font-size:clamp(22px,2.6vw,30px); color:var(--off-white); margin:0 0 8px; line-height:1.25;">Make the autonomous economy governable, and therefore <span style="color:var(--bronze);">priceable</span>.</p>
     <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:var(--off-white-soft); margin:0 0 28px;">Resilience Capital is built. Not asserted.</p>
     <a href="/schema" style="display:inline-block; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; letter-spacing:1.6px; text-transform:uppercase; font-weight:600; text-decoration:none; padding:13px 22px; border-radius:3px; background:var(--bronze); color:var(--deep-teal); margin-right:14px;">Read the schema</a>
-    <a href="/solutions" style="display:inline-block; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; letter-spacing:1.6px; text-transform:uppercase; font-weight:600; text-decoration:none; padding:13px 22px; border-radius:3px; border:1px solid var(--off-white-faint); color:var(--off-white);">See the product</a>
+    <a href="/read" style="display:inline-block; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; letter-spacing:1.6px; text-transform:uppercase; font-weight:600; text-decoration:none; padding:13px 22px; border-radius:3px; border:1px solid var(--off-white-faint); color:var(--off-white);">See the product</a>
   </div>
 </section>
 

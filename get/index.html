@@ -441,6 +441,9 @@
   .section-body code { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.86em; color: var(--bronze); word-break: break-all; }
   .section-body ul, .section-body ol { margin: 0 0 1.1rem 1.25rem; }
   .section-body li { margin-bottom: 0.55rem; }
+
+  .nav-primary a { letter-spacing: 1.6px; font-weight: 600; }
+  @media (max-width: 760px) { nav { flex-wrap: wrap; row-gap: 10px; } .nav-group { flex-wrap: wrap; row-gap: 10px; } .nav-group + .nav-group { border-left: none; padding-left: 0; margin-left: 0; } }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Arkaya Layer 1 implementer pack v1","description":"Specifications, candidate test vectors, an independent checker and a specimen record for producing and reading Arkaya Layer 1 governance evidence records (Cryptographic Profile v5, cryptosuite eddsa-jcs-2022).","url":"https://arkayarisk.com/get","version":"1","datePublished":"2026-08-10","dateModified":"2026-08-25","isAccessibleForFree":true,"license":"https://arkayarisk.com/get/v1/README.md","creator":{"@type":"Organization","name":"Arkaya Risk Limited","url":"https://arkayarisk.com/"},"distribution":[{"@type":"DataDownload","name":"MANIFEST.json","encodingFormat":"application/json","contentUrl":"https://arkayarisk.com/get/v1/MANIFEST.json"},{"@type":"DataDownload","name":"vectors_v5_candidate.json","encodingFormat":"application/json","contentUrl":"https://arkayarisk.com/get/v1/vectors/vectors_v5_candidate.json"},{"@type":"DataDownload","name":"Cryptographic Profile v5","encodingFormat":"text/markdown","contentUrl":"https://arkayarisk.com/get/v1/specifications/Arkaya_Layer1_Cryptographic_Profile_v5.md"},{"@type":"DataDownload","name":"governance-evidence.json discovery document","encodingFormat":"application/json","contentUrl":"https://arkayarisk.com/.well-known/governance-evidence.json"}]}</script>
 </head>
@@ -452,18 +455,17 @@
       <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
     </a>
     <nav aria-label="Site">
-      <span class="nav-group"><span class="nav-glabel">Understand</span>
-<a href="/solutions">Solutions</a>
-<a href="/evidence">Evidence</a>
+      <span class="nav-group nav-primary">
+<a href="/emit">EMIT</a>
+<a href="/schema">SCHEMA</a>
+<a href="/read">READ</a>
+<a href="/evidence">EVIDENCE</a>
 </span>
-      <span class="nav-group"><span class="nav-glabel">Evaluate</span>
-<a href="/schema">Schema</a>
+      <span class="nav-group nav-secondary">
 <a href="/doctrine">Doctrine</a>
-<a href="/founder">Founders</a>
-</span>
-      <span class="nav-group"><span class="nav-glabel">Examine</span>
 <a href="/library">Library</a>
 <a href="/standard">Standard</a>
+<a href="/founder">Founders</a>
 </span>
     </nav>
   </div>
