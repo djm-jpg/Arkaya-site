@@ -13,8 +13,9 @@ Flat. Every page sits at the repository root; `.well-known/` and `get/` are the 
 subdirectories.
 
 ```
-index.html  schema.html  evidence.html  solutions.html  doctrine.html
-library.html  standard.html  founder.html  ecosystem.html  infinity.html
+index.html  emit.html  schema.html  read.html  evidence.html  doctrine.html
+library.html  standard.html  founder.html  architecture.html  infinity.html
+solutions.html  ecosystem.html          retained, redirected to /read, never served
 _redirects  _headers  robots.txt  llms.txt  sitemap.xml
 .well-known/governance-evidence.json     machine-readable index of the open Layer 1 material
 get/index.html                           Layer 1 implementer pack page

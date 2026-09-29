@@ -110,6 +110,202 @@
   .code pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;line-height:1.6;color:var(--off-white-soft);white-space:pre;margin:0}
     .nav-group { display: flex; gap: inherit; align-items: center; }  .nav-group + .nav-group { border-left: 1px solid rgba(200,147,88,0.4); padding-left: 22px; margin-left: -6px; }  .nav-glabel { font-family: 'IBM Plex Sans', sans-serif; font-size: 10.5px; letter-spacing: 1.8px; text-transform: uppercase; font-weight: 600; color: rgba(65,65,63,0.78); margin-right: 4px; }  @media (max-width: 900px) { .nav-glabel { display: none; } .nav-group + .nav-group { padding-left: 14px; } } @media (max-width:760px){.container{padding:0 22px}.e-hero{padding:60px 0 50px}.code{padding:16px 16px}.code pre{font-size:11px}.light,.dark{padding:54px 0}.fields,.reads,.decision{grid-template-columns:1fr}.header-inner{flex-wrap:wrap;gap:14px}.logo{height:56px}nav{gap:18px}.closing{padding:70px 0}
     table.reg,table.reg tbody,table.reg tr,table.reg td{display:block}table.reg thead{display:none}table.reg td{border:none;padding:2px 0}table.reg tr{border-bottom:1px solid var(--rule);padding:12px 0}}
+  /* Evidence band: priced after the event */
+  .evidence {
+    background: var(--off-white);
+    padding: 60px 0 8px 0;
+  }
+  .evidence-head {
+    max-width: 880px;
+    margin-bottom: 34px;
+  }
+  .evidence-eyebrow {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--bronze);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .evidence-lede {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(18px, 2.1vw, 23px);
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--deep-teal);
+  }
+  .evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .evidence-card {
+    border-top: 3px solid var(--bronze);
+    background: rgba(42, 57, 60, 0.03);
+    padding: 28px 30px 30px 30px;
+  }
+  .evidence-tag {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--slate-teal);
+    margin-bottom: 16px;
+  }
+  .evidence-figure {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(34px, 4.4vw, 46px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--deep-teal);
+  }
+  .evidence-figure-label {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: var(--charcoal);
+    margin: 8px 0 18px 0;
+  }
+  .evidence-body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+  }
+  .evidence-source {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--slate-teal);
+    font-style: italic;
+    border-top: 1px solid var(--rule);
+    padding-top: 12px;
+  }
+
+  .lr {
+    background: #222F32;
+    border: 1px solid rgba(200, 147, 88, 0.35);
+    border-radius: 4px;
+    padding: 0;
+    max-width: 560px;
+    width: 100%;
+    box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.55);
+    font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+    overflow: hidden;
+  }
+  .lr-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    border-bottom: 1px solid rgba(200, 147, 88, 0.22);
+    background: rgba(0, 0, 0, 0.18);
+  }
+  .lr-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #C89358; flex: none;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .lr-dot { animation: lr-pulse 2.4s ease-in-out infinite; }
+    @keyframes lr-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(200, 147, 88, 0.5); }
+      50% { box-shadow: 0 0 0 6px rgba(200, 147, 88, 0); }
+    }
+  }
+  .lr-title {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 10.5px; letter-spacing: 1.8px; font-weight: 500;
+    color: #F4F5EF; text-transform: uppercase; white-space: nowrap;
+  }
+  .lr-meta {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 10px; letter-spacing: 0.6px;
+    color: rgba(244, 245, 239, 0.5);
+    margin-left: auto; white-space: nowrap;
+  }
+  .lr-rows { padding: 6px 0; }
+  .lr-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
+    align-items: center;
+    padding: 9px 18px;
+    border-bottom: 1px solid rgba(244, 245, 239, 0.06);
+  }
+  .lr-row:last-child { border-bottom: none; }
+  .lr-ob { min-width: 0; }
+  .lr-ob-name {
+    font-size: 12.5px; font-weight: 500; color: #F4F5EF;
+    line-height: 1.3; letter-spacing: 0.2px;
+  }
+  .lr-ob-src {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; color: rgba(244, 245, 239, 0.45);
+    letter-spacing: 0.4px; margin-top: 2px;
+  }
+  .lr-exc {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; letter-spacing: 1px; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 2px; white-space: nowrap;
+  }
+  .lr-exc.open, .lr-exc.review, .lr-exc.progress {
+    color: #C89358; border: 1px solid rgba(200, 147, 88, 0.5);
+    background: rgba(200, 147, 88, 0.1);
+  }
+  .lr-exc.clear {
+    color: rgba(244, 245, 239, 0.65); border: 1px solid rgba(244, 245, 239, 0.18);
+    background: transparent;
+  }
+  .lr-ver {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; letter-spacing: 0.8px;
+    color: rgba(244, 245, 239, 0.7); white-space: nowrap;
+  }
+  .lr-ver .tick { color: #C89358; font-weight: 700; }
+  .lr-foot {
+    border-top: 1px solid rgba(200, 147, 88, 0.22);
+    padding: 12px 18px 14px 18px;
+    background: rgba(0, 0, 0, 0.18);
+  }
+  .lr-prov {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; letter-spacing: 0.5px;
+    color: rgba(244, 245, 239, 0.5);
+    margin-bottom: 8px;
+  }
+  .lr-prov .arr { color: #C89358; }
+  .lr-seal {
+    display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 10.5px; letter-spacing: 0.5px; color: #F4F5EF;
+  }
+  .lr-sig { color: #C89358; }
+  .lr-verify { color: rgba(244, 245, 239, 0.85); }
+  .lr-verify .tick { color: #C89358; font-weight: 700; }
+  .lr-note {
+    font-size: 10px; letter-spacing: 0.6px;
+    color: rgba(244, 245, 239, 0.38);
+    margin-top: 10px; font-style: italic;
+  }
+  /* animation states: rows hidden until revealed when .lr-anim is set */
+  .lr-anim .lr-row, .lr-anim .lr-prov, .lr-anim .lr-seal { opacity: 0; transform: translateY(6px); }
+  .lr-anim .lr-row.on, .lr-anim .lr-prov.on, .lr-anim .lr-seal.on {
+    opacity: 1; transform: translateY(0);
+    transition: opacity 420ms ease, transform 420ms ease;
+  }
+  .lr-row.reverify .lr-ver { color: #C89358; transition: color 300ms ease; }
+
+
+  .spec-wrap { max-width: 560px; }
+  @media (max-width: 760px) { .evidence-grid { grid-template-columns: 1fr; } }
+
+  .nav-primary a { letter-spacing: 1.6px; font-weight: 600; }
+  @media (max-width: 760px) { nav { flex-wrap: wrap; row-gap: 10px; } .nav-group { flex-wrap: wrap; row-gap: 10px; } .nav-group + .nav-group { border-left: none; padding-left: 0; margin-left: 0; } }
 </style>
 </head>
 <body>
@@ -120,18 +316,17 @@
       <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
     </a>
     <nav aria-label="Site">
-      <span class="nav-group"><span class="nav-glabel">Understand</span>
-<a href="/solutions">Solutions</a>
-<a href="/evidence" class="active">Evidence</a>
+      <span class="nav-group nav-primary">
+<a href="/emit">EMIT</a>
+<a href="/schema">SCHEMA</a>
+<a href="/read">READ</a>
+<a href="/evidence" class="active" aria-current="page">EVIDENCE</a>
 </span>
-      <span class="nav-group"><span class="nav-glabel">Evaluate</span>
-<a href="/schema">Schema</a>
+      <span class="nav-group nav-secondary">
 <a href="/doctrine">Doctrine</a>
-<a href="/founder">Founders</a>
-</span>
-      <span class="nav-group"><span class="nav-glabel">Examine</span>
 <a href="/library">Library</a>
 <a href="/standard">Standard</a>
+<a href="/founder">Founders</a>
 </span>
     </nav>
   </div>
@@ -229,6 +424,57 @@
 </section>
 
 
+<section class="dark" style="padding-top:64px">
+  <div class="container">
+    <div class="eyebrow">The record, live</div>
+    <h2 class="sec-title">The same record, as it assembles.</h2>
+    <div class="spec-wrap">
+<div class="lr" data-lr aria-label="Specimen governance evidence record, assembling live. Illustrative values only; no client data; no score issued.">
+  <div class="lr-head">
+    <span class="lr-dot" aria-hidden="true"></span>
+    <span class="lr-title">Governance evidence record</span>
+    <span class="lr-meta">GET-v1 · <span data-lr-clock>continuous</span></span>
+  </div>
+  <div class="lr-rows">
+    <div class="lr-row" data-exc="open">
+      <div class="lr-ob"><div class="lr-ob-name">Third-party access control</div><div class="lr-ob-src">helpdesk access logs · continuous</div></div>
+      <span class="lr-exc open">open</span>
+      <span class="lr-ver">signed <span class="tick">&#10003;</span></span>
+    </div>
+    <div class="lr-row" data-exc="clear">
+      <div class="lr-ob"><div class="lr-ob-name">Privileged-access review</div><div class="lr-ob-src">IAM change log · event-triggered</div></div>
+      <span class="lr-exc clear">clear</span>
+      <span class="lr-ver">signed <span class="tick">&#10003;</span></span>
+    </div>
+    <div class="lr-row" data-exc="review">
+      <div class="lr-ob"><div class="lr-ob-name">Model-override governance</div><div class="lr-ob-src">override log · monthly review</div></div>
+      <span class="lr-exc review">in review</span>
+      <span class="lr-ver">signed <span class="tick">&#10003;</span></span>
+    </div>
+    <div class="lr-row" data-exc="progress">
+      <div class="lr-ob"><div class="lr-ob-name">Incident notification</div><div class="lr-ob-src">regulator-of-record filing · on event</div></div>
+      <span class="lr-exc progress">in progress</span>
+      <span class="lr-ver">filed <span class="tick">&#10003;</span></span>
+    </div>
+    <div class="lr-row" data-exc="clear">
+      <div class="lr-ob"><div class="lr-ob-name">Board protocol adherence</div><div class="lr-ob-src">decision log vs protocol · monthly</div></div>
+      <span class="lr-exc clear">within bounds</span>
+      <span class="lr-ver">signed <span class="tick">&#10003;</span></span>
+    </div>
+  </div>
+  <div class="lr-foot">
+    <div class="lr-prov">provenance: source system <span class="arr">&#8594;</span> engine <span class="arr">&#8594;</span> signing key · each hop retained in the record</div>
+    <div class="lr-seal">
+      <span>record sealed · sig <span class="lr-sig" data-lr-sig>0x8f3ac21e9b47d05e</span></span>
+      <span class="lr-verify">proof checked, no call to Arkaya <span class="tick">&#10003;</span> · score: null</span>
+    </div>
+    <div class="lr-note">Format specimen · illustrative values · no client data · no score issued</div>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
 <section class="light" style="padding-top:0">
   <div class="container">
     <div class="eyebrow">Provenance</div>
@@ -273,6 +519,39 @@
       <div class="read"><div class="read-pr">Board oversight</div><p>Risk-committee minutes show the model risk reviewed and acted on, not noted. The read: the protocol the board authored is live, not shelfware.</p></div>
       <div class="read"><div class="read-pr">Trajectory</div><p>Maturity rising on the record over the period. The read: an improving firm being priced, not a static snapshot.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="evidence">
+  <div class="container">
+    <div class="evidence-head">
+      <div class="evidence-eyebrow">Priced after the event</div>
+      <p class="evidence-lede">Automated decisions have already crystallised nine and ten figure losses, reconstructed only after the event.<br>The trail those reconstructions assembled too late is the trail a conformant engine produces continuously, in the format Arkaya stewards.</p>
+    </div>
+    <div class="evidence-grid">
+      <div class="evidence-card">
+        <div class="evidence-tag">Automated decisioning · Government · Australia</div>
+        <div class="evidence-figure">A$2.4bn</div>
+        <div class="evidence-figure-label">total repayment and compensation</div>
+        <p class="evidence-body">Robodebt averaged annual income across fortnightly periods and raised welfare debts later ruled unlawful. A$1.8bn was settled in 2020, a further A$475m (about US$309m) in 2025. A royal commission found the responsible department held legal advice warning of unlawfulness in 2018 and proceeded. The decision trail surfaced years after the loss. <strong>In the schema:</strong> the unlawful-calculation control carries an open exception from the moment that advice lands, readable by a counterparty years before settlement.</p>
+        <p class="evidence-source">Royal Commission into the Robodebt Scheme, final report 2023; Reuters, 2025.</p>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-tag">Model governance · Corporate · United States</div>
+        <div class="evidence-figure">$540m+</div>
+        <div class="evidence-figure-label">inventory write-down, Zillow Offers</div>
+        <p class="evidence-body">Algorithmic home-buying priced off the Zestimate model, which overpaid as the 2021 market turned. A $304m write-down in Q3 2021, a further $240m to $265m guided for Q4, the unit closed and about 2,000 staff cut, a quarter of the workforce. The model outputs existed internally. A record a counterparty could check did not. <strong>In the schema:</strong> the model-override governance field shows the Zestimate's widening error as a populated exception in Q3, not after the write-down.</p>
+        <p class="evidence-source">Zillow Group SEC Form 8-K, third quarter 2021.</p>
+      </div>
+      <div class="evidence-card">
+        <div class="evidence-tag">Third-party · cyber · Retail · United Kingdom</div>
+        <div class="evidence-figure">&#8776;15%</div>
+        <div class="evidence-figure-label">of M&amp;S equity value at the point of impact</div>
+        <p class="evidence-body">The April 2025 cyber incident, attributed to Scattered Spider operating through the TCS-run helpdesk, sat inside a multi-year outsourcing arrangement renewed on cost. Insurance performed against the loss it covered: roughly &pound;100m of proceeds settled &pound;101.6m of booked incident costs almost exactly, and did not reach the equity value the market removed. Arkaya's composed estimate puts the total equity-value impact near &pound;2.4bn. <strong>In the schema:</strong> the third-party access-control obligation carries an open exception at the helpdesk boundary, readable by an underwriter at renewal, not reconstructed at claim.</p>
+        <p class="evidence-source">Cyber Monitoring Centre, 2025 (Category 2, with Co-op, &pound;270m&ndash;&pound;440m); M&amp;S market disclosures, 2025.</p>
+      </div>
+    </div>
+    <p class="evidence-lede" style="margin-top: 30px;">Today’s forensic evidence is retrospective. Arkaya makes forensic evidence prospective.</p>
   </div>
 </section>
 
@@ -344,5 +623,67 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var records = document.querySelectorAll('[data-lr]');
+  if (!records.length) return;
+  var HEX = '0123456789abcdef';
+  function scramble(el, finalText, dur) {
+    var start = null, len = finalText.length;
+    function frame(ts) {
+      if (!start) start = ts;
+      var p = Math.min(1, (ts - start) / dur), out = '';
+      for (var i = 0; i < len; i++) {
+        if (finalText[i] === 'x' && i === 1) { out += 'x'; continue; }
+        out += (i / len < p) ? finalText[i] : HEX[Math.floor(Math.random() * 16)];
+      }
+      el.textContent = out;
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+  function tickClock(el) {
+    function t() {
+      var d = new Date();
+      el.textContent = d.toISOString().slice(11, 19) + ' UTC';
+    }
+    t(); setInterval(t, 1000);
+  }
+  records.forEach(function (rec) {
+    var clock = rec.querySelector('[data-lr-clock]');
+    if (clock) tickClock(clock);
+    if (reduced) return;
+    rec.classList.add('lr-anim');
+    var seq = [].slice.call(rec.querySelectorAll('.lr-row'))
+      .concat([rec.querySelector('.lr-prov'), rec.querySelector('.lr-seal')]);
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        io.disconnect();
+        seq.forEach(function (el, i) {
+          setTimeout(function () {
+            el.classList.add('on');
+            if (el.classList.contains('lr-seal')) {
+              var sig = rec.querySelector('[data-lr-sig]');
+              if (sig) scramble(sig, sig.textContent, 1100);
+            }
+          }, 350 + i * 380);
+        });
+        // quiet life: one row re-verifies every 8s
+        setTimeout(function () {
+          var rows = rec.querySelectorAll('.lr-row');
+          setInterval(function () {
+            var r = rows[Math.floor(Math.random() * rows.length)];
+            r.classList.add('reverify');
+            setTimeout(function () { r.classList.remove('reverify'); }, 900);
+          }, 8000);
+        }, 350 + seq.length * 380);
+      });
+    }, { threshold: 0.35 });
+    io.observe(rec);
+  });
+})();
+</script>
 </body>
 </html>

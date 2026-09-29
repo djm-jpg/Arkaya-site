@@ -99,6 +99,9 @@
   .dl{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--bronze);text-decoration:none;border-bottom:1px solid var(--bronze);padding-bottom:2px}
   #libLinks{display:none}
 
+
+  .nav-primary a { letter-spacing: 1.6px; font-weight: 600; }
+  @media (max-width: 760px) { nav { flex-wrap: wrap; row-gap: 10px; } .nav-group { flex-wrap: wrap; row-gap: 10px; } .nav-group + .nav-group { border-left: none; padding-left: 0; margin-left: 0; } }
 </style>
 </head>
 <body>
@@ -109,18 +112,17 @@
       <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
     </a>
     <nav aria-label="Site">
-      <span class="nav-group"><span class="nav-glabel">Understand</span>
-<a href="/solutions">Solutions</a>
-<a href="/evidence">Evidence</a>
+      <span class="nav-group nav-primary">
+<a href="/emit">EMIT</a>
+<a href="/schema">SCHEMA</a>
+<a href="/read">READ</a>
+<a href="/evidence">EVIDENCE</a>
 </span>
-      <span class="nav-group"><span class="nav-glabel">Evaluate</span>
-<a href="/schema">Schema</a>
+      <span class="nav-group nav-secondary">
 <a href="/doctrine">Doctrine</a>
-<a href="/founder">Founders</a>
-</span>
-      <span class="nav-group"><span class="nav-glabel">Examine</span>
-<a href="/library" class="active">Library</a>
+<a href="/library" class="active" aria-current="page">Library</a>
 <a href="/standard">Standard</a>
+<a href="/founder">Founders</a>
 </span>
     </nav>
   </div>

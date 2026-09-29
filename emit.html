@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produce governance evidence another party can read. Arkaya Risk.</title>
+<meta name="description" content="For the systems and companies that produce the record: one open schema, conformance assessment of implementations, and one role per record. Arkaya produces no record and issues no score.">
+<link rel="canonical" href="https://arkayarisk.com/emit">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arkaya Risk">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Produce governance evidence another party can read. Arkaya Risk.">
+<meta property="og:description" content="For the systems and companies that produce the record: one open schema, conformance assessment of implementations, and one role per record. Arkaya produces no record and issues no score.">
+<meta property="og:url" content="https://arkayarisk.com/emit">
+<meta property="og:image" content="https://arkayarisk.com/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Arkaya Risk. Make the autonomous economy governable, and therefore priceable.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Produce governance evidence another party can read. Arkaya Risk.">
+<meta name="twitter:description" content="For the systems and companies that produce the record: one open schema, conformance assessment of implementations, and one role per record. Arkaya produces no record and issues no score.">
+<meta name="twitter:image" content="https://arkayarisk.com/og-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-teal: #2A393C;
+    --slate-teal: #364748;
+    --bronze: #C89358;
+    --bronze-soft: rgba(200, 147, 88, 0.13);
+    --bronze-line: rgba(200, 147, 88, 0.45);
+    --charcoal: #41413F;
+    --charcoal-soft: rgba(65, 65, 63, 0.78);
+    --off-white: #F4F5EF;
+    --off-white-deep: #ECEDE6;
+    --rule: rgba(42, 57, 60, 0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--charcoal);
+    background: var(--off-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--bronze); color: var(--deep-teal); }
+
+  .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+  .container-narrow { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 28px; }
+
+  header { background: var(--off-white); padding: 18px 0; border-bottom: 1px solid var(--rule); }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; }
+  .logo-link { display: inline-block; line-height: 0; }
+  .logo { height: 76px; width: auto; display: block; }
+  nav { display: flex; gap: 26px; align-items: center; }
+  nav a {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--charcoal);
+    text-decoration: none;
+    font-size: 12.5px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 200ms ease;
+    position: relative;
+    padding: 4px 0;
+  }
+  nav a.active { color: var(--bronze); }
+  nav a:hover { color: var(--bronze); }
+  nav a::after {
+    content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px;
+    background: var(--bronze); transition: width 200ms ease;
+  }
+  nav a.active::after, nav a:hover::after { width: 100%; }
+
+  .title-block { padding: 88px 0 56px 0; border-bottom: 1px solid var(--rule); background: var(--off-white-deep); }
+  .eyebrow { font-family: 'IBM Plex Sans', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--bronze); font-weight: 600; margin-bottom: 22px; }
+  .page-title { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(38px, 6vw, 72px); line-height: 1.05; letter-spacing: -0.025em; color: var(--deep-teal); margin-bottom: 16px; }
+  .page-subtitle { font-family: 'Fraunces', serif; font-weight: 300; font-style: italic; font-size: clamp(20px, 2.6vw, 28px); line-height: 1.3; color: var(--slate-teal); max-width: 720px; margin-bottom: 32px; }
+  .title-meta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--charcoal-soft); display: flex; gap: 24px; flex-wrap: wrap; }
+  .title-meta span::before { content: '·'; color: var(--bronze); margin-right: 8px; }
+  .title-meta span:first-child::before { content: ''; margin: 0; }
+
+  section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+  .section-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--bronze); font-weight: 500; margin-bottom: 18px; }
+  h2 { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(26px, 3.6vw, 38px); line-height: 1.18; letter-spacing: -0.015em; color: var(--deep-teal); margin-bottom: 24px; }
+  p { font-size: 16px; line-height: 1.7; color: var(--charcoal); margin-bottom: 18px; max-width: 720px; }
+  p strong { font-weight: 600; color: var(--deep-teal); }
+  p em { font-style: italic; color: var(--slate-teal); }
+
+  /* Audience blocks */
+  .audiences { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 36px; }
+  .audience { background: var(--off-white); border: 1px solid var(--rule); padding: 36px 30px; display: flex; flex-direction: column; border-radius: 4px; transition: transform 250ms ease, border-color 250ms ease, box-shadow 250ms ease; position: relative; overflow: hidden; }
+  .audience::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--bronze); opacity: 0; transition: opacity 250ms ease; }
+  .audience:hover { transform: translateY(-3px); border-color: var(--bronze-line); box-shadow: 0 12px 32px -16px rgba(42, 57, 60, 0.18); }
+  .audience:hover::before { opacity: 1; }
+  .audience-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--bronze); font-weight: 500; margin-bottom: 14px; }
+  .audience-title { font-family: 'Fraunces', serif; font-weight: 500; font-size: 22px; color: var(--deep-teal); margin-bottom: 14px; letter-spacing: -0.01em; line-height: 1.15; }
+  .audience-body { font-size: 14px; line-height: 1.65; color: var(--charcoal); flex: 1; }
+  .audience-body p { font-size: 14px; line-height: 1.65; margin-bottom: 12px; }
+  .audience-cta { margin-top: 18px; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 600; }
+  .audience-cta a { color: var(--bronze); text-decoration: none; border-bottom: 1px solid var(--bronze-line); }
+  .audience-cta a:hover { border-bottom-color: var(--bronze); }
+  .brief-form { margin-top: 18px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .brief-form input[type=email] { flex: 1 1 150px; min-width: 0; padding: 8px 10px; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; color: var(--charcoal); background: var(--off-white); border: 1px solid var(--rule); }
+  .brief-form button { font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 600; color: var(--bronze); background: none; border: none; border-bottom: 1px solid var(--bronze-line); padding: 8px 0; cursor: pointer; white-space: nowrap; }
+  .brief-form button:hover { border-bottom-color: var(--bronze); }
+
+  /* Two-column row table (moments / ladder / economics) */
+  .moments { display: grid; grid-template-columns: 280px 1fr; gap: 0; margin-top: 32px; border: 1px solid var(--rule); background: var(--rule); }
+  .moments-row { display: contents; }
+  .moments-row > div { background: var(--off-white); padding: 22px 26px; }
+  .moment-name { font-family: 'Fraunces', serif; font-weight: 500; font-size: 18px; color: var(--deep-teal); letter-spacing: -0.005em; }
+  .moment-desc { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; line-height: 1.55; color: var(--charcoal); }
+  .moment-desc strong { color: var(--deep-teal); font-weight: 600; }
+
+  /* Three-column comparison */
+  .compare { display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: 0; margin-top: 32px; border: 1px solid var(--rule); background: var(--rule); }
+  .compare > div { background: var(--off-white); padding: 18px 22px; font-size: 13.5px; line-height: 1.55; color: var(--charcoal); }
+  .compare .ch { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 1.3px; text-transform: uppercase; color: var(--bronze); font-weight: 600; background: var(--off-white-deep); }
+  .compare .cl { font-family: 'Fraunces', serif; font-size: 15px; color: var(--deep-teal); font-weight: 500; }
+  .compare .cd strong { color: var(--deep-teal); font-weight: 600; }
+
+  /* Pull-quote */
+  .pull { margin: 40px 0 8px 0; padding: 30px 0 30px 28px; border-left: 3px solid var(--bronze); max-width: 760px; }
+  .pull p { font-family: 'Fraunces', serif; font-weight: 300; font-style: italic; font-size: clamp(20px, 2.4vw, 26px); line-height: 1.4; color: var(--deep-teal); margin: 0; letter-spacing: -0.005em; }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; margin-top: 34px; }
+  .step { background: var(--off-white); border: 1px solid var(--rule); border-top: 3px solid var(--bronze); padding: 26px 22px; border-radius: 4px; }
+  .step-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 1.4px; color: var(--bronze); font-weight: 600; margin-bottom: 12px; }
+  .step-name { font-family: 'Fraunces', serif; font-weight: 500; font-size: 17px; color: var(--deep-teal); margin-bottom: 10px; line-height: 1.2; }
+  .step-body { font-size: 13.5px; line-height: 1.55; color: var(--charcoal); }
+
+  /* UP block */
+  .up-card { background: var(--off-white); border: 1px solid var(--bronze-line); padding: 36px 34px; border-radius: 4px; margin-top: 32px; max-width: 760px; }
+  .up-tag { font-family: 'IBM Plex Sans', sans-serif; font-size: 10.5px; letter-spacing: 2.4px; text-transform: uppercase; color: var(--bronze); font-weight: 600; margin-bottom: 14px; }
+  .up-title { font-family: 'Fraunces', serif; font-weight: 500; font-size: 24px; color: var(--deep-teal); margin-bottom: 14px; letter-spacing: -0.01em; }
+  .up-body { font-size: 15px; line-height: 1.65; color: var(--charcoal); margin: 0; }
+
+  /* What this is not */
+  .wtin { background: var(--off-white-deep); padding: 72px 0; border-bottom: 1px solid var(--rule); }
+  .wtin-lede { font-family: 'IBM Plex Sans', sans-serif; font-size: clamp(16px, 1.8vw, 18px); line-height: 1.6; color: var(--charcoal); max-width: 720px; margin-bottom: 26px; }
+  .wtin-list { display: grid; gap: 14px; max-width: 780px; }
+  .wtin-item { font-family: 'IBM Plex Sans', sans-serif; font-size: 15.5px; line-height: 1.55; color: var(--charcoal); border-left: 2px solid var(--bronze); padding-left: 16px; }
+  .wtin-item strong { color: var(--deep-teal); font-weight: 600; }
+
+  .closing { background: var(--deep-teal); padding: 90px 0; text-align: center; border-bottom: none; }
+  .closing p { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(28px, 4vw, 48px); line-height: 1.3; letter-spacing: -0.015em; color: var(--off-white); margin: 0 auto; max-width: 760px; padding: 0 20px; }
+  .closing-back { display: inline-block; margin-top: 36px; font-family: 'IBM Plex Sans', sans-serif; font-size: 12.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--bronze); text-decoration: none; font-weight: 600; }
+  .closing-back:hover { text-decoration: underline; }
+
+  footer { background: var(--deep-teal); padding: 40px 0; border-top: 1px solid rgba(200, 147, 88, 0.18); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 28px; }
+  .footer-meta { font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; color: rgba(244, 245, 239, 0.55); line-height: 1.7; letter-spacing: 0.4px; }
+  .footer-meta a { color: var(--bronze); text-decoration: none; }
+  .footer-meta a:hover { text-decoration: underline; }
+  .footer-legal { font-family: 'IBM Plex Sans', sans-serif; font-size: 10px; color: rgba(244, 245, 239, 0.35); letter-spacing: 1.4px; text-transform: uppercase; }
+
+  /* Worked example */
+  .worked { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 30px; }
+  .worked-col { background: rgba(200,147,88,0.07); border: 1px solid var(--rule); border-top: 3px solid var(--bronze); padding: 28px 26px; border-radius: 4px; }
+  .worked-col.muted { background: rgba(65,65,63,0.05); border-top-color: rgba(65,65,63,0.35); }
+  .worked-grade { font-family: 'Fraunces', serif; font-weight: 500; font-size: 22px; color: var(--deep-teal); margin-bottom: 4px; }
+  .worked-mode { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--charcoal-soft); margin-bottom: 18px; }
+  .worked-offer { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
+  .worked-offer li { display: flex; justify-content: space-between; gap: 14px; font-size: 14px; line-height: 1.5; padding: 11px 0; border-bottom: 1px solid var(--rule); }
+  .worked-offer .k { color: var(--charcoal-soft); }
+  .worked-offer .v { color: var(--deep-teal); font-weight: 600; text-align: right; }
+  .worked-note { font-family: 'IBM Plex Sans', sans-serif; font-size: 12.5px; font-style: italic; line-height: 1.55; color: var(--slate-teal); margin-top: 18px; max-width: 720px; }
+
+
+  .lr {
+    background: #222F32;
+    border: 1px solid rgba(200, 147, 88, 0.35);
+    border-radius: 4px;
+    padding: 0;
+    max-width: 560px;
+    width: 100%;
+    box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.55);
+    font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+    overflow: hidden;
+  }
+  .lr-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    border-bottom: 1px solid rgba(200, 147, 88, 0.22);
+    background: rgba(0, 0, 0, 0.18);
+  }
+  .lr-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #C89358; flex: none;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .lr-dot { animation: lr-pulse 2.4s ease-in-out infinite; }
+    @keyframes lr-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(200, 147, 88, 0.5); }
+      50% { box-shadow: 0 0 0 6px rgba(200, 147, 88, 0); }
+    }
+  }
+  .lr-title {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 10.5px; letter-spacing: 1.8px; font-weight: 500;
+    color: #F4F5EF; text-transform: uppercase; white-space: nowrap;
+  }
+  .lr-meta {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 10px; letter-spacing: 0.6px;
+    color: rgba(244, 245, 239, 0.5);
+    margin-left: auto; white-space: nowrap;
+  }
+  .lr-rows { padding: 6px 0; }
+  .lr-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
+    align-items: center;
+    padding: 9px 18px;
+    border-bottom: 1px solid rgba(244, 245, 239, 0.06);
+  }
+  .lr-row:last-child { border-bottom: none; }
+  .lr-ob { min-width: 0; }
+  .lr-ob-name {
+    font-size: 12.5px; font-weight: 500; color: #F4F5EF;
+    line-height: 1.3; letter-spacing: 0.2px;
+  }
+  .lr-ob-src {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; color: rgba(244, 245, 239, 0.45);
+    letter-spacing: 0.4px; margin-top: 2px;
+  }
+  .lr-exc {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; letter-spacing: 1px; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 2px; white-space: nowrap;
+  }
+  .lr-exc.open, .lr-exc.review, .lr-exc.progress {
+    color: #C89358; border: 1px solid rgba(200, 147, 88, 0.5);
+    background: rgba(200, 147, 88, 0.1);
+  }
+  .lr-exc.clear {
+    color: rgba(244, 245, 239, 0.65); border: 1px solid rgba(244, 245, 239, 0.18);
+    background: transparent;
+  }
+  .lr-ver {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; letter-spacing: 0.8px;
+    color: rgba(244, 245, 239, 0.7); white-space: nowrap;
+  }
+  .lr-ver .tick { color: #C89358; font-weight: 700; }
+  .lr-foot {
+    border-top: 1px solid rgba(200, 147, 88, 0.22);
+    padding: 12px 18px 14px 18px;
+    background: rgba(0, 0, 0, 0.18);
+  }
+  .lr-prov {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 9.5px; letter-spacing: 0.5px;
+    color: rgba(244, 245, 239, 0.5);
+    margin-bottom: 8px;
+  }
+  .lr-prov .arr { color: #C89358; }
+  .lr-seal {
+    display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 10.5px; letter-spacing: 0.5px; color: #F4F5EF;
+  }
+  .lr-sig { color: #C89358; }
+  .lr-verify { color: rgba(244, 245, 239, 0.85); }
+  .lr-verify .tick { color: #C89358; font-weight: 700; }
+  .lr-note {
+    font-size: 10px; letter-spacing: 0.6px;
+    color: rgba(244, 245, 239, 0.38);
+    margin-top: 10px; font-style: italic;
+  }
+  /* animation states: rows hidden until revealed when .lr-anim is set */
+  .lr-anim .lr-row, .lr-anim .lr-prov, .lr-anim .lr-seal { opacity: 0; transform: translateY(6px); }
+  .lr-anim .lr-row.on, .lr-anim .lr-prov.on, .lr-anim .lr-seal.on {
+    opacity: 1; transform: translateY(0);
+    transition: opacity 420ms ease, transform 420ms ease;
+  }
+  .lr-row.reverify .lr-ver { color: #C89358; transition: color 300ms ease; }
+
+
+  .nav-group { display: flex; gap: inherit; align-items: center; }
+  .nav-group + .nav-group { border-left: 1px solid rgba(200,147,88,0.4); padding-left: 22px; margin-left: -6px; }
+  .nav-glabel { font-family: 'IBM Plex Sans', sans-serif; font-size: 10.5px; letter-spacing: 1.8px; text-transform: uppercase; font-weight: 600; color: rgba(65,65,63,0.78); margin-right: 4px; }
+  @media (max-width: 900px) { .nav-glabel { display: none; } .nav-group + .nav-group { padding-left: 14px; } }
+
+  @media (max-width: 760px) {
+    .worked { grid-template-columns: 1fr; }
+    .container, .container-narrow { padding: 0 22px; }
+    .title-block { padding: 60px 0 44px 0; }
+    section { padding: 56px 0; }
+    .audiences { grid-template-columns: 1fr; gap: 14px; }
+    .moments { grid-template-columns: 1fr; }
+    .compare { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .header-inner { flex-direction: row; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .logo { height: 56px; }
+    nav { gap: 16px; }
+    .up-card { padding: 30px 26px; }
+  }
+
+  section p a:not(.closing-back) { color: var(--bronze); text-decoration: none; border-bottom: 1px solid var(--bronze-line, rgba(200,147,88,0.45)); }
+  .emit-list { margin: 18px 0 0 20px; }
+  .emit-list li { margin-bottom: 10px; line-height: 1.6; }
+  .route-line { font-family: 'IBM Plex Sans', sans-serif; font-size: 13.5px; margin-top: 14px; }
+  .route-line a { color: var(--bronze); text-decoration: none; font-weight: 600; letter-spacing: 1px; }
+  .open-q { font-family: 'Fraunces', serif; font-style: italic; font-size: 18px; color: var(--deep-teal); margin-top: 10px; }
+  .boundary-line { font-family: 'Fraunces', serif; font-size: clamp(20px, 2.4vw, 26px); line-height: 1.35; color: var(--deep-teal); }
+  .roles-note { font-size: 14px; color: var(--slate-teal); margin-top: 18px; }
+  .brief-form select { font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; padding: 12px 14px; border: 1px solid rgba(42,57,60,0.25); border-radius: 3px; background: #fff; color: var(--charcoal); }
+
+  .nav-primary a { letter-spacing: 1.6px; font-weight: 600; }
+  @media (max-width: 760px) { nav { flex-wrap: wrap; row-gap: 10px; } .nav-group { flex-wrap: wrap; row-gap: 10px; } .nav-group + .nav-group { border-left: none; padding-left: 0; margin-left: 0; } }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Produce governance evidence another party can read. Arkaya Risk.", "url": "https://arkayarisk.com/emit", "description": "For the systems and companies that produce the record: one open schema, conformance assessment of implementations, and one role per record. Arkaya produces no record and issues no score.", "isPartOf": {"@type": "WebSite", "name": "Arkaya Risk", "url": "https://arkayarisk.com/"}, "publisher": {"@type": "Organization", "name": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}</script>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="/" class="logo-link" aria-label="Arkaya Risk. Building resilience capital.">
+      <img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo">
+    </a>
+    <nav aria-label="Site">
+      <span class="nav-group nav-primary">
+<a href="/emit" class="active" aria-current="page">EMIT</a>
+<a href="/schema">SCHEMA</a>
+<a href="/read">READ</a>
+<a href="/evidence">EVIDENCE</a>
+</span>
+      <span class="nav-group nav-secondary">
+<a href="/doctrine">Doctrine</a>
+<a href="/library">Library</a>
+<a href="/standard">Standard</a>
+<a href="/founder">Founders</a>
+</span>
+    </nav>
+  </div>
+</header>
+
+<section class="title-block">
+  <div class="container">
+    <div class="eyebrow">Emit</div>
+    <h1 class="page-title">Produce governance evidence another party can read.</h1>
+    <p class="route-line">Reading evidence rather than producing it? <a href="/read">&#8594; READ</a></p>
+    <p class="page-subtitle">For the systems and organisations that produce the record: AI-governance and GRC platforms, monitoring and control engines, identity and telemetry systems, and companies emitting first-party evidence about themselves.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow">
+    <div class="section-num">§ 01 · The question a record answers</div>
+    <h2>What happened, under what authority, with what evidence?</h2>
+    <p>A governance evidence record states what a system was permitted to do, what it did, under what control, and whether the control held. The company's systems emit the underlying signals. A conformant engine produces the record against one open schema, so that an insurer, a lender or an acquirer can read it without adopting the system that produced it. The format is on the <a href="/evidence">Evidence</a> page; the schema is on the <a href="/schema">Schema</a> page.</p>
+    <p>The record is the company's. Portability is a schema property: evidence generated against the schema moves with the company across engines, insurers and capital events without re-basing. No vendor, and not Arkaya, holds it captive.</p>
+  </div>
+</section>
+
+<section style="background: var(--off-white-deep);">
+  <div class="container-narrow">
+    <div class="section-num">§ 02 · What Arkaya does here</div>
+    <h2>One open schema, and the assessment of what implements it.</h2>
+    <p>Arkaya is custodian of the schema and, until the Foundation handover set out in the Charter, its founding assessor. Assessment on this side is of the implementation against the schema, not of the organisation's governance.</p>
+    <ul class="emit-list">
+      <li>The open schema and its published specifications.</li>
+      <li>The reference conformance verifier, which any party can run.</li>
+      <li>Conformance assessment of an engine implementation against the schema. Conformance attaches to the implementation, never to any organisation's governance.</li>
+      <li>Portability testing: does the record keep its meaning outside the environment that produced it?</li>
+      <li>Authority-continuity testing: does the record preserve what was authorised at the moment the consequential act occurred?</li>
+      <li>Emission triage: what belongs in a record, what travels as a committed reference, and what is product content that never enters a record.</li>
+    </ul>
+    <p style="margin-top: 22px;">Arkaya produces no record, connects no system and issues no score.</p>
+    <div class="pull">
+      <p>There are no systems to connect.<br>There are three parties writing to one contract, and the only thing passing between them is a file.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow">
+    <div class="section-num">§ 03 · Advice to a company on its own record</div>
+    <h2>One role per record.</h2>
+    <p>A company can ask Arkaya how its record will read to the parties that price it. That advice is given to the company, and it is taken only where Arkaya has not assessed and will not assess that record for any reader. The role is recorded when the engagement opens. Where a reader has appointed Arkaya to assess a record, the advisory role is not available for that record, and the company is told so.</p>
+    <p>A Dynamic Risk Maturity Assessment and event-readiness work, calibrated to the obligations the company's next capital moment will test and built to be read by insurers, lenders and acquirers, sit on this side. Detailed scope held under NDA. Improving the controls themselves is operational work; Arkaya does not sell it.</p>
+  </div>
+</section>
+
+<section style="background: var(--off-white-deep);">
+  <div class="container">
+    <div class="section-num">§ 04 · How it starts</div>
+    <h2>Two steps, each one evidenced.</h2>
+    <p>For a company emitting evidence about itself:</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">01</div><div class="step-name">First engagement</div><div class="step-body">The board authors the Protocol and ranks the domains material to enterprise value.</div></div>
+      <div class="step"><div class="step-num">02</div><div class="step-name">First evidence record</div><div class="step-body">A conformant engine produces a signed record against obligation, in the eight-field format.</div></div>
+    </div>
+    <p style="margin-top: 22px;">For a platform or engine, the starting point is conformance assessment of the implementation against the schema, as set out above.</p>
+    <p>What happens next is the reader's: the desk read at inception and the renewal re-read are on the <a href="/read">READ</a> page.</p>
+  </div>
+</section>
+
+<section class="wtin" style="border-bottom: 1px solid var(--rule);">
+  <div class="container-narrow">
+    <div class="section-num">§ 05 · What this is not</div>
+    <div class="wtin-list">
+      <div class="wtin-item"><strong>Not an integrator.</strong> Nothing is connected; a record is produced and a file travels.</div>
+      <div class="wtin-item"><strong>Not an improvement adviser.</strong> The record shows the state of the controls; changing them is the company's own operational work.</div>
+      <div class="wtin-item"><strong>Not a certification of anyone's governance.</strong> Conformance attaches to an implementation; no rating, level or score is issued to an organisation.</div>
+      <div class="wtin-item"><strong>Not pay-to-include.</strong> There is no fee for inclusion in the schema, no priority path and no commercial tier. The Charter says so, and the Schema page carries it.</div>
+    </div>
+    <p class="boundary-line" style="margin-top: 34px;">The emitter produces the evidence.<br>Arkaya does not.</p>
+    <p class="roles-note">Of the three roles on the READ page, the Subject sits on this side. Its systems emit the underlying signals; a conformant engine produces the record. Supervisor and Pricer are readers.</p>
+    <form name="emitter-brief" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="brief-form">
+      <input type="hidden" name="form-name" value="emitter-brief">
+      <p style="display:none;"><label>Leave blank: <input name="bot-field"></label></p>
+      <input type="email" name="email" placeholder="Work email" required aria-label="Work email">
+      <button type="submit">Request the Emitter Brief &#8594;</button>
+    </form>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="container-narrow">
+    <p>Resilience Capital is built.<br>Not asserted.</p>
+    <a href="/schema" class="closing-back">Read the schema &#8594;</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-meta">
+      Arkaya Risk Limited · registered in England and Wales, no. 17380022<br>
+      Founded by David J McKibbin and Simon Hudson<br>
+      <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a> · +44 (0)7972 178759<br>
+        <a href="mailto:smh@arkayarisk.com">smh@arkayarisk.com</a> · +1 (914) 309-6397<br>
+      <a href="https://www.linkedin.com/in/davidmckibbin" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="footer-legal">
+      Arkaya Risk Limited, a company registered in England and Wales (no. 17380022).<br>
+        Registered office: Oxford House, 15-17 Mount Ephraim Road, Tunbridge Wells, England, TN1 1EN.<br>
+        © 2026 Arkaya Risk. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
