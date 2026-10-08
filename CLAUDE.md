@@ -23,17 +23,16 @@ red-teamed and deliberately shelved: the benefit was unevidenced and the publish
 to fail is worth more. The decision record is with the Tranche A notes; the shelved machinery is in
 the v5 bundle and can be revived if measurement ever justifies it.
 
-Pages, and whether they are in the navigation (October ship, OPS_Website_October_Spec_v5; `services.html` added by OPS_Website_Commercial_Update_Spec_v2, Release 1, 8 October 2026):
+Pages, and whether they are in the navigation (October ship, OPS_Website_October_Spec_v5; `services.html` added by OPS_Website_Commercial_Update_Spec_v2, Release 1, 8 October 2026; navigation rebuilt buyer-led by Spec v4, Release 2):
 
-| In the navigation | Live, not in the navigation |
+| In the navigation | Reached otherwise |
 |---|---|
-| Primary: `services.html`, `emit.html`, `schema.html`, `read.html`, `evidence.html` | `architecture.html`, `get/index.html`: in-page routes from `/schema` (DQ-26) and `llms.txt` |
-| Secondary: `doctrine.html`, `library.html`, `standard.html`, `founder.html` | `infinity.html`: kept in the repository, never served; `/infinity` and `/infinity.html` are forced 301s to `/evidence` (DQ-40) |
-| `index.html` (home, one screen) | `solutions.html`, `ecosystem.html`: kept in the repository, never served; `/solutions`, `/ecosystem` and their `.html` paths are forced 301s to `/read` |
+| Primary: WHO WE HELP (`/#routes` on `index.html`), SERVICES (`services.html`), EVIDENCE EXAMPLE (`evidence.html`), OPEN SCHEMA (`schema.html`) | Footer "Resources" on every page: `doctrine.html`, `library.html`, `standard.html`, `emit.html` ("For emitters"), `read.html` ("For readers") |
+| Secondary: About (`founder.html`) | `architecture.html`, `get/index.html`: in-page routes from `/schema` (DQ-26) and `llms.txt` |
+| `index.html` (home, buyer-led) | `infinity.html`: kept, never served; `/infinity` and `/infinity.html` are forced 301s to `/evidence` (DQ-40). `solutions.html`, `ecosystem.html`: kept, never served; `/solutions`, `/ecosystem` and their `.html` paths are forced 301s to `/read` |
 
-The header is identical on every page: SERVICES · EMIT · SCHEMA · READ · EVIDENCE, then Doctrine ·
-Library · Standard · Founders. The "Understand / Evaluate / Examine" group labels and the Solutions item were
-retired with the October ship. A redirect over a file that still exists needs the `!` force flag, or
+The header is identical on every page: WHO WE HELP · SERVICES · EVIDENCE EXAMPLE · OPEN SCHEMA, then
+About. The footer's contact block is unchanged; the Resources block sits beside it. A redirect over a file that still exists needs the `!` force flag, or
 Netlify serves the file and ignores the rule.
 
 ### Adding or retiring a page
