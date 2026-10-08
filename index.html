@@ -882,8 +882,7 @@
   .intro { position: fixed; inset: 0; z-index: 1000; background: #263539; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.9s ease; }
   .intro[hidden] { display: none; }
   .intro.is-fading { opacity: 0; pointer-events: none; }
-  .intro video { display: block; width: 100%; height: auto; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 84%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 84%, transparent 100%); }
-  @media (min-aspect-ratio: 4/3) { .intro video { height: 100%; object-fit: cover; -webkit-mask-image: none; mask-image: none; } }
+  .intro video { display: block; width: 100%; height: 100%; object-fit: cover; }
   .intro-skip { position: absolute; right: 20px; bottom: 20px; min-height: 44px; padding: 10px 16px; border: 1px solid rgba(200,147,88,0.7); border-radius: 3px; background: rgba(42,57,60,0.6); color: #F4F5EF; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; letter-spacing: 1.2px; text-transform: uppercase; cursor: pointer; }
   .intro-skip:hover { background: rgba(200,147,88,0.18); }
   .intro-skip:focus-visible { outline: 3px solid #F4F5EF; outline-offset: 2px; }
@@ -932,9 +931,9 @@
 </head>
 <body>
 <div class="intro" id="intro" role="region" aria-label="Intro animation" hidden>
-  <video id="intro-video" muted playsinline preload="none" poster="/arkaya-intro-start.jpg" aria-hidden="true" tabindex="-1">
-    <source data-src="/arkaya-intro.mp4" type="video/mp4">
-    <source data-src="/arkaya-intro.webm" type="video/webm">
+  <video id="intro-video" muted playsinline preload="none" aria-hidden="true" tabindex="-1">
+    <source data-src="/arkaya-intro.mp4" data-src-portrait="/arkaya-intro-portrait.mp4" type="video/mp4">
+    <source data-src="/arkaya-intro.webm" data-src-portrait="/arkaya-intro-portrait.webm" type="video/webm">
   </video>
   <button type="button" class="intro-skip" id="intro-skip">Skip intro</button>
 </div>
@@ -966,7 +965,9 @@
     root.classList.remove('intro-open');
     setTimeout(function () { intro.hidden = true; intro.parentNode && intro.parentNode.removeChild(intro); }, fast ? 300 : 1000);
   }
-  Array.prototype.forEach.call(film.querySelectorAll('source'), function (s) { s.src = s.getAttribute('data-src'); });
+  var portrait = window.innerHeight > window.innerWidth;
+  film.poster = portrait ? '/arkaya-intro-portrait-start.jpg' : '/arkaya-intro-start.jpg';
+  Array.prototype.forEach.call(film.querySelectorAll('source'), function (s) { s.src = s.getAttribute(portrait ? 'data-src-portrait' : 'data-src'); });
   film.muted = true;
   film.load();
   var p;
