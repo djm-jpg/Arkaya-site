@@ -354,17 +354,13 @@
     </a>
     <nav aria-label="Site">
       <span class="nav-group nav-primary">
+<a href="/#routes">WHO WE HELP</a>
 <a href="/services" class="active" aria-current="page">SERVICES</a>
-<a href="/emit">EMIT</a>
-<a href="/schema">SCHEMA</a>
-<a href="/read">READ</a>
-<a href="/evidence">EVIDENCE</a>
+<a href="/evidence">EVIDENCE EXAMPLE</a>
+<a href="/schema">OPEN SCHEMA</a>
 </span>
       <span class="nav-group nav-secondary">
-<a href="/doctrine">Doctrine</a>
-<a href="/library">Library</a>
-<a href="/standard">Standard</a>
-<a href="/founder">Founders</a>
+<a href="/founder">About</a>
 </span>
     </nav>
   </div>
@@ -385,8 +381,8 @@ Start with one question, commission a full read, or keep the evidence under revi
 <section>
   <div class="container-narrow">
     <div class="section-num">&#167; 01 &#183; The Defensive Playbook</div>
-    <h2>Protecting enterprise value as AI moves faster than governance.</h2>
-    <p>Growth plans explain how AI creates value. The Defensive Playbook sets out how that value could be lost, and keeps four questions current: what your AI systems are authorised to do; what the records show about whether the controls ran; where the evidence is weak or missing; and what an insurer, lender or buyer could use today.</p>
+    <h2>A Defensive Playbook for enterprise value.</h2>
+    <p>Growth plans explain how AI creates value. The Defensive Playbook does the other half: it is built to make the risk a company carries visible enough for insurers, lenders and buyers to price, rather than exclude it or price it as uncertainty. The decision-maker may still decline the risk or tighten terms. It keeps four questions in view: what your AI systems are authorised to do; what the records show about whether the controls ran; where the evidence is weak or missing; and what an insurer, lender or buyer could use today.</p>
     <p style="margin-top:14px;">The services below are its working parts.</p>
   </div>
 </section>
@@ -462,6 +458,7 @@ Start with one question, commission a full read, or keep the evidence under revi
       <input id="er-email" type="email" name="email" required>
       <label for="er-problem">The decision or problem</label>
       <textarea id="er-problem" name="decision" required></textarea>
+      <p style="font-size:13.5px;color:var(--slate-teal);margin:6px 0 0;">Describe the decision briefly. Do not include policyholder details, confidential client records or passwords.</p>
       <label for="er-role">Which describes you?</label>
       <select id="er-role" name="role" required>
         <option value="" disabled selected>Choose one</option>
@@ -470,6 +467,25 @@ Start with one question, commission a full read, or keep the evidence under revi
         <option value="partner">Platform, broker or consultancy</option>
         <option value="unsure">Not sure</option>
       </select>
+      <fieldset class="regions" style="border:0;padding:0;margin:0;display:grid;gap:8px;min-width:0;">
+        <legend style="padding:0;margin-bottom:4px;font-size:13px;color:var(--slate-teal);">Which countries or regions does this review concern?</legend>
+        <label class="check"><input type="checkbox" name="regions" value="United Kingdom"> United Kingdom</label>
+        <label class="check"><input type="checkbox" name="regions" value="United States"> United States</label>
+        <label class="check"><input type="checkbox" name="regions" value="European Union or EEA"> European Union or EEA</label>
+        <label class="check"><input type="checkbox" name="regions" value="Elsewhere"> Elsewhere</label>
+        <label class="check"><input type="checkbox" name="regions" value="Not sure"> Not sure</label>
+      </fieldset>
+      <script>
+        (function () {
+          var boxes = document.querySelectorAll('input[name="regions"]');
+          function check() {
+            var any = Array.prototype.some.call(boxes, function (b) { return b.checked; });
+            boxes[0].setCustomValidity(any ? '' : 'Tick at least one, or Not sure.');
+          }
+          Array.prototype.forEach.call(boxes, function (b) { b.addEventListener('change', check); });
+          check();
+        })();
+      </script>
       <label class="check"><input type="checkbox" name="brief-interest" value="yes"> Register interest in the AI Risk Evidence Brief</label>
       <button type="submit">Discuss an evidence review &#8594;</button>
     </form>
@@ -506,6 +522,7 @@ Start with one question, commission a full read, or keep the evidence under revi
         <a href="mailto:smh@arkayarisk.com">smh@arkayarisk.com</a> · +1 (914) 309-6397<br>
       <a href="https://www.linkedin.com/in/davidmckibbin" target="_blank" rel="noopener">LinkedIn</a>
     </div>
+    <div class="footer-meta footer-resources">Resources<br><a href="/doctrine">Doctrine</a> · <a href="/library">Library</a> · <a href="/standard">Standard</a><br><a href="/emit">For emitters</a> · <a href="/read">For readers</a></div>
     <div class="footer-legal">
       Arkaya Risk Limited, a company registered in England and Wales (no. 17380022).<br>
         Registered office: Oxford House, 15-17 Mount Ephraim Road, Tunbridge Wells, England, TN1 1EN.<br>

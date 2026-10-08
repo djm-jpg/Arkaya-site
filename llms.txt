@@ -8,7 +8,7 @@ Arkaya Risk Limited is a UK company (England and Wales no. 17380022), pre-revenu
 
 ## Start here
 
-- [Home](https://arkayarisk.com/): Without evidence that travels to the insurer, lender or acquirer, AI risk is excluded or priced as uncertainty. Arkaya stewards one open schema, so all three can read governance evidence from any platform on a common basis, and price the risk.
+- [Home](https://arkayarisk.com/): Without evidence that travels to the insurer, lender or acquirer, AI risk is excluded or priced as uncertainty. Arkaya stewards one open schema, so all three can read governance evidence from different platforms on a common basis, and price the risk.
 - [Services](https://arkayarisk.com/services): Arkaya reads your AI governance records, shows what they support and finds the gaps that matter to a decision. Pressure tests, snapshots, monthly reviews, the Defensive Playbook adviser, and readings for insurers, lenders and investors.
 - [Architecture](https://arkayarisk.com/architecture): where Arkaya sits in the chain from source systems to capital. The four layers, what Arkaya does not do at each, the nine steps a record passes through, and which material is open and which is licensed.
 - [Schema](https://arkayarisk.com/schema): the Governance Evidence Taxonomy. The four-layer architecture, the eight fields, the eight governance domains, the four-grade evidence ladder (Asserted, Attested, Evidenced, Verifiable) and the Schema Independence Charter.
