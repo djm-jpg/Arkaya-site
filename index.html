@@ -879,10 +879,11 @@
 
   /* Release 2: buyer-led home (spec v3 section 5) */
   /* WEB-36: full-screen intro animation on arrival, then fades to the page */
-  .intro { position: fixed; inset: 0; z-index: 1000; background: #2A393C; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.9s ease; }
+  .intro { position: fixed; inset: 0; z-index: 1000; background: #263539; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.9s ease; }
   .intro[hidden] { display: none; }
   .intro.is-fading { opacity: 0; pointer-events: none; }
-  .intro video { width: 100%; height: 100%; object-fit: contain; background: #2A393C; }
+  .intro video { display: block; width: 100%; height: auto; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 84%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 84%, transparent 100%); }
+  @media (min-aspect-ratio: 4/3) { .intro video { height: 100%; object-fit: cover; -webkit-mask-image: none; mask-image: none; } }
   .intro-skip { position: absolute; right: 20px; bottom: 20px; min-height: 44px; padding: 10px 16px; border: 1px solid rgba(200,147,88,0.7); border-radius: 3px; background: rgba(42,57,60,0.6); color: #F4F5EF; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; letter-spacing: 1.2px; text-transform: uppercase; cursor: pointer; }
   .intro-skip:hover { background: rgba(200,147,88,0.18); }
   .intro-skip:focus-visible { outline: 3px solid #F4F5EF; outline-offset: 2px; }
