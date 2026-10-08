@@ -23,16 +23,16 @@ red-teamed and deliberately shelved: the benefit was unevidenced and the publish
 to fail is worth more. The decision record is with the Tranche A notes; the shelved machinery is in
 the v5 bundle and can be revived if measurement ever justifies it.
 
-Pages, and whether they are in the navigation (October ship, OPS_Website_October_Spec_v5):
+Pages, and whether they are in the navigation (October ship, OPS_Website_October_Spec_v5; `services.html` added by OPS_Website_Commercial_Update_Spec_v2, Release 1, 8 October 2026):
 
 | In the navigation | Live, not in the navigation |
 |---|---|
-| Primary: `emit.html`, `schema.html`, `read.html`, `evidence.html` | `architecture.html`, `get/index.html`: in-page routes from `/schema` (DQ-26) and `llms.txt` |
+| Primary: `services.html`, `emit.html`, `schema.html`, `read.html`, `evidence.html` | `architecture.html`, `get/index.html`: in-page routes from `/schema` (DQ-26) and `llms.txt` |
 | Secondary: `doctrine.html`, `library.html`, `standard.html`, `founder.html` | `infinity.html`: kept in the repository, never served; `/infinity` and `/infinity.html` are forced 301s to `/evidence` (DQ-40) |
 | `index.html` (home, one screen) | `solutions.html`, `ecosystem.html`: kept in the repository, never served; `/solutions`, `/ecosystem` and their `.html` paths are forced 301s to `/read` |
 
-The header is identical on every page: EMIT · SCHEMA · READ · EVIDENCE, then Doctrine · Library ·
-Standard · Founders. The "Understand / Evaluate / Examine" group labels and the Solutions item were
+The header is identical on every page: SERVICES · EMIT · SCHEMA · READ · EVIDENCE, then Doctrine ·
+Library · Standard · Founders. The "Understand / Evaluate / Examine" group labels and the Solutions item were
 retired with the October ship. A redirect over a file that still exists needs the `!` force flag, or
 Netlify serves the file and ignores the rule.
 
@@ -65,7 +65,13 @@ Three files, all static, all authored:
 Carried verbatim wherever the chain is stated — llms.txt, the discovery document, `/architecture`:
 
 > Source systems emit signals; an engine produces a record against the schema; a counterparty reads
-> that record as evidence; Arkaya produces neither the record nor the price.
+> that record as evidence; Arkaya can be appointed to read records and report what they support for a
+> stated decision; Arkaya produces neither the record nor the price.
+
+Amended 8 October 2026 (OPS_Website_Commercial_Update_Spec_v2, WEB-4 and WEB-6, DM): the appointed-reading
+clause was added because Arkaya now sells readings of a client's records (findings reports). The
+discovery document carries the same sentence with "the Governance Evidence Taxonomy" in place of "the
+schema"; that difference predates the amendment and is recorded, not resolved, here.
 
 If you edit any statement of who produces what, it must match this form exactly.
 

@@ -1,3 +1,4 @@
+/services     /services.html     200
 /emit         /emit.html         200
 /read         /read.html         200
 /solutions    /read              301!

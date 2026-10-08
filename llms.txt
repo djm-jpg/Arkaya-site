@@ -2,17 +2,18 @@
 
 > Arkaya stewards the Governance Evidence Taxonomy (GET), an open schema for governance evidence. An organisation's systems emit signals; an engine produces a signed record against the schema stating whether a control existed, ran and passed its own test; insurers, lenders and acquirers read that record as evidence and price governance risk on it. Arkaya produces no evidence, issues no score and prices nothing; a record is checked with the record, the public schema and the signer's public key, with no call to Arkaya.
 
-Source systems emit signals; an engine produces a record against the schema; a counterparty reads that record as evidence; Arkaya produces neither the record nor the price.
+Source systems emit signals; an engine produces a record against the schema; a counterparty reads that record as evidence; Arkaya can be appointed to read records and report what they support for a stated decision; Arkaya produces neither the record nor the price.
 
 Arkaya Risk Limited is a UK company (England and Wales no. 17380022), pre-revenue, founded by David J McKibbin and Simon Hudson. Two pages set out the work on either side of the schema: EMIT, for the systems and companies that produce the record, and READ, for the parties that price it, with continuous covenant underwriting for AI liability as the first class. The links below are the site's principal pages; each carries the same copy an agent or a person reads.
 
 ## Start here
 
 - [Home](https://arkayarisk.com/): Without evidence that travels to the insurer, lender or acquirer, AI risk is excluded or priced as uncertainty. Arkaya stewards one open schema, so all three can read governance evidence from any platform on a common basis, and price the risk.
+- [Services](https://arkayarisk.com/services): Arkaya reads your AI governance records, shows what they support and finds the gaps that matter to a decision. Pressure tests, snapshots, monthly reviews, the Defensive Playbook adviser, and readings for insurers, lenders and investors.
 - [Architecture](https://arkayarisk.com/architecture): where Arkaya sits in the chain from source systems to capital. The four layers, what Arkaya does not do at each, the nine steps a record passes through, and which material is open and which is licensed.
 - [Schema](https://arkayarisk.com/schema): the Governance Evidence Taxonomy. The four-layer architecture, the eight fields, the eight governance domains, the four-grade evidence ladder (Asserted, Attested, Evidenced, Verifiable) and the Schema Independence Charter.
 - [Evidence](https://arkayarisk.com/evidence): what a governance evidence record looks like: the eight observable fields, the exception states and how an underwriter or lender reads it. Illustrative template, no client data, no score issued. Three worked loss cases (Robodebt, Zillow Offers, M&S) read through the schema.
-- [Emit](https://arkayarisk.com/emit): For the systems and companies that produce the record: one open schema, conformance assessment of implementations, and one role per record. Arkaya produces no record and issues no score.
+- [Emit](https://arkayarisk.com/emit): For the systems and companies that produce the record: one open schema, conformance assessment of implementations, and disclosed prior involvement. Arkaya produces no record and issues no score.
 - [Read](https://arkayarisk.com/read): For insurers, lenders and acquirers: continuous covenant underwriting, calibration, the evidence ladder and the pilot. The reader decides sufficiency, price and terms; Arkaya does not.
 
 ## For agents and implementers
