@@ -162,5 +162,5 @@
     "price anything (the carrier, lender or acquirer decides what the record is worth)",
     "sit in the path of a proof check"
   ],
-  "invariant": "Source systems emit signals; an engine produces a record against the Governance Evidence Taxonomy; a counterparty reads that record as evidence; Arkaya produces neither the record nor the price."
+  "invariant": "Source systems emit signals; an engine produces a record against the Governance Evidence Taxonomy; a counterparty reads that record as evidence; Arkaya can be appointed to read records and report what they support for a stated decision; Arkaya produces neither the record nor the price."
 }
