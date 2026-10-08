@@ -884,6 +884,7 @@
   /* WEB-32: hero two-column layout with the illustrative evidence animation */
   .home-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 56px; row-gap: 40px; }
   .home-hero-media { width: 100%; max-width: 640px; }
+  @media (max-width: 760px) { .home-hero-grid { margin-top: 26px; row-gap: 30px; } .home-hero-media { order: -1; } .home-hero-text .home-sub:first-child { margin-top: 0; } }
   @media (max-height: 820px) and (min-width: 700px) { .home-hero { padding-top: 40px; } .home-eyebrow { margin-bottom: 12px; } }
   @media (min-width: 1180px) and (min-height: 821px) {
     .home-hero { padding-top: 60px; }
