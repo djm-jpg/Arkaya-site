@@ -884,9 +884,13 @@
   /* WEB-32: hero two-column layout with the illustrative evidence animation */
   .home-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 56px; row-gap: 40px; }
   .home-hero-media { width: 100%; max-width: 640px; }
-  @media (min-width: 980px) {
-    .home-hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr); align-items: start; }
-    .home-hero-media { margin-top: 34px; }
+  @media (min-width: 1180px) {
+    .home-hero { padding-top: 60px; }
+    .home-eyebrow { margin-bottom: 14px; }
+    .home-hero-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); align-items: start; }
+    .home-hero-text .home-sub:first-child { margin-top: 22px; }
+    .home-hero-text .home-buttons { margin-top: 28px; }
+    .home-hero-media { margin-top: 28px; }
   }
   .arkaya-motion { --am-bronze: #C89358; margin: 0; color: var(--off-white); background: #26353A; border: 1px solid rgba(200,147,88,0.22); border-radius: 3px; overflow: hidden; }
   .arkaya-motion * { box-sizing: border-box; }
@@ -978,6 +982,7 @@
             <img class="arkaya-motion__still" src="/arkaya-evidence-final.jpg" width="1920" height="1080" alt="Arkaya Risk. Evidence.">
             <video class="arkaya-motion__film" hidden muted playsinline preload="none" width="960" height="540" poster="/arkaya-evidence-start.jpg" aria-hidden="true" tabindex="-1">
               <source data-src="/arkaya-evidence.mp4" type="video/mp4">
+              <source data-src="/arkaya-evidence.webm" type="video/webm">
             </video>
           </div>
           <div class="arkaya-motion__bar" hidden>
@@ -1181,7 +1186,9 @@
     var saveData = !!(navigator.connection && navigator.connection.saveData);
     var finalSrc = still.getAttribute('src'), finalAlt = still.alt;
     var openingSrc = film.getAttribute('poster');
-    var autoPlay = !motion.matches && !saveData && !reducedData && root.getAttribute('data-autoplay') === 'true';
+    var playable = !!(film.canPlayType && (film.canPlayType('video/mp4; codecs="avc1.640028"') || film.canPlayType('video/webm; codecs="vp9"')));
+    var autoPlay = playable && !motion.matches && !saveData && !reducedData && root.getAttribute('data-autoplay') === 'true';
+    var lastSource = film.querySelector('source:last-of-type');
     var loaded = false, attempted = false, finalShown = false, inFlight = false;
     if (autoPlay) { still.src = openingSrc; still.alt = 'Letters, numbers and symbols on a teal background.'; }
     bar.hidden = false;
@@ -1208,12 +1215,15 @@
       try { p = film.play(); } catch (e) { p = Promise.reject(e); }
       Promise.resolve(p).then(function () {
         inFlight = false; label();
-      }, function () {
-        inFlight = false; showFinal();
+      }, function (err) {
+        inFlight = false;
+        if (err && err.name === 'AbortError') { label(); return; }
+        showFinal();
         if (byUser) meta.textContent = 'Playback unavailable. Final frame shown.';
       });
     }
     toggle.addEventListener('click', function () {
+      if (!playable) { showFinal(); meta.textContent = 'Playback unavailable. Final frame shown.'; return; }
       if (!film.paused && !film.ended) film.pause(); else play(true);
     });
     finish.addEventListener('click', showFinal);
@@ -1221,6 +1231,7 @@
     film.addEventListener('pause', label);
     film.addEventListener('ended', showFinal);
     film.addEventListener('error', function () { showFinal(); });
+    if (lastSource) lastSource.addEventListener('error', function () { showFinal(); });
     document.addEventListener('visibilitychange', function () { if (document.hidden) film.pause(); });
     var changed = function () { if (motion.matches) showFinal(); };
     if (motion.addEventListener) motion.addEventListener('change', changed);
