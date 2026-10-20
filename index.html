@@ -878,15 +878,6 @@
   @media (max-width: 760px) { nav { flex-wrap: wrap; row-gap: 10px; } .nav-group { flex-wrap: wrap; row-gap: 10px; } .nav-group + .nav-group { border-left: none; padding-left: 0; margin-left: 0; } }
 
   /* Release 2: buyer-led home (spec v3 section 5) */
-  /* WEB-36: full-screen intro animation on arrival, then fades to the page */
-  .intro { position: fixed; inset: 0; z-index: 1000; background: #263539; display: flex; align-items: center; justify-content: center; opacity: 1; transition: opacity 0.9s ease; }
-  .intro[hidden] { display: none; }
-  .intro.is-fading { opacity: 0; pointer-events: none; }
-  .intro video { display: block; width: 100%; height: 100%; object-fit: cover; }
-  .intro-skip { position: absolute; right: 20px; bottom: 20px; min-height: 44px; padding: 10px 16px; border: 1px solid rgba(200,147,88,0.7); border-radius: 3px; background: rgba(42,57,60,0.6); color: #F4F5EF; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; letter-spacing: 1.2px; text-transform: uppercase; cursor: pointer; }
-  .intro-skip:hover { background: rgba(200,147,88,0.18); }
-  .intro-skip:focus-visible { outline: 3px solid #F4F5EF; outline-offset: 2px; }
-  html.intro-open, html.intro-open body { overflow: hidden; }
   .home-hero { background: var(--deep-teal); color: var(--off-white); padding: 94px 0 86px; }
   .home-eyebrow { font-family: 'IBM Plex Sans', sans-serif; font-size: 17px; line-height: 1.5; color: var(--off-white-soft); margin: 0 0 22px; }
   .home-h1 { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(34px, 5vw, 60px); line-height: 1.08; letter-spacing: -0.5px; margin: 0; color: var(--off-white); }
@@ -930,65 +921,6 @@
 </style>
 </head>
 <body>
-<div class="intro" id="intro" role="region" aria-label="Intro animation" hidden>
-  <video id="intro-video" muted playsinline preload="none" aria-hidden="true" tabindex="-1">
-    <source data-src="/arkaya-intro.mp4" data-src-portrait="/arkaya-intro-portrait.mp4" type="video/mp4">
-    <source data-src="/arkaya-intro.webm" data-src-portrait="/arkaya-intro-portrait.webm" type="video/webm">
-  </video>
-  <button type="button" class="intro-skip" id="intro-skip">Skip intro</button>
-</div>
-<script>
-/* WEB-36: full-screen intro. Shown once per browser session, on arrival only.
-   Skipped for reduced motion, data saving, no playable format or blocked autoplay.
-   Any failure, Skip, Escape or a click removes it; the page is underneath throughout. */
-(function () {
-  'use strict';
-  var root = document.documentElement;
-  var intro = document.getElementById('intro');
-  var film = document.getElementById('intro-video');
-  var skip = document.getElementById('intro-skip');
-  var mm = function (q) { try { return window.matchMedia(q).matches; } catch (e) { return false; } };
-  var seen = false;
-  try { seen = sessionStorage.getItem('arkayaIntroSeen') === '1'; } catch (e) {}
-  var saveData = !!(navigator.connection && navigator.connection.saveData);
-  var playable = !!(film.canPlayType && (film.canPlayType('video/mp4; codecs="avc1.640028"') || film.canPlayType('video/webm; codecs="vp9"')));
-  if (seen || saveData || !playable || mm('(prefers-reduced-motion: reduce)') || mm('(prefers-reduced-data: reduce)')) return;
-  try { sessionStorage.setItem('arkayaIntroSeen', '1'); } catch (e) {}
-  intro.hidden = false;
-  root.classList.add('intro-open');
-  var done = false, lastT = 0, stalls = 0;
-  function close(fast) {
-    if (done) return; done = true;
-    try { film.pause(); } catch (e) {}
-    intro.style.transitionDuration = fast ? '0.25s' : '';
-    intro.classList.add('is-fading');
-    root.classList.remove('intro-open');
-    setTimeout(function () { intro.hidden = true; intro.parentNode && intro.parentNode.removeChild(intro); }, fast ? 300 : 1000);
-  }
-  var portrait = window.innerHeight > window.innerWidth;
-  film.poster = portrait ? '/arkaya-intro-portrait-start.jpg' : '/arkaya-intro-start.jpg';
-  Array.prototype.forEach.call(film.querySelectorAll('source'), function (s) { s.src = s.getAttribute(portrait ? 'data-src-portrait' : 'data-src'); });
-  film.muted = true;
-  film.load();
-  var p;
-  try { p = film.play(); } catch (e) { p = Promise.reject(e); }
-  Promise.resolve(p).catch(function () { close(true); });
-  film.addEventListener('ended', function () { setTimeout(function () { close(false); }, 1200); });
-  film.addEventListener('error', function () { close(true); });
-  var last = film.querySelector('source:last-of-type');
-  if (last) last.addEventListener('error', function () { close(true); });
-  var watchdog = setInterval(function () {
-    if (done) { clearInterval(watchdog); return; }
-    if (film.currentTime <= lastT + 0.01) { stalls++; } else { stalls = 0; lastT = film.currentTime; }
-    if (stalls >= 8) { clearInterval(watchdog); close(true); }
-  }, 500);
-  setTimeout(function () { close(false); }, 17000);
-  skip.addEventListener('click', function (e) { e.stopPropagation(); close(true); });
-  intro.addEventListener('click', function () { close(true); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(true); });
-  document.addEventListener('visibilitychange', function () { if (document.hidden) close(true); });
-})();
-</script>
 
 <header>
   <div class="container header-inner">

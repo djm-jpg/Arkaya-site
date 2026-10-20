@@ -12,14 +12,14 @@
     "url": "https://arkayarisk.com/",
     "contact": "djm@arkayarisk.com"
   },
-  "issued": "2026-08-25",
+  "issued": "2026-10-20",
   "humanIndex": "https://arkayarisk.com/llms.txt",
   "implementerPack": {
     "name": "Arkaya Layer 1 implementer pack",
     "version": 1,
     "dated": "2026-08-10",
     "status": "Specifications in review, pre-ratification. Vector set and conformance corpus are candidates.",
-    "openMaterial": "No fee, no licence condition, no account, no call to any Arkaya service.",
+    "openMaterial": "No fee, no account and no call to any Arkaya service. Licence terms for the schema, specifications and test vectors are not yet settled. The reference implementation code is under the MIT licence.",
     "landing": "https://arkayarisk.com/get",
     "root": "https://arkayarisk.com/get/v1/",
     "manifest": "https://arkayarisk.com/get/v1/MANIFEST.json",
@@ -110,7 +110,7 @@
       ]
     },
     "registeredAcceptanceTests": {
-      "V-1": "cryptographic correctness across the vector set",
+      "V-1": "cryptographic correctness: an independent checker using stock open-source tooling, and no package published by the custodian, checks one sealed record with the published schema at the pinned version and the signer's public key",
       "V-2": "retrievability of referenced material",
       "V-3": "V-1 run with every Arkaya-operated domain blocked at DNS; the result must be identical"
     },
@@ -136,7 +136,7 @@
     "shortName": "GET",
     "humanReadable": "https://arkayarisk.com/schema",
     "machineReadable": null,
-    "machineReadableNote": "The GET schema JSON (v4, hash-pinned) is body vocabulary a reader interprets, not what an emitter validates to seal. Its publication on this site is a version act on the schema governance track and is pending. The envelope an emitter emits is defined by the Evidence Record Specification, which is also not yet published here.",
+    "machineReadableNote": "The GET schema as JSON. The current candidate is editorial revision v5 (normative version 1.0). It is not approved and is not yet published here; publishing it is a version act on the schema governance track. How the schema's arrays relate to the record body is an open question, listed for version 1.1. A correction, v6, is prepared as a public draft but has not been published. The Evidence Record Specification is also not yet published here.",
     "domains": [
       "People and culture",
       "Strategy and change",
@@ -153,14 +153,16 @@
       "Evidenced",
       "Verifiable"
     ],
-    "schemaGovernance": "Schema decisions run on a governance track separate from commercial decisions. No fee for inclusion, no paid tier of the schema. Schema Independence Charter."
+    "schemaGovernance": "Arkaya stewards the schema during the founding period. Schema decisions run on a governance track separate from commercial decisions. No fee for inclusion, no paid tier of the schema. Independent stewardship is a designed path; it has not happened. Constituting authority and current Charter effectiveness are not settled."
   },
   "whatArkayaDoesNotDo": [
     "produce the record (an engine does, from the signals the organisation's own systems emit; the record is evidence when a counterparty reads it)",
     "sign records (the insured or its engine does; the record states which)",
-    "issue a score, rating or benchmark from the schema",
+    "score, rate, certify, audit or approve organisations",
     "price anything (the carrier, lender or acquirer decides what the record is worth)",
+    "find, arrange, advise on or place insurance, or give audit, legal or investment advice",
     "sit in the path of a proof check"
   ],
-  "invariant": "Source systems emit signals; an engine produces a record against the Governance Evidence Taxonomy; a counterparty reads that record as evidence; Arkaya can be appointed to read records and report what they support for a stated decision; Arkaya produces neither the record nor the price."
+  "invariant": "Source systems emit signals; an engine produces a record against the Governance Evidence Taxonomy; a counterparty reads that record as evidence; Arkaya can be appointed to read records and report what they support for a stated decision; Arkaya produces neither the record nor the price.",
+  "description": "Arkaya connects governance and cybersecurity platforms with the insurers, MGAs and lenders who price and set terms for AI and other governance risks."
 }
