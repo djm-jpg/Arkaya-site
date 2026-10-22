@@ -31,7 +31,7 @@ Arkaya GET is an open schema: a shared structure for records, distinct from Arka
 
 No fee to build against the schema. Licence terms for the schema, specifications and vectors are not yet settled. The reference code is under the MIT licence.
 
-Current GET candidate: editorial revision v5 (normative 1.0). A correction, v6, is prepared as a public draft but has not been published. Nothing is approved.
+Current GET candidate: editorial revision v5 (normative 1.0). A correction, v6, was published on 20 October 2026 as a public draft for comment, for 21 days from publication, at https://record.arkayarisk.com/get/. It is not a candidate. Nothing is approved.
 
 How the schema's arrays relate to the record body is an open question, listed for version 1.1.
 
