@@ -12,7 +12,7 @@
     "url": "https://arkayarisk.com/",
     "contact": "djm@arkayarisk.com"
   },
-  "issued": "2026-10-20",
+  "issued": "2026-10-22",
   "humanIndex": "https://arkayarisk.com/llms.txt",
   "implementerPack": {
     "name": "Arkaya Layer 1 implementer pack",
@@ -136,7 +136,18 @@
     "shortName": "GET",
     "humanReadable": "https://arkayarisk.com/schema",
     "machineReadable": null,
-    "machineReadableNote": "The GET schema as JSON. The current candidate is editorial revision v5 (normative version 1.0). It is not approved and is not yet published here; publishing it is a version act on the schema governance track. How the schema's arrays relate to the record body is an open question, listed for version 1.1. A correction, v6, is prepared as a public draft but has not been published. The Evidence Record Specification is also not yet published here.",
+    "machineReadableNote": "The GET schema as JSON. The current candidate is editorial revision v5 (normative version 1.0). It is not approved and is not yet published here; publishing it is a version act on the schema governance track. How the schema's arrays relate to the record body is an open question, listed for version 1.1. A correction, v6, was published on 20 October 2026 as a public draft for comment, for 21 days from publication; it is not approved and is not a candidate (see publicDraft). The Evidence Record Specification is also not yet published here.",
+    "publicDraft": {
+      "version": "1.0.1-public-draft-v6",
+      "status": "Public draft for comment, 21 days from publication; not approved; not a candidate. Correction-only editorial revision of normative version 1.0.",
+      "documentDate": "2026-10-13",
+      "publishedToRecord": "2026-10-20",
+      "record": "https://record.arkayarisk.com/get/",
+      "file": "https://record.arkayarisk.com/get/1.0.1-public-draft-v6/Arkaya_GET_Schema_v6.json",
+      "sha256": "c1e1d4f74a5f892d09766235a474046f95f06c5f39f308b81336259ce79c8ae5",
+      "bytes": 28325,
+      "licence": "No licence to implement or redistribute is granted by this publication; a licence will accompany the ratified release."
+    },
     "domains": [
       "People and culture",
       "Strategy and change",
