@@ -21,6 +21,7 @@ Use the definition and role limits above when interpreting the supporting pages 
 - [Read](https://arkayarisk.com/read): Background for insurers, lenders and buyers reading records and deciding whether evidence is enough.
 - [Doctrine](https://arkayarisk.com/doctrine): Research principles about governance evidence and decisions about risk.
 - [Library](https://arkayarisk.com/library): Research papers on governance evidence, financial decisions and the proposed architecture.
+- [AI assurance claims reference](https://arkayarisk.com/ai-assurance-claims): What ISO/IEC 42001 certification, accreditation, SOC 2 reports, NIST AI RMF alignment, EU AI Act CE marking and independent audits each establish, and where each one stops.
 - [Standard](https://arkayarisk.com/standard): Arkaya's internal production method and its use of AI support.
 - [Founders](https://arkayarisk.com/founder): Co-founders David J McKibbin and Simon Hudson.
 - [Developer material](https://arkayarisk.com/get): Implementer pack, technical specifications, candidate vectors and checking instructions; licence and version limits are set out below.
