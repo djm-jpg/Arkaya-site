@@ -17,7 +17,7 @@ Use the definition and role limits above when interpreting the supporting pages 
 - [Architecture](https://arkayarisk.com/architecture): Technical background on source signals, records, schema material and decisions by insurers, lenders and buyers.
 - [Schema](https://arkayarisk.com/schema): GET's fields, governance domains, evidence ladder and proposed stewardship arrangements; candidate status and licence limits are set out below.
 - [Evidence](https://arkayarisk.com/evidence): Illustrative record fields, exception states and examples of how an insurer or lender might read them.
-- [Emit](https://arkayarisk.com/emit): Background on how data and signals from platforms and company systems become records, conformance of the software that produces them, and disclosure of prior involvement.
+- [Emit](https://arkayarisk.com/emit): Background on how data and signals from platforms and company systems become records, conformance of the software that produces them, and advice to a company on its own record, which Arkaya does not then read for anyone else.
 - [Read](https://arkayarisk.com/read): Background for insurers, lenders and buyers reading records and deciding whether evidence is enough.
 - [Doctrine](https://arkayarisk.com/doctrine): Research principles about governance evidence and decisions about risk.
 - [Library](https://arkayarisk.com/library): Research papers on governance evidence, financial decisions and the proposed architecture.
