@@ -355,7 +355,7 @@
     <div class="eyebrow">Read</div>
     <h1 class="page-title">Determine what evidence is sufficient for the decision you must take.</h1>
     <p class="route-line">Producing evidence rather than reading it? <a href="/emit">&#8594; EMIT</a></p>
-    <p class="page-subtitle">For the parties that assume or price the risk: insurers, reinsurers, MGAs and coverholders, lenders, acquirers and sponsors, claims and dispute functions, and the boards and aggregators accountable for a delegated portfolio they cannot fully see.</p>
+    <p class="page-subtitle">For the parties that assume or price the risk: insurers, reinsurers, MGAs and coverholders, lenders, acquirers and sponsors, and the boards and aggregators accountable for a delegated portfolio they cannot fully see.</p>
     <p class="open-q">Is that evidence sufficient for the risk I am taking?</p>
   </div>
 </section>
@@ -399,12 +399,12 @@
     <div class="section-num">§ 03 · Why it pays</div>
     <h2>Where evidence could matter, if a reader relies on it.</h2>
     <p>
-      A premium reflects expected loss, uncertainty and the cost of capital held behind the policy. Where a risk cannot be characterised, that uncertainty may affect price, terms or capacity. Better evidence can reduce the information gap; the insurer decides what, if anything, changes in price or terms. At Lloyd's the capital channel flows in full: every syndicate's capital requirement is calculated on an internal model, so evidence that narrows the distribution reaches the capital held, not only the rate.
+      A premium reflects expected loss, uncertainty and the cost of capital held behind the policy. Where a risk cannot be characterised, that uncertainty may affect price, terms or capacity. Better evidence can reduce the information gap; the insurer decides what, if anything, changes in price or terms. At Lloyd's, every syndicate's capital requirement is calculated on an internal model. Our hypothesis: evidence that narrows the distribution could reach the capital held, not only the rate.
     </p>
 
     <div class="moments">
       <div class="moments-row"><div class="moment-name">A basis for the decision</div><div class="moment-desc">Our hypothesis: evidence may help an insurer decide whether, and on what terms, to offer cover.</div></div>
-      <div class="moments-row"><div class="moment-name">An evidenced estate</div><div class="moment-desc">The underwriter prices an <strong>evidenced</strong> estate, not a declared one.</div></div>
+      <div class="moments-row"><div class="moment-name">An evidenced estate</div><div class="moment-desc">The underwriter can read an <strong>evidenced</strong> estate, not only a declared one.</div></div>
       <div class="moments-row"><div class="moment-name">Repeated during the term</div><div class="moment-desc">The reading can be repeated during the term against the same question.</div></div>
       <div class="moments-row"><div class="moment-name">Aggregation visible</div><div class="moment-desc">AI exposure is <strong>aggregated across the book</strong> for exposure management and reinsurance.</div></div>
     </div>
@@ -414,8 +414,8 @@
       <div class="ch">Where it lands</div>
 
       <div class="cl">Insurer</div>
-      <div class="cd">The uncertainty around an uncharacterisable class, the capital held behind the book, and the loss-adjustment and dispute cost at claim.</div>
-      <div class="cd"><strong>Loss ratio, capital efficiency, expense ratio</strong></div>
+      <div class="cd">The uncertainty around an uncharacterisable class and the capital held behind the book.</div>
+      <div class="cd"><strong>Loss ratio, capital efficiency</strong></div>
 
       <div class="cl">Lender</div>
       <div class="cd">The spread priced on incomplete information and the margin of conservatism capitalised against weak data.</div>
@@ -426,7 +426,7 @@
       <div class="cd"><strong>Entry price, retained exposure, IRR</strong></div>
 
       <div class="cl">Corporate (the user)</div>
-      <div class="cd">The premium and terms at renewal, the all-in cost at refinancing, the recovery and dispute surface at claim, and the price of the whole at exit.</div>
+      <div class="cd">Our hypothesis: the premium and terms at renewal, the cost of refinancing and the price at exit.</div>
       <div class="cd"><strong>Cost of risk, cost of capital, enterprise value</strong></div>
 
       <div class="cl">Reinsurer / HoldCo / GP</div>
@@ -442,7 +442,7 @@
     <div class="section-num">§ 04 · How the carrier reads it</div>
     <h2>Calibration, and the evidence ladder.</h2>
     <p>
-      The conformant engine produces the evidence; Arkaya reads the record against the underwriter's question and reports what it supports; the underwriter prices it. The calibration layer states how to read a governance evidence record into rating, retention, limit, recovery, reserving and capital, in direction and mechanism. The thresholds and the rate response are the carrier's. <em>The schema and the conformance test are Arkaya's; the calibration, the position and the rating are not.</em>
+      The conformant engine produces the evidence; Arkaya reads the record against the underwriter's question and reports what it supports; the underwriter prices it. The calibration layer sets out, as hypotheses, where a governance evidence record might bear on rating, retention, limit and capital. The thresholds and the rate response are the carrier's. <em>The schema and the conformance test are Arkaya's; the calibration, the position and the rating are not.</em>
     </p>
     <p>Each answer sits on one of four rungs of the evidence ladder, set by its provenance and not by Arkaya. The rung caps the evidential weight the desk can give it; the desk decides the weight.</p>
 
@@ -482,31 +482,31 @@
 
 
     <h2 style="margin-top: 56px;">What the read looks like at the desk.</h2>
-    <p>Two insureds, same sector, same limit sought. One produces continuous evidence of its AI estate that the underwriter can check independently; the other answers a periodic questionnaire. The underwriter reads the difference and prices it.</p>
+    <p>Two insureds, same sector, same limit sought. One produces continuous evidence of its AI estate that the underwriter can check independently; the other answers a periodic questionnaire. The underwriter sees the difference; what follows is the underwriter's decision.</p>
 
     <div class="worked">
       <div class="worked-col">
         <div class="worked-grade">Insured A &middot; Verifiable</div>
-        <div class="worked-mode">Continuous first-party evidence</div>
+        <div class="worked-mode">First-party records</div>
         <ul class="worked-offer">
-          <li><span class="k">Cover</span><span class="v">Affirmative AI cover offered</span></li>
-          <li><span class="k">Limit</span><span class="v">Full limit available</span></li>
-          <li><span class="k">Retention</span><span class="v">Lower</span></li>
-          <li><span class="k">Terms</span><span class="v">Drift caught and re-rated mid-term</span></li>
+          <li><span class="k">Answers</span><span class="v">Each cited to a record</span></li>
+          <li><span class="k">Gaps</span><span class="v">Listed, with what would settle each</span></li>
+          <li><span class="k">Checkable</span><span class="v">Yes, against the records</span></li>
+          <li><span class="k">Cover, limit, retention, terms</span><span class="v">The carrier's decision</span></li>
         </ul>
       </div>
       <div class="worked-col muted">
         <div class="worked-grade">Insured B &middot; Asserted</div>
         <div class="worked-mode">Periodic questionnaire</div>
         <ul class="worked-offer">
-          <li><span class="k">Cover</span><span class="v">AI exclusion applied</span></li>
-          <li><span class="k">Limit</span><span class="v">Reduced or declined</span></li>
-          <li><span class="k">Retention</span><span class="v">Higher</span></li>
-          <li><span class="k">Terms</span><span class="v">Priced on a declared estate that is not independently checkable</span></li>
+          <li><span class="k">Answers</span><span class="v">As declared</span></li>
+          <li><span class="k">Gaps</span><span class="v">Not visible</span></li>
+          <li><span class="k">Checkable</span><span class="v">No, self-reported</span></li>
+          <li><span class="k">Cover, limit, retention, terms</span><span class="v">The carrier's decision</span></li>
         </ul>
       </div>
     </div>
-    <p class="worked-note">Illustrative, to show the direction of the read. The carrier sets the rating, the limit and the retention against its own book; these are not Arkaya figures, not a quoted outcome, and not a promise of cover. Direction and mechanism only.</p>
+    <p class="worked-note">Illustrative. It shows what each underwriter has to read, not an outcome. The carrier sets cover, limit, retention and terms against its own book; nothing here is a quote or a promise of cover.</p>
     <p style="margin-top:18px;">The read can go either way. Evidence that exposes a weakness may justify tighter terms. The reader's gain is a better-informed decision, not a cheaper one.</p>
   </div>
 </section>
@@ -543,13 +543,13 @@
     <p>Steps one and two, the Protocol and the first record, are the emitter's and sit on the <a href="/emit">EMIT</a> page.</p>
     <div class="steps">
       <div class="step"><div class="step-num">03</div><div class="step-name">First underwriting decision</div><div class="step-body">The carrier reads the record into rating, retention and limit at inception.</div></div>
-      <div class="step"><div class="step-num">04</div><div class="step-name">First commercial value</div><div class="step-body">The renewal re-read shows trajectory, and the terms move with it.</div></div>
+      <div class="step"><div class="step-num">04</div><div class="step-name">First commercial value</div><div class="step-body">The renewal re-read shows trajectory; the carrier decides whether terms move.</div></div>
     </div>
 
     <div class="up-card" style="margin-top:44px;">
       <div class="up-tag">The shape of the engagement</div>
       <div class="up-title">What you get, and what stays yours.</div>
-      <p class="up-body" style="margin-bottom:14px;"><strong>The deliverable</strong> is Arkaya's dated findings report on the insured's records, read against an eligibility floor at inception and, where agreed, re-read monthly across the term. The records stay the insured's.</p>
+      <p class="up-body" style="margin-bottom:14px;"><strong>The deliverable</strong> is Arkaya's dated findings report on the insured's records, read against the underwriter's question at inception and, where agreed, re-read monthly across the term. The records stay the insured's.</p>
       <p class="up-body" style="margin-bottom:14px;"><strong>The record is the insured's.</strong> Portability is a schema property: evidence generated against the schema moves with the insured across engines, insurers and capital events without re-basing. No vendor, and not Arkaya, holds it captive.</p>
       <p class="up-body" style="margin-bottom:14px;"><strong>The pilot</strong> is the §05 experiment run on a live desk: the floor at inception, the term monitored, the terms offered compared against the unevidenced book. If the evidence does not move the terms, the thesis fails on its own stated ground.</p>
       <p class="up-body"><strong>Detailed scope, implementation timelines and pricing</strong> sit in the post-NDA package: working session, sprint map, term sheet.</p>
