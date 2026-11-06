@@ -1,6 +1,6 @@
 # Arkaya Risk
 
-> Appoint Arkaya to read the records against your question. You get a cited account of what they establish, what is missing and what would settle it. You keep the decision. Two pilots start the connection: a platform pilot, which reports what one record type from a governance or cybersecurity platform can and cannot show an insurer; and a reader pilot: You fix the question. We read one export against it and report what is present, missing or not in the export, each line cited. You keep the decision.
+> Governance evidence service, not software: insurers, MGAs and lenders appoint Arkaya to read a company's AI governance records against their own question, so they can price governance risk on evidence rather than exclude it. Arkaya reports what the records support and what is missing; the reader sets the price.
 
 Source systems emit signals; an engine produces a record against the schema; a counterparty reads that record as evidence; Arkaya can be appointed to read records and report what they support for a stated decision; Arkaya produces neither the record nor the price.
 
