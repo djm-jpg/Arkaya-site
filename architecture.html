@@ -31,7 +31,7 @@
   :root {
     --deep-teal: #2A393C;
     --slate-teal: #364748;
-    --bronze: #C89358;
+    --bronze: #8B5A32;
     --bronze-soft: rgba(200, 147, 88, 0.18);
     --bronze-line: rgba(200, 147, 88, 0.45);
     --charcoal: #41413F;
@@ -55,7 +55,7 @@
     overflow-x: hidden;
   }
 
-  ::selection { background: var(--bronze); color: var(--deep-teal); }
+  ::selection { background: #D9AE7C; color: var(--deep-teal); }
 
   .container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 28px; }
 
@@ -293,7 +293,7 @@
   .footer-standard a { color: var(--bronze); text-decoration: none; }
   .footer-legal {
     font-family: 'IBM Plex Sans', sans-serif; font-size: 10px;
-    color: rgba(244, 245, 239, 0.35); letter-spacing: 1.4px; text-transform: uppercase;
+    color: rgba(244, 245, 239, 0.60); letter-spacing: 1.4px; text-transform: uppercase;
   }
 
   .nav-group { display: flex; gap: inherit; align-items: center; }
@@ -316,6 +316,12 @@
 
   .nav-primary a { letter-spacing: 1.6px; font-weight: 600; }
   @media (max-width: 760px) { nav { flex-wrap: wrap; row-gap: 10px; } .nav-group { flex-wrap: wrap; row-gap: 10px; } .nav-group + .nav-group { border-left: none; padding-left: 0; margin-left: 0; } }
+
+  /* Contrast fix, 22 Oct 2026 (APPROVE CONTRAST): darker bronze #8B5A32 on light backgrounds; a lighter bronze on the dark teal areas, where the darker shade would fail. Colour only. */
+  footer, section.closing, .closing, section.dark, .lr, .split-card.licensed, .production-note, section.hero, section.f-hero, section.e-hero, .pillar-go { --bronze: #D9AE7C; }
+  .lr-exc.open, .lr-exc.review, .lr-exc.progress, .lr-ver .tick, .lr-prov .arr, .lr-sig, .lr-verify .tick, .lr-row.reverify .lr-ver { color: var(--bronze); }
+  .pillar-go { color: var(--bronze); }
+  [style*="color:var(--off-white)"], [style*="color: var(--off-white)"] { --bronze: #D9AE7C; }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"The architecture. Four layers, and the one Arkaya builds.","description":"Where Arkaya sits in the chain from source systems to capital: what each layer does, what Arkaya does not do at any of them, and which material is open and which is licensed.","url":"https://arkayarisk.com/architecture","inLanguage":"en-GB","datePublished":"2026-08-26","isAccessibleForFree":true,"author":{"@type":"Organization","name":"Arkaya Risk Limited","url":"https://arkayarisk.com/"},"publisher":{"@type":"Organization","name":"Arkaya Risk Limited","url":"https://arkayarisk.com/"},"about":["Governance Evidence Taxonomy","governance evidence","capital allocation"],"citation":[{"@type":"CreativeWork","name":"Arkaya Layer 1 implementer pack v1","url":"https://arkayarisk.com/get"}]}</script>
 </head>
@@ -467,7 +473,7 @@
               <li>Cryptographic Profile v5: canonicalisation, digest, chaining, seal</li>
               <li>Interface and Conformance Specification v4: what an emitter emits, what a reader consumes</li>
               <li>The candidate vector set, 49 checks</li>
-              <li>An independent checker, and a reading-side conformance corpus</li>
+              <li>A checker script anyone can run, and a reading-side conformance corpus</li>
               <li>A specimen record and the fixture keys to check it with</li>
             </ul>
             <div class="split-foot">No fee, no licence condition, no account, no call to any Arkaya service. At <a href="/get" style="color:var(--deep-teal)">/get</a>.</div>

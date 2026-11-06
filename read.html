@@ -30,7 +30,7 @@
   :root {
     --deep-teal: #2A393C;
     --slate-teal: #364748;
-    --bronze: #C89358;
+    --bronze: #8B5A32;
     --bronze-soft: rgba(200, 147, 88, 0.13);
     --bronze-line: rgba(200, 147, 88, 0.45);
     --charcoal: #41413F;
@@ -52,7 +52,7 @@
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
-  ::selection { background: var(--bronze); color: var(--deep-teal); }
+  ::selection { background: #D9AE7C; color: var(--deep-teal); }
 
   .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 28px; }
   .container-narrow { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 28px; }
@@ -165,7 +165,7 @@
   .footer-meta { font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; color: rgba(244, 245, 239, 0.55); line-height: 1.7; letter-spacing: 0.4px; }
   .footer-meta a { color: var(--bronze); text-decoration: none; }
   .footer-meta a:hover { text-decoration: underline; }
-  .footer-legal { font-family: 'IBM Plex Sans', sans-serif; font-size: 10px; color: rgba(244, 245, 239, 0.35); letter-spacing: 1.4px; text-transform: uppercase; }
+  .footer-legal { font-family: 'IBM Plex Sans', sans-serif; font-size: 10px; color: rgba(244, 245, 239, 0.60); letter-spacing: 1.4px; text-transform: uppercase; }
 
   /* Worked example */
   .worked { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 30px; }
@@ -201,7 +201,7 @@
   }
   .lr-dot {
     width: 8px; height: 8px; border-radius: 50%;
-    background: #C89358; flex: none;
+    background: var(--bronze); flex: none;
   }
   @media (prefers-reduced-motion: no-preference) {
     .lr-dot { animation: lr-pulse 2.4s ease-in-out infinite; }
@@ -247,7 +247,7 @@
     padding: 3px 8px; border-radius: 2px; white-space: nowrap;
   }
   .lr-exc.open, .lr-exc.review, .lr-exc.progress {
-    color: #C89358; border: 1px solid rgba(200, 147, 88, 0.5);
+    color: var(--bronze); border: 1px solid rgba(200, 147, 88, 0.5);
     background: rgba(200, 147, 88, 0.1);
   }
   .lr-exc.clear {
@@ -259,7 +259,7 @@
     font-size: 9.5px; letter-spacing: 0.8px;
     color: rgba(244, 245, 239, 0.7); white-space: nowrap;
   }
-  .lr-ver .tick { color: #C89358; font-weight: 700; }
+  .lr-ver .tick { color: var(--bronze); font-weight: 700; }
   .lr-foot {
     border-top: 1px solid rgba(200, 147, 88, 0.22);
     padding: 12px 18px 14px 18px;
@@ -271,15 +271,15 @@
     color: rgba(244, 245, 239, 0.5);
     margin-bottom: 8px;
   }
-  .lr-prov .arr { color: #C89358; }
+  .lr-prov .arr { color: var(--bronze); }
   .lr-seal {
     display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
     font-family: 'IBM Plex Mono', ui-monospace, monospace;
     font-size: 10.5px; letter-spacing: 0.5px; color: #F4F5EF;
   }
-  .lr-sig { color: #C89358; }
+  .lr-sig { color: var(--bronze); }
   .lr-verify { color: rgba(244, 245, 239, 0.85); }
-  .lr-verify .tick { color: #C89358; font-weight: 700; }
+  .lr-verify .tick { color: var(--bronze); font-weight: 700; }
   .lr-note {
     font-size: 10px; letter-spacing: 0.6px;
     color: rgba(244, 245, 239, 0.38);
@@ -291,7 +291,7 @@
     opacity: 1; transform: translateY(0);
     transition: opacity 420ms ease, transform 420ms ease;
   }
-  .lr-row.reverify .lr-ver { color: #C89358; transition: color 300ms ease; }
+  .lr-row.reverify .lr-ver { color: var(--bronze); transition: color 300ms ease; }
 
 
   .nav-group { display: flex; gap: inherit; align-items: center; }
@@ -326,6 +326,13 @@
 
   .nav-primary a { letter-spacing: 1.6px; font-weight: 600; }
   @media (max-width: 760px) { nav { flex-wrap: wrap; row-gap: 10px; } .nav-group { flex-wrap: wrap; row-gap: 10px; } .nav-group + .nav-group { border-left: none; padding-left: 0; margin-left: 0; } }
+
+  /* Contrast fix, 22 Oct 2026 (APPROVE CONTRAST): darker bronze #8B5A32 on light backgrounds; a lighter bronze on the dark teal areas, where the darker shade would fail. Colour only. */
+  footer, section.closing, .closing, section.dark, .lr, .split-card.licensed, .production-note, section.hero, section.f-hero, section.e-hero, .pillar-go { --bronze: #D9AE7C; }
+  .lr-exc.open, .lr-exc.review, .lr-exc.progress, .lr-ver .tick, .lr-prov .arr, .lr-sig, .lr-verify .tick, .lr-row.reverify .lr-ver { color: var(--bronze); }
+  .pillar-go { color: var(--bronze); }
+  [style*="color:var(--off-white)"], [style*="color: var(--off-white)"] { --bronze: #D9AE7C; }
+@media (max-width:360px){.steps{grid-template-columns:1fr}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Determine what evidence is sufficient for the decision you must take. Arkaya Risk.", "url": "https://arkayarisk.com/read", "description": "For insurers, lenders and acquirers: continuous covenant underwriting, calibration, the evidence ladder and the pilot. The reader decides sufficiency, price and terms; Arkaya does not.", "isPartOf": {"@type": "WebSite", "name": "Arkaya Risk", "url": "https://arkayarisk.com/"}, "publisher": {"@type": "Organization", "name": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}</script>
 </head>
@@ -386,7 +393,7 @@
       Arkaya's hypothesis is that continuous evidence of an insured's AI estate could help insurers assess whether, and on what terms, to offer cover. The underwriting decision remains with the insurer.
     </p>
     <p>
-      A machine-readable schema is only as good as the evidence that feeds it. Evidence produced at human cadence, the periodic questionnaire and the point-in-time attestation, cannot describe an estate that changes between checkpoints. Machine-readable underwriting needs evidence produced at machine cadence: captured continuously, at source, as the estate moves. The decision stays human and is recorded; the observation runs at the speed of the thing observed.
+      A machine-readable schema is only as good as the evidence that feeds it. Evidence produced at human cadence shows the estate at its checkpoints. Machine-readable underwriting also needs evidence produced at machine cadence: captured continuously, at source, as the estate moves. The decision stays human and is recorded; the observation runs at the speed of the thing observed.
     </p>
     <div class="pull">
       <p>Machine-readable underwriting requires machine-cadence evidence. The decision stays human; the observation does not.</p>
@@ -442,7 +449,7 @@
     <div class="section-num">§ 04 · How the carrier reads it</div>
     <h2>Calibration, and the evidence ladder.</h2>
     <p>
-      The conformant engine produces the evidence; Arkaya reads the record against the underwriter's question and reports what it supports; the underwriter prices it. The calibration layer sets out, as hypotheses, where a governance evidence record might bear on rating, retention, limit and capital. The thresholds and the rate response are the carrier's. <em>The schema and the conformance test are Arkaya's; the calibration, the position and the rating are not.</em>
+      Once a conformant engine produces evidence, Arkaya reads the record against the underwriter's question and reports what it supports; the underwriter prices it. The calibration layer sets out, as hypotheses, where a governance evidence record might bear on rating, retention, limit and capital. The thresholds and the rate response are the carrier's. <em>The schema and the conformance test are Arkaya's; the calibration, the position and the rating are not.</em>
     </p>
     <p>Each answer sits on one of four rungs of the evidence ladder, set by its provenance and not by Arkaya. The rung caps the evidential weight the desk can give it; the desk decides the weight.</p>
 
@@ -457,16 +464,16 @@
       <svg viewBox="0 0 1000 320" style="width:100%;height:auto;display:block;" role="img">
         <title>The evidence ladder</title>
         <!-- rising evidential-weight line -->
-        <g stroke="#C89358" stroke-width="2" stroke-dasharray="6,6" fill="none">
+        <g stroke="#8B5A32" stroke-width="2" stroke-dasharray="6,6" fill="none">
           <path d="M 130 218 L 370 178 L 610 138 L 850 98"/>
         </g>
-        <path d="M 850 98 l -14 -3 l 10 11 z" fill="#C89358"/>
-        <text x="470" y="122" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11.5" letter-spacing="1.2" fill="#C89358">EVIDENTIAL WEIGHT AVAILABLE</text>
+        <path d="M 850 98 l -14 -3 l 10 11 z" fill="#8B5A32"/>
+        <text x="470" y="122" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11.5" letter-spacing="1.2" fill="#8B5A32">EVIDENTIAL WEIGHT AVAILABLE</text>
         <!-- steps -->
         <rect x="20"  y="230" width="220" height="60"  fill="none" stroke="#41413F" stroke-width="1.4" stroke-dasharray="4,4"/>
-        <rect x="260" y="200" width="220" height="90"  fill="#364748" opacity="0.55"/>
+        <rect x="260" y="200" width="220" height="90"  fill="#364748" opacity="0.80"/>
         <rect x="500" y="160" width="220" height="130" fill="#2A393C"/>
-        <rect x="740" y="120" width="220" height="170" fill="#C89358"/>
+        <rect x="740" y="120" width="220" height="170" fill="#D9AE7C"/>
         <text x="130" y="262" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="20" font-weight="500" fill="#41413F">Asserted</text>
         <text x="370" y="248" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="20" font-weight="500" fill="#F4F5EF">Attested</text>
         <text x="610" y="228" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="20" font-weight="500" fill="#F4F5EF">Evidenced</text>
@@ -482,7 +489,7 @@
 
 
     <h2 style="margin-top: 56px;">What the read looks like at the desk.</h2>
-    <p>Two insureds, same sector, same limit sought. One produces continuous evidence of its AI estate that the underwriter can check independently; the other answers a periodic questionnaire. The underwriter sees the difference; what follows is the underwriter's decision.</p>
+    <p>Two insureds, same sector, same limit sought. One produces first-party records of its AI estate that the underwriter can check independently; the other answers a periodic questionnaire. The underwriter sees the difference; what follows is the underwriter's decision.</p>
 
     <div class="worked">
       <div class="worked-col">
@@ -542,7 +549,7 @@
     <h2>The reader's steps, each one evidenced.</h2>
     <p>Steps one and two, the Protocol and the first record, are the emitter's and sit on the <a href="/emit">EMIT</a> page.</p>
     <div class="steps">
-      <div class="step"><div class="step-num">03</div><div class="step-name">First underwriting decision</div><div class="step-body">The carrier reads the record into rating, retention and limit at inception.</div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-name">First underwriting decision</div><div class="step-body">The carrier decides how the record bears on rating, retention and limit at inception.</div></div>
       <div class="step"><div class="step-num">04</div><div class="step-name">First commercial value</div><div class="step-body">The renewal re-read shows trajectory; the carrier decides whether terms move.</div></div>
     </div>
 
@@ -551,7 +558,7 @@
       <div class="up-title">What you get, and what stays yours.</div>
       <p class="up-body" style="margin-bottom:14px;"><strong>The deliverable</strong> is Arkaya's dated findings report on the insured's records, read against the underwriter's question at inception and, where agreed, re-read monthly across the term. The records stay the insured's.</p>
       <p class="up-body" style="margin-bottom:14px;"><strong>The record is the insured's.</strong> Portability is a schema property: evidence generated against the schema moves with the insured across engines, insurers and capital events without re-basing. No vendor, and not Arkaya, holds it captive.</p>
-      <p class="up-body" style="margin-bottom:14px;"><strong>The pilot</strong> is the §05 experiment run on a live desk: the floor at inception, the term monitored, the terms offered compared against the unevidenced book. If the evidence does not move the terms, the thesis fails on its own stated ground.</p>
+      <p class="up-body" style="margin-bottom:14px;"><strong>The pilot</strong> is the §05 experiment run on a live desk: the underwriter's question at inception, the term monitored, the terms offered compared against the unevidenced book. If the evidence does not move the terms, the thesis fails on its own stated ground.</p>
       <p class="up-body"><strong>Detailed scope, implementation timelines and pricing</strong> sit in the post-NDA package: working session, sprint map, term sheet.</p>
     </div>
 
@@ -580,7 +587,7 @@
 
       <div class="cl">The underwriting questionnaire</div>
       <div class="cd">The AI estate only through example questions put to the applicant.</div>
-      <div class="cd">An evidenced estate, captured at source and read against obligation.</div>
+      <div class="cd">An evidenced estate, based on first-party records and read against obligation.</div>
 
       <div class="cl">Rating agencies</div>
       <div class="cd">A summary judgement, issued and trusted.</div>
@@ -606,7 +613,7 @@
       <div class="wtin-item"><strong>Not a delegated underwriting authority.</strong> Pricing and the bind decision stay with the underwriter.</div>
       <div class="wtin-item"><strong>Does not replace board accountability.</strong> The board authors the Protocol and owns the decision.</div>
       <div class="wtin-item"><strong>Does not redefine accounting recognition thresholds.</strong> IAS 37 and ASC 450 stand. The schema surfaces the obligation earlier.</div>
-      <div class="wtin-item"><strong>One role per record.</strong> Where Arkaya has designed evidence or advised on it, it does not read that evidence for anyone else. Where Arkaya has only translated a platform's records into the open format, it may later read them for an insurer, after telling the insurer and having the translation checked independently.</div>
+      <div class="wtin-item"><strong>One role per record.</strong> Where Arkaya has designed evidence or advised on it, it does not read that evidence for anyone else. Where Arkaya has only translated a platform's records into the open format, it reads them for an insurer only after telling the insurer before appointment and having the translation checked, before it is relied on, by a competent checker with no involvement in the work and no interest in the finding. No such checker is in place yet, so Arkaya does not currently read records it has translated.</div>
     </div>
   </div>
 </section>
@@ -623,7 +630,7 @@
     </div>
     <p class="roles-note">The Subject sits on the EMIT side, which has its own page; Supervisor and Pricer read.</p>
     <p class="boundary-line" style="margin-top: 34px;">The reader determines sufficiency, price and terms.<br>Arkaya does not.</p>
-    <p style="margin-top:30px;"><a href="/services#start" style="display:inline-block;font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;text-decoration:none;padding:14px 22px;border-radius:3px;background:var(--bronze);color:var(--deep-teal);">Discuss an evidence review&nbsp;&#8594;</a></p>
+    <p style="margin-top:30px;"><a href="/services#start" style="display:inline-block;font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;text-decoration:none;padding:14px 22px;border-radius:3px;background:#D9AE7C;color:var(--deep-teal);">Discuss an evidence review&nbsp;&#8594;</a></p>
     <p style="margin-top:18px;font-size:14px;color:var(--slate-teal);">Or request the Reader Brief by email:</p>
     <form name="reader-brief" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="brief-form">
       <input type="hidden" name="form-name" value="reader-brief">

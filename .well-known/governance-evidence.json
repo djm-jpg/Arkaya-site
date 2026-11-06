@@ -1,7 +1,7 @@
 {
   "$comment": "Machine-readable index of Arkaya's open Layer 1 material. Everything listed is retrievable without an account, a fee or a call to any Arkaya service. Status flags are literal: candidate means not yet adopted; nothing here is described as certified, established or recognised.",
   "documentType": "ArkayaGovernanceEvidenceDiscovery",
-  "documentVersion": 1,
+  "documentVersion": 2,
   "documentSchema": null,
   "documentSchemaNote": "A JSON Schema for this document type is queued; until it exists, documentType and documentVersion are the only contract.",
   "publisher": {
@@ -175,5 +175,166 @@
     "sit in the path of a proof check"
   ],
   "invariant": "Source systems emit signals; an engine produces a record against the Governance Evidence Taxonomy; a counterparty reads that record as evidence; Arkaya can be appointed to read records and report what they support for a stated decision; Arkaya produces neither the record nor the price.",
-  "description": "Arkaya connects governance and cybersecurity platforms with the insurers, MGAs and lenders who price and set terms for AI and other governance risks."
+  "description": "Arkaya connects governance and cybersecurity platforms with the insurers, MGAs and lenders who price and set terms for AI and other governance risks.",
+  "services": [
+    {
+      "name": "Appointed Reading",
+      "description": "You appoint Arkaya and set the question.",
+      "commissionedBy": "Insurers, MGAs and lenders (readers)",
+      "arkayaDoesNot": "Arkaya does not price, accept or decline the risk.",
+      "status": "available",
+      "pricing": "US$5,000 per platform",
+      "route": "https://arkayarisk.com/services#call",
+      "contact": "mailto:djm@arkayarisk.com"
+    },
+    {
+      "name": "Portfolio Reading",
+      "description": "The same reading repeated across an MGA book, a delegated-authority population or an investment portfolio.",
+      "commissionedBy": "Insurers, MGAs and lenders (readers)",
+      "arkayaDoesNot": "Arkaya does not price, accept or decline the risk.",
+      "status": "available",
+      "pricing": "quoted",
+      "route": "https://arkayarisk.com/services#call",
+      "contact": "mailto:djm@arkayarisk.com"
+    },
+    {
+      "name": "Policy wording and covenant mapping to field sets",
+      "description": "Arkaya maps your policy wording and covenants to the evidence fields a submission must carry, so what a company sends can be read against your own terms.",
+      "commissionedBy": "Insurers, MGAs and lenders (readers)",
+      "arkayaDoesNot": "Arkaya does not price, accept or decline the risk.",
+      "status": "available",
+      "pricing": "quoted",
+      "route": "https://arkayarisk.com/services#call",
+      "contact": "mailto:djm@arkayarisk.com"
+    },
+    {
+      "name": "AI Risk Evidence Brief",
+      "description": "A weekly note on what changed, why it matters to your decision and what evidence to ask for.",
+      "commissionedBy": "Insurers, MGAs and lenders (readers)",
+      "arkayaDoesNot": "We do not advise on or place insurance.",
+      "status": "available",
+      "pricing": "US$200 a month per organisation",
+      "route": "https://arkayarisk.com/services#call",
+      "contact": "mailto:djm@arkayarisk.com"
+    },
+    {
+      "name": "Emitter conformance check",
+      "description": "in development: whether a platform's records can carry the fields you require.",
+      "commissionedBy": "Insurers, MGAs and lenders (readers)",
+      "arkayaDoesNot": "Arkaya does not price, accept or decline the risk.",
+      "status": "in-development",
+      "pricing": "quoted",
+      "route": "https://arkayarisk.com/services#call",
+      "contact": "mailto:djm@arkayarisk.com"
+    },
+    {
+      "name": "Build: field sets and record formats for the underwriting guidelines",
+      "description": "Arkaya writes the evidence requirements and record formats that sit behind your underwriting guidelines, so every bind can carry the records your capacity provider will ask to see.",
+      "commissionedBy": "MGAs and delegated authorities",
+      "arkayaDoesNot": "We do not advise on or place insurance.",
+      "status": "available",
+      "pricing": "quoted",
+      "route": "https://arkayarisk.com/services#call",
+      "contact": "mailto:djm@arkayarisk.com"
+    },
+    {
+      "name": "Operate: reading of binds against authority, with reports to the capacity provider",
+      "description": "Not yet offered; subject to a readiness decision.",
+      "commissionedBy": "MGAs and delegated authorities",
+      "arkayaDoesNot": "Where an Arkaya principal has an interest in the MGA, the independent reading comes from a reader the capacity provider appoints; Arkaya gives only a disclosed technical contribution.",
+      "status": "in-development",
+      "pricing": "quoted",
+      "route": "https://arkayarisk.com/services#call",
+      "contact": "mailto:djm@arkayarisk.com"
+    },
+    {
+      "name": "Evidence Pressure Test",
+      "description": "You receive a short findings note.",
+      "commissionedBy": [
+        "Companies",
+        "Private equity sponsors"
+      ],
+      "arkayaDoesNot": "Arkaya does not then read that evidence for an insurer, lender or acquirer.",
+      "status": "available",
+      "pricing": "US$2,500",
+      "route": "https://arkayarisk.com/services#call",
+      "contact": "mailto:djm@arkayarisk.com"
+    },
+    {
+      "name": "Governance Evidence Snapshot",
+      "description": "A full read of one organisation, scoped by the question it needs answered rather than by system count.",
+      "commissionedBy": [
+        "Companies",
+        "Private equity sponsors"
+      ],
+      "arkayaDoesNot": "Arkaya does not then read that evidence for an insurer, lender or acquirer.",
+      "status": "available",
+      "pricing": "quoted",
+      "route": "https://arkayarisk.com/services#call",
+      "contact": "mailto:djm@arkayarisk.com"
+    },
+    {
+      "name": "Defensive Playbook Adviser",
+      "description": "An ongoing relationship for boards and owners.",
+      "commissionedBy": [
+        "Private equity sponsors",
+        "Companies"
+      ],
+      "arkayaDoesNot": "Arkaya does not later read that evidence for anyone else.",
+      "status": "available",
+      "pricing": "quoted",
+      "route": "https://arkayarisk.com/services#call",
+      "contact": "mailto:djm@arkayarisk.com"
+    },
+    {
+      "name": "Evidence Remediation Plan",
+      "description": "For each gap, what to record as the control operates from now on, and how, so an outside reader can check it.",
+      "commissionedBy": "Companies",
+      "arkayaDoesNot": "Arkaya does not later read that evidence for anyone else.",
+      "status": "available",
+      "pricing": "quoted",
+      "route": "https://arkayarisk.com/services#call",
+      "contact": "mailto:djm@arkayarisk.com"
+    },
+    {
+      "name": "Monthly Evidence Review",
+      "description": "Each month ends in a dated findings report.",
+      "commissionedBy": "Companies",
+      "arkayaDoesNot": "Arkaya does not later read that evidence for anyone else.",
+      "status": "available",
+      "pricing": "quoted",
+      "route": "https://arkayarisk.com/services#call",
+      "contact": "mailto:djm@arkayarisk.com"
+    },
+    {
+      "name": "Defensive Playbook",
+      "description": "The Defensive Playbook does the other half: it is built to show which of a company's risks its records can evidence, and where they cannot.",
+      "commissionedBy": "Companies",
+      "arkayaDoesNot": "We do not advise on or place insurance.",
+      "status": "available",
+      "pricing": "quoted",
+      "route": "https://arkayarisk.com/services#call",
+      "contact": "mailto:djm@arkayarisk.com"
+    },
+    {
+      "name": "Partner work",
+      "description": "Platforms can ask Arkaya to translate their record format into the open schema, for a fixed fee.",
+      "commissionedBy": "Platforms",
+      "arkayaDoesNot": "Arkaya does not currently read records it has translated.",
+      "status": "available",
+      "pricing": "US$1,000 per platform",
+      "route": "https://arkayarisk.com/services#call",
+      "contact": "mailto:djm@arkayarisk.com"
+    },
+    {
+      "name": "GET self-check",
+      "description": "GET self-check is in development.",
+      "commissionedBy": "Platforms",
+      "arkayaDoesNot": "Arkaya does not certify organisations.",
+      "status": "in-development",
+      "pricing": "free",
+      "route": "https://arkayarisk.com/services#call",
+      "contact": "mailto:djm@arkayarisk.com"
+    }
+  ]
 }

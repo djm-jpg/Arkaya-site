@@ -30,7 +30,7 @@
   :root {
     --deep-teal: #2A393C;
     --slate-teal: #364748;
-    --bronze: #C89358;
+    --bronze: #8B5A32;
     --bronze-soft: rgba(200, 147, 88, 0.13);
     --bronze-line: rgba(200, 147, 88, 0.45);
     --charcoal: #41413F;
@@ -52,7 +52,7 @@
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
-  ::selection { background: var(--bronze); color: var(--deep-teal); }
+  ::selection { background: #D9AE7C; color: var(--deep-teal); }
 
   .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 28px; }
   .container-narrow { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 28px; }
@@ -165,7 +165,7 @@
   .footer-meta { font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; color: rgba(244, 245, 239, 0.55); line-height: 1.7; letter-spacing: 0.4px; }
   .footer-meta a { color: var(--bronze); text-decoration: none; }
   .footer-meta a:hover { text-decoration: underline; }
-  .footer-legal { font-family: 'IBM Plex Sans', sans-serif; font-size: 10px; color: rgba(244, 245, 239, 0.35); letter-spacing: 1.4px; text-transform: uppercase; }
+  .footer-legal { font-family: 'IBM Plex Sans', sans-serif; font-size: 10px; color: rgba(244, 245, 239, 0.60); letter-spacing: 1.4px; text-transform: uppercase; }
 
   /* Worked example */
   .worked { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 30px; }
@@ -201,7 +201,7 @@
   }
   .lr-dot {
     width: 8px; height: 8px; border-radius: 50%;
-    background: #C89358; flex: none;
+    background: var(--bronze); flex: none;
   }
   @media (prefers-reduced-motion: no-preference) {
     .lr-dot { animation: lr-pulse 2.4s ease-in-out infinite; }
@@ -247,7 +247,7 @@
     padding: 3px 8px; border-radius: 2px; white-space: nowrap;
   }
   .lr-exc.open, .lr-exc.review, .lr-exc.progress {
-    color: #C89358; border: 1px solid rgba(200, 147, 88, 0.5);
+    color: var(--bronze); border: 1px solid rgba(200, 147, 88, 0.5);
     background: rgba(200, 147, 88, 0.1);
   }
   .lr-exc.clear {
@@ -259,7 +259,7 @@
     font-size: 9.5px; letter-spacing: 0.8px;
     color: rgba(244, 245, 239, 0.7); white-space: nowrap;
   }
-  .lr-ver .tick { color: #C89358; font-weight: 700; }
+  .lr-ver .tick { color: var(--bronze); font-weight: 700; }
   .lr-foot {
     border-top: 1px solid rgba(200, 147, 88, 0.22);
     padding: 12px 18px 14px 18px;
@@ -271,15 +271,15 @@
     color: rgba(244, 245, 239, 0.5);
     margin-bottom: 8px;
   }
-  .lr-prov .arr { color: #C89358; }
+  .lr-prov .arr { color: var(--bronze); }
   .lr-seal {
     display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
     font-family: 'IBM Plex Mono', ui-monospace, monospace;
     font-size: 10.5px; letter-spacing: 0.5px; color: #F4F5EF;
   }
-  .lr-sig { color: #C89358; }
+  .lr-sig { color: var(--bronze); }
   .lr-verify { color: rgba(244, 245, 239, 0.85); }
-  .lr-verify .tick { color: #C89358; font-weight: 700; }
+  .lr-verify .tick { color: var(--bronze); font-weight: 700; }
   .lr-note {
     font-size: 10px; letter-spacing: 0.6px;
     color: rgba(244, 245, 239, 0.38);
@@ -291,7 +291,7 @@
     opacity: 1; transform: translateY(0);
     transition: opacity 420ms ease, transform 420ms ease;
   }
-  .lr-row.reverify .lr-ver { color: #C89358; transition: color 300ms ease; }
+  .lr-row.reverify .lr-ver { color: var(--bronze); transition: color 300ms ease; }
 
 
   .nav-group { display: flex; gap: inherit; align-items: center; }
@@ -326,6 +326,13 @@
 
   .nav-primary a { letter-spacing: 1.6px; font-weight: 600; }
   @media (max-width: 760px) { nav { flex-wrap: wrap; row-gap: 10px; } .nav-group { flex-wrap: wrap; row-gap: 10px; } .nav-group + .nav-group { border-left: none; padding-left: 0; margin-left: 0; } }
+
+  /* Contrast fix, 22 Oct 2026 (APPROVE CONTRAST): darker bronze #8B5A32 on light backgrounds; a lighter bronze on the dark teal areas, where the darker shade would fail. Colour only. */
+  footer, section.closing, .closing, section.dark, .lr, .split-card.licensed, .production-note, section.hero, section.f-hero, section.e-hero, .pillar-go { --bronze: #D9AE7C; }
+  .lr-exc.open, .lr-exc.review, .lr-exc.progress, .lr-ver .tick, .lr-prov .arr, .lr-sig, .lr-verify .tick, .lr-row.reverify .lr-ver { color: var(--bronze); }
+  .pillar-go { color: var(--bronze); }
+  [style*="color:var(--off-white)"], [style*="color: var(--off-white)"] { --bronze: #D9AE7C; }
+  .ph{background:#F3E3C3;color:#5a3a12;padding:0 4px;border-radius:3px;font-style:normal}
 </style>
 <style>
   .svc { border-left: 2px solid var(--bronze); padding: 4px 0 4px 18px; margin: 0 0 26px 0; max-width: 760px; }
@@ -343,7 +350,13 @@
   .svc-form button { justify-self: start; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 600; color: var(--bronze); background: none; border: none; border-bottom: 1px solid var(--bronze-line); padding: 8px 0; cursor: pointer; }
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": "Governance evidence for business decisions. Arkaya Risk.", "url": "https://arkayarisk.com/services", "description": "Arkaya reads your AI governance records, shows what they support and finds the gaps that matter to a decision. Pressure tests, snapshots, monthly reviews, the Defensive Playbook adviser, and readings for insurers, lenders and investors.", "isPartOf": {"@type": "WebSite", "name": "Arkaya Risk", "url": "https://arkayarisk.com/"}, "publisher": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "Evidence Pressure Test", "description": "One question you choose, read against your own records in about a week; a short findings note.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "Governance Evidence Snapshot", "description": "A full read of one organisation, scoped by the question it needs answered; a dated findings report and an evidence map.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "Evidence Remediation Plan", "description": "For each gap, what to record as the control operates from now on, and how, so an outside reader can check it. Arkaya does not later read that evidence for anyone else.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "Monthly Evidence Review", "description": "The read repeated monthly against the same scope, ending in a dated findings report.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "Defensive Playbook Adviser", "description": "An ongoing relationship for boards and owners covering the monthly review, quarterly board sessions and playbook updates; governance evidence only, never insurance cover.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "Appointed Reading", "description": "A reader appoints Arkaya and sets the question; Arkaya reports what the evidence does and does not support for that decision.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "Portfolio Reading", "description": "Appointed Reading repeated across an MGA book, a delegated-authority population or an investment portfolio; no aggregate score is issued.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "AI Risk Evidence Brief", "description": "A weekly note on what changed, why it matters to your decision and what evidence to ask for.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "Partner work", "description": "Record mapping for platforms that ask for it; the schema stays free.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": "Governance evidence for business decisions. Arkaya Risk.", "url": "https://arkayarisk.com/services", "description": "Arkaya reads your AI governance records, shows what they support and finds the gaps that matter to a decision. Pressure tests, snapshots, monthly reviews, the Defensive Playbook adviser, and readings for insurers, lenders and investors.", "isPartOf": {"@type": "WebSite", "name": "Arkaya Risk", "url": "https://arkayarisk.com/"}, "publisher": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "Evidence Pressure Test", "description": "One question you choose, read against your own records in about a week; a short findings note. Arkaya does not then read that evidence for an insurer, lender or acquirer.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "Governance Evidence Snapshot", "description": "A full read of one organisation, scoped by the question it needs answered; a dated findings report and an evidence map. Arkaya does not then read that evidence for an insurer, lender or acquirer.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "Evidence Remediation Plan", "description": "For each gap, what to record as the control operates from now on, and how, so an outside reader can check it. Arkaya does not later read that evidence for anyone else.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "Monthly Evidence Review", "description": "The read repeated monthly against the same scope, ending in a dated findings report.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "Defensive Playbook Adviser", "description": "An ongoing relationship for boards and owners covering the monthly review, quarterly board sessions and playbook updates; governance evidence only, never insurance cover.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "Appointed Reading", "description": "A reader appoints Arkaya and sets the question; Arkaya reports what the evidence does and does not support for that decision.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "Portfolio Reading", "description": "Appointed Reading repeated across an MGA book, a delegated-authority population or an investment portfolio; no aggregate score is issued.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "AI Risk Evidence Brief", "description": "A weekly note on what changed, why it matters to your decision and what evidence to ask for.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}, {"@type": "Service", "name": "Partner work", "description": "Record mapping for platforms that ask for it; the schema stays free.", "provider": {"@type": "Organization", "name": "Arkaya Risk Limited", "legalName": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}]}</script>
+<style>
+.call-request summary { cursor: pointer; }
+.call-request a { color: var(--bronze); }
+#call-success { display: none; }
+#call-success:target { display: block; }
+</style>
 </head>
 <body>
 
@@ -372,125 +385,99 @@
     <h1 class="page-title">Governance evidence for business decisions.</h1>
     <p class="page-subtitle">Arkaya reads your AI governance records, shows what they support and identifies the gaps that matter to your decision.<br>
 Start with one question, commission a full read, or keep the evidence under review.</p>
-    <a href="#start" class="cta-link">Discuss an evidence review &#8594;</a>
+    <a href="#call" class="cta-link">Ask for a 15-minute call</a>
     <p class="role-line">The organisation supplies its records.<br>Arkaya reads them and reports what they support.<br>The decision-maker decides whether the evidence is enough.</p>
     <p class="routes"><a href="#companies">For boards and companies</a> &#183; <a href="#readers">For insurers, lenders and investors</a> &#183; <a href="#partners">For platforms and partners</a></p>
   </div>
 </section>
 
-<section>
-  <div class="container-narrow">
-    <div class="section-num">&#167; 01 &#183; The Defensive Playbook</div>
-    <h2>A Defensive Playbook for enterprise value.</h2>
+<section id="call"><div class="container-narrow">
+  <span id="start"></span>
+  <p>Not sure which door? Ask for a 15-minute call and say what you are trying to decide.</p>
+<details class="call-request" id="call-unsure">
+  <summary class="cta-link">Ask for a 15-minute call</summary>
+  <form name="call-request" method="POST" action="/services#call-success" data-netlify="true" netlify-honeypot="bot-field" class="svc-form">
+    <input type="hidden" name="form-name" value="call-request">
+    <input type="hidden" name="door" value="Not sure">
+    <p style="display:none;"><label>Leave blank: <input name="bot-field"></label></p>
+    <label for="unsure-name">Name</label><input id="unsure-name" type="text" name="name" autocomplete="name" required>
+    <label for="unsure-email">Work email</label><input id="unsure-email" type="email" name="email" autocomplete="email" required>
+    <label for="unsure-org">Organisation</label><input id="unsure-org" type="text" name="organisation" autocomplete="organization" required>
+    <label for="unsure-question">what you want to ask (optional)</label><input id="unsure-question" type="text" name="question">
+    <button type="submit">Request a call</button>
+  </form>
+  <p><a href="mailto:djm@arkayarisk.com?subject=15-minute%20call">djm@arkayarisk.com</a></p>
+</details>
+</div></section>
+<section id="readers"><div class="container-narrow"><div class="section-num">Door 1</div><h2>Insurers, MGAs and lenders (readers)</h2><p>You set the question. Arkaya reads the records against it and reports what they support, what is missing and what would settle it. You keep the decision and the price.</p><div class="svc" id="appointed-reading"><h3>Appointed Reading</h3><p class="service-label"><strong>Standard</strong> · fixed scope and price · US$5,000 per platform</p><p>You appoint Arkaya and set the question. The company being read supplies the evidence. Arkaya reports to you what that evidence does and does not support for your decision. Your thresholds stay yours and are never disclosed to the company being read.</p></div><div class="svc" id="portfolio-reading"><h3>Portfolio Reading</h3><p class="service-label"><strong>Bespoke</strong> · scoped and quoted after a call</p><p>The same reading repeated across an MGA book, a delegated-authority population or an investment portfolio. Each record is read on its own terms; no aggregate score is issued for the portfolio.</p></div><div class="svc" id="field-set-mapping"><h3>Policy wording and covenant mapping to field sets</h3><p class="service-label"><strong>Bespoke</strong> · scoped and quoted after a call · insurer-paid; field sets stay yours</p><p>Arkaya maps your policy wording and covenants to the evidence fields a submission must carry, so what a company sends can be read against your own terms. The field sets stay yours and are not shared with companies or platforms.</p></div><div class="svc" id="ai-risk-evidence-brief"><h3>AI Risk Evidence Brief</h3><p class="service-label"><strong>Standard</strong> · fixed scope and price · US$200 a month per organisation</p><p>A weekly note on what changed, why it matters to your decision and what evidence to ask for. Every item is checked at source before it is printed. Register your interest.</p></div><div class="svc" id="emitter-conformance"><h3>Emitter conformance check</h3><p class="service-label"><strong>Bespoke</strong> · scoped and quoted after a call</p><p>in development: whether a platform's records can carry the fields you require.</p></div><p>Arkaya does not price, accept or decline the risk.</p><details class="call-request" id="call-readers">
+  <summary class="cta-link">Ask for a 15-minute call</summary>
+  <form name="call-request" method="POST" action="/services#call-success" data-netlify="true" netlify-honeypot="bot-field" class="svc-form">
+    <input type="hidden" name="form-name" value="call-request">
+    <input type="hidden" name="door" value="Insurers, MGAs and lenders (readers)">
+    <p style="display:none;"><label>Leave blank: <input name="bot-field"></label></p>
+    <label for="readers-name">Name</label><input id="readers-name" type="text" name="name" autocomplete="name" required>
+    <label for="readers-email">Work email</label><input id="readers-email" type="email" name="email" autocomplete="email" required>
+    <label for="readers-org">Organisation</label><input id="readers-org" type="text" name="organisation" autocomplete="organization" required>
+    <label for="readers-question">what you want to ask (optional)</label><input id="readers-question" type="text" name="question">
+    <button type="submit">Request a call</button>
+  </form>
+  <p><a href="mailto:djm@arkayarisk.com?subject=15-minute%20call">djm@arkayarisk.com</a></p>
+</details></div></section>
+<section id="mga" style="background: var(--off-white-deep);"><div class="container-narrow"><div class="section-num">Door 2</div><h2>MGAs and delegated authorities</h2><p>For an MGA that writes on a capacity provider's authority, Arkaya builds the evidence requirements and record formats so each bind can be shown against the authority granted.</p><div class="svc" id="mga-build"><h3>Build: field sets and record formats for the underwriting guidelines</h3><p class="service-label"><strong>Bespoke</strong> · scoped and quoted after a call · available now</p><p>Arkaya writes the evidence requirements and record formats that sit behind your underwriting guidelines, so every bind can carry the records your capacity provider will ask to see.</p></div><div class="svc" id="mga-operate"><h3>Operate: reading of binds against authority, with reports to the capacity provider</h3><p class="service-label"><strong>Bespoke</strong> · scoped and quoted after a call · not yet offered; subject to a readiness decision</p><p>Not yet offered. When a readiness decision is recorded, Arkaya would read bound risks against the authority granted and report to the capacity provider what each record supports.</p></div><p>Where an Arkaya principal has an interest in the MGA, the independent reading comes from a reader the capacity provider appoints; Arkaya gives only a disclosed technical contribution.</p><details class="call-request" id="call-mga">
+  <summary class="cta-link">Ask for a 15-minute call</summary>
+  <form name="call-request" method="POST" action="/services#call-success" data-netlify="true" netlify-honeypot="bot-field" class="svc-form">
+    <input type="hidden" name="form-name" value="call-request">
+    <input type="hidden" name="door" value="MGAs and delegated authorities">
+    <p style="display:none;"><label>Leave blank: <input name="bot-field"></label></p>
+    <label for="mga-name">Name</label><input id="mga-name" type="text" name="name" autocomplete="name" required>
+    <label for="mga-email">Work email</label><input id="mga-email" type="email" name="email" autocomplete="email" required>
+    <label for="mga-org">Organisation</label><input id="mga-org" type="text" name="organisation" autocomplete="organization" required>
+    <label for="mga-question">what you want to ask (optional)</label><input id="mga-question" type="text" name="question">
+    <button type="submit">Request a call</button>
+  </form>
+  <p><a href="mailto:djm@arkayarisk.com?subject=15-minute%20call">djm@arkayarisk.com</a></p>
+</details></div></section>
+<section id="sponsors"><div class="container-narrow"><div class="section-num">Door 3</div><h2>Private equity sponsors</h2><p>Before an insurer, lender or buyer prices a portfolio company, see what its records can show and what they cannot.</p><div class="svc service-reference"><p><a href="#evidence-pressure-test">Evidence Pressure Test</a>: one question, read against the company's own records in about a week. US$2,500.</p><p class="service-label"><strong>Standard</strong> · fixed scope and price</p></div><div class="svc service-reference"><p><a href="#governance-evidence-snapshot">Governance Evidence Snapshot</a>: a full read of one portfolio company, scoped by the question it must answer. Quoted.</p><p class="service-label"><strong>Bespoke</strong> · scoped and quoted after a call</p></div><div class="svc" id="defensive-playbook-adviser"><h3>Defensive Playbook Adviser</h3><p class="service-label"><strong>Bespoke</strong> · scoped and quoted after a call</p><p>An ongoing relationship for boards and owners. It covers the monthly review, quarterly board sessions, playbook updates, alignment with the plans you already run for growth, and priorities for action. It usually follows a first engagement, but a board with an urgent problem can start here. The advice covers governance evidence only, never insurance cover. You or your chosen partner make the fixes. Arkaya does not later read that evidence for anyone else.</p></div><p>One role per record: where Arkaya has read a company's records for a sponsor, it does not later read them for that company's insurer, lender or buyer.</p><details class="call-request" id="call-sponsors">
+  <summary class="cta-link">Ask for a 15-minute call</summary>
+  <form name="call-request" method="POST" action="/services#call-success" data-netlify="true" netlify-honeypot="bot-field" class="svc-form">
+    <input type="hidden" name="form-name" value="call-request">
+    <input type="hidden" name="door" value="Private equity sponsors">
+    <p style="display:none;"><label>Leave blank: <input name="bot-field"></label></p>
+    <label for="sponsors-name">Name</label><input id="sponsors-name" type="text" name="name" autocomplete="name" required>
+    <label for="sponsors-email">Work email</label><input id="sponsors-email" type="email" name="email" autocomplete="email" required>
+    <label for="sponsors-org">Organisation</label><input id="sponsors-org" type="text" name="organisation" autocomplete="organization" required>
+    <label for="sponsors-question">what you want to ask (optional)</label><input id="sponsors-question" type="text" name="question">
+    <button type="submit">Request a call</button>
+  </form>
+  <p><a href="mailto:djm@arkayarisk.com?subject=15-minute%20call">djm@arkayarisk.com</a></p>
+</details></div></section>
+<section id="companies" style="background: var(--off-white-deep);"><div class="container-narrow"><div class="section-num">Door 4</div><h2>Companies</h2><p>For your own use: what your records support today, and what to record so a control becomes checkable.</p><div class="svc" id="evidence-pressure-test"><h3>Evidence Pressure Test</h3><p class="service-label"><strong>Standard</strong> · fixed scope and price · US$2,500</p><p>About a week. One question you choose, such as how vendor models are overseen or how a deployed model is monitored, is read against your own records. You receive a short findings note. Arkaya does not then read that evidence for an insurer, lender or acquirer.</p></div><div class="svc" id="governance-evidence-snapshot"><h3>Governance Evidence Snapshot</h3><p class="service-label"><strong>Bespoke</strong> · scoped and quoted after a call</p><p>Two to three weeks. A full read of one organisation, scoped by the question it needs answered rather than by system count. You receive a dated findings report and an evidence map you can show to an examiner, reinsurer, board or buyer. For US insurers and MGAs, an edition is built around the programme elements of the NAIC model bulletin. Arkaya does not then read that evidence for an insurer, lender or acquirer.</p></div><div class="svc" id="evidence-remediation-plan"><h3>Evidence Remediation Plan</h3><p class="service-label"><strong>Bespoke</strong> · scoped and quoted after a call</p><p>After a Pressure Test or Snapshot. For each gap, what to record as the control operates from now on, and how, so an outside reader can check it. Arkaya does not later read that evidence for anyone else. A checkable record shows a control can be tested, not that it worked. We do not backdate records or present later reconstructions as evidence recorded at the time.</p></div><div class="svc" id="monthly-evidence-review"><h3>Monthly Evidence Review</h3><p class="service-label"><strong>Bespoke</strong> · scoped and quoted after a call</p><p>After a Snapshot. The read is repeated monthly against the same scope and shows what moved: controls newly evidenced, controls whose operation is no longer evidenced, AI systems added. Each month ends in a dated findings report. Today our analysts, supported by AI agents, do the reading. Automated collection of the records is in development. Any change to the review service is agreed with the client; no date is promised.</p></div><div class="svc service-reference"><p><a href="#defensive-playbook-adviser">Defensive Playbook Adviser</a> · <strong>Bespoke</strong> · scoped and quoted after a call</p></div><div class="svc" id="defensive-playbook"><h3>Defensive Playbook</h3><p class="service-label"><strong>Bespoke</strong> · scoped and quoted after a call</p><h2>A Defensive Playbook for enterprise value.</h2>
     <p>Growth plans explain how AI creates value. The Defensive Playbook does the other half: it is built to show which of a company's risks its records can evidence, and where they cannot. Insurers, lenders and buyers decide what, if anything, follows. It keeps four questions in view: what your AI systems are authorised to do; what the records show about whether the controls ran; where the evidence is weak or missing; and what an insurer, lender or buyer could use today.</p>
-    <p style="margin-top:14px;">The services below are its working parts.</p>
-  </div>
-</section>
-
-<section id="companies" style="background: var(--off-white-deep);">
-  <div class="container-narrow">
-    <div class="section-num">&#167; 02 &#183; For boards and companies</div>
-    <div class="svc">
-      <h3>Evidence Pressure Test</h3>
-      <p>About a week. One question you choose, such as how vendor models are overseen or how a deployed model is monitored, is read against your own records. You receive a short findings note.</p>
-    </div>
-    <div class="svc">
-      <h3>Governance Evidence Snapshot</h3>
-      <p>Two to three weeks. A full read of one organisation, scoped by the question it needs answered rather than by system count. You receive a dated findings report and an evidence map you can show to an examiner, reinsurer, board or buyer. For US insurers and MGAs, an edition is built around the programme elements of the NAIC model bulletin.</p>
-    </div>
-    <div class="svc">
-      <h3>Evidence Remediation Plan</h3>
-      <p>After a Pressure Test or Snapshot. For each gap, what to record as the control operates from now on, and how, so an outside reader can check it. Arkaya does not later read that evidence for anyone else. A checkable record shows a control can be tested, not that it worked. We do not backdate records or present later reconstructions as evidence recorded at the time.</p>
-    </div>
-    <div class="svc">
-      <h3>Monthly Evidence Review</h3>
-      <p>After a Snapshot. The read is repeated monthly against the same scope and shows what moved: controls newly evidenced, controls whose operation is no longer evidenced, AI systems added. Each month ends in a dated findings report. Today our analysts, supported by AI agents, do the reading. Automated collection of the records is in development. Any change to the review service is agreed with the client; no date is promised.</p>
-    </div>
-    <div class="svc">
-      <h3>Defensive Playbook Adviser</h3>
-      <p>An ongoing relationship for boards and owners. It covers the monthly review, quarterly board sessions, playbook updates, alignment with the plans you already run for growth, and priorities for action. It usually follows a first engagement, but a board with an urgent problem can start here. The advice covers governance evidence only, never insurance cover. You or your chosen partner make the fixes. Arkaya does not later read that evidence for anyone else.</p>
-    </div>
-  </div>
-</section>
-
-<section id="readers">
-  <div class="container-narrow">
-    <div class="section-num">&#167; 03 &#183; For insurers, lenders and investors</div>
-    <div class="svc">
-      <h3>Appointed Reading</h3>
-      <p>You appoint Arkaya and set the question. The company being read supplies the evidence. Arkaya reports to you what that evidence does and does not support for your decision. Your thresholds stay yours and are never disclosed to the company being read.</p>
-    </div>
-    <div class="svc">
-      <h3>Portfolio Reading</h3>
-      <p>The same reading repeated across an MGA book, a delegated-authority population or an investment portfolio. Each record is read on its own terms; no aggregate score is issued for the portfolio.</p>
-    </div>
-    <div class="svc">
-      <h3>AI Risk Evidence Brief</h3>
-      <p>A weekly note on what changed, why it matters to your decision and what evidence to ask for. Every item is checked at source before it is printed. Register your interest; billing starts only when the first edition is delivered.</p>
-    </div>
-    <p style="margin-top:6px;">Arkaya does not price, accept or decline the risk. No fee depends on a policy or a loan.</p>
-  </div>
-</section>
-
+    <p style="margin-top:14px;">The company-facing services below are its working parts; reader services are under Insurers, MGAs and lenders (readers).</p></div><details class="call-request" id="call-companies">
+  <summary class="cta-link">Ask for a 15-minute call</summary>
+  <form name="call-request" method="POST" action="/services#call-success" data-netlify="true" netlify-honeypot="bot-field" class="svc-form">
+    <input type="hidden" name="form-name" value="call-request">
+    <input type="hidden" name="door" value="Companies">
+    <p style="display:none;"><label>Leave blank: <input name="bot-field"></label></p>
+    <label for="companies-name">Name</label><input id="companies-name" type="text" name="name" autocomplete="name" required>
+    <label for="companies-email">Work email</label><input id="companies-email" type="email" name="email" autocomplete="email" required>
+    <label for="companies-org">Organisation</label><input id="companies-org" type="text" name="organisation" autocomplete="organization" required>
+    <label for="companies-question">what you want to ask (optional)</label><input id="companies-question" type="text" name="question">
+    <button type="submit">Request a call</button>
+  </form>
+  <p><a href="mailto:djm@arkayarisk.com?subject=15-minute%20call">djm@arkayarisk.com</a></p>
+</details></div></section>
 <section id="partners" style="background: var(--off-white-deep);">
   <div class="container-narrow">
     <div class="section-num">&#167; 04 &#183; For platforms, consultancies and data firms</div>
     <div class="svc">
-      <h3>Partner work</h3>
+      <h3>Partner work</h3><p class="service-label"><strong>Standard</strong> · fixed scope and price · US$1,000 per platform · producer record mapping</p>
       <p>The evidence schema and implementer pack are free: anyone can build to them, without charge and without asking. Platforms can ask Arkaya to translate their record format into the open schema, for a fixed fee. The <a href="/schema" style="color:var(--bronze)">Schema</a> page sets out why inclusion in the schema is never sold.</p>
+      <p>GET self-check: free, in development.</p>
     </div>
   </div>
 </section>
-
-<section id="start">
-  <div class="container-narrow">
-    <div class="section-num">&#167; 05 &#183; How it starts</div>
-    <h2>Start with one question.</h2>
-    <p>Tell us the decision or the problem in front of you. We will say whether a Pressure Test, a Snapshot or a reading fits, and which records it would need.</p>
-    <form name="evidence-review" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="svc-form">
-      <input type="hidden" name="form-name" value="evidence-review">
-      <p style="display:none;"><label>Leave blank: <input name="bot-field"></label></p>
-      <label for="er-name">Name</label>
-      <input id="er-name" type="text" name="name" required>
-      <label for="er-org">Organisation</label>
-      <input id="er-org" type="text" name="organisation">
-      <label for="er-email">Work email</label>
-      <input id="er-email" type="email" name="email" required>
-      <label for="er-problem">The decision or problem</label>
-      <textarea id="er-problem" name="decision" required></textarea>
-      <p style="font-size:13.5px;color:var(--slate-teal);margin:6px 0 0;">Describe the decision briefly. Do not include policyholder details, confidential client records or passwords.</p>
-      <label for="er-role">Which describes you?</label>
-      <select id="er-role" name="role" required>
-        <option value="" disabled selected>Choose one</option>
-        <option value="company">Company or board</option>
-        <option value="reader">Insurer, lender or investor</option>
-        <option value="partner">Platform, broker or consultancy</option>
-        <option value="unsure">Not sure</option>
-      </select>
-      <fieldset class="regions" style="border:0;padding:0;margin:0;display:grid;gap:8px;min-width:0;">
-        <legend style="padding:0;margin-bottom:4px;font-size:13px;color:var(--slate-teal);">Which countries or regions does this review concern?</legend>
-        <label class="check"><input type="checkbox" name="regions" value="United Kingdom"> United Kingdom</label>
-        <label class="check"><input type="checkbox" name="regions" value="United States"> United States</label>
-        <label class="check"><input type="checkbox" name="regions" value="European Union or EEA"> European Union or EEA</label>
-        <label class="check"><input type="checkbox" name="regions" value="Elsewhere"> Elsewhere</label>
-        <label class="check"><input type="checkbox" name="regions" value="Not sure"> Not sure</label>
-      </fieldset>
-      <script>
-        (function () {
-          var boxes = document.querySelectorAll('input[name="regions"]');
-          function check() {
-            var any = Array.prototype.some.call(boxes, function (b) { return b.checked; });
-            boxes[0].setCustomValidity(any ? '' : 'Tick at least one, or Not sure.');
-          }
-          Array.prototype.forEach.call(boxes, function (b) { b.addEventListener('change', check); });
-          check();
-        })();
-      </script>
-      <label class="check"><input type="checkbox" name="brief-interest" value="yes"> Register interest in the AI Risk Evidence Brief</label>
-      <button type="submit">Discuss an evidence review &#8594;</button>
-    </form>
-  </div>
-</section>
+<section id="call-success"><div class="container-narrow"><p>Thank you. David McKibbin will reply within one working day to fix a 15-minute call.</p></div></section>
 
 <section class="wtin">
   <div class="container-narrow">
@@ -499,9 +486,9 @@ Start with one question, commission a full read, or keep the evidence under revi
     <div class="wtin-list">
       <div class="wtin-item"><strong>Not a decision.</strong> Price, terms, capacity and whether the evidence is enough stay with the reader.</div>
       <div class="wtin-item"><strong>Not a governance score,</strong> an audit opinion, a continuous-compliance certification, a compliance opinion or legal advice.</div>
-      <div class="wtin-item"><strong>Not insurance advice.</strong> We do not advise on or place insurance, and no fee depends on a policy or a loan being bound.</div>
+      <div class="wtin-item"><strong>Not insurance advice.</strong> We do not advise on or place insurance.</div>
       <div class="wtin-item"><strong>Not operational improvement.</strong> Changing a control is your work, or your chosen partner's.</div>
-      <div class="wtin-item"><strong>One role per record.</strong> Where Arkaya has designed evidence or advised on it, it does not read that evidence for anyone else. Where Arkaya has only translated a platform's records into the open format, it may later read them for an insurer, after telling the insurer and having the translation checked independently.</div>
+      <div class="wtin-item"><strong>One role per record.</strong> Where Arkaya has designed evidence or advised on it, it does not read that evidence for anyone else. Where Arkaya has only translated a platform's records into the open format, it reads them for an insurer only after telling the insurer before appointment and having the translation checked, before it is relied on, by a competent checker with no involvement in the work and no interest in the finding. No such checker is in place yet, so Arkaya does not currently read records it has translated.</div>
     </div>
   </div>
 </section>

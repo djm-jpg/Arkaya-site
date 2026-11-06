@@ -30,7 +30,7 @@
   :root {
     --deep-teal: #2A393C;
     --slate-teal: #364748;
-    --bronze: #C89358;
+    --bronze: #8B5A32;
     --bronze-soft: rgba(200, 147, 88, 0.13);
     --bronze-line: rgba(200, 147, 88, 0.45);
     --charcoal: #41413F;
@@ -52,7 +52,7 @@
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
-  ::selection { background: var(--bronze); color: var(--deep-teal); }
+  ::selection { background: #D9AE7C; color: var(--deep-teal); }
 
   .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 28px; }
   .container-narrow { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 28px; }
@@ -165,7 +165,7 @@
   .footer-meta { font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; color: rgba(244, 245, 239, 0.55); line-height: 1.7; letter-spacing: 0.4px; }
   .footer-meta a { color: var(--bronze); text-decoration: none; }
   .footer-meta a:hover { text-decoration: underline; }
-  .footer-legal { font-family: 'IBM Plex Sans', sans-serif; font-size: 10px; color: rgba(244, 245, 239, 0.35); letter-spacing: 1.4px; text-transform: uppercase; }
+  .footer-legal { font-family: 'IBM Plex Sans', sans-serif; font-size: 10px; color: rgba(244, 245, 239, 0.60); letter-spacing: 1.4px; text-transform: uppercase; }
 
   /* Worked example */
   .worked { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 30px; }
@@ -201,7 +201,7 @@
   }
   .lr-dot {
     width: 8px; height: 8px; border-radius: 50%;
-    background: #C89358; flex: none;
+    background: var(--bronze); flex: none;
   }
   @media (prefers-reduced-motion: no-preference) {
     .lr-dot { animation: lr-pulse 2.4s ease-in-out infinite; }
@@ -247,7 +247,7 @@
     padding: 3px 8px; border-radius: 2px; white-space: nowrap;
   }
   .lr-exc.open, .lr-exc.review, .lr-exc.progress {
-    color: #C89358; border: 1px solid rgba(200, 147, 88, 0.5);
+    color: var(--bronze); border: 1px solid rgba(200, 147, 88, 0.5);
     background: rgba(200, 147, 88, 0.1);
   }
   .lr-exc.clear {
@@ -259,7 +259,7 @@
     font-size: 9.5px; letter-spacing: 0.8px;
     color: rgba(244, 245, 239, 0.7); white-space: nowrap;
   }
-  .lr-ver .tick { color: #C89358; font-weight: 700; }
+  .lr-ver .tick { color: var(--bronze); font-weight: 700; }
   .lr-foot {
     border-top: 1px solid rgba(200, 147, 88, 0.22);
     padding: 12px 18px 14px 18px;
@@ -271,15 +271,15 @@
     color: rgba(244, 245, 239, 0.5);
     margin-bottom: 8px;
   }
-  .lr-prov .arr { color: #C89358; }
+  .lr-prov .arr { color: var(--bronze); }
   .lr-seal {
     display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
     font-family: 'IBM Plex Mono', ui-monospace, monospace;
     font-size: 10.5px; letter-spacing: 0.5px; color: #F4F5EF;
   }
-  .lr-sig { color: #C89358; }
+  .lr-sig { color: var(--bronze); }
   .lr-verify { color: rgba(244, 245, 239, 0.85); }
-  .lr-verify .tick { color: #C89358; font-weight: 700; }
+  .lr-verify .tick { color: var(--bronze); font-weight: 700; }
   .lr-note {
     font-size: 10px; letter-spacing: 0.6px;
     color: rgba(244, 245, 239, 0.38);
@@ -291,7 +291,7 @@
     opacity: 1; transform: translateY(0);
     transition: opacity 420ms ease, transform 420ms ease;
   }
-  .lr-row.reverify .lr-ver { color: #C89358; transition: color 300ms ease; }
+  .lr-row.reverify .lr-ver { color: var(--bronze); transition: color 300ms ease; }
 
 
   .nav-group { display: flex; gap: inherit; align-items: center; }
@@ -326,6 +326,12 @@
 
   .nav-primary a { letter-spacing: 1.6px; font-weight: 600; }
   @media (max-width: 760px) { nav { flex-wrap: wrap; row-gap: 10px; } .nav-group { flex-wrap: wrap; row-gap: 10px; } .nav-group + .nav-group { border-left: none; padding-left: 0; margin-left: 0; } }
+
+  /* Contrast fix, 22 Oct 2026 (APPROVE CONTRAST): darker bronze #8B5A32 on light backgrounds; a lighter bronze on the dark teal areas, where the darker shade would fail. Colour only. */
+  footer, section.closing, .closing, section.dark, .lr, .split-card.licensed, .production-note, section.hero, section.f-hero, section.e-hero, .pillar-go { --bronze: #D9AE7C; }
+  .lr-exc.open, .lr-exc.review, .lr-exc.progress, .lr-ver .tick, .lr-prov .arr, .lr-sig, .lr-verify .tick, .lr-row.reverify .lr-ver { color: var(--bronze); }
+  .pillar-go { color: var(--bronze); }
+  [style*="color:var(--off-white)"], [style*="color: var(--off-white)"] { --bronze: #D9AE7C; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Produce governance evidence another party can read. Arkaya Risk.", "url": "https://arkayarisk.com/emit", "description": "For the systems and companies that produce the record: one open schema, conformance assessment of implementations, and advice to a company on its own record. Arkaya produces no evidence record and issues no score.", "isPartOf": {"@type": "WebSite", "name": "Arkaya Risk", "url": "https://arkayarisk.com/"}, "publisher": {"@type": "Organization", "name": "Arkaya Risk Limited", "url": "https://arkayarisk.com/"}}</script>
 </head>
@@ -392,7 +398,7 @@
   <div class="container-narrow">
     <div class="section-num">§ 03 · Advice to a company on its own record</div>
     <h2>Advice for the company alone.</h2>
-    <p>A company can ask Arkaya how its record will read to the parties that price it, and which records would make a control checkable. That advice is given to the company. Where Arkaya has designed evidence or advised on it, it does not read that evidence for anyone else. Where Arkaya has only translated a platform's records into the open format, it may later read them for an insurer, after telling the insurer and having the translation checked independently.</p>
+    <p>A company can ask Arkaya how its record will read to the parties that price it, and which records would make a control checkable. That advice is given to the company. One role per record. Where Arkaya has designed evidence or advised on it, it does not read that evidence for anyone else. Where Arkaya has only translated a platform's records into the open format, it reads them for an insurer only after telling the insurer before appointment and having the translation checked, before it is relied on, by a competent checker with no involvement in the work and no interest in the finding. No such checker is in place yet, so Arkaya does not currently read records it has translated.</p>
     <p>A Dynamic Risk Maturity Assessment and event-readiness work, calibrated to the obligations the company's next capital moment will test, sit on this side. If an insurer, lender or acquirer later reads that evidence, Arkaya does not carry out the reading. Detailed scope held under NDA. Improving the controls themselves is operational work; Arkaya does not sell it.</p>
   </div>
 </section>
@@ -422,7 +428,7 @@
     </div>
     <p class="boundary-line" style="margin-top: 34px;">The emitter produces the evidence.<br>Arkaya does not.</p>
     <p class="roles-note">Of the three roles on the READ page, the Subject sits on this side. Its systems emit the underlying signals; a conformant engine produces the record. Supervisor and Pricer are readers.</p>
-    <p style="margin-top:30px;"><a href="/services#start" style="display:inline-block;font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;text-decoration:none;padding:14px 22px;border-radius:3px;background:var(--bronze);color:var(--deep-teal);">Discuss an evidence review&nbsp;&#8594;</a></p>
+    <p style="margin-top:30px;"><a href="/services#start" style="display:inline-block;font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;text-decoration:none;padding:14px 22px;border-radius:3px;background:#D9AE7C;color:var(--deep-teal);">Discuss an evidence review&nbsp;&#8594;</a></p>
     <p style="margin-top:18px;font-size:14px;color:var(--slate-teal);">Or request the Emitter Brief by email:</p>
     <form name="emitter-brief" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="brief-form">
       <input type="hidden" name="form-name" value="emitter-brief">

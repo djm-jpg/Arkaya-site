@@ -28,7 +28,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --deep-teal:#2A393C;--slate-teal:#364748;--bronze:#C89358;
+    --deep-teal:#2A393C;--slate-teal:#364748;--bronze:#8B5A32;
     --bronze-soft:rgba(200,147,88,0.18);--bronze-line:rgba(200,147,88,0.45);
     --charcoal:#41413F;--off-white:#F4F5EF;--off-white-soft:rgba(244,245,239,0.78);
     --off-white-faint:rgba(244,245,239,0.55);--rule:rgba(42,57,60,0.12);
@@ -36,7 +36,7 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{font-family:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,sans-serif;font-weight:400;line-height:1.55;color:var(--off-white);background:var(--deep-teal);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
-  ::selection{background:var(--bronze);color:var(--deep-teal)}
+  ::selection{background:#D9AE7C;color:var(--deep-teal)}
   .container{width:100%;max-width:1180px;margin:0 auto;padding:0 28px}
   header{background:var(--off-white);padding:18px 0;border-bottom:1px solid var(--rule);position:relative;z-index:10}
   .header-inner{display:flex;justify-content:space-between;align-items:center}
@@ -72,7 +72,7 @@
   /* eight-field grid */
   .fields{display:grid;grid-template-columns:1fr 1fr;gap:6px;max-width:1000px}
   .field{background:rgba(54,71,72,0.04);border:1px solid rgba(54,71,72,0.10);border-radius:3px;padding:18px 22px}
-  .field-id{font-family:'IBM Plex Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:rgba(65,65,63,0.55)}
+  .field-id{font-family:'IBM Plex Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:rgba(65,65,63,0.78)}
   .field-name{font-family:'Fraunces',serif;font-weight:500;font-size:18px;letter-spacing:-0.005em;color:var(--deep-teal);margin:5px 0 7px 0}
   .field-val{font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.5;color:var(--charcoal)}
   .field.span{grid-column:1/-1;background:var(--bronze-soft);border:1px solid var(--bronze-line)}
@@ -103,7 +103,7 @@
   .footer-inner{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:28px}
   .footer-meta{font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:var(--off-white-faint);line-height:1.7;letter-spacing:0.4px}
   .footer-meta a{color:var(--bronze);text-decoration:none}
-  .footer-legal{font-family:'IBM Plex Sans',sans-serif;font-size:10px;color:rgba(244,245,239,0.35);letter-spacing:1.4px;text-transform:uppercase}
+  .footer-legal{font-family:'IBM Plex Sans',sans-serif;font-size:10px;color:rgba(244,245,239,0.60);letter-spacing:1.4px;text-transform:uppercase}
   .footer-standard{font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;color:var(--off-white-faint);letter-spacing:0.6px;margin-top:18px;padding-top:18px;border-top:1px solid rgba(200,147,88,0.12)}
   .footer-standard a{color:var(--bronze);text-decoration:none}
   .code{background:var(--deep-teal);border-radius:4px;padding:22px 24px;max-width:1000px;overflow-x:auto;border-left:3px solid var(--bronze)}
@@ -208,7 +208,7 @@
   }
   .lr-dot {
     width: 8px; height: 8px; border-radius: 50%;
-    background: #C89358; flex: none;
+    background: var(--bronze); flex: none;
   }
   @media (prefers-reduced-motion: no-preference) {
     .lr-dot { animation: lr-pulse 2.4s ease-in-out infinite; }
@@ -245,7 +245,7 @@
   }
   .lr-ob-src {
     font-family: 'IBM Plex Mono', ui-monospace, monospace;
-    font-size: 9.5px; color: rgba(244, 245, 239, 0.45);
+    font-size: 9.5px; color: rgba(244, 245, 239, 0.60);
     letter-spacing: 0.4px; margin-top: 2px;
   }
   .lr-exc {
@@ -254,7 +254,7 @@
     padding: 3px 8px; border-radius: 2px; white-space: nowrap;
   }
   .lr-exc.open, .lr-exc.review, .lr-exc.progress {
-    color: #C89358; border: 1px solid rgba(200, 147, 88, 0.5);
+    color: var(--bronze); border: 1px solid rgba(200, 147, 88, 0.5);
     background: rgba(200, 147, 88, 0.1);
   }
   .lr-exc.clear {
@@ -266,7 +266,7 @@
     font-size: 9.5px; letter-spacing: 0.8px;
     color: rgba(244, 245, 239, 0.7); white-space: nowrap;
   }
-  .lr-ver .tick { color: #C89358; font-weight: 700; }
+  .lr-ver .tick { color: var(--bronze); font-weight: 700; }
   .lr-foot {
     border-top: 1px solid rgba(200, 147, 88, 0.22);
     padding: 12px 18px 14px 18px;
@@ -278,18 +278,18 @@
     color: rgba(244, 245, 239, 0.5);
     margin-bottom: 8px;
   }
-  .lr-prov .arr { color: #C89358; }
+  .lr-prov .arr { color: var(--bronze); }
   .lr-seal {
     display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
     font-family: 'IBM Plex Mono', ui-monospace, monospace;
     font-size: 10.5px; letter-spacing: 0.5px; color: #F4F5EF;
   }
-  .lr-sig { color: #C89358; }
+  .lr-sig { color: var(--bronze); }
   .lr-verify { color: rgba(244, 245, 239, 0.85); }
-  .lr-verify .tick { color: #C89358; font-weight: 700; }
+  .lr-verify .tick { color: var(--bronze); font-weight: 700; }
   .lr-note {
     font-size: 10px; letter-spacing: 0.6px;
-    color: rgba(244, 245, 239, 0.38);
+    color: rgba(244, 245, 239, 0.60);
     margin-top: 10px; font-style: italic;
   }
   /* animation states: rows hidden until revealed when .lr-anim is set */
@@ -298,7 +298,7 @@
     opacity: 1; transform: translateY(0);
     transition: opacity 420ms ease, transform 420ms ease;
   }
-  .lr-row.reverify .lr-ver { color: #C89358; transition: color 300ms ease; }
+  .lr-row.reverify .lr-ver { color: var(--bronze); transition: color 300ms ease; }
 
 
   .spec-wrap { max-width: 560px; }
@@ -306,6 +306,14 @@
 
   .nav-primary a { letter-spacing: 1.6px; font-weight: 600; }
   @media (max-width: 760px) { nav { flex-wrap: wrap; row-gap: 10px; } .nav-group { flex-wrap: wrap; row-gap: 10px; } .nav-group + .nav-group { border-left: none; padding-left: 0; margin-left: 0; } }
+
+  /* Contrast fix, 22 Oct 2026 (APPROVE CONTRAST): darker bronze #8B5A32 on light backgrounds; a lighter bronze on the dark teal areas, where the darker shade would fail. Colour only. */
+  footer, section.closing, .closing, section.dark, .lr, .split-card.licensed, .production-note, section.hero, section.f-hero, section.e-hero, .pillar-go { --bronze: #D9AE7C; }
+  .lr-exc.open, .lr-exc.review, .lr-exc.progress, .lr-ver .tick, .lr-prov .arr, .lr-sig, .lr-verify .tick, .lr-row.reverify .lr-ver { color: var(--bronze); }
+  .pillar-go { color: var(--bronze); }
+  [style*="color:var(--off-white)"], [style*="color: var(--off-white)"] { --bronze: #D9AE7C; }
+  /* Finding 4, 22 Oct 2026: let the record header wrap on narrow screens so the timestamp is not cut off. */
+  @media (max-width: 520px) { .lr-head { flex-wrap: wrap; } .lr-title { white-space: normal; } .lr-meta { margin-left: 18px; flex-basis: 100%; white-space: normal; } }
 </style>
 </head>
 <body>
@@ -479,7 +487,7 @@
     <figure style="margin:0;max-width:1000px;" aria-label="Provenance chain: source system to engine to signing key to sealed record to counterparty. Each hop retained in the record; the counterparty runs its own proof check on the sealed record.">
       <svg viewBox="0 0 1000 190" style="width:100%;height:auto;display:block;" role="img">
         <title>The provenance chain</title>
-        <g stroke="#C89358" stroke-width="3" fill="#C89358">
+        <g stroke="#8B5A32" stroke-width="3" fill="#8B5A32">
           <line x1="172" y1="72" x2="192" y2="72"/><path d="M192,65 L205,72 L192,79 Z"/>
           <line x1="377" y1="72" x2="397" y2="72"/><path d="M397,65 L410,72 L397,79 Z"/>
           <line x1="582" y1="72" x2="602" y2="72"/><path d="M602,65 L615,72 L602,79 Z"/>
@@ -497,7 +505,7 @@
         <rect x="625" y="36" width="160" height="72" rx="4" fill="#2A393C"/>
         <text x="705" y="79" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="17" font-weight="500" fill="#F4F5EF">Sealed record</text>
         <text x="705" y="136" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="11.5" fill="#364748">a stranger can check it</text>
-        <rect x="830" y="36" width="160" height="72" rx="4" fill="#C89358"/>
+        <rect x="830" y="36" width="160" height="72" rx="4" fill="#D9AE7C"/>
         <text x="910" y="79" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="17" font-weight="600" fill="#2A393C">Counterparty</text>
         <text x="910" y="136" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="11.5" fill="#364748">reads, verifies, prices</text>
         <text x="500" y="176" text-anchor="middle" font-family="'IBM Plex Sans',sans-serif" font-size="12" font-style="italic" fill="#364748">Field 06 in one picture. The counterparty verifies from the sealed record, without the vendor&#8217;s or Arkaya&#8217;s code.</text>
