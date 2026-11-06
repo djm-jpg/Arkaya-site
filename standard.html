@@ -30,7 +30,7 @@
   :root {
     --deep-teal: #2A393C;
     --slate-teal: #364748;
-    --bronze: #C89358;
+    --bronze: #8B5A32;
     --bronze-soft: rgba(200, 147, 88, 0.18);
     --bronze-line: rgba(200, 147, 88, 0.45);
     --charcoal: #41413F;
@@ -54,7 +54,7 @@
     overflow-x: hidden;
   }
 
-  ::selection { background: var(--bronze); color: var(--deep-teal); }
+  ::selection { background: #D9AE7C; color: var(--deep-teal); }
 
   .container {
     width: 100%;
@@ -411,7 +411,7 @@
   .footer-legal {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 10px;
-    color: rgba(244, 245, 239, 0.35);
+    color: rgba(244, 245, 239, 0.60);
     letter-spacing: 1.4px;
     text-transform: uppercase;
   }
@@ -439,6 +439,12 @@
 
   .nav-primary a { letter-spacing: 1.6px; font-weight: 600; }
   @media (max-width: 760px) { nav { flex-wrap: wrap; row-gap: 10px; } .nav-group { flex-wrap: wrap; row-gap: 10px; } .nav-group + .nav-group { border-left: none; padding-left: 0; margin-left: 0; } }
+
+  /* Contrast fix, 22 Oct 2026 (APPROVE CONTRAST): darker bronze #8B5A32 on light backgrounds; a lighter bronze on the dark teal areas, where the darker shade would fail. Colour only. */
+  footer, section.closing, .closing, section.dark, .lr, .split-card.licensed, .production-note, section.hero, section.f-hero, section.e-hero, .pillar-go { --bronze: #D9AE7C; }
+  .lr-exc.open, .lr-exc.review, .lr-exc.progress, .lr-ver .tick, .lr-prov .arr, .lr-sig, .lr-verify .tick, .lr-row.reverify .lr-ver { color: var(--bronze); }
+  .pillar-go { color: var(--bronze); }
+  [style*="color:var(--off-white)"], [style*="color: var(--off-white)"] { --bronze: #D9AE7C; }
 </style>
 </head>
 <body>
