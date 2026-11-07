@@ -6,7 +6,7 @@ Source systems emit signals; an engine produces a record against the schema; a c
 
 Arkaya does not find, arrange, advise on or place insurance; produce or sign evidence records; score, rate or certify organisations; set prices or terms; or give audit, legal or investment advice.
 
-Arkaya is a service, not software, and installs nothing in a client's organisation. Its analysts use AI support. Platforms and company systems produce the data and signals that records are built from. The insurer, lender or buyer decides whether evidence is enough and keeps the decision, price and terms.
+Arkaya is a service, not software, and installs nothing in a client's organisation. Its analysts use AI support. Platforms and company systems produce the data and signals that records are built from. The insurer, lender or acquirer decides whether evidence is enough and keeps the decision, price and terms.
 
 ## Services
 
@@ -42,11 +42,11 @@ Arkaya is a service, not software, and installs nothing in a client's organisati
 ## Background pages
 
 - [Services](https://arkayarisk.com/services): Reading supplied records for an agreed question, with findings on what they support and where evidence is missing.
-- [Architecture](https://arkayarisk.com/architecture): Technical background on source signals, records, schema material and decisions by insurers, lenders and buyers.
+- [Architecture](https://arkayarisk.com/architecture): Technical background on source signals, records, schema material and decisions by insurers, lenders and acquirers.
 - [Schema](https://arkayarisk.com/schema): GET's fields, governance domains, evidence ladder and proposed stewardship arrangements; candidate status and licence limits are set out below.
 - [Evidence](https://arkayarisk.com/evidence): Illustrative record fields, exception states and examples of how an insurer or lender might read them.
 - [Emit](https://arkayarisk.com/emit): Background on how data and signals from platforms and company systems become records, conformance of the software that produces them, and advice to a company on its own record, which Arkaya does not then read for anyone else.
-- [Read](https://arkayarisk.com/read): Background for insurers, lenders and buyers reading records and deciding whether evidence is enough.
+- [Read](https://arkayarisk.com/read): Background for insurers, lenders and acquirers reading records and deciding whether evidence is enough.
 - [Doctrine](https://arkayarisk.com/doctrine): Research principles about governance evidence and decisions about risk.
 - [Library](https://arkayarisk.com/library): Research papers on governance evidence, financial decisions and the proposed architecture.
 - [Standard](https://arkayarisk.com/standard): Arkaya's internal production method and its use of AI support.
