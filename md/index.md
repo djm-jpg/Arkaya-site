@@ -4,7 +4,7 @@ Page: https://arkayarisk.com/
 
 Appoint Arkaya to read the records against your question. You get a cited account of what they establish, what is missing and what would settle it. You keep the decision. Arkaya is a service, not software. It reads only the records supplied to it and installs nothing in any organisation's systems.
 
-Records. Relationships. Decisions.
+Governance evidence that insurers and lenders can price.
 
 # Bring records and risk decisions together.
 
