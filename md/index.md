@@ -21,7 +21,7 @@ For platforms
 Find out what your records can and cannot show an insurer.
 [Explore the platform pilot](https://arkayarisk.com/platform-pilot)
 
-For insurers, MGAs and lenders
+For insurers, MGAs, lenders and M&A teams
 
 ## Reader pilot
 You fix the question. We read one export against it and report what is present, missing or not in the export, each line cited. You keep the decision.
