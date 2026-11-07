@@ -6,7 +6,7 @@ Appoint Arkaya to read the records against your question. You get a cited accoun
 
 Governance evidence that insurers, lenders and acquirers can price.
 
-# Bring records and risk decisions together.
+# AI governance evidence capital markets can price.
 
 Appoint Arkaya to read the records against your question. You get a cited account of what they establish, what is missing and what would settle it. You keep the decision. Arkaya is a service, not software. It reads only the records supplied to it and installs nothing in any organisation's systems.
 [Find your starting point ↓](https://arkayarisk.com/#start)
