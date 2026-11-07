@@ -33,9 +33,12 @@ The [Evidence Pressure Test](https://arkayarisk.com/services#companies) reads yo
 Placing AI risk for a client?
 The [Pre-Loss Records Check](mailto:djm@arkayarisk.com?subject=Pre-Loss%20Records%20Check) tests whether a client's AI records can be retrieved before a loss, not after one.
 
+Buying or selling a company?
+The [Governance Evidence Snapshot](https://arkayarisk.com/services#sponsors) reads a target's or a portfolio company's AI governance records before an acquirer, lender or insurer prices them. Arkaya reads for one side only.
+
 ## Can we just give the records to an AI model?
 
-You can, and for records you already hold it may read them well. We use AI models in our own reading. What you appoint Arkaya for is the work around the reading: checking that the records your question needs can be produced, fixing the question before anyone sees a record, reading it on a basis you can check line by line, and keeping to one role. We never read evidence we designed or advised on, and the company being read does not pay for its reading. Whether that work is worth paying for is for you to judge from a sample reading.
+You can, and for records you already hold it may read them well. We use AI models in our own reading. What you appoint Arkaya for is the work around the reading: checking that the records your question needs can be produced, fixing the question before anyone sees a record, reading it on a basis you can check line by line, and keeping to one role. When we read for an insurer, lender or acquirer, we never read evidence we designed or advised on, and the company being read does not pay for that reading. Whether that work is worth paying for is for you to judge from a sample reading.
 
 A worked example
 
