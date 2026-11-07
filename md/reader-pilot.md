@@ -2,9 +2,9 @@
 
 Page: https://arkayarisk.com/reader-pilot
 
-Arkaya connects governance and cybersecurity platforms with the insurers, MGAs and lenders who price and set terms for AI and other governance risks.
+Arkaya connects governance and cybersecurity platforms with the insurers, MGAs, lenders and M&A teams who price and set terms for AI and other governance risks.
 
-For insurers, MGAs and lenders
+For insurers, MGAs, lenders and M&A teams
 
 # You keep the decision.
 You fix the question. We read one export against it and report what is present, missing or not in the export, each line cited. You keep the decision.

@@ -2,7 +2,7 @@
 
 Page: https://arkayarisk.com/platform-pilot
 
-Arkaya connects governance and cybersecurity platforms with the insurers, MGAs and lenders who price and set terms for AI and other governance risks.
+Arkaya connects governance and cybersecurity platforms with the insurers, MGAs, lenders and M&A teams who price and set terms for AI and other governance risks.
 
 For governance and cybersecurity platforms
 

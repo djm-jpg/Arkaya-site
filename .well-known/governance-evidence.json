@@ -175,12 +175,12 @@
     "sit in the path of a proof check"
   ],
   "invariant": "Source systems emit signals; an engine produces a record against the Governance Evidence Taxonomy; a counterparty reads that record as evidence; Arkaya can be appointed to read records and report what they support for a stated decision; Arkaya produces neither the record nor the price.",
-  "description": "Governance evidence service, not software: insurers, MGAs and lenders appoint Arkaya to read a company's AI governance records against their own question, so they can price governance risk on evidence rather than exclude it. Arkaya reports what the records support and what is missing; the reader sets the price.",
+  "description": "Governance evidence service, not software: insurers, MGAs, lenders and M&A teams appoint Arkaya to read a company's AI governance records against their own question, so they can price governance risk on evidence rather than exclude it. Arkaya reports what the records support and what is missing; the reader sets the price.",
   "services": [
     {
       "name": "Appointed Reading",
       "description": "You appoint Arkaya and set the question.",
-      "commissionedBy": "Insurers, MGAs and lenders (readers)",
+      "commissionedBy": "Insurers, MGAs, lenders and M&A teams (readers)",
       "arkayaDoesNot": "Arkaya does not price, accept or decline the risk.",
       "status": "available",
       "pricing": "US$5,000 per platform",
@@ -190,7 +190,7 @@
     {
       "name": "Portfolio Reading",
       "description": "The same reading repeated across an MGA book, a delegated-authority population or an investment portfolio.",
-      "commissionedBy": "Insurers, MGAs and lenders (readers)",
+      "commissionedBy": "Insurers, MGAs, lenders and M&A teams (readers)",
       "arkayaDoesNot": "Arkaya does not price, accept or decline the risk.",
       "status": "available",
       "pricing": "quoted",
@@ -200,7 +200,7 @@
     {
       "name": "Policy wording and covenant mapping to field sets",
       "description": "Arkaya maps your policy wording and covenants to the evidence fields a submission must carry, so what a company sends can be read against your own terms.",
-      "commissionedBy": "Insurers, MGAs and lenders (readers)",
+      "commissionedBy": "Insurers, MGAs, lenders and M&A teams (readers)",
       "arkayaDoesNot": "Arkaya does not price, accept or decline the risk.",
       "status": "available",
       "pricing": "quoted",
@@ -210,7 +210,7 @@
     {
       "name": "AI Risk Evidence Brief",
       "description": "A weekly note on what changed, why it matters to your decision and what evidence to ask for.",
-      "commissionedBy": "Insurers, MGAs and lenders (readers)",
+      "commissionedBy": "Insurers, MGAs, lenders and M&A teams (readers)",
       "arkayaDoesNot": "We do not advise on or place insurance.",
       "status": "available",
       "pricing": "US$200 a month per organisation",
@@ -220,7 +220,7 @@
     {
       "name": "Emitter conformance check",
       "description": "in development: whether a platform's records can carry the fields you require.",
-      "commissionedBy": "Insurers, MGAs and lenders (readers)",
+      "commissionedBy": "Insurers, MGAs, lenders and M&A teams (readers)",
       "arkayaDoesNot": "Arkaya does not price, accept or decline the risk.",
       "status": "in-development",
       "pricing": "quoted",
