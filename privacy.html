@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy | Arkaya Risk</title>
+<link rel="canonical" href="https://arkayarisk.com/privacy">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+:root{--bg:#FAF8F3;--teal:#203E3C;--sage:#E5EDE6;--bronze:#8B5A32;--ink:#2E3432;--muted:#5F6662;--rule:#D9DED8;--white:#fff;--miss:#8A2E2E}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 19px/1.7 "DM Sans",system-ui,sans-serif}
+h1,h2{font-family:"Newsreader",Georgia,serif;font-weight:400;color:var(--teal);letter-spacing:-.015em}
+h1{font-size:clamp(46px,6.2vw,80px);line-height:1.02;margin:0 0 36px}
+h2{font-size:clamp(34px,4vw,50px);line-height:1.08;margin:0 0 22px}
+p{margin:0 0 18px;max-width:60ch}a{color:var(--teal)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+header .wrap{display:flex;align-items:flex-end;justify-content:space-between;padding-top:30px;padding-bottom:26px;border-bottom:1px solid var(--rule)}
+.mark{text-decoration:none;line-height:1}
+nav a{margin-left:42px;text-decoration:none;font-size:17px;color:var(--muted)}nav a.talk{color:var(--teal);border-bottom:1.5px solid var(--bronze);padding-bottom:6px}
+footer{border-top:1px solid var(--rule);padding:44px 0 60px;font-size:15px;color:var(--muted)}
+.res{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:6px 22px;margin:18px 0 0;font-size:15px}.res a{color:var(--teal);margin:0 !important;padding:0 !important}
+.mark .logo{height:76px;width:auto;display:block}@media (max-width:860px){.mark .logo{height:56px}}
+main{padding:90px 0}
+main h2{margin-top:42px}
+#visit-counting-toggle{margin:12px 0 16px;background:none;border:1.5px solid var(--rule);color:var(--teal);border-radius:999px;padding:14px 26px;font:500 17px "DM Sans",sans-serif;cursor:pointer}
+#visit-counting-status:empty{margin:0}
+@media (max-width:860px){nav a:not(.talk){display:none}main{padding:60px 0}body{font-size:18px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="mark" href="/" aria-label="Arkaya Risk, home"><img src="/arkaya-logo-sm.png" alt="Arkaya Risk · Building resilience capital" class="logo"></a>
+<nav><a href="/platform-pilot">Platforms</a><a href="/reader-pilot">Insurers, MGAs, lenders</a><a class="talk" href="mailto:djm@arkayarisk.com">Talk to us</a></nav></div></header>
+<main>
+<div class="wrap">
+<h1>Privacy</h1>
+<p>Arkaya Risk Limited runs this website. We are registered in England and Wales (company no. 17380022), registered office Oxford House, 15-17 Mount Ephraim Road, Tunbridge Wells, England, TN1 1EN. Questions about your data go to <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a>.</p>
+<h2>What we collect and why</h2>
+<p><strong>When you write to us through a form.</strong> Our forms ask for your email address. The call-request form also asks for your name, organisation and question. We use these only to reply, arrange the call or send the brief you asked for. Our lawful basis is our legitimate interest in answering enquiries, or taking steps you asked for before a contract.</p>
+<p><strong>When you visit.</strong> We count visits with Cloudflare Web Analytics. It sets no cookies and does not identify you; we see only totals, such as which pages are read and roughly where from. We use them only to improve the site. It is switched off if your browser sends Global Privacy Control or Do Not Track, or if you use the button below.</p>
+<p><strong>Hosting.</strong> Netlify hosts the site and, like any web server, briefly logs each request, including your IP address, to run and secure it. Our fonts are served from our own site, so no font service sees your visit.</p>
+<h2>Who handles it</h2>
+<p>Netlify (hosting and form submissions) and Cloudflare (visit counts) process data for these purposes only. Both are based in the United States; transfers rely on the UK's approved transfer safeguards. We do not sell your data or use it for advertising.</p>
+<h2>How long we keep it</h2>
+<p>Form submissions: 24 months from our last contact, unless we start working together. Server logs: kept by Netlify for a short period. Visit counts: totals only, with no identifying data.</p>
+<h2>Your rights</h2>
+<p>You can ask to see, correct or delete your data, object to how we use it, or ask us to limit it, by writing to <a href="mailto:djm@arkayarisk.com">djm@arkayarisk.com</a>. If you are unhappy with our answer, you can complain to the Information Commissioner's Office (<a href="https://ico.org.uk/">ico.org.uk</a>).</p>
+<button type="button" id="visit-counting-toggle" hidden>Turn off visit counting on this browser</button>
+<p id="visit-counting-status" role="status"></p>
+<p>Last updated: 11 November 2026.</p>
+</div>
+</main>
+<footer><div class="wrap"><p>Arkaya connects governance and cybersecurity platforms with the insurers, MGAs, lenders and M&amp;A teams who price and set terms for AI and other governance risks.</p><p style="margin:0">Arkaya does not advise on or place insurance, score organisations or certify them. Arkaya Risk Limited, registered in England and Wales, no. 17380022. Registered office: Oxford House, 15-17 Mount Ephraim Road, Tunbridge Wells, England, TN1 1EN.</p><div class="res" role="navigation" aria-label="Resources"><a href="/questions">Questions and answers</a><a href="/schema">Open schema</a><a href="/get">Developer material</a><a href="/library">Library</a><a href="/founder">Founders</a><a href="https://record.arkayarisk.com/disclosures/">Disclosure record</a><a href="/privacy">Privacy</a></div></div></footer>
+<script>
+(() => {
+  const key = 'arkaya-analytics-optout';
+  const button = document.getElementById('visit-counting-toggle');
+  const status = document.getElementById('visit-counting-status');
+  let optedOut;
+
+  function render() {
+    button.textContent = optedOut
+      ? 'Turn visit counting back on'
+      : 'Turn off visit counting on this browser';
+    status.textContent = optedOut ? 'Visit counting is off on this browser.' : '';
+  }
+
+  function showStorageError() {
+    status.textContent = 'Your browser blocked this setting; visit counting stays off.';
+  }
+
+  try {
+    optedOut = localStorage.getItem(key) === '1';
+  } catch {
+    showStorageError();
+    return;
+  }
+
+  render();
+  button.hidden = false;
+  button.addEventListener('click', () => {
+    try {
+      if (optedOut) localStorage.removeItem(key);
+      else localStorage.setItem(key, '1');
+    } catch {
+      showStorageError();
+      return;
+    }
+    optedOut = !optedOut;
+    render();
+  });
+})();
+</script>
+<script src="/analytics.js" defer></script>
+</body>
+</html>
