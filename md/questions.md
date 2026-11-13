@@ -2,12 +2,12 @@
 
 Page: https://arkayarisk.com/questions
 
-Arkaya connects governance and cybersecurity platforms with the insurers, MGAs, lenders and M&A teams who price and set terms for AI and other governance risks.
+Arkaya reports what one platform's published record format and synthetic examples can evidence against a Reader's stated question. The Reader makes its own decisions.
 
 # Questions and answers
 
 ### What does Arkaya Risk do?
-Arkaya connects governance and cybersecurity platforms with the insurers, MGAs, lenders and M&A teams who price and set terms for AI and other governance risks.
+Arkaya reports what one platform's published record format and synthetic examples can evidence against a Reader's stated question. The Reader makes its own decisions.
 
 ### Does Arkaya find or place insurance?
 No. Arkaya does not find, arrange, advise on or place insurance.
