@@ -1,4 +1,5 @@
 (() => {
+  if (location.hostname !== 'arkayarisk.com') return;
   if (navigator.globalPrivacyControl === true || navigator.doNotTrack === '1') return;
   try {
     if (localStorage.getItem('arkaya-analytics-optout') === '1') return;
