@@ -178,18 +178,28 @@
   "description": "Governance evidence service, not software: insurers, MGAs, lenders and M&A teams appoint Arkaya to read a company's AI governance records against their own question, so they can price governance risk on evidence rather than exclude it. Arkaya reports what the records support and what is missing; the reader sets the price.",
   "services": [
     {
-      "name": "Appointed Reading",
-      "description": "You appoint Arkaya and set the question.",
+      "name": "Appointed Reading: Platform",
+      "description": "What one platform's record format and samples can and cannot evidence against your requirement. The platform pays nothing to be read.",
       "commissionedBy": "Insurers, MGAs, lenders and M&A teams (readers)",
       "arkayaDoesNot": "Arkaya does not price, accept or decline the risk.",
       "status": "available",
-      "pricing": "US$5,000 per platform",
+      "pricing": "US$6,000 per platform",
+      "route": "https://arkayarisk.com/services#call",
+      "contact": "mailto:djm@arkayarisk.com"
+    },
+    {
+      "name": "Appointed Reading: Company",
+      "description": "One company's own records on a platform already read for you, against the same requirement.",
+      "commissionedBy": "Insurers, MGAs, lenders and M&A teams (readers)",
+      "arkayaDoesNot": "Arkaya does not price, accept or decline the risk.",
+      "status": "available",
+      "pricing": "quoted",
       "route": "https://arkayarisk.com/services#call",
       "contact": "mailto:djm@arkayarisk.com"
     },
     {
       "name": "Portfolio Reading",
-      "description": "The same reading repeated across an MGA book, a delegated-authority population or an investment portfolio.",
+      "description": "Company Readings bought as a block across an MGA book, a delegated-authority population or an investment portfolio.",
       "commissionedBy": "Insurers, MGAs, lenders and M&A teams (readers)",
       "arkayaDoesNot": "Arkaya does not price, accept or decline the risk.",
       "status": "available",
@@ -214,16 +224,6 @@
       "arkayaDoesNot": "We do not advise on or place insurance.",
       "status": "available",
       "pricing": "US$200 a month per organisation",
-      "route": "https://arkayarisk.com/services#call",
-      "contact": "mailto:djm@arkayarisk.com"
-    },
-    {
-      "name": "Emitter conformance check",
-      "description": "in development: whether a platform's records can carry the fields you require.",
-      "commissionedBy": "Insurers, MGAs, lenders and M&A teams (readers)",
-      "arkayaDoesNot": "Arkaya does not price, accept or decline the risk.",
-      "status": "in-development",
-      "pricing": "quoted",
       "route": "https://arkayarisk.com/services#call",
       "contact": "mailto:djm@arkayarisk.com"
     },
