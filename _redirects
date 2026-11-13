@@ -16,3 +16,6 @@
 /reader-pilot /reader-pilot.html 200
 /questions /questions.html 200
 /name         /name.html         200
+/contact /services#call 301
+/contact-us /services#call 301
+/about /founder 301
