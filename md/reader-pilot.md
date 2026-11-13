@@ -2,7 +2,7 @@
 
 Page: https://arkayarisk.com/reader-pilot
 
-Arkaya connects governance and cybersecurity platforms with the insurers, MGAs, lenders and M&A teams who price and set terms for AI and other governance risks.
+Arkaya reports what one platform's published record format and synthetic examples can evidence against a Reader's stated question. The Reader makes its own decisions.
 
 For insurers, MGAs, lenders and M&A teams
 
@@ -33,14 +33,12 @@ A sample of the deliverable, not evidence that this reading is better than anoth
 
 - You choose: The requirements, from a list of record types or your own.
 
-- You authorise: One export from one insured, for one workflow.
+- You supply: One synthetic export in a real platform's format, for one workflow. We read no real insured's records.
 
 - We read: What is present and what is missing, with the event rebuilt.
 
 - You decide: Whether the evidence is enough, and on what terms.
 
-### During the policy
-The same reading at agreed points, or when the insured changes model, provider or tools.
 
 ## What it is not
 
