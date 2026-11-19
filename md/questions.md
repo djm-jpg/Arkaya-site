@@ -2,12 +2,12 @@
 
 Page: https://arkayarisk.com/questions
 
-Arkaya reports what one platform's published record format and synthetic examples can evidence against a Reader's stated question. The Reader makes its own decisions.
+Arkaya is a service, not software. Companies commission its defensive playbook; insurers, lenders and acquirers test the evidence for themselves and make their own decisions.
 
 # Questions and answers
 
 ### What does Arkaya Risk do?
-Arkaya reports what one platform's published record format and synthetic examples can evidence against a Reader's stated question. The Reader makes its own decisions.
+Arkaya is a service, not software. Companies commission its defensive playbook; insurers, lenders and acquirers test the evidence for themselves and make their own decisions.
 
 ### Does Arkaya find or place insurance?
 No. Arkaya does not find, arrange, advise on or place insurance.
