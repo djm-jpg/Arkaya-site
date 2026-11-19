@@ -1,8 +1,8 @@
 # Arkaya Layer 1 — implementer pack
 
-**Version 1 · 10 August 2026 · open material**
+**Version 1 · 10 August 2026 · rights statement revised 19 November 2026**
 
-Everything here is open. The schema, the specifications, the test vectors and the reference verifier carry no fee and no licence condition, because a verification layer that charged for its own contract would not be one. Nothing in this pack requires an account with Arkaya, a call to an Arkaya service, or an Arkaya library at any point in production, verification or reading.
+The schema, the specifications, the test vectors and the reference verifier carry no fee, because a verification layer that charged for its own contract would not be one. Licence terms for the schema, specifications, test vectors and reference code are not yet settled. No licence to implement or redistribute is granted by this publication; a licence will accompany the ratified release. Nothing in this pack requires an account with Arkaya, a call to an Arkaya service, or an Arkaya library at any point in production, verification or reading.
 
 What is not here is the mapping library, the field sets and the covenant benchmark. Those are licensed, and they are a separate conversation.
 
