@@ -4,7 +4,7 @@ Page: https://arkayarisk.com/reader-pilot
 
 Arkaya reports what one platform's published record format and synthetic examples can evidence against a Reader's stated question. The Reader makes its own decisions.
 
-For insurers, MGAs, lenders and M&A teams
+For insurers, lenders and acquirers
 
 # You keep the decision.
 You fix the question. We read one export against it and report what is present, missing or not in the export, each line cited. You keep the decision.

@@ -308,9 +308,9 @@
     },
     {
       "name": "Defensive Playbook",
-      "description": "The Defensive Playbook does the other half: it is built to show which of a company's risks its records can evidence, and where they cannot.",
+      "description": "A company's record of how it finds, treats and answers for its material weaknesses, across risk management, controls and GRC platforms, vendor contracts, insurance, and notification duties.",
       "commissionedBy": "Companies",
-      "arkayaDoesNot": "We do not advise on or place insurance.",
+      "arkayaDoesNot": "Arkaya does not advise on or arrange insurance, give legal advice on notification duties, or replace the platforms that monitor the risk.",
       "status": "available",
       "pricing": "quoted",
       "route": "https://arkayarisk.com/services#call",
