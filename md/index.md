@@ -27,9 +27,8 @@ cybersecurity.
 Produce the
 records.
 Insurers,
-MGAs,
 lenders and
-M&A teams
+acquirers
 Set the
 requirements.
 Keep the
