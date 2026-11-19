@@ -175,44 +175,14 @@
     "sit in the path of a proof check"
   ],
   "invariant": "Source systems emit signals; an engine produces a record against the Governance Evidence Taxonomy; a counterparty reads that record as evidence; Arkaya can be appointed to read records and report what they support for a stated decision; Arkaya produces neither the record nor the price.",
-  "description": "Governance evidence service, not software: insurers, MGAs, lenders and M&A teams appoint Arkaya to read a company's AI governance records against their own question, so they can price governance risk on evidence rather than exclude it. Arkaya reports what the records support and what is missing; the reader sets the price.",
+  "description": "Arkaya is a service, not software. Its defensive playbook records how a company defines, monitors and narrows the gap between the risk it believes it carries and the risk its evidence can independently demonstrate in its key risk domains: the areas critical to its revenue and to the terms its counterparties set. Insurers, lenders and acquirers can test the evidence for themselves and see whether that gap is assessed qualitatively, measured quantitatively and narrowing over a defined period. It reads only the records supplied to it and installs nothing in any organisation's systems.",
   "services": [
     {
       "name": "Appointed Reading: Platform",
       "description": "What one platform's record format and samples can and cannot evidence against your requirement. The platform pays nothing to be read.",
-      "commissionedBy": "Insurers, MGAs, lenders and M&A teams (readers)",
+      "commissionedBy": "Insurers, lenders and acquirers (readers)",
       "arkayaDoesNot": "Arkaya does not price, accept or decline the risk.",
       "status": "available",
-      "pricing": "US$6,000 per platform",
-      "route": "https://arkayarisk.com/services#call",
-      "contact": "mailto:djm@arkayarisk.com"
-    },
-    {
-      "name": "Appointed Reading: Company",
-      "description": "One company's own records on a platform already read for you, against the same requirement.",
-      "commissionedBy": "Insurers, MGAs, lenders and M&A teams (readers)",
-      "arkayaDoesNot": "Arkaya does not price, accept or decline the risk.",
-      "status": "not yet offered: subject to a licensing check",
-      "pricing": "quoted",
-      "route": "https://arkayarisk.com/services#call",
-      "contact": "mailto:djm@arkayarisk.com"
-    },
-    {
-      "name": "Portfolio Reading",
-      "description": "Company Readings bought as a block across an MGA book, a delegated-authority population or an investment portfolio.",
-      "commissionedBy": "Insurers, MGAs, lenders and M&A teams (readers)",
-      "arkayaDoesNot": "Arkaya does not price, accept or decline the risk.",
-      "status": "not yet offered: subject to a licensing check",
-      "pricing": "quoted",
-      "route": "https://arkayarisk.com/services#call",
-      "contact": "mailto:djm@arkayarisk.com"
-    },
-    {
-      "name": "Policy wording and covenant mapping to field sets",
-      "description": "Arkaya maps your policy wording and covenants to the evidence fields a submission must carry, so what a company sends can be read against your own terms.",
-      "commissionedBy": "Insurers, MGAs, lenders and M&A teams (readers)",
-      "arkayaDoesNot": "Arkaya does not price, accept or decline the risk.",
-      "status": "not yet offered: subject to a licensing check",
       "pricing": "quoted",
       "route": "https://arkayarisk.com/services#call",
       "contact": "mailto:djm@arkayarisk.com"
@@ -220,30 +190,10 @@
     {
       "name": "AI Risk Evidence Brief",
       "description": "A weekly note on what changed, why it matters to your decision and what evidence to ask for.",
-      "commissionedBy": "Insurers, MGAs, lenders and M&A teams (readers)",
+      "commissionedBy": "Insurers, lenders and acquirers (readers)",
       "arkayaDoesNot": "We do not advise on or place insurance.",
       "status": "available",
       "pricing": "US$200 a month per organisation",
-      "route": "https://arkayarisk.com/services#call",
-      "contact": "mailto:djm@arkayarisk.com"
-    },
-    {
-      "name": "Build: field sets and record formats for the underwriting guidelines",
-      "description": "Arkaya writes the evidence requirements and record formats that sit behind your underwriting guidelines, so every bind can carry the records your capacity provider will ask to see.",
-      "commissionedBy": "MGAs and delegated authorities",
-      "arkayaDoesNot": "We do not advise on or place insurance.",
-      "status": "not yet offered: subject to a licensing check",
-      "pricing": "quoted",
-      "route": "https://arkayarisk.com/services#call",
-      "contact": "mailto:djm@arkayarisk.com"
-    },
-    {
-      "name": "Operate: reading of binds against authority, with reports to the capacity provider",
-      "description": "Not yet offered; subject to a readiness decision.",
-      "commissionedBy": "MGAs and delegated authorities",
-      "arkayaDoesNot": "Where an Arkaya principal has an interest in the MGA, the independent reading comes from a reader the capacity provider appoints; Arkaya gives only a disclosed technical contribution.",
-      "status": "in-development",
-      "pricing": "quoted",
       "route": "https://arkayarisk.com/services#call",
       "contact": "mailto:djm@arkayarisk.com"
     },
@@ -308,7 +258,7 @@
     },
     {
       "name": "Defensive Playbook",
-      "description": "A company's record of how it finds, treats and answers for its material weaknesses, across risk management, controls and GRC platforms, vendor contracts, insurance, and notification duties.",
+      "description": "A company's record of how it defines, monitors and narrows the gap between the risk it believes it carries and the risk its evidence can independently demonstrate in its key risk domains, across risk management, controls and GRC platforms, vendor contracts, insurance, and notification duties.",
       "commissionedBy": "Companies",
       "arkayaDoesNot": "Arkaya does not advise on or arrange insurance, give legal advice on notification duties, or replace the platforms that monitor the risk.",
       "status": "available",
