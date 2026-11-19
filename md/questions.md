@@ -24,7 +24,7 @@ The party that relies on the evidence decides what is enough. The insurer, lende
 ### Can we just give the records to an AI model?
 You can, and for records you already hold it may read them well. We use AI models in our own reading. What you appoint Arkaya for is the work around the reading: checking that the records your question needs can be produced, fixing the question before anyone sees a record, reading it on a basis you can check line by line, and keeping to one role. When we read for an insurer, lender or acquirer, we never read evidence we designed or advised on, and the company being read does not pay for that reading. Whether that work is worth paying for is for you to judge from a sample reading.
 
-### Is the GET schema free to use, and is it published?
+### Is there a fee for the GET schema, and is it published?
 The GET schema carries no fee. Licence terms for the schema, specifications, test vectors and reference code are not yet settled. No licence to implement or redistribute is granted by this publication; a licence will accompany the ratified release. The current candidate is editorial revision v5 (normative 1.0); its JSON version is not yet published. A correction, v6, was published on 20 October 2026 as a public draft for comment; it is not approved and is not a candidate. No version is approved.
 
 ### Who runs Arkaya?
