@@ -19,6 +19,26 @@ Proving you are investable means proving you are governable, at the speed agenti
 
 Arkaya is not a governance platform. It builds the evidence layer a company and its insurers, lenders and acquirers can agree to rely on: what is recorded, in what form, and how it is tested, independent of the vendors who monitor the risk. The parties set the terms, and insurers, lenders and acquirers decide what it is worth.
 
+## A direct connection between the parties
+
+Platforms
+Governance and
+cybersecurity.
+Produce the
+records.
+Insurers,
+MGAs,
+lenders and
+M&A teams
+Set the
+requirements.
+Keep the
+decision.
+Arkaya
+Reports what the records can evidence
+
+Play the connection
+
 ## Find the weakness before someone prices it. Prove what you did about it, and when.
 
 Give insurers, lenders and acquirers evidence of your risk maturity trajectory, measured on a basis you and they agree: which weaknesses in the risk domains that drive value were fixed, reduced or accepted, how quickly, and whether the result held. They decide what it is worth.
@@ -124,26 +144,6 @@ Some provider records can be retrieved for only days. One agent-session API retu
 David McKibbin has worked every side of the placement: as an underwriter at Lloyd's of London, AIG and HSB, as a broker, and as an insurance buyer at a multinational steel producer. He has been chief executive (SMF1) of an FCA-regulated financial services group, sat on M&A deal teams and advised private equity on insurance within value creation plans.
 
 [Book a 15-minute call: what evidence will your next renewal or transaction need?](https://arkayarisk.com/services.html#call)
-
-## A direct connection between the parties
-
-Platforms
-Governance and
-cybersecurity.
-Produce the
-records.
-Insurers,
-MGAs,
-lenders and
-M&A teams
-Set the
-requirements.
-Keep the
-decision.
-Arkaya
-Reports what the records can evidence
-
-Play the connection
 
 Arkaya is a service, not software. Companies commission its defensive playbook; insurers, lenders and acquirers test the evidence for themselves and make their own decisions.
 
