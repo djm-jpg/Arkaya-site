@@ -269,7 +269,7 @@
     {
       "name": "Partner work",
       "description": "Platforms can ask Arkaya to translate their record format into the open schema, for a fixed fee.",
-      "commissionedBy": "Platforms",
+      "commissionedBy": "Governance and cybersecurity platforms",
       "arkayaDoesNot": "Arkaya does not currently read records it has translated.",
       "status": "available",
       "pricing": "US$1,000 per platform",
@@ -279,7 +279,7 @@
     {
       "name": "GET self-check",
       "description": "GET self-check is in development.",
-      "commissionedBy": "Platforms",
+      "commissionedBy": "Governance and cybersecurity platforms",
       "arkayaDoesNot": "Arkaya does not certify organisations.",
       "status": "in-development",
       "pricing": "free",

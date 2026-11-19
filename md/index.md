@@ -57,7 +57,7 @@ Find the weakness before someone prices it, and record what you did about it.
 
 [Explore the defensive playbook ↗](https://arkayarisk.com/services#defensive-playbook)
 
-For platforms
+For governance and cybersecurity platforms
 
 ## Platform pilot
 
