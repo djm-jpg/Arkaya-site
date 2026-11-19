@@ -2,7 +2,7 @@
 
 Page: https://arkayarisk.com/reader-pilot
 
-Arkaya reports what one platform's published record format and synthetic examples can evidence against a Reader's stated question. The Reader makes its own decisions.
+Arkaya's defensive playbook shows where the risk a company believes it carries differs from the risk its evidence can independently demonstrate in its key risk domains, and records each decision to fix, reduce, transfer or accept the risk, so insurers, lenders and acquirers can test the evidence for themselves.
 
 For insurers, lenders and acquirers
 
