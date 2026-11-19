@@ -17,7 +17,7 @@ Arkaya is a service, not software, and installs nothing in a client's organisati
 - Defensive Playbook Adviser | quoted | available | An ongoing relationship for boards and owners. | Commissioned by: Private equity sponsors, Companies. Arkaya does not later read that evidence for anyone else. | https://arkayarisk.com/services#call | mailto:djm@arkayarisk.com
 - Evidence Remediation Plan | quoted | available | For each gap, what to record as the control operates from now on, and how, so an outside reader can check it. | Commissioned by: Companies. Arkaya does not later read that evidence for anyone else. | https://arkayarisk.com/services#call | mailto:djm@arkayarisk.com
 - Monthly Evidence Review | quoted | available | Each month ends in a dated findings report. | Commissioned by: Companies. Arkaya does not later read that evidence for anyone else. | https://arkayarisk.com/services#call | mailto:djm@arkayarisk.com
-- Defensive Playbook | quoted | available | The Defensive Playbook does the other half: it is built to show which of a company's risks its records can evidence, and where they cannot. | Commissioned by: Companies. We do not advise on or place insurance. | https://arkayarisk.com/services#call | mailto:djm@arkayarisk.com
+- Defensive Playbook | quoted | available | A company's record of how it finds, treats and answers for its material weaknesses, across risk management, controls and GRC platforms, vendor contracts, insurance, and notification duties. | Commissioned by: Companies. Arkaya does not advise on or arrange insurance, give legal advice on notification duties, or replace the platforms that monitor the risk. | https://arkayarisk.com/services#call | mailto:djm@arkayarisk.com
 - Partner work | US$1,000 per platform | available | Platforms can ask Arkaya to translate their record format into the open schema, for a fixed fee. | Commissioned by: Platforms. Arkaya does not currently read records it has translated. | https://arkayarisk.com/services#call | mailto:djm@arkayarisk.com
 - GET self-check | free | in development | GET self-check is in development. | Commissioned by: Platforms. Arkaya does not certify organisations. | https://arkayarisk.com/services#call | mailto:djm@arkayarisk.com
 
@@ -53,7 +53,7 @@ Arkaya is a service, not software, and installs nothing in a client's organisati
 
 Arkaya GET is an open schema: a shared structure for records, distinct from Arkaya's paid work. Arkaya stewards it during the founding period. Independent stewardship is a designed path; it has not happened.
 
-No fee to build against the schema. Licence terms for the schema, specifications and vectors are not yet settled. The reference code is under the MIT licence.
+The schema carries no fee. Licence terms for the schema, specifications, test vectors and reference code are not yet settled. No licence to implement or redistribute is granted by this publication; a licence will accompany the ratified release.
 
 Current GET candidate: editorial revision v5 (normative 1.0). A correction, v6, was published on 20 October 2026 as a public draft for comment, for 21 days from publication, at https://record.arkayarisk.com/get/. It is not a candidate. Nothing is approved.
 

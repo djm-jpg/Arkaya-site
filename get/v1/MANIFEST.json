@@ -4,12 +4,12 @@
  "dated": "2026-08-10",
  "status": "Specifications in review, pre-ratification. Vector set and conformance corpus are candidates.",
  "digestForm": "base58-btc multibase over multihash-prefixed SHA-256, per Cryptographic Profile v5 section 3.3",
- "openMaterial": "No fee, no licence condition, no account, no call to any Arkaya service.",
+ "openMaterial": "No fee, no account, no call to any Arkaya service. Licence terms for the schema, specifications, test vectors and reference code are not yet settled. No licence to implement or redistribute is granted by this publication; a licence will accompany the ratified release.",
  "contents": "No binaries, no executables, no archives. Nine text files and this manifest. See SECURITY.md.",
  "files": [
   {
    "path": "README.md",
-   "digest": "zQmS6RPnpVRQYQBaSNHnXm1RJUV3nPsenMufnWj44QRQZE3"
+   "digest": "zQmQrXpmmWK9LHicwJ9tjRtkqnG4v2CjmgYFsdzxwUoAKtP"
   },
   {
    "path": "SECURITY.md",
