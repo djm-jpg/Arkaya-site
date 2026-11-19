@@ -58,7 +58,7 @@ Arkaya is a service, not software, and installs nothing in a client's organisati
 
 Arkaya GET is an open schema: a shared structure for records, distinct from Arkaya's paid work. Arkaya stewards it during the founding period. Independent stewardship is a designed path; it has not happened.
 
-No fee to build against the schema. Licence terms for the schema, specifications and vectors are not yet settled. The reference code is under the MIT licence.
+No fee to build against the schema. Licence terms for the schema, specifications, test vectors and reference code are not yet settled. No licence to implement or redistribute is granted by this publication; a licence will accompany the ratified release.
 
 Current GET candidate: editorial revision v5 (normative 1.0). A correction, v6, was published on 20 October 2026 as a public draft for comment, for 21 days from publication, at https://record.arkayarisk.com/get/. It is not a candidate. Nothing is approved.
 
