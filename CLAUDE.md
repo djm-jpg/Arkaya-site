@@ -63,14 +63,19 @@ Three files, all static, all authored:
 
 Carried verbatim wherever the chain is stated — llms.txt, the discovery document, `/architecture`:
 
-> Source systems emit signals; an engine produces a record against the schema; a counterparty reads
-> that record as evidence; Arkaya can be appointed to read records and report what they support for a
-> stated decision; Arkaya produces neither the record nor the price.
+> Source systems emit signals; an engine produces a record against the schema; a company can commission
+> Arkaya's defensive playbook to assemble its records into evidence; a counterparty reads that record as
+> evidence; Arkaya can be appointed to read records and report what they support for a stated decision,
+> taking one role per record; Arkaya produces neither the record nor the price.
 
 Amended 8 October 2026 (OPS_Website_Commercial_Update_Spec_v2, WEB-4 and WEB-6, DM): the appointed-reading
 clause was added because Arkaya now sells readings of a client's records (findings reports). The
 discovery document carries the same sentence with "the Governance Evidence Taxonomy" in place of "the
 schema"; that difference predates the amendment and is recorded, not resolved, here.
+
+Amended 19 November 2026 (WEB-20261119-050, DM): the defensive playbook clause and "taking one role per
+record" were added because the defensive playbook is now Arkaya's lead service, bought by the company
+(WEB-20261119-003; claims register row C27, one role per record).
 
 If you edit any statement of who produces what, it must match this form exactly.
 
