@@ -1,6 +1,6 @@
 # Arkaya Risk
 
-> Governance evidence service, not software: insurers, MGAs, lenders and M&A teams appoint Arkaya to read a company's AI governance records against their own question, so they can price governance risk on evidence rather than exclude it. Arkaya reports what the records support and what is missing; the reader sets the price.
+> Arkaya is a service, not software. Its defensive playbook records how a company finds, treats and answers for its material weaknesses, so insurers, lenders and acquirers can test the evidence for themselves. It reads only the records supplied to it and installs nothing in any organisation's systems.
 
 Source systems emit signals; an engine produces a record against the schema; a counterparty reads that record as evidence; Arkaya can be appointed to read records and report what they support for a stated decision; Arkaya produces neither the record nor the price.
 
@@ -10,8 +10,8 @@ Arkaya is a service, not software, and installs nothing in a client's organisati
 
 ## Services
 
-- Appointed Reading: Platform | quoted | available | What one platform's record format and samples can and cannot evidence against your requirement. The platform pays nothing to be read. | Commissioned by: Insurers, MGAs, lenders and M&A teams (readers). Arkaya does not price, accept or decline the risk. | https://arkayarisk.com/services#call | mailto:djm@arkayarisk.com
-- AI Risk Evidence Brief | US$200 a month per organisation | available | A weekly note on what changed, why it matters to your decision and what evidence to ask for. | Commissioned by: Insurers, MGAs, lenders and M&A teams (readers). We do not advise on or place insurance. | https://arkayarisk.com/services#call | mailto:djm@arkayarisk.com
+- Appointed Reading: Platform | quoted | available | What one platform's record format and samples can and cannot evidence against your requirement. The platform pays nothing to be read. | Commissioned by: Insurers, lenders and acquirers (readers). Arkaya does not price, accept or decline the risk. | https://arkayarisk.com/services#call | mailto:djm@arkayarisk.com
+- AI Risk Evidence Brief | US$200 a month per organisation | available | A weekly note on what changed, why it matters to your decision and what evidence to ask for. | Commissioned by: Insurers, lenders and acquirers (readers). We do not advise on or place insurance. | https://arkayarisk.com/services#call | mailto:djm@arkayarisk.com
 - Evidence Pressure Test | US$2,500 | available | You receive a short findings note. | Commissioned by: Companies, Private equity sponsors. Arkaya does not then read that evidence for an insurer, lender or acquirer. | https://arkayarisk.com/services#call | mailto:djm@arkayarisk.com
 - Governance Evidence Snapshot | quoted | available | A full read of one organisation, scoped by the question it needs answered rather than by system count. | Commissioned by: Companies, Private equity sponsors. Arkaya does not then read that evidence for an insurer, lender or acquirer. | https://arkayarisk.com/services#call | mailto:djm@arkayarisk.com
 - Defensive Playbook Adviser | quoted | available | An ongoing relationship for boards and owners. | Commissioned by: Private equity sponsors, Companies. Arkaya does not later read that evidence for anyone else. | https://arkayarisk.com/services#call | mailto:djm@arkayarisk.com
@@ -25,7 +25,7 @@ Arkaya is a service, not software, and installs nothing in a client's organisati
 
 - [Home](https://arkayarisk.com/) | [Markdown](https://arkayarisk.com/md/index.md): The definition, the two pilots, routes for companies and brokers, a worked example of an AI-agent payment rebuilt from synthetic records, and why records matter after a loss.
 - [Platform pilot](https://arkayarisk.com/platform-pilot) | [Markdown](https://arkayarisk.com/md/platform-pilot.md): For governance and cybersecurity platforms: one record type translated into the open schema, one example event rebuilt, and a one-page note on what the records carry and what they do not. Not a certification or endorsement.
-- [Reader pilot](https://arkayarisk.com/reader-pilot) | [Markdown](https://arkayarisk.com/md/reader-pilot.md): For insurers, MGAs, lenders and M&A teams: You fix the question. We read one export against it and report what is present, missing or not in the export, each line cited. You keep the decision.
+- [Reader pilot](https://arkayarisk.com/reader-pilot) | [Markdown](https://arkayarisk.com/md/reader-pilot.md): For insurers, lenders and acquirers: You fix the question. We read one export against it and report what is present, missing or not in the export, each line cited. You keep the decision.
 - [Questions and answers](https://arkayarisk.com/questions) | [Markdown](https://arkayarisk.com/md/questions.md): Short answers about Arkaya's role, the pilots and the GET schema.
 - [AI assurance claims reference](https://arkayarisk.com/ai-assurance-claims): What ISO/IEC 42001 certification, accreditation, SOC 2 reports, NIST AI RMF alignment, EU AI Act CE marking and independent audits each establish, and where each one stops.
 
