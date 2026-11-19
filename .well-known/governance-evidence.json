@@ -19,7 +19,7 @@
     "version": 1,
     "dated": "2026-08-10",
     "status": "Specifications in review, pre-ratification. Vector set and conformance corpus are candidates.",
-    "openMaterial": "No fee, no account and no call to any Arkaya service. Licence terms for the schema, specifications and test vectors are not yet settled. The reference implementation code is under the MIT licence.",
+    "openMaterial": "No fee, no account and no call to any Arkaya service. Licence terms for the schema, specifications, test vectors and reference code are not yet settled. No licence to implement or redistribute is granted by this publication; a licence will accompany the ratified release.",
     "landing": "https://arkayarisk.com/get",
     "root": "https://arkayarisk.com/get/v1/",
     "manifest": "https://arkayarisk.com/get/v1/MANIFEST.json",
@@ -27,7 +27,7 @@
     "files": [
       {
         "path": "README.md",
-        "digest": "zQmS6RPnpVRQYQBaSNHnXm1RJUV3nPsenMufnWj44QRQZE3"
+        "digest": "zQmQrXpmmWK9LHicwJ9tjRtkqnG4v2CjmgYFsdzxwUoAKtP"
       },
       {
         "path": "SECURITY.md",
