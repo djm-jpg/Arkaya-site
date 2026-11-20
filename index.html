@@ -138,16 +138,23 @@ details{border-top:1px solid var(--rule);padding:20px 0}details:last-of-type{bor
 .nots p{padding-left:22px;border-left:1.5px solid var(--bronze)}
 footer{border-top:1px solid var(--rule);padding:44px 0 60px;font-size:15px;color:var(--muted)}
 /* diagram */
-.dia{text-align:center}.dia svg{width:100%;height:auto;display:block}
-.replay{margin-top:22px;background:none;border:1.5px solid var(--rule);color:var(--teal);border-radius:999px;padding:14px 32px;font:500 17px "DM Sans",sans-serif;cursor:pointer}
-.d-arrow{stroke-dasharray:150;stroke-dashoffset:0}.d-brace{stroke-dasharray:640;stroke-dashoffset:0}
-.play .d-arrow{animation:draw 1.2s ease both}
-.play .d-brace{animation:draw 1.2s ease 1.3s both}
-.play .d-ark{animation:fade .9s ease 2.4s both}
-.play .d-note{animation:fade .9s ease 3.1s both}
-@keyframes draw{from{stroke-dashoffset:var(--len,640)}to{stroke-dashoffset:0}}@keyframes fade{from{opacity:.15}to{opacity:1}}
-.d-arrow{--len:150}
-@media (prefers-reduced-motion:reduce){.play *{animation:none!important}}
+.dia{--dia-paper:#FAF8F3;--dia-ink:#203E3C;--dia-panel:#E5EDE6;--dia-accent:#8B5A32;--dia-secondary:#5F6662;min-width:0;text-align:center;overflow-x:auto;color:var(--dia-ink);font-family:"DM Sans",sans-serif}
+.dia .dia-title{max-width:none;font-size:26px;font-weight:500;line-height:1.2;text-align:center;margin:0 0 24px;letter-spacing:-.02em}
+.dia svg{width:100%;height:auto;display:block;overflow:visible;font-family:"DM Sans",sans-serif}
+.dia .dia-panel{fill:var(--dia-panel)}
+.dia .dia-party{font-size:28px;font-weight:600;fill:var(--dia-ink)}
+.dia .dia-body{font-size:25px;font-weight:400;fill:var(--dia-secondary)}
+.dia .dia-arrow-label{font-size:25px;font-weight:500;fill:var(--dia-ink)}
+.dia .dia-connection{fill:none;stroke:var(--dia-accent);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.dia .dia-footer{max-width:none;font-size:15px;font-weight:400;line-height:1.5;text-align:center;margin:18px 0 0}
+.dia .dia-reader-role{margin-top:8px}
+.dia .dia-layout-wide{display:none}
+.dia .dia-layout-narrow{display:block;min-width:293px;max-width:400px;margin-inline:auto}
+.dia .dia-layout-narrow .dia-party{font-size:20px}
+.dia .dia-layout-narrow .dia-body,.dia .dia-layout-narrow .dia-arrow-label{font-size:16px}
+@media (max-width:860px){.dia .dia-title{font-size:24px;margin-bottom:20px}}
+@media (min-width:901px){.dia .dia-layout-wide{display:block}.dia .dia-layout-narrow{display:none}}
+@media (prefers-reduced-motion:reduce){.dia,.dia *,.dia *::before,.dia *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media (max-width:860px){.hero,.two,.three{grid-template-columns:1fr;gap:44px}.hero{padding:56px 0 40px}.steps{grid-template-columns:1fr 1fr;gap:28px}nav a:not(.talk){display:none}section{padding:60px 0}body{font-size:18px}.paper{padding:26px 24px}.mark .w{font-size:36px}}
 .ph{background:#F3E3C3;color:#5a3a12;padding:0 4px;border-radius:3px;font-style:normal}
 .res{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:6px 22px;margin:18px 0 0;font-size:15px}.res a{color:var(--teal);margin:0 !important;padding:0 !important}
@@ -165,25 +172,61 @@ Charlie Munger</p>
 <p>AI now finds weaknesses faster than most businesses can fix them. Resilience is built from each test, incident and near miss: what held, what did not, and what you did next.</p>
 <p>Proving you are investable means proving you are governable, at the speed agentic AI moves.</p>
 <p>Arkaya is not a governance platform. It builds the evidence layer a company and its insurers, lenders and acquirers can agree to rely on: what is recorded, in what form, and how it is tested, independent of the vendors who monitor the risk. The parties set the terms, and insurers, lenders and acquirers decide what it is worth.</p>
-</div><div class="dia"><div id="dbox" class="play">
-<svg viewBox="0 0 680 600" role="img" aria-label="Platforms and insurers, lenders and acquirers connect directly. Arkaya sits alongside and reports what a platform&#x27;s record format and synthetic examples can evidence against a Reader&#x27;s stated question.">
-<g font-family="DM Sans, sans-serif">
-<text x="340" y="22" text-anchor="middle" font-size="19" fill="#5F6662">A direct connection between the parties</text>
-<rect x="20" y="70" width="230" height="300" rx="30" fill="#E5EDE6"/>
-<text x="50" y="140" font-size="27" fill="#203E3C">Platforms</text>
-<text x="50" y="195" font-size="19" fill="#5F6662">Governance and</text><text x="50" y="228" font-size="19" fill="#5F6662">cybersecurity.</text>
-<text x="50" y="261" font-size="19" fill="#5F6662">Produce the</text><text x="50" y="294" font-size="19" fill="#5F6662">records.</text>
-<rect x="430" y="40" width="230" height="360" rx="30" fill="#E5EDE6"/>
-<text x="460" y="108" font-size="27" fill="#203E3C">Insurers,</text><text x="460" y="144" font-size="27" fill="#203E3C">lenders and</text><text x="460" y="180" font-size="27" fill="#203E3C">acquirers</text>
-<text x="460" y="272" font-size="19" fill="#5F6662">Set the</text><text x="460" y="305" font-size="19" fill="#5F6662">requirements.</text>
-<text x="460" y="338" font-size="19" fill="#5F6662">Keep the</text><text x="460" y="371" font-size="19" fill="#5F6662">decision.</text>
-<path class="d-arrow" d="M266 222 L414 222" stroke="#203E3C" stroke-width="2.5" fill="none"/>
-<path d="M276 212 L264 222 L276 232 M404 212 L416 222 L404 232" stroke="#203E3C" stroke-width="2.5" fill="none"/>
-<path class="d-brace" d="M110 420 L110 440 Q110 470 140 470 L520 470 Q550 470 550 440 L550 420" stroke="#8B5A32" stroke-width="1.6" fill="none"/>
-<g class="d-ark"><text x="330" y="530" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="44" fill="#203E3C">Arkaya</text>
-<text x="330" y="568" text-anchor="middle" font-size="19" fill="#5F6662">Reports what the records can evidence</text></g>
-</g></svg></div>
-<button class="replay" type="button" onclick="var b=document.getElementById('dbox');b.classList.remove('play');void b.offsetWidth;b.classList.add('play')">Play the connection</button></div></div></div>
+</div><div class="dia" role="region" aria-labelledby="diagram-title">
+<p class="dia-title" id="diagram-title" data-copy="title">How the evidence travels</p>
+<svg class="dia-layout-wide" data-layout="wide" viewBox="0 0 680 600" role="img" aria-label="Platforms produce records; your company supplies them to Arkaya, whose defensive playbook returns a findings report and decision log. Your company chooses what to share with insurers, lenders and acquirers, who test the evidence and decide what it is worth.">
+<defs><marker id="wide-arrowhead" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#8B5A32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<g aria-hidden="true">
+<rect class="dia-panel" data-party="Platforms" x="12" y="8" width="260" height="192" rx="24"/>
+<rect class="dia-panel" data-party="Your company" x="374" y="8" width="294" height="220" rx="24"/>
+<rect class="dia-panel" data-party="Arkaya" x="374" y="328" width="294" height="264" rx="24"/>
+<rect class="dia-panel" data-party="Insurers, lenders and acquirers" x="12" y="328" width="260" height="264" rx="24"/>
+<path class="dia-connection" data-from="Platforms" data-to="Your company" data-label="records" d="M280 118 H366" marker-end="url(#wide-arrowhead)"/>
+<path class="dia-connection" data-from="Your company" data-to="Arkaya" data-label="records you supply" d="M470 236 V320" marker-end="url(#wide-arrowhead)"/>
+<path class="dia-connection" data-from="Arkaya" data-to="Your company" data-label="findings report and decision log" d="M500 320 V236" marker-end="url(#wide-arrowhead)"/>
+<path class="dia-connection" data-from="Your company" data-to="Insurers, lenders and acquirers" data-label="the evidence you choose to share" d="M382 196 H335 V306 H142 V320" marker-end="url(#wide-arrowhead)"/>
+<text data-copy="box1-label" class="dia-party" text-anchor="start"><tspan x="32" y="48">Platforms</tspan></text>
+<text data-copy="box1-body" class="dia-body" text-anchor="start"><tspan x="32" y="85">Governance and</tspan> <tspan x="32" y="115">cybersecurity.</tspan> <tspan x="32" y="145">Produce the</tspan> <tspan x="32" y="175">records.</tspan></text>
+<text data-copy="box2-label" class="dia-party" text-anchor="start"><tspan x="394" y="48">Your company</tspan></text>
+<text data-copy="box2-body" class="dia-body" text-anchor="start"><tspan x="394" y="85">Decides and does</tspan> <tspan x="394" y="115">the work. Chooses</tspan> <tspan x="394" y="145">what each reader sees.</tspan></text>
+<text data-copy="box3-label" class="dia-party" text-anchor="start"><tspan x="394" y="362">Arkaya</tspan></text>
+<text data-copy="box3-body" class="dia-body" text-anchor="start"><tspan x="394" y="402">Defensive playbook.</tspan> <tspan x="394" y="430">Reads the records you</tspan> <tspan x="394" y="458">supply. Records each</tspan> <tspan x="394" y="486">decision to fix, reduce,</tspan> <tspan x="394" y="514">transfer or accept the</tspan> <tspan x="394" y="542">risk, and every test of</tspan> <tspan x="394" y="570">the result.</tspan></text>
+<text data-copy="box4-label" class="dia-party" text-anchor="start"><tspan x="32" y="362">Insurers, lenders</tspan> <tspan x="32" y="394">and acquirers</tspan></text>
+<text data-copy="box4-body" class="dia-body" text-anchor="start"><tspan x="32" y="439">Test the evidence</tspan> <tspan x="32" y="469">for themselves.</tspan> <tspan x="32" y="499">Set the terms.</tspan> <tspan x="32" y="529">Decide what it</tspan> <tspan x="32" y="559">is worth.</tspan></text>
+<text data-copy="arrow1" class="dia-arrow-label" text-anchor="middle"><tspan x="323" y="91">records</tspan></text>
+<text data-copy="arrow2" class="dia-arrow-label" text-anchor="end"><tspan x="450" y="255">records</tspan> <tspan x="450" y="283">you</tspan> <tspan x="450" y="311">supply</tspan></text>
+<text data-copy="arrow3" class="dia-arrow-label" text-anchor="start"><tspan x="520" y="255">findings</tspan> <tspan x="520" y="283">report and</tspan> <tspan x="520" y="311">decision log</tspan></text>
+<text data-copy="arrow4" class="dia-arrow-label" text-anchor="start"><tspan x="394" y="184">the evidence you</tspan> <tspan x="394" y="212">choose to share</tspan></text>
+</g>
+</svg>
+<svg class="dia-layout-narrow" data-layout="narrow" viewBox="0 0 334 818" role="img" aria-label="Platforms produce records; your company supplies them to Arkaya, whose defensive playbook returns a findings report and decision log. Your company chooses what to share with insurers, lenders and acquirers, who test the evidence and decide what it is worth.">
+<defs><marker id="narrow-arrowhead" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#8B5A32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<g aria-hidden="true">
+<rect class="dia-panel" data-party="Platforms" x="44" y="8" width="274" height="122" rx="24"/>
+<rect class="dia-panel" data-party="Your company" x="44" y="174" width="274" height="158" rx="24"/>
+<rect class="dia-panel" data-party="Arkaya" x="44" y="432" width="274" height="194" rx="24"/>
+<rect class="dia-panel" data-party="Insurers, lenders and acquirers" x="44" y="650" width="274" height="152" rx="24"/>
+<path class="dia-connection" data-from="Platforms" data-to="Your company" data-label="records" d="M180 138 V166" marker-end="url(#narrow-arrowhead)"/>
+<path class="dia-connection" data-from="Your company" data-to="Arkaya" data-label="records you supply" d="M164 340 V424" marker-end="url(#narrow-arrowhead)"/>
+<path class="dia-connection" data-from="Arkaya" data-to="Your company" data-label="findings report and decision log" d="M196 424 V340" marker-end="url(#narrow-arrowhead)"/>
+<path class="dia-connection" data-from="Your company" data-to="Insurers, lenders and acquirers" data-label="the evidence you choose to share" d="M54 292 H24 V736 H36" marker-end="url(#narrow-arrowhead)"/>
+<text data-copy="box1-label" class="dia-party" text-anchor="start"><tspan x="64" y="40">Platforms</tspan></text>
+<text data-copy="box1-body" class="dia-body" text-anchor="start"><tspan x="64" y="68">Governance and</tspan> <tspan x="64" y="90">cybersecurity. Produce</tspan> <tspan x="64" y="112">the records.</tspan></text>
+<text data-copy="box2-label" class="dia-party" text-anchor="start"><tspan x="64" y="206">Your company</tspan></text>
+<text data-copy="box2-body" class="dia-body" text-anchor="start"><tspan x="64" y="236">Decides and does the work.</tspan> <tspan x="64" y="258">Chooses what each reader sees.</tspan></text>
+<text data-copy="box3-label" class="dia-party" text-anchor="start"><tspan x="64" y="464">Arkaya</tspan></text>
+<text data-copy="box3-body" class="dia-body" text-anchor="start"><tspan x="64" y="496">Defensive playbook.</tspan> <tspan x="64" y="518">Reads the records you supply.</tspan> <tspan x="64" y="540">Records each decision to fix,</tspan> <tspan x="64" y="562">reduce, transfer or accept the</tspan> <tspan x="64" y="584">risk, and every test of the</tspan> <tspan x="64" y="606">result.</tspan></text>
+<text data-copy="box4-label" class="dia-party" text-anchor="start"><tspan x="64" y="682">Insurers, lenders</tspan> <tspan x="64" y="706">and acquirers</tspan></text>
+<text data-copy="box4-body" class="dia-body" text-anchor="start"><tspan x="64" y="738">Test the evidence for</tspan> <tspan x="64" y="760">themselves. Set the terms.</tspan> <tspan x="64" y="782">Decide what it is worth.</tspan></text>
+<text data-copy="arrow1" class="dia-arrow-label" text-anchor="start"><tspan x="200" y="154">records</tspan></text>
+<text data-copy="arrow2" class="dia-arrow-label" text-anchor="end"><tspan x="144" y="364">records</tspan> <tspan x="144" y="386">you supply</tspan></text>
+<text data-copy="arrow3" class="dia-arrow-label" text-anchor="start"><tspan x="216" y="354">findings</tspan> <tspan x="216" y="376">report and</tspan> <tspan x="216" y="398">decision log</tspan></text>
+<text data-copy="arrow4" class="dia-arrow-label" text-anchor="start"><tspan x="64" y="290">the evidence you</tspan> <tspan x="64" y="312">choose to share</tspan></text>
+</g>
+</svg>
+<p class="dia-footer" data-copy="footer">Arkaya takes one role per record, installs nothing in your systems and prices nothing.</p>
+<p class="dia-footer dia-reader-role" data-copy="reader-role">Insurers, lenders and acquirers can also appoint Arkaya to read a record it has not worked on.</p>
+</div></div></div>
 <section class="rule"><div class="wrap">
 <h2>Find the weakness before someone prices it. Prove what you did about it, and when.</h2>
 <p class="lede">Give insurers, lenders and acquirers evidence of your risk maturity trajectory, measured on a basis you and they agree: which weaknesses in the risk domains that drive value were fixed, reduced or accepted, how quickly, and whether the result held. They decide what it is worth.</p>
