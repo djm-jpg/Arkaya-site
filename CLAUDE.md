@@ -77,7 +77,7 @@ Amended 19 November 2026 (WEB-20261119-050, DM): the defensive playbook clause a
 record" were added because the defensive playbook is now Arkaya's lead service, bought by the company
 (WEB-20261119-003; claims register row C27, one role per record).
 
-If you edit any statement of who produces what, it must match this form exactly.
+Where the whole chain is stated, it must match this form exactly. A shorter statement of one part of it, such as a diagram label, a caption or a line of page copy, need not repeat the form but must not contradict it. Here "the record" means the record an engine produces against the schema; the findings report and decision log Arkaya returns to a company are its own work, not that record.
 
 ## Language constraints
 

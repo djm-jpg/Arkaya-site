@@ -19,24 +19,18 @@ Proving you are investable means proving you are governable, at the speed agenti
 
 Arkaya is not a governance platform. It builds the evidence layer a company and its insurers, lenders and acquirers can agree to rely on: what is recorded, in what form, and how it is tested, independent of the vendors who monitor the risk. The parties set the terms, and insurers, lenders and acquirers decide what it is worth.
 
-## A direct connection between the parties
+## How the evidence travels
 
-Platforms
-Governance and
-cybersecurity.
-Produce the
-records.
-Insurers,
-lenders and
-acquirers
-Set the
-requirements.
-Keep the
-decision.
-Arkaya
-Reports what the records can evidence
+Platforms: Governance and cybersecurity. Produce the records.
+Your company: Decides and does the work. Chooses what each reader sees.
+Arkaya: Defensive playbook. Reads the records you supply. Records each decision to fix, reduce, transfer or accept the risk, and every test of the result.
+Insurers, lenders and acquirers: Test the evidence for themselves. Set the terms. Decide what it is worth.
 
-Play the connection
+Platforms send records to your company. Your company sends the records you supply to Arkaya. Arkaya returns a findings report and decision log to your company. Your company sends the evidence you choose to share to insurers, lenders and acquirers.
+
+Arkaya takes one role per record, installs nothing in your systems and prices nothing.
+
+Insurers, lenders and acquirers can also appoint Arkaya to read a record it has not worked on.
 
 ## Find the weakness before someone prices it. Prove what you did about it, and when.
 
